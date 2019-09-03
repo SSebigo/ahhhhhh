@@ -9,9 +9,24 @@ abstract class AudioEvent extends Equatable {
 
 class PlayAudio extends AudioEvent {
   final BatteryState state;
+  final int index;
 
-  PlayAudio({this.state}) : super([state]);
+  PlayAudio({this.state, this.index}) : super([state, index]);
 
   @override
-  String toString() => 'Playing audio current state: $state';
+  String toString() => 'Playing audio current state: $state at indx: $index';
+}
+
+class PhoneDischarging extends AudioEvent {
+  @override
+  String toString() => 'Phone discharging';
+}
+
+class ChangeTrack extends AudioEvent {
+  final int index;
+
+  ChangeTrack({this.index}) : super([index]);
+
+  @override
+  String toString() => 'Changing track to audio at index: $index';
 }

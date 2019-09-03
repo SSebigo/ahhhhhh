@@ -20,3 +20,8 @@ class PlayedAudio extends AudioState {
   @override
   String toString() => 'Played audio';
 }
+
+class Discharging extends AudioState {
+  @override
+  String toString() => 'Phone is discharging';
+}

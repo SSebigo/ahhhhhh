@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:ahhhhhh/logic.dart';
 import 'package:battery/battery.dart';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/services.dart';
 import './bloc.dart';
 
 class AudioBloc extends Bloc<AudioEvent, AudioState> {
@@ -9,6 +10,8 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
 
   BatteryState _previousState = BatteryState.discharging;
   BatteryState _currentState = BatteryState.discharging;
+
+  int _index = 0;
 
   @override
   AudioState get initialState => InitialAudioState();
@@ -25,10 +28,16 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
           _currentState == BatteryState.charging) {
         yield PlayingAudio();
 
-        _logic.playSavunAohhhh();
+        await _logic.playAudioTrack(_index);
 
         yield PlayedAudio();
       }
+    }
+    if (event is PhoneDischarging) {
+      yield Discharging();
+    }
+    if (event is ChangeTrack) {
+      _index = event.index;
     }
   }
 }
