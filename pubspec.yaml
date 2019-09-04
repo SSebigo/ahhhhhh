@@ -39,7 +39,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter_icons:
-  android: "launcher_icon"
+  android: true
   ios: true
   image_path: "assets/ahhhhhh-logo.png"
 
@@ -59,6 +59,7 @@ flutter:
     - assets/cfg/config.json
     - assets/savun.mp3
     - assets/terry.mp3
+    - assets/ahhhhhh-logo.png
     - assets/yaranaika-pleasure.png
     - assets/yaranaika-straight.png
   #  - images/a_dot_burr.jpeg
