@@ -11,7 +11,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
   BatteryState _previousState = BatteryState.discharging;
   BatteryState _currentState = BatteryState.discharging;
 
-  int _index = 0;
+  int _index;
 
   @override
   AudioState get initialState => InitialAudioState();
@@ -20,22 +20,28 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
   Stream<AudioState> mapEventToState(
     AudioEvent event,
   ) async* {
-    if (event is PlayAudio) {
+    if (event is PluggedIn) {
       _previousState = _currentState;
       _currentState = event.state;
 
-      if (_currentState != _previousState &&
-          _currentState == BatteryState.charging) {
-        yield PlayingAudio();
+      if (_currentState != _previousState) {
+        // (_currentState == BatteryState.charging ||
+        //     _currentState == BatteryState.full))
+        if (_currentState == BatteryState.charging) {
+          yield PlayingAudio();
 
-        await _logic.playAudioTrack(_index);
+          await _logic.playAudioTrack(index: _index);
 
-        yield PlayedAudio();
+          yield PlayedAudio();
+        }
+        if (_currentState == BatteryState.discharging) {
+          yield Discharging();
+        }
       }
     }
-    if (event is PhoneDischarging) {
-      yield Discharging();
-    }
+    // if (event is PhoneDischarging) {
+    //   yield Discharging();
+    // }
     if (event is ChangeTrack) {
       _index = event.index;
     }

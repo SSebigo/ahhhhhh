@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:ahhhhhh/bloc/audio_bloc.dart';
 import 'package:ahhhhhh/bloc/audio_event.dart';
+import 'package:ahhhhhh/bloc/audio_event.dart';
 import 'package:ahhhhhh/bloc/audio_state.dart';
 import 'package:ahhhhhh/logic.dart';
 import 'package:ahhhhhh/styles.dart';
@@ -17,7 +18,7 @@ import 'package:global_configuration/global_configuration.dart';
 
 typedef void OnError(Exception exception);
 
-final cfg = GlobalConfiguration();
+// final cfg = GlobalConfiguration();
 
 void backgroundFetchHeadlessTask() {
   print('[BackgroundFetch] Headless event received.');
@@ -26,7 +27,7 @@ void backgroundFetchHeadlessTask() {
 }
 
 void main() async {
-  cfg.loadFromAsset('config');
+  GlobalConfiguration().loadFromAsset('config');
   runApp(App());
   BackgroundFetch.registerHeadlessTask(backgroundFetchHeadlessTask);
 }
@@ -49,16 +50,18 @@ class _AppState extends State<App> {
     super.initState();
     initPlatformState();
 
-    _audioBloc.dispatch(ChangeTrack(index: cfg.getString('index') as int));
+    _audioBloc.dispatch(
+        ChangeTrack(index: GlobalConfiguration().getString('index') as int));
 
     _batteryStateSubscription =
         _battery.onBatteryStateChanged.listen((BatteryState state) {
-          if (state == BatteryState.charging || state == BatteryState.full) {
-            _audioBloc.dispatch(PlayAudio(state: state));
-          }
-          if (state == BatteryState.discharging) {
-            _audioBloc.dispatch(PhoneDischarging());
-          }
+      _audioBloc.dispatch(PluggedIn(state: state));
+      // if (state == BatteryState.charging || state == BatteryState.full) {
+      //   _audioBloc.dispatch(PlayAudio(state: state));
+      // }
+      // if (state == BatteryState.discharging) {
+      //   _audioBloc.dispatch(PhoneDischarging());
+      // }
     });
   }
 
@@ -88,7 +91,7 @@ class _AppState extends State<App> {
     print('[BackgroundFetch] Event received');
 
     _battery.onBatteryStateChanged.listen((BatteryState state) {
-      _audioBloc.dispatch(PlayAudio(state: state));
+      _audioBloc.dispatch(PluggedIn(state: state));
     });
 
     BackgroundFetch.finish();
@@ -117,12 +120,7 @@ class _AppState extends State<App> {
           body:
               Center(child: Container(child: BlocBuilder<AudioBloc, AudioState>(
             builder: (context, state) {
-              if (state is PlayingAudio) {
-                return Center(
-                  child: Image.asset('assets/yaranaika-pleasure.png'),
-                );
-              }
-              if (state is PlayedAudio) {
+              if (state is PlayingAudio || state is PlayedAudio) {
                 return Center(
                   child: Image.asset(
                     'assets/yaranaika-pleasure.png',
@@ -155,9 +153,9 @@ class _AppState extends State<App> {
                       _audioBloc.dispatch(ChangeTrack(index: index));
                       audioCache.play(tracks[index].path);
 
-                      cfg.setValue('index', index);
+                      GlobalConfiguration().setValue('index', index);
 
-                      Navigator.of(context).pop();
+                      Navigator.pop(context);
                     },
                   );
                 },

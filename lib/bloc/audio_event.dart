@@ -7,20 +7,29 @@ abstract class AudioEvent extends Equatable {
   AudioEvent([List props = const <dynamic>[]]) : super(props);
 }
 
-class PlayAudio extends AudioEvent {
+class PluggedIn extends AudioEvent {
   final BatteryState state;
-  final int index;
 
-  PlayAudio({this.state, this.index}) : super([state, index]);
+  PluggedIn({this.state}) : super([state]);
 
   @override
-  String toString() => 'Playing audio current state: $state at indx: $index';
+  String toString() => 'Playing audio current state: $state';
 }
 
-class PhoneDischarging extends AudioEvent {
-  @override
-  String toString() => 'Phone discharging';
-}
+// class PlayAudio extends AudioEvent {
+//   final BatteryState state;
+//   final int index;
+
+//   PlayAudio({this.state, this.index}) : super([state, index]);
+
+//   @override
+//   String toString() => 'Playing audio current state: $state at indx: $index';
+// }
+
+// class PhoneDischarging extends AudioEvent {
+//   @override
+//   String toString() => 'Phone discharging';
+// }
 
 class ChangeTrack extends AudioEvent {
   final int index;
