@@ -25,9 +25,8 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       _currentState = event.state;
 
       if (_currentState != _previousState) {
-        // (_currentState == BatteryState.charging ||
-        //     _currentState == BatteryState.full))
-        if (_currentState == BatteryState.charging) {
+        if (_currentState == BatteryState.charging ||
+            _currentState == BatteryState.full) {
           yield PlayingAudio();
 
           await _logic.playAudioTrack(index: _index);
@@ -39,9 +38,6 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
         }
       }
     }
-    // if (event is PhoneDischarging) {
-    //   yield Discharging();
-    // }
     if (event is ChangeTrack) {
       _index = event.index;
     }

@@ -18,8 +18,6 @@ import 'package:global_configuration/global_configuration.dart';
 
 typedef void OnError(Exception exception);
 
-// final cfg = GlobalConfiguration();
-
 void backgroundFetchHeadlessTask() {
   print('[BackgroundFetch] Headless event received.');
 
@@ -42,7 +40,6 @@ class _AppState extends State<App> {
   AudioCache audioCache = AudioCache();
 
   Battery _battery = Battery();
-  // BatteryState _batteryState;
   StreamSubscription<BatteryState> _batteryStateSubscription;
 
   @override
@@ -56,12 +53,6 @@ class _AppState extends State<App> {
     _batteryStateSubscription =
         _battery.onBatteryStateChanged.listen((BatteryState state) {
       _audioBloc.dispatch(PluggedIn(state: state));
-      // if (state == BatteryState.charging || state == BatteryState.full) {
-      //   _audioBloc.dispatch(PlayAudio(state: state));
-      // }
-      // if (state == BatteryState.discharging) {
-      //   _audioBloc.dispatch(PhoneDischarging());
-      // }
     });
   }
 
@@ -166,10 +157,6 @@ class _AppState extends State<App> {
       ),
     );
   }
-
-  // playAudio() {
-  //   _logic.playSavunAohhhh();
-  // }
 
   @override
   void dispose() {
