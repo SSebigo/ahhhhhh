@@ -2,13 +2,9 @@ import 'dart:async';
 
 import 'package:ahhhhhh/bloc/audio_bloc.dart';
 import 'package:ahhhhhh/bloc/audio_event.dart';
-import 'package:ahhhhhh/bloc/audio_event.dart';
 import 'package:ahhhhhh/bloc/audio_state.dart';
-import 'package:ahhhhhh/logic.dart';
-import 'package:ahhhhhh/styles.dart';
 import 'package:ahhhhhh/track.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:background_fetch/background_fetch.dart';
 import 'package:battery/battery.dart';
 import 'package:flutter/material.dart';
