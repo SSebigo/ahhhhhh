@@ -28,6 +28,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
             _currentState == BatteryState.full) {
           yield PlayingAudio();
 
+          print('index: $_index');
           await _logic.playAudioTrack(index: _index);
 
           yield PlayedAudio();

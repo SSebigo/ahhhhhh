@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:ahhhhhh/bloc/audio_bloc.dart';
 import 'package:ahhhhhh/bloc/audio_event.dart';
 import 'package:ahhhhhh/bloc/audio_state.dart';
+import 'package:ahhhhhh/storage.dart';
 import 'package:ahhhhhh/track.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:background_fetch/background_fetch.dart';
@@ -10,7 +12,6 @@ import 'package:battery/battery.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:global_configuration/global_configuration.dart';
 
 typedef void OnError(Exception exception);
 
@@ -20,36 +21,60 @@ void backgroundFetchHeadlessTask() {
   BackgroundFetch.finish();
 }
 
-void main() async {
-  GlobalConfiguration().loadFromAsset('config');
-  runApp(App());
+void main() {
+  runApp(App(
+    storage: Storage(),
+  ));
   BackgroundFetch.registerHeadlessTask(backgroundFetchHeadlessTask);
 }
 
 class App extends StatefulWidget {
+  final Storage storage;
+
+  App({Key key, @required this.storage}) : super(key: key);
+
   @override
   _AppState createState() => _AppState();
 }
 
 class _AppState extends State<App> {
   AudioBloc _audioBloc = AudioBloc();
-  AudioCache audioCache = AudioCache();
+  AudioCache _audioCache = AudioCache();
 
   Battery _battery = Battery();
   StreamSubscription<BatteryState> _batteryStateSubscription;
+
+  int _index;
 
   @override
   void initState() {
     super.initState();
     initPlatformState();
 
-    _audioBloc.dispatch(
-        ChangeTrack(index: GlobalConfiguration().getString('index') as int));
+    widget.storage.readData().then((data) {
+      print(data);
+      setState(() {
+       _index = data["index"] as int;
+      });
+      _audioBloc.dispatch(ChangeTrack(index: _index));
+    }).catchError((onError) {
+      _index = 0;
+    }).whenComplete(subscribeBattery);
+  }
 
+  Future<Null> subscribeBattery() {
     _batteryStateSubscription =
         _battery.onBatteryStateChanged.listen((BatteryState state) {
       _audioBloc.dispatch(PluggedIn(state: state));
     });
+    return null;
+  }
+
+  Future<File> writeData() async {
+    Map<String, dynamic> config = {
+      "index": _index,
+    };
+    return widget.storage.writeData(config);
   }
 
   Future<void> initPlatformState() async {
@@ -110,7 +135,7 @@ class _AppState extends State<App> {
               if (state is PlayingAudio || state is PlayedAudio) {
                 return Center(
                   child: Image.asset(
-                    'assets/yaranaika-pleasure.png',
+                    'assets/img/yaranaika-pleasure.png',
                     width: 300,
                     height: 300,
                   ),
@@ -118,11 +143,11 @@ class _AppState extends State<App> {
               }
               if (state is Discharging) {
                 return Center(
-                  child: Image.asset('assets/yaranaika-straight.png'),
+                  child: Image.asset('assets/img/yaranaika-straight.png'),
                 );
               }
               return Center(
-                child: Image.asset('assets/yaranaika-straight.png'),
+                child: Image.asset('assets/img/yaranaika-straight.png'),
               );
             },
           ))),
@@ -131,23 +156,36 @@ class _AppState extends State<App> {
               canvasColor: Colors.white,
             ),
             child: Drawer(
-              child: ListView.builder(
-                itemCount: tracks.length,
-                itemBuilder: (_, int index) {
-                  return ListTile(
-                    title: Text(tracks[index].name),
-                    onTap: () {
-                      _audioBloc.dispatch(ChangeTrack(index: index));
-                      audioCache.play(tracks[index].path);
+                child: ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text(
+                    'Select a sound effect',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: tracks.length,
+                  itemBuilder: (_, int index) {
+                    return ListTile(
+                      title: Text(tracks[index].name),
+                      onTap: () {
+                        _audioBloc.dispatch(ChangeTrack(index: index));
+                        _audioCache.play(tracks[index].path);
 
-                      GlobalConfiguration().setValue('index', index);
+                        _index = index;
 
-                      Navigator.pop(context);
-                    },
-                  );
-                },
-              ),
-            ),
+                        writeData();
+                      },
+                    );
+                  },
+                ),
+              ],
+            )),
           ),
         ),
       ),

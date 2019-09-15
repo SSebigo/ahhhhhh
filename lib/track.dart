@@ -8,6 +8,7 @@ class Track extends Equatable {
 }
 
 final tracks = [
-  new Track(name: 'Savun', path: 'savun.mp3'),
-  new Track(name: 'Terry', path: 'terry.mp3'),
+  new Track(name: 'Savun', path: 'sounds/savun.mp3'),
+  new Track(name: 'Terry', path: 'sounds/terry.mp3'),
+  new Track(name: 'Bison Yes', path: 'sounds/bison_yes.mp3'),
 ];
