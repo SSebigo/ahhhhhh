@@ -46,7 +46,7 @@ android {
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         versionCode 3
-        versionName "1.1.0-beta"
+        versionName "1.1.0"
     }
     // productFlavors {
     //     demo {
