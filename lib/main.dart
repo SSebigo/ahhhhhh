@@ -54,7 +54,7 @@ class _AppState extends State<App> {
     widget.storage.readData().then((data) {
       print(data);
       setState(() {
-       _index = data["index"] as int;
+        _index = data["index"] as int;
       });
       _audioBloc.dispatch(ChangeTrack(index: _index));
     }).catchError((onError) {
@@ -109,6 +109,26 @@ class _AppState extends State<App> {
     BackgroundFetch.finish();
   }
 
+  Widget _buildFaceView(AudioState state) {
+    if (state is PlayingAudio || state is PlayedAudio) {
+      return Center(
+        child: Image.asset(
+          'assets/img/yaranaika-pleasure.png',
+          width: 300,
+          height: 300,
+        ),
+      );
+    }
+    if (state is Discharging) {
+      return Center(
+        child: Image.asset('assets/img/yaranaika-straight.png'),
+      );
+    }
+    return Center(
+      child: Image.asset('assets/img/yaranaika-straight.png'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -132,22 +152,9 @@ class _AppState extends State<App> {
           body:
               Center(child: Container(child: BlocBuilder<AudioBloc, AudioState>(
             builder: (context, state) {
-              if (state is PlayingAudio || state is PlayedAudio) {
-                return Center(
-                  child: Image.asset(
-                    'assets/img/yaranaika-pleasure.png',
-                    width: 300,
-                    height: 300,
-                  ),
-                );
-              }
-              if (state is Discharging) {
-                return Center(
-                  child: Image.asset('assets/img/yaranaika-straight.png'),
-                );
-              }
-              return Center(
-                child: Image.asset('assets/img/yaranaika-straight.png'),
+              return GestureDetector(
+                onTap: () {},
+                child: _buildFaceView(state),
               );
             },
           ))),
