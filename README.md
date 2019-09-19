@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/assets/img/ahhhhhh-logo.png" width="30%">
+  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/assets/img/ahhhhhh_logoV2.png" width="30%">
 </p>
 
 </br>
