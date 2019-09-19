@@ -45,8 +45,8 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        versionCode 4
-        versionName "1.1.1"
+        versionCode 5
+        versionName "1.2.1"
     }
     // productFlavors {
     //     demo {
