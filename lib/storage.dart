@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:meta/meta.dart';
 
 import 'package:path_provider/path_provider.dart';
 
@@ -9,15 +10,23 @@ class Storage {
     return dir.path;
   }
 
-  Future<File> get localFile async {
+  Future<File> get localTrackFile async {
     final path = await localPath;
-    return File('$path/config.json');
+    print('track config file path: $path');
+    return File('$path/track_config.json');
   }
 
-  Future<dynamic> readData() async {
+  Future<File> get localFaceFile async {
+    final path = await localPath;
+    print('face config file path: $path');
+    return File('$path/face_config.json');
+  }
+
+  Future<dynamic> readData({@required bool fromTrackFile}) async {
     try {
-      final file = await localFile;
+      final file = fromTrackFile ? await localTrackFile : await localFaceFile;
       Map<String, dynamic> body = json.decode(await file.readAsString());
+      print('body: $body');
 
       return body;
     } catch (e) {
@@ -25,8 +34,8 @@ class Storage {
     }
   }
 
-  Future<File> writeData(dynamic data) async {
-    final file = await localFile;
+  Future<File> writeData(dynamic data, {@required bool toTrackFile}) async {
+    final file = toTrackFile ? await localTrackFile : await localFaceFile;
 
     return file.writeAsString(json.encode(data));
   }

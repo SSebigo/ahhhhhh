@@ -16,21 +16,6 @@ class PluggedIn extends AudioEvent {
   String toString() => 'Playing audio current state: $state';
 }
 
-// class PlayAudio extends AudioEvent {
-//   final BatteryState state;
-//   final int index;
-
-//   PlayAudio({this.state, this.index}) : super([state, index]);
-
-//   @override
-//   String toString() => 'Playing audio current state: $state at indx: $index';
-// }
-
-// class PhoneDischarging extends AudioEvent {
-//   @override
-//   String toString() => 'Phone discharging';
-// }
-
 class ChangeTrack extends AudioEvent {
   final int index;
 
