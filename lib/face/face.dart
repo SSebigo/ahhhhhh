@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:ahhhhhh/bloc/audio_bloc.dart';
-import 'package:ahhhhhh/bloc/audio_state.dart';
+import 'package:ahhhhhh/audio/bloc/audio_bloc.dart';
+import 'package:ahhhhhh/audio/bloc/audio_state.dart';
 import 'package:ahhhhhh/face/bloc/face_bloc.dart';
 import 'package:ahhhhhh/face/bloc/face_event.dart';
 import 'package:ahhhhhh/face/bloc/face_state.dart';

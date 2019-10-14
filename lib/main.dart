@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:ahhhhhh/bloc/audio_bloc.dart';
-import 'package:ahhhhhh/bloc/audio_event.dart';
+import 'package:ahhhhhh/audio/bloc/audio_bloc.dart';
+import 'package:ahhhhhh/audio/bloc/audio_event.dart';
 import 'package:ahhhhhh/face/bloc/face_bloc.dart';
 import 'package:ahhhhhh/face/face.dart';
 import 'package:ahhhhhh/storage.dart';

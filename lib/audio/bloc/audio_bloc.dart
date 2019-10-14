@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:ahhhhhh/logic.dart';
+import 'package:ahhhhhh/audio/audio_logic.dart';
 import 'package:battery/battery.dart';
 import 'package:bloc/bloc.dart';
 import './bloc.dart';
