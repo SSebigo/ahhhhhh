@@ -42,6 +42,9 @@
   <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20190906-170431.jpg" width="25%">
   <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20190906-170447.jpg" width="25%">
   <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20190918-162814.jpg" width="25%">
+  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20191009-011720.jpg" width="25%">
+  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20191009-011733.jpg" width="25%">
+  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20191009-011752.jpg" width="25%">
 </p>
 
 ## Author
@@ -52,7 +55,14 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/SSebigo/white-whistle/issues).
+1. [Install Flutter](https://flutter.dev/docs/get-started/install)
+---
+2. Clone the project: ```git clone https://github.com/SSebigo/ahhhhhh.git```
+---
+3. Open an emulator or plug in your prefered device
+4. ```flutter run```
+---
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/SSebigo/ahhhhhh/issues).
 
 ## Show your support
 
@@ -61,4 +71,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2019 [François Grèzes <grezesfrancois@gmail.com>](https://github.com/SSebigo).<br />
-This project is [MIT](https://github.com/SSebigo/white-whistle/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/SSebigo/ahhhhhh/blob/master/LICENSE) licensed.
