@@ -28,6 +28,7 @@
 .pub-cache/
 .pub/
 /build/
+**/android/app/google-properties.json
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -38,7 +39,6 @@
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
 **/android/key.properties
-**/android/app/google-services.json
 
 # iOS/XCode related
 **/ios/**/*.mode1v3

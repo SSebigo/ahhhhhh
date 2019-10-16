@@ -44,11 +44,17 @@ android {
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
-        versionCode 7
-        versionName "1.4.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 6
+        versionName "1.3.0"
     }
+    // productFlavors {
+    //     demo {
+    //         versionName "1.0.0-beta-demo"
+    //     }
+    //     full {
+    //     }
+    // }
 
     signingConfigs {
         release {
@@ -76,9 +82,6 @@ flutter {
 
 dependencies {
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.1.0'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.1.0'
-    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
-
-apply plugin: 'com.google.gms.google-services'

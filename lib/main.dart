@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:ahhhhhh/audio/bloc/audio_bloc.dart';
 import 'package:ahhhhhh/audio/bloc/audio_event.dart';
-import 'package:ahhhhhh/components/face/bloc/face_bloc.dart';
-import 'package:ahhhhhh/components/face/face.dart';
+import 'package:ahhhhhh/face/bloc/face_bloc.dart';
+import 'package:ahhhhhh/face/face.dart';
 import 'package:ahhhhhh/storage.dart';
 import 'package:ahhhhhh/track.dart';
 import 'package:audioplayers/audio_cache.dart';
