@@ -13,8 +13,6 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
   BatteryState _previousState = BatteryState.discharging;
   BatteryState _currentState = BatteryState.discharging;
 
-  int _index;
-
   @override
   AudioState get initialState => InitialAudioState();
 
@@ -27,14 +25,10 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       _currentState = event.state;
 
       if (_currentState != _previousState) {
-        if (_currentState == BatteryState.charging ||
-            _currentState == BatteryState.full) {
+        if (_currentState == BatteryState.charging || _currentState == BatteryState.full) {
           yield PlayingAudio();
 
-          print(
-              'index: ${_storage.getUserSessionData(Constants.sessionTrackIndex)}');
-          await _logic.playAudioTrack(
-              index: _storage.getUserSessionData(Constants.sessionTrackIndex));
+          await _logic.playAudioTrack(index: _storage.getUserSessionData(Constants.sessionTrackIndex) as int);
 
           yield PlayedAudio();
         }
@@ -44,8 +38,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       }
     }
     if (event is ChangeTrack) {
-      await _storage.setUserSessionData(
-          Constants.sessionTrackIndex, event.index);
+      await _storage.setUserSessionData(Constants.sessionTrackIndex, event.index);
     }
   }
 }

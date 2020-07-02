@@ -10,6 +10,8 @@ import 'package:ahhhhhh/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 
 class Face extends StatefulWidget {
   @override
@@ -18,6 +20,7 @@ class Face extends StatefulWidget {
 
 class _FaceState extends State<Face> {
   final Storage _storage = Storage();
+  final ImagePicker imagePicker = ImagePicker();
 
   File _neutralImage;
   File _pleasuredImage;
@@ -25,24 +28,31 @@ class _FaceState extends State<Face> {
   @override
   void initState() {
     super.initState();
-
-    _neutralImage = _storage.getUserSessionData(Constants.sessionNeutralFace);
-    _pleasuredImage =
-        _storage.getUserSessionData(Constants.sessionPleasureFace);
+    _neutralImage = File(_storage.getUserSessionData(Constants.sessionNeutralFace) as String);
+    _pleasuredImage = File(_storage.getUserSessionData(Constants.sessionPleasureFace) as String);
   }
 
   // SECTION Image getters
   Future _getNeutralImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    final PickedFile pickedImage = await imagePicker.getImage(source: ImageSource.gallery);
+    final File imageAsFile = File(pickedImage.path);
 
-    BlocProvider.of<FaceBloc>(context)..add(NeutralFaceSelected(image: image));
+    final Directory appDocDir = await getApplicationDocumentsDirectory();
+    final String imagePath = appDocDir.uri.resolve(p.basename(pickedImage.path)).path;
+    final File image = await imageAsFile.copy(imagePath);
+
+    BlocProvider.of<FaceBloc>(context).add(NeutralFaceSelected(image: image));
   }
 
   Future _getPleasuredImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    final PickedFile pickedImage = await imagePicker.getImage(source: ImageSource.gallery);
+    final File imageAsFile = File(pickedImage.path);
 
-    BlocProvider.of<FaceBloc>(context)
-      ..add(PleasuredFaceSelected(image: image));
+    final Directory appDocDir = await getApplicationDocumentsDirectory();
+    final String imagePath = appDocDir.uri.resolve(p.basename(pickedImage.path)).path;
+    final File image = await imageAsFile.copy(imagePath);
+
+    BlocProvider.of<FaceBloc>(context).add(PleasuredFaceSelected(image: image));
   }
 
   // SECTION  Pickers button
@@ -57,15 +67,16 @@ class _FaceState extends State<Face> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           onPressed: _getNeutralImage,
-          child: Text(
+          color: const Color(0xFFFFB43F),
+          child: const Text(
             'Select neutral face',
             style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'VarelaRound',
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0),
+              color: Colors.white,
+              fontFamily: 'VarelaRound',
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),
           ),
-          color: Color(0xFFFFB43F),
         ),
       ),
     );
@@ -82,15 +93,16 @@ class _FaceState extends State<Face> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           onPressed: _getPleasuredImage,
-          child: Text(
+          color: const Color(0xFFFFB43F),
+          child: const Text(
             'Select orgasmic face',
             style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'VarelaRound',
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0),
+              color: Colors.white,
+              fontFamily: 'VarelaRound',
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),
           ),
-          color: Color(0xFFFFB43F),
         ),
       ),
     );
@@ -108,22 +120,23 @@ class _FaceState extends State<Face> {
           ),
           onPressed: () {
             if (_neutralImage != null && _pleasuredImage != null) {
-              BlocProvider.of<FaceBloc>(context)
-                ..add(FacesModified(
-                    neutralFacePath: _neutralImage.path,
-                    pleasureFacePath: _pleasuredImage.path));
+              BlocProvider.of<FaceBloc>(context).add(FacesModified(
+                neutralFacePath: _neutralImage.path,
+                pleasureFacePath: _pleasuredImage.path,
+              ));
               Navigator.pop(context);
             }
           },
-          child: Text(
+          color: const Color(0xFFFFB43F),
+          child: const Text(
             'Save selection',
             style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'VarelaRound',
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0),
+              color: Colors.white,
+              fontFamily: 'VarelaRound',
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),
           ),
-          color: Color(0xFFFFB43F),
         ),
       ),
     );
@@ -156,17 +169,14 @@ class _FaceState extends State<Face> {
                           child: _neutralImage == null
                               ? Text(
                                   'No image selected.',
-                                  style: TextStyle(
-                                      color: Colors.black54,
-                                      fontWeight: FontWeight.bold),
+                                  style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold),
                                 )
                               : Container(
                                   width: 300,
                                   height: 300,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    child: Image.file(_neutralImage,
-                                        fit: BoxFit.cover),
+                                    child: Image.file(_neutralImage, fit: BoxFit.cover),
                                   ),
                                 ),
                         ),
@@ -178,17 +188,14 @@ class _FaceState extends State<Face> {
                           child: _pleasuredImage == null
                               ? Text(
                                   'No image selected.',
-                                  style: TextStyle(
-                                      color: Colors.black54,
-                                      fontWeight: FontWeight.bold),
+                                  style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold),
                                 )
                               : Container(
                                   width: 300,
                                   height: 300,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    child: Image.file(_pleasuredImage,
-                                        fit: BoxFit.cover),
+                                    child: Image.file(_pleasuredImage, fit: BoxFit.cover),
                                   ),
                                 ),
                         ),
@@ -211,8 +218,7 @@ class _FaceState extends State<Face> {
           height: 300,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: Image.asset('assets/img/yaranaika-neutral.png',
-                fit: BoxFit.cover),
+            child: Image.asset('assets/img/yaranaika-neutral.png', fit: BoxFit.cover),
           ),
         ),
       );
@@ -286,15 +292,13 @@ class _FaceState extends State<Face> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        child: BlocBuilder<AudioBloc, AudioState>(
-          builder: (context, state) {
-            return GestureDetector(
-              onTap: () => _buildFacePreview(),
-              child: _buildFaceView(state),
-            );
-          },
-        ),
+      child: BlocBuilder<AudioBloc, AudioState>(
+        builder: (context, state) {
+          return GestureDetector(
+            onTap: () => _buildFacePreview(),
+            child: _buildFaceView(state),
+          );
+        },
       ),
     );
   }

@@ -15,15 +15,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'screens/splash/bloc/splash_bloc.dart';
 
-typedef void OnError(Exception exception);
+typedef OnError = void Function(Exception exception);
 
 void backgroundFetchHeadlessTask(String taskId) {
-  print('[BackgroundFetch] Headless event received.');
-
   BackgroundFetch.finish(taskId);
 }
 
-void main() async {
+Future<void> main() async {
   BlocSupervisor.delegate = SimpleBlocDelegate();
 
   final Storage _storage = Storage();
@@ -33,6 +31,7 @@ void main() async {
     create: (_) => AuthBloc()..add(AppStarted()),
     child: App(),
   ));
+
   BackgroundFetch.registerHeadlessTask(backgroundFetchHeadlessTask);
 }
 
@@ -43,16 +42,8 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MultiBlocProvider(
       providers: [
         BlocProvider<SplashBloc>(create: (_) => SplashBloc()),
@@ -84,10 +75,5 @@ class _AppState extends State<App> {
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }
