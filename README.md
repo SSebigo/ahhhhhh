@@ -51,7 +51,7 @@
 
 ## Author
 
-👤 **SSebigo <bonfire.sebigo@gmail.com>**
+👤 **SSebigo <killy.sebigo@gmail.com>**
 
 * Github: [@SSebigo](https://github.com/SSebigo)
 
@@ -72,5 +72,5 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2019 [SSebigo <bonfire.sebigo@gmail.com>](https://github.com/SSebigo).<br />
+Copyright © 2019 [SSebigo <killy.sebigo@gmail.com>](https://github.com/SSebigo).<br />
 This project is [MIT](https://github.com/SSebigo/ahhhhhh/blob/master/LICENSE) licensed.
