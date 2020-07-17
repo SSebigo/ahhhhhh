@@ -3,8 +3,7 @@ import 'package:bloc/bloc.dart';
 import './bloc.dart';
 
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
-  @override
-  SplashState get initialState => InitialSplashState();
+  SplashBloc() : super(InitialSplashState());
 
   @override
   Stream<SplashState> mapEventToState(

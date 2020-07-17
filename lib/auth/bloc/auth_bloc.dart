@@ -3,8 +3,7 @@ import 'package:bloc/bloc.dart';
 import './bloc.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  @override
-  AuthState get initialState => Uninitialized();
+  AuthBloc() : super(Uninitialized());
 
   @override
   Stream<AuthState> mapEventToState(

@@ -7,8 +7,7 @@ import './bloc.dart';
 class FaceBloc extends Bloc<FaceEvent, FaceState> {
   final Storage _storage = Storage();
 
-  @override
-  FaceState get initialState => InitialFaceState();
+  FaceBloc() : super(InitialFaceState());
 
   @override
   Stream<FaceState> mapEventToState(

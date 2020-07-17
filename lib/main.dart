@@ -5,7 +5,7 @@ import 'package:ahhhhhh/route_generator.dart';
 import 'package:ahhhhhh/screens/home/bloc/home_bloc.dart';
 import 'package:ahhhhhh/screens/home/home_screen.dart';
 import 'package:ahhhhhh/screens/splash/splash_screen.dart';
-import 'package:ahhhhhh/simple_bloc_delegate.dart';
+import 'package:ahhhhhh/simple_bloc_observer.dart';
 import 'package:ahhhhhh/storage.dart';
 import 'package:background_fetch/background_fetch.dart';
 import 'package:bloc/bloc.dart';
@@ -22,7 +22,7 @@ void backgroundFetchHeadlessTask(String taskId) {
 }
 
 Future<void> main() async {
-  BlocSupervisor.delegate = SimpleBlocDelegate();
+  Bloc.observer = SimpleBlocObserver();
 
   final Storage _storage = Storage();
   await _storage.initLocalStorageService();

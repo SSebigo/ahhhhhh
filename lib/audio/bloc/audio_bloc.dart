@@ -13,8 +13,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
   BatteryState _previousState = BatteryState.discharging;
   BatteryState _currentState = BatteryState.discharging;
 
-  @override
-  AudioState get initialState => InitialAudioState();
+  AudioBloc() : super(InitialAudioState());
 
   @override
   Stream<AudioState> mapEventToState(

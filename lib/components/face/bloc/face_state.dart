@@ -17,7 +17,7 @@ class InitialFaceState extends FaceState {
 class DisplayPreviewNeutralFace extends FaceState {
   final File image;
 
-  DisplayPreviewNeutralFace(this.image);
+  const DisplayPreviewNeutralFace(this.image);
 
   @override
   String toString() => 'Display neutral face';
@@ -30,7 +30,7 @@ class DisplayPreviewNeutralFace extends FaceState {
 class DisplayPreviewPleasuredFace extends FaceState {
   final File image;
 
-  DisplayPreviewPleasuredFace(this.image);
+  const DisplayPreviewPleasuredFace(this.image);
 
   @override
   String toString() => 'Display pleasured face';

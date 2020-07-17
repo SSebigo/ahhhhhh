@@ -116,19 +116,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocProvider(
       create: (_) => BlocProvider.of<AudioBloc>(context),
       child: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.white, iconTheme: IconThemeData(color: Colors.black), elevation: 0.0),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0.0,
+        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
-              child: Text(
-                'Touch to modify faces! ⬇️',
-                style: TextStyle(
-                  color: Colors.black54,
-                  fontFamily: 'VarelaRound',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
+              child: Center(
+                child: Text(
+                  'Touch to modify faces! ⬇️',
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontFamily: 'VarelaRound',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
             ),
@@ -143,7 +149,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ListTile(
                 title: Text(
                   'Select a sound effect',
-                  style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               ListView.builder(
