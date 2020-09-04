@@ -1,4 +1,5 @@
-import 'package:ahhhhhh/screens/home/home_screen.dart';
+import 'package:ahhhhhh/screens/changelog/changelog_screen.dart';
+import 'package:ahhhhhh/screens/home/home_layout.dart';
 import 'package:ahhhhhh/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,10 @@ class RouteGenerator {
     // Getting arguments passed in while calling Navigator.pushNamed
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => HomeLayout());
+        break;
+      case '/changelog':
+        return MaterialPageRoute(builder: (_) => ChangelogScreen());
         break;
       case '/splashscreen':
         return MaterialPageRoute(builder: (_) => SplashScreen());

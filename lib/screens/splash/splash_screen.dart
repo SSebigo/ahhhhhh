@@ -1,6 +1,5 @@
 import 'package:ahhhhhh/auth/bloc/bloc.dart';
 import 'package:ahhhhhh/screens/splash/bloc/splash_bloc.dart';
-import 'package:ahhhhhh/screens/splash/bloc/splash_event.dart';
 import 'package:ahhhhhh/screens/splash/bloc/splash_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,18 +10,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<SplashBloc>(context)..add(CheckForUpdate());
-    _updatedApp();
-  }
-
-  Future<void> _updatedApp() async {
-    await Future.delayed(const Duration(seconds: 2), () {});
-    BlocProvider.of<AuthBloc>(context)..add(LoggedAsGuest());
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,13 +23,12 @@ class _SplashScreenState extends State<SplashScreen> {
                 height: 200,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
-                  child: Image.asset('assets/img/ahhhhhh_logoV2.png',
-                      fit: BoxFit.cover),
+                  child: Image.asset('assets/img/ahhhhhh_logoV2.png', fit: BoxFit.cover),
                 ),
               ),
             );
           }
-          if (state is CheckingForUpdate) {
+          if (state is UpdatingProfile) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -52,24 +38,30 @@ class _SplashScreenState extends State<SplashScreen> {
                     height: 200,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset('assets/img/ahhhhhh_logoV2.png',
-                          fit: BoxFit.cover),
+                      child: Image.asset('assets/img/ahhhhhh_logoV2.png', fit: BoxFit.cover),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20.0),
                   child: Center(
-                    child: Text('Checking for updates...',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'VarelaRound',
-                        )),
+                    child: Text(
+                      'Updating profile...',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'VarelaRound',
+                      ),
+                    ),
                   ),
                 )
               ],
             );
+          }
+          if (state is ProfileUpdated) {
+            BlocProvider.of<AuthBloc>(context).add(LoggedAsGuest());
+
+            return Container();
           }
           return Container();
         },

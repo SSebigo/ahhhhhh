@@ -4,9 +4,7 @@ import 'package:audioplayers/audio_cache.dart';
 class Logic {
   AudioCache audioCache = AudioCache();
 
-  Future<void> playAudioTrack({int index}) async {
-    index != null
-        ? await audioCache.play(tracks[index].path)
-        : await audioCache.play(tracks[0].path);
+  Future<void> playAudioTrack({String path}) async {
+    path != null ? await audioCache.play(path) : await audioCache.play(tracks[0].path);
   }
 }

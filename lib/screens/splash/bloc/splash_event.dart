@@ -4,9 +4,9 @@ abstract class SplashEvent extends Equatable {
   const SplashEvent();
 }
 
-class CheckForUpdate extends SplashEvent {
+class UpdateProfile extends SplashEvent {
   @override
-  String toString() => 'Check for update!';
+  String toString() => 'Update profile!';
 
   @override
   List<Object> get props => [];

@@ -170,9 +170,12 @@ class _FaceState extends State<Face> {
                         padding: const EdgeInsets.symmetric(vertical: 10.0),
                         child: Center(
                           child: _neutralImage == null
-                              ? Text(
+                              ? const Text(
                                   'No image selected.',
-                                  style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 )
                               : Container(
                                   width: 300,
@@ -189,9 +192,12 @@ class _FaceState extends State<Face> {
                         padding: const EdgeInsets.symmetric(vertical: 10.0),
                         child: Center(
                           child: _pleasuredImage == null
-                              ? Text(
+                              ? const Text(
                                   'No image selected.',
-                                  style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 )
                               : Container(
                                   width: 300,

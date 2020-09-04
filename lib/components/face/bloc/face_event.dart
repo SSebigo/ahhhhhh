@@ -11,7 +11,7 @@ abstract class FaceEvent extends Equatable {
 class NeutralFaceSelected extends FaceEvent {
   final File image;
 
-  NeutralFaceSelected({@required this.image});
+  const NeutralFaceSelected({@required this.image});
 
   @override
   String toString() => 'Neutral face selected';
@@ -23,7 +23,7 @@ class NeutralFaceSelected extends FaceEvent {
 class PleasuredFaceSelected extends FaceEvent {
   final File image;
 
-  PleasuredFaceSelected({@required this.image});
+  const PleasuredFaceSelected({@required this.image});
 
   @override
   String toString() => 'Pleasured face selected';
@@ -36,7 +36,7 @@ class FacesModified extends FaceEvent {
   final String neutralFacePath;
   final String pleasureFacePath;
 
-  FacesModified({this.neutralFacePath, this.pleasureFacePath});
+  const FacesModified({this.neutralFacePath, this.pleasureFacePath});
 
   @override
   String toString() => 'Faces modified';

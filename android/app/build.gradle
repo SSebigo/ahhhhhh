@@ -46,8 +46,8 @@ android {
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-        versionCode 14
-        versionName "1.8.0"
+        versionCode 15
+        versionName "1.9.0"
     }
 
     signingConfigs {
@@ -79,6 +79,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

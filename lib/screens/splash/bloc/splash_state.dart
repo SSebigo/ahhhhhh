@@ -12,9 +12,17 @@ class InitialSplashState extends SplashState {
   String toString() => 'Splash screen initial state!';
 }
 
-class CheckingForUpdate extends SplashState {
+class UpdatingProfile extends SplashState {
   @override
-  String toString() => 'Checking for update!';
+  String toString() => 'Updating profile!';
+
+  @override
+  List<Object> get props => [];
+}
+
+class ProfileUpdated extends SplashState {
+  @override
+  String toString() => 'Profile updated!';
 
   @override
   List<Object> get props => [];

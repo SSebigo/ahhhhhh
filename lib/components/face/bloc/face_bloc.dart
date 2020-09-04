@@ -21,8 +21,10 @@ class FaceBloc extends Bloc<FaceEvent, FaceState> {
     }
     if (event is FacesModified) {
       yield ModifyingFaces();
-      await _storage.setUserSessionData(Constants.sessionNeutralFace, event.neutralFacePath);
-      await _storage.setUserSessionData(Constants.sessionPleasureFace, event.pleasureFacePath);
+      await Future.wait([
+        _storage.setFaceData(Constants.sessionNeutralFace, event.neutralFacePath),
+        _storage.setFaceData(Constants.sessionPleasureFace, event.pleasureFacePath),
+      ]);
       yield FacesHaveBeenModified();
     }
   }

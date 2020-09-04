@@ -1,13 +1,13 @@
 import 'dart:io';
-import 'dart:convert';
-import 'package:ahhhhhh/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:meta/meta.dart';
 
 import 'package:path_provider/path_provider.dart';
 
 class Storage {
+  Box configBox;
+  Box facesBox;
+  Box tracksBox;
   Box userSessionBox;
 
   static final Storage _singleton = Storage._internal();
@@ -24,10 +24,49 @@ class Storage {
 
     Hive.init(dirPath);
 
+    configBox = await Hive.openBox('configBox');
+    facesBox = await Hive.openBox('facesBox');
+    tracksBox = await Hive.openBox('tracksBox');
     userSessionBox = await Hive.openBox('userSessionBox');
   }
 
-  Future<void> setUserSessionData(String key, dynamic value) async {
+  Future<void> setConfigData(String key, {bool value}) async {
+    await configBox.put(key, value);
+  }
+
+  Future<void> clearConfigData(String key) async {
+    await configBox.delete(key);
+  }
+
+  bool getConfigData(String key) {
+    return configBox.get(key) as bool;
+  }
+
+  Future<void> setFaceData(String key, String value) async {
+    await facesBox.put(key, value);
+  }
+
+  Future<void> clearFaceData(String key) async {
+    await facesBox.delete(key);
+  }
+
+  String getFaceData(String key) {
+    return facesBox.get(key) as String;
+  }
+
+  Future<void> setTrackData(String key, Map<String, String> value) async {
+    await tracksBox.put(key, value);
+  }
+
+  Future<void> clearTrackData(String key) async {
+    await tracksBox.delete(key);
+  }
+
+  Map<String, String> getTrackData(String key) {
+    return tracksBox.get(key)?.cast<String, String>() as Map<String, String>;
+  }
+
+  Future<void> setUserSessionData(String key, int value) async {
     await userSessionBox.put(key, value);
   }
 
@@ -35,7 +74,7 @@ class Storage {
     await userSessionBox.delete(key);
   }
 
-  dynamic getUserSessionData(String key) {
-    return userSessionBox.get(key);
+  int getUserSessionData(String key) {
+    return userSessionBox.get(key) as int;
   }
 }

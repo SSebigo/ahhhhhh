@@ -1,14 +1,17 @@
+import 'package:ahhhhhh/ad_manager.dart';
 import 'package:ahhhhhh/audio/bloc/audio_bloc.dart';
 import 'package:ahhhhhh/auth/bloc/bloc.dart';
 import 'package:ahhhhhh/components/face/bloc/face_bloc.dart';
 import 'package:ahhhhhh/route_generator.dart';
 import 'package:ahhhhhh/screens/home/bloc/home_bloc.dart';
-import 'package:ahhhhhh/screens/home/home_screen.dart';
+import 'package:ahhhhhh/screens/home/home_layout.dart';
+import 'package:ahhhhhh/screens/splash/bloc/bloc.dart';
 import 'package:ahhhhhh/screens/splash/splash_screen.dart';
 import 'package:ahhhhhh/simple_bloc_observer.dart';
 import 'package:ahhhhhh/storage.dart';
 import 'package:background_fetch/background_fetch.dart';
 import 'package:bloc/bloc.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +28,11 @@ Future<void> main() async {
   Bloc.observer = SimpleBlocObserver();
 
   final Storage _storage = Storage();
-  await _storage.initLocalStorageService();
+
+  await Future.wait([
+    _storage.initLocalStorageService(),
+    FirebaseAdMob.instance.initialize(appId: AdManager.appId),
+  ]);
 
   runApp(BlocProvider(
     create: (_) => AuthBloc()..add(AppStarted()),
@@ -46,10 +53,10 @@ class _AppState extends State<App> {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MultiBlocProvider(
       providers: [
-        BlocProvider<SplashBloc>(create: (_) => SplashBloc()),
-        BlocProvider<HomeBloc>(create: (_) => HomeBloc()),
         BlocProvider<AudioBloc>(create: (_) => AudioBloc()),
         BlocProvider<FaceBloc>(create: (_) => FaceBloc()),
+        BlocProvider<HomeBloc>(create: (_) => HomeBloc()),
+        BlocProvider<SplashBloc>(create: (_) => SplashBloc()..add(UpdateProfile())),
       ],
       child: MaterialApp(
         title: 'ahhhhhh',
@@ -57,16 +64,16 @@ class _AppState extends State<App> {
         theme: ThemeData(
           brightness: Brightness.dark,
           scaffoldBackgroundColor: Colors.white,
-          bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.white),
+          bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.white),
         ),
         home: BlocBuilder<AuthBloc, AuthState>(
-          bloc: BlocProvider.of<AuthBloc>(context),
+          cubit: BlocProvider.of<AuthBloc>(context),
           builder: (BuildContext context, AuthState state) {
             if (state is Uninitialized) {
               return SplashScreen();
             }
             if (state is Guest) {
-              return HomeScreen();
+              return HomeLayout();
             }
             return Container();
           },
