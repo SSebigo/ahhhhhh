@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:ahhhhhh/audio/audio_logic.dart';
 import 'package:ahhhhhh/constants.dart';
+import 'package:ahhhhhh/models/track.dart';
 import 'package:ahhhhhh/storage.dart';
-import 'package:ahhhhhh/track.dart';
 import 'package:battery/battery.dart';
 import 'package:bloc/bloc.dart';
 import './bloc.dart';
@@ -10,6 +10,8 @@ import './bloc.dart';
 class AudioBloc extends Bloc<AudioEvent, AudioState> {
   final Logic _logic = Logic();
   final Storage _storage = Storage();
+
+  bool _isTrackPlaying = false;
 
   BatteryState _previousState = BatteryState.discharging;
   BatteryState _currentState = BatteryState.discharging;
@@ -20,6 +22,18 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
   Stream<AudioState> mapEventToState(
     AudioEvent event,
   ) async* {
+    if (event is PlayTrack) {
+      yield PlayingTestTrack();
+
+      if (_isTrackPlaying) {
+        await _logic.stopAudioTrack();
+      }
+      _isTrackPlaying = true;
+      await _logic.playAudioTrack(track: event.track);
+      _isTrackPlaying = false;
+
+      yield TestTrackPlayed();
+    }
     if (event is PluggedIn) {
       _previousState = _currentState;
       _currentState = event.state;
@@ -28,27 +42,36 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
         if (_currentState == BatteryState.charging) {
           yield PlayingAudio();
 
-          final Map<String, String> chargingTrack = _storage.getTrackData(Constants.sessionChargingTrack);
-          await _logic.playAudioTrack(path: Track.fromMap(chargingTrack).path);
+          final Track chargingTrack = _storage.getNewTrackData(Constants.sessionChargingTrack);
+          await _logic.playAudioTrack(track: chargingTrack);
 
-          yield PlayedAudio();
+          yield AudioPlayed();
         }
         if (_currentState == BatteryState.discharging) {
           yield PlayingAudio();
 
-          final Map<String, String> dischargingTrack = _storage.getTrackData(Constants.sessionDischargingTrack);
-          await _logic.playAudioTrack(path: Track.fromMap(dischargingTrack).path);
+          final Track dischargingTrack = _storage.getNewTrackData(Constants.sessionDischargingTrack);
+          await _logic.playAudioTrack(track: dischargingTrack);
 
-          yield PlayedAudio();
+          yield AudioPlayed();
           yield Discharging();
         }
       }
     }
     if (event is ChangeChargingTrack) {
-      await _storage.setTrackData(Constants.sessionChargingTrack, event.track.toMap());
+      yield ChangingTrack();
+      await _storage.setNewTrackData(Constants.sessionChargingTrack, event.track);
+      yield TrackChanged();
     }
     if (event is ChangeDischargingTrack) {
-      await _storage.setTrackData(Constants.sessionDischargingTrack, event.track.toMap());
+      yield ChangingTrack();
+      await _storage.setNewTrackData(Constants.sessionDischargingTrack, event.track);
+      yield TrackChanged();
+    }
+    if (event is UploadUserTrack) {
+      yield UploadingUserTrack();
+      await _storage.setUserTrackData(event.track.name, event.track);
+      yield UserTrackUploaded();
     }
   }
 }

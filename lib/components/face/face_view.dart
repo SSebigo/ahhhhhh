@@ -32,7 +32,7 @@ class FaceView extends StatelessWidget {
           if (audioState is Discharging) {
             return NeutralFace(neutralFace: neutralFace);
           }
-          if (audioState is PlayingAudio || audioState is PlayedAudio) {
+          if (audioState is PlayingAudio || audioState is PlayingTestTrack || audioState is AudioPlayed) {
             return PleasuredFace(pleasuredFace: pleasuredFace);
           }
           return NeutralFace(neutralFace: neutralFace);
@@ -53,7 +53,7 @@ class FaceView extends StatelessWidget {
           if (audioState is Discharging) {
             return NeutralFace(neutralFace: neutralImage);
           }
-          if (audioState is PlayingAudio || audioState is PlayedAudio) {
+          if (audioState is PlayingAudio || audioState is PlayingTestTrack || audioState is AudioPlayed) {
             return PleasuredFace(pleasuredFace: pleasuredImage);
           }
           return NeutralFace(neutralFace: neutralImage);

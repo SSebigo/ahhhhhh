@@ -7,4 +7,5 @@ class Constants {
   static const String sessionPleasureFace = 'sessionPleasureFace';
   static const String sessionTrackIndex = 'sessionTrackIndex';
   static const String sessionUserTrack = 'sessionUserTrack';
+  static const String sessionUserUploadedTracks = 'sessionUserUploadedTracks';
 }

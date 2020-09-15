@@ -1,12 +1,10 @@
 import 'dart:async';
 
-import 'package:ahhhhhh/ad_manager.dart';
 import 'package:ahhhhhh/screens/home/home.dart';
 import 'package:ahhhhhh/screens/home/onboarding.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:background_fetch/background_fetch.dart';
 import 'package:battery/battery.dart';
-import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,27 +28,28 @@ class _HomeLayoutState extends State<HomeLayout> {
   final Battery _battery = Battery();
   StreamSubscription<BatteryState> _batteryStateSubscription;
 
-  BannerAd _bannerAd;
-
   @override
   void initState() {
     super.initState();
     _initPlatformState();
     _initStorage();
-
-    _bannerAd = BannerAd(
-      adUnitId: AdManager.bannerAdUnitId,
-      size: AdSize.banner,
-    );
-    _bannerAd
-      ..load()
-      ..show();
   }
 
   Future<void> _initPlatformState() async {
     // Configure BackgroundFetch.
 
-    BackgroundFetch.configure(BackgroundFetchConfig(minimumFetchInterval: 15), (String taskId) async {
+    BackgroundFetch.configure(
+        BackgroundFetchConfig(
+          minimumFetchInterval: 15,
+          startOnBoot: true,
+          stopOnTerminate: false,
+          enableHeadless: false,
+          requiresBatteryNotLow: false,
+          requiresCharging: false,
+          requiresStorageNotLow: false,
+          requiresDeviceIdle: false,
+          requiredNetworkType: NetworkType.NONE,
+        ), (String taskId) async {
       _battery.onBatteryStateChanged.listen((BatteryState state) {
         BlocProvider.of<AudioBloc>(context).add(PluggedIn(state: state));
       });
@@ -92,7 +91,6 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   @override
   void dispose() {
-    _bannerAd?.dispose();
     if (_batteryStateSubscription != null) {
       _batteryStateSubscription.cancel();
     }

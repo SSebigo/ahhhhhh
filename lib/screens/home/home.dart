@@ -1,12 +1,18 @@
+import 'package:ahhhhhh/ad_manager.dart';
 import 'package:ahhhhhh/audio/bloc/bloc.dart';
 import 'package:ahhhhhh/components/face/face.dart';
 import 'package:ahhhhhh/constants.dart';
+import 'package:ahhhhhh/models/track.dart';
 import 'package:ahhhhhh/screens/home/track_selection_dialog.dart';
+import 'package:ahhhhhh/screens/home/track_upload_dialog.dart';
 import 'package:ahhhhhh/storage.dart';
-import 'package:ahhhhhh/track.dart';
+import 'package:ahhhhhh/tracks.dart';
 import 'package:audioplayers/audio_cache.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class Home extends StatefulWidget {
   const Home({
@@ -26,14 +32,30 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final Storage _storage = Storage();
 
-  Map<String, String> _chargingTrack = <String, String>{};
-  Map<String, String> _dischargingTrack = <String, String>{};
+  Track _chargingTrack;
+  Track _dischargingTrack;
+
+  BannerAd _bannerAd;
 
   @override
   void initState() {
     super.initState();
-    _chargingTrack = _storage.getTrackData(Constants.sessionChargingTrack);
-    _dischargingTrack = _storage.getTrackData(Constants.sessionDischargingTrack);
+    _chargingTrack = _storage.getNewTrackData(Constants.sessionChargingTrack);
+    _dischargingTrack = _storage.getNewTrackData(Constants.sessionDischargingTrack);
+
+    _bannerAd = BannerAd(
+      adUnitId: AdManager.bannerAdUnitId,
+      size: AdSize.banner,
+    );
+    _bannerAd
+      ..load()
+      ..show();
+  }
+
+  @override
+  void dispose() {
+    _bannerAd?.dispose();
+    super.dispose();
   }
 
   @override
@@ -87,28 +109,32 @@ class _HomeState extends State<Home> {
                   onTap: () => Navigator.of(context).pushNamed('/changelog'),
                 ),
                 // SECTION UPLOAD NEW SOUND
-                // const ListTile(
-                //   title: Text(
-                //     'Upload a sound',
-                //     style: TextStyle(
-                //       color: Colors.black,
-                //       fontSize: 18.0,
-                //       fontWeight: FontWeight.bold,
-                //     ),
-                //   ),
-                //   trailing: Icon(
-                //     Icons.file_upload,
-                //     color: Colors.black,
-                //   ),
-                // ),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                //   child: Container(
-                //     height: 1.0,
-                //     width: double.infinity,
-                //     color: Colors.black,
-                //   ),
-                // ),
+                ListTile(
+                  title: const Text(
+                    'Upload a sound',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  trailing: const Icon(
+                    Icons.file_upload,
+                    color: Colors.black,
+                  ),
+                  onTap: () => showDialog(
+                    context: context,
+                    builder: (_) => TrackUploadDialog(),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: 1.0,
+                    width: double.infinity,
+                    color: Colors.black,
+                  ),
+                ),
                 // SECTION CHARGING SOUND
                 const ListTile(
                   title: Text(
@@ -122,10 +148,10 @@ class _HomeState extends State<Home> {
                 ),
                 ListTile(
                   title: Text(
-                    _chargingTrack['name'],
+                    _chargingTrack.name,
                     style: const TextStyle(color: Colors.black),
                   ),
-                  onTap: () => widget._audioCache.play(_chargingTrack['path']),
+                  onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: _chargingTrack)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -148,10 +174,10 @@ class _HomeState extends State<Home> {
                 ),
                 ListTile(
                   title: Text(
-                    _dischargingTrack['name'],
+                    _dischargingTrack.name,
                     style: const TextStyle(color: Colors.black),
                   ),
-                  onTap: () => widget._audioCache.play(_dischargingTrack['path']),
+                  onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: _dischargingTrack)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -176,25 +202,25 @@ class _HomeState extends State<Home> {
                         color: Colors.black12,
                         context: context,
                         tiles: tracks
-                            .map((el) => ListTile(
-                                  title: Text(el.name, style: const TextStyle(color: Colors.black)),
-                                  onTap: () => widget._audioCache.play(el.path),
+                            .map((Track track) => ListTile(
+                                  title: Text(track.name, style: const TextStyle(color: Colors.black)),
+                                  onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: track)),
                                   onLongPress: () => showDialog(
                                     context: context,
                                     builder: (_) => TrackSelectionDialog(
-                                      trackName: el.name,
-                                      chargingTrackName: _chargingTrack['name'],
-                                      dischargingTrackName: _dischargingTrack['name'],
+                                      trackName: track.name,
+                                      chargingTrackName: _chargingTrack.name,
+                                      dischargingTrackName: _dischargingTrack.name,
                                       onChargingPressed: () {
-                                        BlocProvider.of<AudioBloc>(context).add(ChangeChargingTrack(track: el));
+                                        BlocProvider.of<AudioBloc>(context).add(ChangeChargingTrack(track: track));
                                         setState(() {
-                                          _chargingTrack = el.toMap();
+                                          _chargingTrack = track;
                                         });
                                       },
                                       onDischargingPressed: () {
-                                        BlocProvider.of<AudioBloc>(context).add(ChangeDischargingTrack(track: el));
+                                        BlocProvider.of<AudioBloc>(context).add(ChangeDischargingTrack(track: track));
                                         setState(() {
-                                          _dischargingTrack = el.toMap();
+                                          _dischargingTrack = track;
                                         });
                                       },
                                     ),
@@ -202,6 +228,48 @@ class _HomeState extends State<Home> {
                                 ))
                             .toList())
                     .toList(),
+                ValueListenableBuilder(
+                  valueListenable: _storage.userTracksBox.listenable(),
+                  builder: (context, Box<Track> box, _) {
+                    return Column(
+                      children: box.values
+                          .map((Track track) => ListTile(
+                                title: Text(track.name, style: const TextStyle(color: Colors.black)),
+                                onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: track)),
+                                onLongPress: () => showDialog(
+                                  context: context,
+                                  builder: (_) => TrackSelectionDialog(
+                                    trackName: track.name,
+                                    chargingTrackName: _chargingTrack.name,
+                                    dischargingTrackName: _dischargingTrack.name,
+                                    onChargingPressed: () {
+                                      BlocProvider.of<AudioBloc>(context).add(ChangeChargingTrack(track: track));
+                                      setState(() {
+                                        _chargingTrack = track;
+                                      });
+                                    },
+                                    onDischargingPressed: () {
+                                      BlocProvider.of<AudioBloc>(context).add(ChangeDischargingTrack(track: track));
+                                      setState(() {
+                                        _dischargingTrack = track;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ))
+                          .toList(),
+                    );
+                  },
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: 1.0,
+                    width: double.infinity,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(height: 55),
               ],
             ),
           ),

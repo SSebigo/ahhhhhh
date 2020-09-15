@@ -22,15 +22,63 @@ class PlayingAudio extends AudioState {
   List<Object> get props => [];
 }
 
-class PlayedAudio extends AudioState {
+class AudioPlayed extends AudioState {
   @override
-  String toString() => 'Played audio';
+  String toString() => 'Audio played';
+
+  @override
+  List<Object> get props => [];
+}
+
+class PlayingTestTrack extends AudioState {
+  @override
+  String toString() => 'Playing test track';
+
+  @override
+  List<Object> get props => [];
+}
+
+class TestTrackPlayed extends AudioState {
+  @override
+  String toString() => 'Test track played';
 
   @override
   List<Object> get props => [];
 }
 
 class Discharging extends AudioState {
+  @override
+  String toString() => 'Phone is discharging';
+
+  @override
+  List<Object> get props => [];
+}
+
+class ChangingTrack extends AudioState {
+  @override
+  String toString() => 'Phone is discharging';
+
+  @override
+  List<Object> get props => [];
+}
+
+class TrackChanged extends AudioState {
+  @override
+  String toString() => 'Phone is discharging';
+
+  @override
+  List<Object> get props => [];
+}
+
+class UploadingUserTrack extends AudioState {
+  @override
+  String toString() => 'Phone is discharging';
+
+  @override
+  List<Object> get props => [];
+}
+
+class UserTrackUploaded extends AudioState {
   @override
   String toString() => 'Phone is discharging';
 

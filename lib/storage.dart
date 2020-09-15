@@ -1,20 +1,23 @@
 import 'dart:io';
+import 'package:ahhhhhh/models/track.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 import 'package:path_provider/path_provider.dart';
 
 class Storage {
-  Box configBox;
-  Box facesBox;
+  Box<bool> configBox;
+  Box<String> facesBox;
   Box tracksBox;
-  Box userSessionBox;
+  Box<Track> newTracksBox;
+  Box<int> userSessionBox;
+  Box<Track> userTracksBox;
 
   static final Storage _singleton = Storage._internal();
 
-  Storage._internal();
-
   factory Storage() => _singleton;
+
+  Storage._internal();
 
   Future<void> initLocalStorageService() async {
     WidgetsFlutterBinding.ensureInitialized();
@@ -22,12 +25,18 @@ class Storage {
     final String dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);
 
+    if (!Hive.isAdapterRegistered(0)) {
+      Hive.registerAdapter(TrackAdapter());
+    }
+
     Hive.init(dirPath);
 
-    configBox = await Hive.openBox('configBox');
-    facesBox = await Hive.openBox('facesBox');
+    configBox = await Hive.openBox<bool>('configBox');
+    facesBox = await Hive.openBox<String>('facesBox');
     tracksBox = await Hive.openBox('tracksBox');
-    userSessionBox = await Hive.openBox('userSessionBox');
+    newTracksBox = await Hive.openBox<Track>('newTracksBox');
+    userSessionBox = await Hive.openBox<int>('userSessionBox');
+    userTracksBox = await Hive.openBox<Track>('userTracksBox');
   }
 
   Future<void> setConfigData(String key, {bool value}) async {
@@ -39,7 +48,7 @@ class Storage {
   }
 
   bool getConfigData(String key) {
-    return configBox.get(key) as bool;
+    return configBox.get(key);
   }
 
   Future<void> setFaceData(String key, String value) async {
@@ -51,7 +60,7 @@ class Storage {
   }
 
   String getFaceData(String key) {
-    return facesBox.get(key) as String;
+    return facesBox.get(key);
   }
 
   Future<void> setTrackData(String key, Map<String, String> value) async {
@@ -66,6 +75,18 @@ class Storage {
     return tracksBox.get(key)?.cast<String, String>() as Map<String, String>;
   }
 
+  Future<void> setNewTrackData(String key, Track value) async {
+    await newTracksBox.put(key, value);
+  }
+
+  Future<void> clearNewTrackData(String key) async {
+    await newTracksBox.delete(key);
+  }
+
+  Track getNewTrackData(String key) {
+    return newTracksBox.get(key);
+  }
+
   Future<void> setUserSessionData(String key, int value) async {
     await userSessionBox.put(key, value);
   }
@@ -75,6 +96,22 @@ class Storage {
   }
 
   int getUserSessionData(String key) {
-    return userSessionBox.get(key) as int;
+    return userSessionBox.get(key);
+  }
+
+  Future<void> setUserTrackData(String key, Track value) async {
+    await userTracksBox.put(key, value);
+  }
+
+  Future<void> clearUserTrackData(String key) async {
+    await userTracksBox.delete(key);
+  }
+
+  Track getUserTrackData(String key) {
+    return userTracksBox.get(key);
+  }
+
+  List<Track> getAllUserTrackData() {
+    return userTracksBox.values.toList();
   }
 }

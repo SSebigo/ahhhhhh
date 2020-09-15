@@ -1,10 +1,15 @@
-import 'package:ahhhhhh/track.dart';
+import 'package:ahhhhhh/models/track.dart';
 import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Logic {
-  AudioCache audioCache = AudioCache();
+  AudioCache audioCache = AudioCache(fixedPlayer: AudioPlayer(playerId: '0'));
 
-  Future<void> playAudioTrack({String path}) async {
-    path != null ? await audioCache.play(path) : await audioCache.play(tracks[0].path);
+  Future<void> playAudioTrack({Track track}) async {
+    track.isAsset ? await audioCache.play(track.path) : await audioCache.fixedPlayer.play(track.path, isLocal: true);
+  }
+
+  Future<int> stopAudioTrack() {
+    return audioCache.fixedPlayer.stop();
   }
 }

@@ -42,7 +42,7 @@ class _FaceState extends State<Face> {
   }
 
   // SECTION Image getters
-  Future _getNeutralImage() async {
+  Future<void> _getNeutralImage() async {
     final PickedFile pickedImage = await imagePicker.getImage(source: ImageSource.gallery);
     final File imageAsFile = File(pickedImage.path);
 
@@ -53,7 +53,7 @@ class _FaceState extends State<Face> {
     BlocProvider.of<FaceBloc>(context).add(NeutralFaceSelected(image: image));
   }
 
-  Future _getPleasuredImage() async {
+  Future<void> _getPleasuredImage() async {
     final PickedFile pickedImage = await imagePicker.getImage(source: ImageSource.gallery);
     final File imageAsFile = File(pickedImage.path);
 
