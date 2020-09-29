@@ -9,4 +9,5 @@ final tracks = [
   const Track(name: 'Yamete kudasai!', path: 'sounds/yamete_kudasai_v1.mp3', isAsset: true),
   const Track(name: 'Yamete kudasai! Moan v1', path: 'sounds/yamete_kudasai_moan_v1.mp3', isAsset: true),
   const Track(name: 'Yamete kudasai! Moan v2', path: 'sounds/yamete_kudasai_moan_v2.mp3', isAsset: true),
+  const Track(name: 'Megumin Yamero!', path: 'sounds/megumin_yamero.mp3', isAsset: true),
 ];

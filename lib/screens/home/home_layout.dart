@@ -43,7 +43,7 @@ class _HomeLayoutState extends State<HomeLayout> {
           minimumFetchInterval: 15,
           startOnBoot: true,
           stopOnTerminate: false,
-          enableHeadless: false,
+          enableHeadless: true,
           requiresBatteryNotLow: false,
           requiresCharging: false,
           requiresStorageNotLow: false,

@@ -39,6 +39,21 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
             _storage.setNewTrackData(Constants.sessionDischargingTrack, tracks[trackIndex ?? 0]),
           ]);
         }
+
+        final String neutralFacePath = _storage.getFaceData(Constants.sessionNeutralFace);
+        final String pleasureFacePath = _storage.getFaceData(Constants.sessionPleasureFace);
+
+        if (neutralFacePath == null) {
+          final String oldNeutralFace = _storage.getUserSessionData(Constants.sessionNeutralFace) as String;
+
+          await _storage.setFaceData(Constants.sessionNeutralFace, oldNeutralFace);
+        }
+
+        if (pleasureFacePath == null) {
+          final String oldPleasureFace = _storage.getUserSessionData(Constants.sessionPleasureFace) as String;
+
+          await _storage.setFaceData(Constants.sessionPleasureFace, oldPleasureFace);
+        }
       }
 
       yield ProfileUpdated();

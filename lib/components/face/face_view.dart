@@ -38,8 +38,8 @@ class FaceView extends StatelessWidget {
           return NeutralFace(neutralFace: neutralFace);
         }
         if (faceState is FacesHaveBeenModified) {
-          final String neutralFilePath = _storage.getUserSessionData(Constants.sessionNeutralFace) as String;
-          final String pleasuredFacePath = _storage.getUserSessionData(Constants.sessionPleasureFace) as String;
+          final String neutralFilePath = _storage.getFaceData(Constants.sessionNeutralFace);
+          final String pleasuredFacePath = _storage.getFaceData(Constants.sessionPleasureFace);
 
           File neutralImage;
           File pleasuredImage;

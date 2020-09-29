@@ -30,8 +30,8 @@ class _FaceState extends State<Face> {
   @override
   void initState() {
     super.initState();
-    final String neutralFilePath = _storage.getUserSessionData(Constants.sessionNeutralFace) as String;
-    final String pleasuredFacePath = _storage.getUserSessionData(Constants.sessionPleasureFace) as String;
+    final String neutralFilePath = _storage.getFaceData(Constants.sessionNeutralFace);
+    final String pleasuredFacePath = _storage.getFaceData(Constants.sessionPleasureFace);
 
     if (neutralFilePath != null) {
       _neutralImage = File(neutralFilePath);
