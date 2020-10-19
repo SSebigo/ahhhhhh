@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:ahhhhhh/audio/audio_logic.dart';
-import 'package:ahhhhhh/constants.dart';
+import 'package:ahhhhhh/utils/constants.dart';
 import 'package:ahhhhhh/models/track.dart';
 import 'package:ahhhhhh/storage.dart';
 import 'package:battery/battery.dart';

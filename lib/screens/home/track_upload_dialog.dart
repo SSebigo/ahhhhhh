@@ -18,11 +18,13 @@ class _TrackUploadDialogState extends State<TrackUploadDialog> {
   File _track;
 
   Future<void> _uploadUserTrack() async {
-    final FilePickerResult result = await FilePicker.platform.pickFiles(type: FileType.audio);
+    final FilePickerResult result =
+        await FilePicker.platform.pickFiles(type: FileType.audio);
     final File trackAsFile = File(result.files.single.path);
 
     final Directory appDocDir = await getApplicationDocumentsDirectory();
-    final String trackPath = appDocDir.uri.resolve(p.basename(result.files.single.path)).path;
+    final String trackPath =
+        appDocDir.uri.resolve(p.basename(result.files.single.path)).path;
     final File track = await trackAsFile.copy(trackPath);
     setState(() {
       _track = track;
@@ -66,8 +68,12 @@ class _TrackUploadDialogState extends State<TrackUploadDialog> {
               TextField(
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
-                  enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black26, width: 2.0)),
-                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 2.0)),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black26, width: 2.0),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(width: 2.0),
+                  ),
                   hintText: "e.g. Oh shit, It's wednesday, Whassa",
                   hintStyle: TextStyle(color: Colors.grey),
                 ),
@@ -100,19 +106,29 @@ class _TrackUploadDialogState extends State<TrackUploadDialog> {
                 ),
               ),
               const SizedBox(height: 20.0),
-              Container(
+              SizedBox(
                 height: 60.0,
                 width: mediaQuery.width,
                 child: FlatButton(
-                  color: _isFormCompleted ? const Color(0xFFFFB43F) : Colors.grey,
+                  color:
+                      _isFormCompleted ? const Color(0xFFFFB43F) : Colors.grey,
                   onPressed: _isFormCompleted
                       ? () {
-                          BlocProvider.of<AudioBloc>(context)
-                              .add(UploadUserTrack(track: Track(name: _name, path: _track.path, isAsset: false)));
+                          BlocProvider.of<AudioBloc>(context).add(
+                            UploadUserTrack(
+                              track: Track(
+                                name: _name,
+                                path: _track.path,
+                                isAsset: false,
+                              ),
+                            ),
+                          );
                           Navigator.of(context).pop();
                         }
                       : null,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: Text(
                     'UPLOAD',
                     style: TextStyle(

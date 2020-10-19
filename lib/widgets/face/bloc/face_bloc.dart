@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:ahhhhhh/constants.dart';
+import 'package:ahhhhhh/utils/constants.dart';
 import 'package:ahhhhhh/storage.dart';
 import 'package:bloc/bloc.dart';
 import './bloc.dart';

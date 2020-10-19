@@ -8,4 +8,9 @@ class Constants {
   static const String sessionTrackIndex = 'sessionTrackIndex';
   static const String sessionUserTrack = 'sessionUserTrack';
   static const String sessionUserUploadedTracks = 'sessionUserUploadedTracks';
+
+  // SECTON assets
+  static const String assetsImages = 'assets/images/';
+  static const String assetsSounds = 'assets/sounds/';
+  static const String assetsOnboarding = 'assets/onboarding/';
 }

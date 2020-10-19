@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:ahhhhhh/components/face/face_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -9,11 +8,10 @@ import 'package:path_provider/path_provider.dart';
 
 import 'package:ahhhhhh/audio/bloc/audio_bloc.dart';
 import 'package:ahhhhhh/audio/bloc/audio_state.dart';
-import 'package:ahhhhhh/components/face/bloc/face_bloc.dart';
-import 'package:ahhhhhh/components/face/bloc/face_event.dart';
-import 'package:ahhhhhh/components/face/bloc/face_state.dart';
-import 'package:ahhhhhh/constants.dart';
 import 'package:ahhhhhh/storage.dart';
+import 'package:ahhhhhh/utils/constants.dart';
+import 'package:ahhhhhh/widgets/face/bloc/bloc.dart';
+import 'package:ahhhhhh/widgets/face/face_view.dart';
 
 class Face extends StatefulWidget {
   @override
@@ -30,8 +28,10 @@ class _FaceState extends State<Face> {
   @override
   void initState() {
     super.initState();
-    final String neutralFilePath = _storage.getFaceData(Constants.sessionNeutralFace);
-    final String pleasuredFacePath = _storage.getFaceData(Constants.sessionPleasureFace);
+    final String neutralFilePath =
+        _storage.getFaceData(Constants.sessionNeutralFace);
+    final String pleasuredFacePath =
+        _storage.getFaceData(Constants.sessionPleasureFace);
 
     if (neutralFilePath != null) {
       _neutralImage = File(neutralFilePath);
@@ -43,22 +43,26 @@ class _FaceState extends State<Face> {
 
   // SECTION Image getters
   Future<void> _getNeutralImage() async {
-    final PickedFile pickedImage = await imagePicker.getImage(source: ImageSource.gallery);
+    final PickedFile pickedImage =
+        await imagePicker.getImage(source: ImageSource.gallery);
     final File imageAsFile = File(pickedImage.path);
 
     final Directory appDocDir = await getApplicationDocumentsDirectory();
-    final String imagePath = appDocDir.uri.resolve(p.basename(pickedImage.path)).path;
+    final String imagePath =
+        appDocDir.uri.resolve(p.basename(pickedImage.path)).path;
     final File image = await imageAsFile.copy(imagePath);
 
     BlocProvider.of<FaceBloc>(context).add(NeutralFaceSelected(image: image));
   }
 
   Future<void> _getPleasuredImage() async {
-    final PickedFile pickedImage = await imagePicker.getImage(source: ImageSource.gallery);
+    final PickedFile pickedImage =
+        await imagePicker.getImage(source: ImageSource.gallery);
     final File imageAsFile = File(pickedImage.path);
 
     final Directory appDocDir = await getApplicationDocumentsDirectory();
-    final String imagePath = appDocDir.uri.resolve(p.basename(pickedImage.path)).path;
+    final String imagePath =
+        appDocDir.uri.resolve(p.basename(pickedImage.path)).path;
     final File image = await imageAsFile.copy(imagePath);
 
     BlocProvider.of<FaceBloc>(context).add(PleasuredFaceSelected(image: image));
@@ -72,7 +76,9 @@ class _FaceState extends State<Face> {
         height: 50.0,
         child: RaisedButton(
           elevation: 0.0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
           onPressed: _getNeutralImage,
           color: const Color(0xFFFFB43F),
           child: const Text(
@@ -96,7 +102,9 @@ class _FaceState extends State<Face> {
         height: 50.0,
         child: RaisedButton(
           elevation: 0.0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
           onPressed: _getPleasuredImage,
           color: const Color(0xFFFFB43F),
           child: const Text(
@@ -120,7 +128,9 @@ class _FaceState extends State<Face> {
         height: 50.0,
         child: RaisedButton(
           elevation: 0.0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
           onPressed: () {
             if (_neutralImage != null && _pleasuredImage != null) {
               BlocProvider.of<FaceBloc>(context).add(FacesModified(
@@ -151,7 +161,7 @@ class _FaceState extends State<Face> {
       context: context,
       builder: (context) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: Container(
+        child: SizedBox(
             height: double.infinity,
             width: double.infinity,
             child: BlocBuilder<FaceBloc, FaceState>(
@@ -177,12 +187,15 @@ class _FaceState extends State<Face> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
-                              : Container(
+                              : SizedBox(
                                   width: 300,
                                   height: 300,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    child: Image.file(_neutralImage, fit: BoxFit.cover),
+                                    child: Image.file(
+                                      _neutralImage,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                         ),
@@ -199,12 +212,15 @@ class _FaceState extends State<Face> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
-                              : Container(
+                              : SizedBox(
                                   width: 300,
                                   height: 300,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    child: Image.file(_pleasuredImage, fit: BoxFit.cover),
+                                    child: Image.file(
+                                      _pleasuredImage,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                         ),

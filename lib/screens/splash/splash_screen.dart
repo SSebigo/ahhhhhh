@@ -1,6 +1,7 @@
 import 'package:ahhhhhh/auth/bloc/bloc.dart';
 import 'package:ahhhhhh/screens/splash/bloc/splash_bloc.dart';
 import 'package:ahhhhhh/screens/splash/bloc/splash_state.dart';
+import 'package:ahhhhhh/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,12 +19,15 @@ class _SplashScreenState extends State<SplashScreen> {
         builder: (BuildContext context, SplashState state) {
           if (state is InitialSplashState) {
             return Center(
-              child: Container(
+              child: SizedBox(
                 width: 200,
                 height: 200,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
-                  child: Image.asset('assets/img/ahhhhhh_logoV2.png', fit: BoxFit.cover),
+                  child: Image.asset(
+                    Assets.logoImage,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             );
@@ -33,12 +37,15 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Center(
-                  child: Container(
+                  child: SizedBox(
                     width: 200,
                     height: 200,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset('assets/img/ahhhhhh_logoV2.png', fit: BoxFit.cover),
+                      child: Image.asset(
+                        Assets.logoImage,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),

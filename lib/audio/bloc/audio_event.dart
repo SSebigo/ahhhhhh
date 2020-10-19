@@ -1,5 +1,4 @@
 import 'package:ahhhhhh/models/track.dart';
-import 'package:ahhhhhh/tracks.dart';
 import 'package:battery/battery.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';

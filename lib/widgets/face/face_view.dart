@@ -1,14 +1,14 @@
 import 'dart:io';
 
-import 'package:ahhhhhh/components/face/pleasured_face.dart';
-import 'package:ahhhhhh/constants.dart';
-import 'package:ahhhhhh/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:ahhhhhh/audio/bloc/audio_state.dart';
-import 'package:ahhhhhh/components/face/bloc/bloc.dart';
-import 'package:ahhhhhh/components/face/neutral_face.dart';
+import 'package:ahhhhhh/storage.dart';
+import 'package:ahhhhhh/utils/constants.dart';
+import 'package:ahhhhhh/widgets/face/bloc/bloc.dart';
+import 'package:ahhhhhh/widgets/face/neutral_face.dart';
+import 'package:ahhhhhh/widgets/face/pleasured_face.dart';
 
 class FaceView extends StatelessWidget {
   final AudioState audioState;
@@ -32,14 +32,18 @@ class FaceView extends StatelessWidget {
           if (audioState is Discharging) {
             return NeutralFace(neutralFace: neutralFace);
           }
-          if (audioState is PlayingAudio || audioState is PlayingTestTrack || audioState is AudioPlayed) {
+          if (audioState is PlayingAudio ||
+              audioState is PlayingTestTrack ||
+              audioState is AudioPlayed) {
             return PleasuredFace(pleasuredFace: pleasuredFace);
           }
           return NeutralFace(neutralFace: neutralFace);
         }
         if (faceState is FacesHaveBeenModified) {
-          final String neutralFilePath = _storage.getFaceData(Constants.sessionNeutralFace);
-          final String pleasuredFacePath = _storage.getFaceData(Constants.sessionPleasureFace);
+          final String neutralFilePath =
+              _storage.getFaceData(Constants.sessionNeutralFace);
+          final String pleasuredFacePath =
+              _storage.getFaceData(Constants.sessionPleasureFace);
 
           File neutralImage;
           File pleasuredImage;
@@ -53,7 +57,9 @@ class FaceView extends StatelessWidget {
           if (audioState is Discharging) {
             return NeutralFace(neutralFace: neutralImage);
           }
-          if (audioState is PlayingAudio || audioState is PlayingTestTrack || audioState is AudioPlayed) {
+          if (audioState is PlayingAudio ||
+              audioState is PlayingTestTrack ||
+              audioState is AudioPlayed) {
             return PleasuredFace(pleasuredFace: pleasuredImage);
           }
           return NeutralFace(neutralFace: neutralImage);

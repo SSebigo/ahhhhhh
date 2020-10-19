@@ -1,8 +1,5 @@
 import 'dart:async';
 
-import 'package:ahhhhhh/screens/home/home.dart';
-import 'package:ahhhhhh/screens/home/onboarding.dart';
-import 'package:audioplayers/audio_cache.dart';
 import 'package:background_fetch/background_fetch.dart';
 import 'package:battery/battery.dart';
 import 'package:flutter/material.dart';
@@ -10,11 +7,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:ahhhhhh/audio/bloc/audio_bloc.dart';
 import 'package:ahhhhhh/audio/bloc/audio_event.dart';
-import 'package:ahhhhhh/constants.dart';
 import 'package:ahhhhhh/screens/home/bloc/home_bloc.dart';
 import 'package:ahhhhhh/screens/home/bloc/home_event.dart';
 import 'package:ahhhhhh/screens/home/bloc/home_state.dart';
+import 'package:ahhhhhh/screens/home/home.dart';
+import 'package:ahhhhhh/screens/home/onboarding.dart';
 import 'package:ahhhhhh/storage.dart';
+import 'package:ahhhhhh/utils/constants.dart';
 
 class HomeLayout extends StatefulWidget {
   @override
@@ -23,7 +22,6 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   final Storage _storage = Storage();
-  final AudioCache _audioCache = AudioCache();
 
   final Battery _battery = Battery();
   StreamSubscription<BatteryState> _batteryStateSubscription;
@@ -61,15 +59,18 @@ class _HomeLayoutState extends State<HomeLayout> {
   }
 
   Future<void> _initStorage() async {
-    final bool showOnboarding = _storage.getConfigData(Constants.sessionShowOnboarding);
+    final bool showOnboarding =
+        _storage.getConfigData(Constants.sessionShowOnboarding);
 
     if (showOnboarding == null || showOnboarding) {
-      await _storage.setConfigData(Constants.sessionShowOnboarding, value: false);
+      await _storage.setConfigData(Constants.sessionShowOnboarding,
+          value: false);
       BlocProvider.of<HomeBloc>(context).add(ShowOnboarding());
     } else {
       BlocProvider.of<HomeBloc>(context).add(ShowHome());
     }
-    _batteryStateSubscription = _battery.onBatteryStateChanged.listen((BatteryState state) {
+    _batteryStateSubscription =
+        _battery.onBatteryStateChanged.listen((BatteryState state) {
       BlocProvider.of<AudioBloc>(context).add(PluggedIn(state: state));
     });
   }
@@ -82,7 +83,7 @@ class _HomeLayoutState extends State<HomeLayout> {
           return Onboarding(context: context);
         }
         if (state is ShowingHome) {
-          return Home(context: context, audioCache: _audioCache);
+          return Home(context: context);
         }
         return Container();
       },

@@ -1,37 +1,38 @@
 import 'dart:io';
 
+import 'package:ahhhhhh/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class PleasuredFace extends StatelessWidget {
-  final File pleasuredFace;
+class NeutralFace extends StatelessWidget {
+  final File neutralFace;
 
-  const PleasuredFace({
+  const NeutralFace({
     Key key,
-    @required this.pleasuredFace,
+    @required this.neutralFace,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (pleasuredFace != null) {
+    if (neutralFace != null) {
       return Center(
-        child: Container(
+        child: SizedBox(
           width: 300,
           height: 300,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: Image.file(pleasuredFace, fit: BoxFit.cover),
+            child: Image.file(neutralFace, fit: BoxFit.cover),
           ),
         ),
       );
     }
     return Center(
-      child: Container(
+      child: SizedBox(
         width: 300,
         height: 300,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20.0),
           child: Image.asset(
-            'assets/img/yaranaika-pleasure.png',
+            Assets.yaranaikaNeutralImage,
             fit: BoxFit.cover,
           ),
         ),

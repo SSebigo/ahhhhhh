@@ -1,13 +1,12 @@
 import 'package:ahhhhhh/ad_manager.dart';
 import 'package:ahhhhhh/audio/bloc/bloc.dart';
-import 'package:ahhhhhh/components/face/face.dart';
-import 'package:ahhhhhh/constants.dart';
+import 'package:ahhhhhh/utils/constants.dart';
 import 'package:ahhhhhh/models/track.dart';
 import 'package:ahhhhhh/screens/home/track_selection_dialog.dart';
 import 'package:ahhhhhh/screens/home/track_upload_dialog.dart';
 import 'package:ahhhhhh/storage.dart';
 import 'package:ahhhhhh/tracks.dart';
-import 'package:audioplayers/audio_cache.dart';
+import 'package:ahhhhhh/widgets/face/face.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,12 +17,9 @@ class Home extends StatefulWidget {
   const Home({
     Key key,
     @required this.context,
-    @required AudioCache audioCache,
-  })  : _audioCache = audioCache,
-        super(key: key);
+  }) : super(key: key);
 
   final BuildContext context;
-  final AudioCache _audioCache;
 
   @override
   _HomeState createState() => _HomeState();
@@ -41,7 +37,8 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     _chargingTrack = _storage.getNewTrackData(Constants.sessionChargingTrack);
-    _dischargingTrack = _storage.getNewTrackData(Constants.sessionDischargingTrack);
+    _dischargingTrack =
+        _storage.getNewTrackData(Constants.sessionDischargingTrack);
 
     _bannerAd = BannerAd(
       adUnitId: AdManager.bannerAdUnitId,
@@ -151,7 +148,8 @@ class _HomeState extends State<Home> {
                     _chargingTrack.name,
                     style: const TextStyle(color: Colors.black),
                   ),
-                  onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: _chargingTrack)),
+                  onTap: () => BlocProvider.of<AudioBloc>(context)
+                      .add(PlayTrack(track: _chargingTrack)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -177,7 +175,8 @@ class _HomeState extends State<Home> {
                     _dischargingTrack.name,
                     style: const TextStyle(color: Colors.black),
                   ),
-                  onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: _dischargingTrack)),
+                  onTap: () => BlocProvider.of<AudioBloc>(context)
+                      .add(PlayTrack(track: _dischargingTrack)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -203,22 +202,30 @@ class _HomeState extends State<Home> {
                         context: context,
                         tiles: tracks
                             .map((Track track) => ListTile(
-                                  title: Text(track.name, style: const TextStyle(color: Colors.black)),
-                                  onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: track)),
+                                  title: Text(track.name,
+                                      style:
+                                          const TextStyle(color: Colors.black)),
+                                  onTap: () =>
+                                      BlocProvider.of<AudioBloc>(context)
+                                          .add(PlayTrack(track: track)),
                                   onLongPress: () => showDialog(
                                     context: context,
                                     builder: (_) => TrackSelectionDialog(
                                       trackName: track.name,
                                       chargingTrackName: _chargingTrack.name,
-                                      dischargingTrackName: _dischargingTrack.name,
+                                      dischargingTrackName:
+                                          _dischargingTrack.name,
                                       onChargingPressed: () {
-                                        BlocProvider.of<AudioBloc>(context).add(ChangeChargingTrack(track: track));
+                                        BlocProvider.of<AudioBloc>(context).add(
+                                            ChangeChargingTrack(track: track));
                                         setState(() {
                                           _chargingTrack = track;
                                         });
                                       },
                                       onDischargingPressed: () {
-                                        BlocProvider.of<AudioBloc>(context).add(ChangeDischargingTrack(track: track));
+                                        BlocProvider.of<AudioBloc>(context).add(
+                                            ChangeDischargingTrack(
+                                                track: track));
                                         setState(() {
                                           _dischargingTrack = track;
                                         });
@@ -234,22 +241,28 @@ class _HomeState extends State<Home> {
                     return Column(
                       children: box.values
                           .map((Track track) => ListTile(
-                                title: Text(track.name, style: const TextStyle(color: Colors.black)),
-                                onTap: () => BlocProvider.of<AudioBloc>(context).add(PlayTrack(track: track)),
+                                title: Text(track.name,
+                                    style:
+                                        const TextStyle(color: Colors.black)),
+                                onTap: () => BlocProvider.of<AudioBloc>(context)
+                                    .add(PlayTrack(track: track)),
                                 onLongPress: () => showDialog(
                                   context: context,
                                   builder: (_) => TrackSelectionDialog(
                                     trackName: track.name,
                                     chargingTrackName: _chargingTrack.name,
-                                    dischargingTrackName: _dischargingTrack.name,
+                                    dischargingTrackName:
+                                        _dischargingTrack.name,
                                     onChargingPressed: () {
-                                      BlocProvider.of<AudioBloc>(context).add(ChangeChargingTrack(track: track));
+                                      BlocProvider.of<AudioBloc>(context).add(
+                                          ChangeChargingTrack(track: track));
                                       setState(() {
                                         _chargingTrack = track;
                                       });
                                     },
                                     onDischargingPressed: () {
-                                      BlocProvider.of<AudioBloc>(context).add(ChangeDischargingTrack(track: track));
+                                      BlocProvider.of<AudioBloc>(context).add(
+                                          ChangeDischargingTrack(track: track));
                                       setState(() {
                                         _dischargingTrack = track;
                                       });
