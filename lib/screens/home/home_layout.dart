@@ -29,34 +29,34 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   void initState() {
     super.initState();
-    _initPlatformState();
+    // _initPlatformState();
     _initStorage();
   }
 
-  Future<void> _initPlatformState() async {
-    // Configure BackgroundFetch.
+  // Future<void> _initPlatformState() async {
+  //   // Configure BackgroundFetch.
 
-    BackgroundFetch.configure(
-        BackgroundFetchConfig(
-          minimumFetchInterval: 15,
-          startOnBoot: true,
-          stopOnTerminate: false,
-          enableHeadless: true,
-          requiresBatteryNotLow: false,
-          requiresCharging: false,
-          requiresStorageNotLow: false,
-          requiresDeviceIdle: false,
-          requiredNetworkType: NetworkType.NONE,
-        ), (String taskId) async {
-      _battery.onBatteryStateChanged.listen((BatteryState state) {
-        BlocProvider.of<AudioBloc>(context).add(PluggedIn(state: state));
-      });
+  //   BackgroundFetch.configure(
+  //       BackgroundFetchConfig(
+  //         minimumFetchInterval: 15,
+  //         startOnBoot: true,
+  //         stopOnTerminate: false,
+  //         enableHeadless: true,
+  //         requiresBatteryNotLow: false,
+  //         requiresCharging: false,
+  //         requiresStorageNotLow: false,
+  //         requiresDeviceIdle: false,
+  //         requiredNetworkType: NetworkType.NONE,
+  //       ), (String taskId) async {
+  //     _battery.onBatteryStateChanged.listen((BatteryState state) {
+  //       BlocProvider.of<AudioBloc>(context).add(PluggedIn(state: state));
+  //     });
 
-      // IMPORTANT:  You must signal completion of your task or the OS can punish your app
-      // for taking too long in the background.
-      BackgroundFetch.finish(taskId);
-    });
-  }
+  //     // IMPORTANT:  You must signal completion of your task or the OS can punish your app
+  //     // for taking too long in the background.
+  //     BackgroundFetch.finish(taskId);
+  //   });
+  // }
 
   Future<void> _initStorage() async {
     final bool showOnboarding =

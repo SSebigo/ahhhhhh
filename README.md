@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/assets/img/ahhhhhh_logoV2.png" width="30%">
+  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/assets/images/ahhhhhh_logoV2.png" width="30%">
 </p>
 
 </br>
 
-<h1 align="center">Welcome to Ahhhhhh 👋</h1>
+# Welcome to Ahhhhhh 👋
 <p>
   <img src="https://img.shields.io/badge/version-1.6.1-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/SSebigo/white-whistle#readme">
