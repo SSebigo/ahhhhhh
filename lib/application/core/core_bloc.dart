@@ -35,8 +35,8 @@ class CoreBloc extends Bloc<CoreEvent, CoreState> with Getters {
           session = Session(
             chargingTrack: tracks[0],
             dischargingTrack: tracks[0],
-            neutralFaceUrl: Assets.yaranaikaNeutralImage,
-            pleasureFaceUrl: Assets.yaranaikaPleasureImage,
+            neutralVisualUrl: Assets.yaranaikaNeutralImage,
+            pleasureVisualUrl: Assets.yaranaikaPleasureImage,
           );
 
           await _localSessionFacade.initializeSession(session);

@@ -19,8 +19,8 @@ class SessionAdapter extends TypeAdapter<Session> {
     return Session(
       chargingTrack: fields[2] as Track,
       dischargingTrack: fields[3] as Track,
-      neutralFaceUrl: fields[0] as String,
-      pleasureFaceUrl: fields[1] as String,
+      neutralVisualUrl: fields[0] as String,
+      pleasureVisualUrl: fields[1] as String,
     );
   }
 
@@ -29,9 +29,9 @@ class SessionAdapter extends TypeAdapter<Session> {
     writer
       ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.neutralFaceUrl)
+      ..write(obj.neutralVisualUrl)
       ..writeByte(1)
-      ..write(obj.pleasureFaceUrl)
+      ..write(obj.pleasureVisualUrl)
       ..writeByte(2)
       ..write(obj.chargingTrack)
       ..writeByte(3)

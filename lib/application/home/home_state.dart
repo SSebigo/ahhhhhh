@@ -4,6 +4,10 @@ part of 'home_bloc.dart';
 @freezed
 abstract class HomeState with _$HomeState {
   /// @nodoc
+  const factory HomeState.batteryStateChangedState(BatteryState batteryState) =
+      _BatteryStateChangedState;
+
+  /// @nodoc
   const factory HomeState.initialState() = _InitialState;
 
   /// @nodoc

@@ -13,10 +13,12 @@ import 'application/core/core_bloc.dart';
 import 'infrastructure/hive_injectable_module.dart';
 import 'infrastructure/hive_local_session_facade.dart';
 import 'infrastructure/hive_local_track_facade.dart';
+import 'application/home/home_bloc.dart';
 import 'domain/facades/i_local_session_facade.dart';
 import 'domain/facades/i_local_track_facade.dart';
 import 'domain/models/hive/session.dart';
 import 'domain/models/hive/track.dart';
+import 'application/visual_manager/visual_manager_bloc.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
@@ -32,12 +34,15 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<hive.Box<Session>>(() => resolvedBox);
   final resolvedBox1 = await hiveInjectableModule.openTracksBox;
   gh.lazySingleton<hive.Box<Track>>(() => resolvedBox1);
+  gh.factory<HomeBloc>(() => HomeBloc());
   gh.lazySingleton<ILocalSessionFacade>(
       () => HiveLocalSessionFacade(get<hive.Box<Session>>()));
   gh.lazySingleton<ILocalTrackFacade>(
       () => HiveLocalTrackFacade(get<hive.Box<Track>>()));
-  gh.factory<AudioManagerBloc>(
-      () => AudioManagerBloc(get<ILocalSessionFacade>()));
+  gh.factory<VisualManagerBloc>(
+      () => VisualManagerBloc(get<ILocalSessionFacade>()));
+  gh.factory<AudioManagerBloc>(() =>
+      AudioManagerBloc(get<ILocalSessionFacade>(), get<ILocalTrackFacade>()));
   gh.factory<CoreBloc>(() => CoreBloc(get<ILocalSessionFacade>()));
   return get;
 }

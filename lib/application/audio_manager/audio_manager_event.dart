@@ -4,6 +4,11 @@ part of 'audio_manager_bloc.dart';
 @freezed
 abstract class AudioManagerEvent with _$AudioManagerEvent {
   /// @nodoc
+  const factory AudioManagerEvent.batteryStateChangedEvent(
+    BatteryState batteryState,
+  ) = BatteryStateChangedEvent;
+
+  /// @nodoc
   const factory AudioManagerEvent.changeChargingTrack(Track track) =
       ChangeChargingTrack;
 
@@ -13,11 +18,6 @@ abstract class AudioManagerEvent with _$AudioManagerEvent {
 
   /// @nodoc
   const factory AudioManagerEvent.playTrackEvent(Track track) = PlayTrackEvent;
-
-  /// @nodoc
-  const factory AudioManagerEvent.devicePluggedInEvent(
-    BatteryState batteryState,
-  ) = DevicePluggedInEvent;
 
   /// @nodoc
   const factory AudioManagerEvent.uploadUserTrack(Track track) =

@@ -11,17 +11,17 @@ class Session extends HiveObject {
   Session({
     this.chargingTrack,
     this.dischargingTrack,
-    this.neutralFaceUrl,
-    this.pleasureFaceUrl,
+    this.neutralVisualUrl,
+    this.pleasureVisualUrl,
   });
 
   /// @nodoc
   @HiveField(0)
-  String neutralFaceUrl;
+  String neutralVisualUrl;
 
   /// @nodoc
   @HiveField(1)
-  String pleasureFaceUrl;
+  String pleasureVisualUrl;
 
   /// @nodoc
   @HiveField(2)
@@ -33,16 +33,16 @@ class Session extends HiveObject {
 
   /// @nodoc
   Session copyWith({
-    String neutralFaceUrl,
-    String pleasureFaceUrl,
+    String neutralVisualUrl,
+    String pleasureVisualUrl,
     Track chargingTrack,
     Track dischargingTrack,
   }) {
     return Session(
       chargingTrack: chargingTrack ?? this.chargingTrack,
       dischargingTrack: dischargingTrack ?? this.dischargingTrack,
-      neutralFaceUrl: neutralFaceUrl ?? this.neutralFaceUrl,
-      pleasureFaceUrl: pleasureFaceUrl ?? this.pleasureFaceUrl,
+      neutralVisualUrl: neutralVisualUrl ?? this.neutralVisualUrl,
+      pleasureVisualUrl: pleasureVisualUrl ?? this.pleasureVisualUrl,
     );
   }
 }

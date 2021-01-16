@@ -20,7 +20,10 @@ class HomePage extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => getIt<AudioManagerBloc>()),
-          BlocProvider(create: (_) => getIt<HomeBloc>()),
+          BlocProvider(
+            create: (_) =>
+                getIt<HomeBloc>()..add(const HomeEvent.homePageLaunchedEvent()),
+          ),
         ],
         child: Scaffold(
           backgroundColor: Colors.white,

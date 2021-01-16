@@ -31,7 +31,7 @@ mixin Getters {
           coverURL: Assets.clickImage,
           explanation:
               // ignore: lines_longer_than_80_chars
-              'Click on the image in the center of the screen to replace them with your own.',
+              'Click on the image in the center of the screen to use your own.',
           title: 'Use you own images',
         ),
         const OnboardingContent(

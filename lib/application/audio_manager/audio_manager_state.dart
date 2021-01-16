@@ -4,6 +4,9 @@ part of 'audio_manager_bloc.dart';
 @freezed
 abstract class AudioManagerState with _$AudioManagerState {
   /// @nodoc
+  const factory AudioManagerState.audioPlayedState() = _AudioPlayedState;
+
+  /// @nodoc
   const factory AudioManagerState.changingTrackState() = _ChangingTrackState;
 
   /// @nodoc

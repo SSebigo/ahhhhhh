@@ -14,6 +14,13 @@ class _$AudioManagerEventTearOff {
   const _$AudioManagerEventTearOff();
 
 // ignore: unused_element
+  BatteryStateChangedEvent batteryStateChangedEvent(BatteryState batteryState) {
+    return BatteryStateChangedEvent(
+      batteryState,
+    );
+  }
+
+// ignore: unused_element
   ChangeChargingTrack changeChargingTrack(Track track) {
     return ChangeChargingTrack(
       track,
@@ -35,13 +42,6 @@ class _$AudioManagerEventTearOff {
   }
 
 // ignore: unused_element
-  DevicePluggedInEvent devicePluggedInEvent(BatteryState batteryState) {
-    return DevicePluggedInEvent(
-      batteryState,
-    );
-  }
-
-// ignore: unused_element
   UploadUserTrack uploadUserTrack(Track track) {
     return UploadUserTrack(
       track,
@@ -57,35 +57,35 @@ const $AudioManagerEvent = _$AudioManagerEventTearOff();
 mixin _$AudioManagerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryState batteryState),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
-    @required TResult devicePluggedInEvent(BatteryState batteryState),
     @required TResult uploadUserTrack(Track track),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryState batteryState),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
-    TResult devicePluggedInEvent(BatteryState batteryState),
     TResult uploadUserTrack(Track track),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
-    @required TResult devicePluggedInEvent(DevicePluggedInEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
-    TResult devicePluggedInEvent(DevicePluggedInEvent value),
     TResult uploadUserTrack(UploadUserTrack value),
     @required TResult orElse(),
   });
@@ -106,6 +106,148 @@ class _$AudioManagerEventCopyWithImpl<$Res>
   final AudioManagerEvent _value;
   // ignore: unused_field
   final $Res Function(AudioManagerEvent) _then;
+}
+
+/// @nodoc
+abstract class $BatteryStateChangedEventCopyWith<$Res> {
+  factory $BatteryStateChangedEventCopyWith(BatteryStateChangedEvent value,
+          $Res Function(BatteryStateChangedEvent) then) =
+      _$BatteryStateChangedEventCopyWithImpl<$Res>;
+  $Res call({BatteryState batteryState});
+}
+
+/// @nodoc
+class _$BatteryStateChangedEventCopyWithImpl<$Res>
+    extends _$AudioManagerEventCopyWithImpl<$Res>
+    implements $BatteryStateChangedEventCopyWith<$Res> {
+  _$BatteryStateChangedEventCopyWithImpl(BatteryStateChangedEvent _value,
+      $Res Function(BatteryStateChangedEvent) _then)
+      : super(_value, (v) => _then(v as BatteryStateChangedEvent));
+
+  @override
+  BatteryStateChangedEvent get _value =>
+      super._value as BatteryStateChangedEvent;
+
+  @override
+  $Res call({
+    Object batteryState = freezed,
+  }) {
+    return _then(BatteryStateChangedEvent(
+      batteryState == freezed
+          ? _value.batteryState
+          : batteryState as BatteryState,
+    ));
+  }
+}
+
+/// @nodoc
+class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
+  const _$BatteryStateChangedEvent(this.batteryState)
+      : assert(batteryState != null);
+
+  @override
+  final BatteryState batteryState;
+
+  @override
+  String toString() {
+    return 'AudioManagerEvent.batteryStateChangedEvent(batteryState: $batteryState)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is BatteryStateChangedEvent &&
+            (identical(other.batteryState, batteryState) ||
+                const DeepCollectionEquality()
+                    .equals(other.batteryState, batteryState)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(batteryState);
+
+  @JsonKey(ignore: true)
+  @override
+  $BatteryStateChangedEventCopyWith<BatteryStateChangedEvent> get copyWith =>
+      _$BatteryStateChangedEventCopyWithImpl<BatteryStateChangedEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeChargingTrack(Track track),
+    @required TResult changeDischargingTrack(Track track),
+    @required TResult playTrackEvent(Track track),
+    @required TResult uploadUserTrack(Track track),
+  }) {
+    assert(batteryStateChangedEvent != null);
+    assert(changeChargingTrack != null);
+    assert(changeDischargingTrack != null);
+    assert(playTrackEvent != null);
+    assert(uploadUserTrack != null);
+    return batteryStateChangedEvent(batteryState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeChargingTrack(Track track),
+    TResult changeDischargingTrack(Track track),
+    TResult playTrackEvent(Track track),
+    TResult uploadUserTrack(Track track),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batteryStateChangedEvent != null) {
+      return batteryStateChangedEvent(batteryState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeChargingTrack(ChangeChargingTrack value),
+    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
+    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult uploadUserTrack(UploadUserTrack value),
+  }) {
+    assert(batteryStateChangedEvent != null);
+    assert(changeChargingTrack != null);
+    assert(changeDischargingTrack != null);
+    assert(playTrackEvent != null);
+    assert(uploadUserTrack != null);
+    return batteryStateChangedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeChargingTrack(ChangeChargingTrack value),
+    TResult changeDischargingTrack(ChangeDischargingTrack value),
+    TResult playTrackEvent(PlayTrackEvent value),
+    TResult uploadUserTrack(UploadUserTrack value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batteryStateChangedEvent != null) {
+      return batteryStateChangedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BatteryStateChangedEvent implements AudioManagerEvent {
+  const factory BatteryStateChangedEvent(BatteryState batteryState) =
+      _$BatteryStateChangedEvent;
+
+  BatteryState get batteryState;
+  @JsonKey(ignore: true)
+  $BatteryStateChangedEventCopyWith<BatteryStateChangedEvent> get copyWith;
 }
 
 /// @nodoc
@@ -169,16 +311,16 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryState batteryState),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
-    @required TResult devicePluggedInEvent(BatteryState batteryState),
     @required TResult uploadUserTrack(Track track),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return changeChargingTrack(track);
   }
@@ -186,10 +328,10 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryState batteryState),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
-    TResult devicePluggedInEvent(BatteryState batteryState),
     TResult uploadUserTrack(Track track),
     @required TResult orElse(),
   }) {
@@ -203,16 +345,16 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
-    @required TResult devicePluggedInEvent(DevicePluggedInEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return changeChargingTrack(this);
   }
@@ -220,10 +362,10 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
-    TResult devicePluggedInEvent(DevicePluggedInEvent value),
     TResult uploadUserTrack(UploadUserTrack value),
     @required TResult orElse(),
   }) {
@@ -305,16 +447,16 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryState batteryState),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
-    @required TResult devicePluggedInEvent(BatteryState batteryState),
     @required TResult uploadUserTrack(Track track),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return changeDischargingTrack(track);
   }
@@ -322,10 +464,10 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryState batteryState),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
-    TResult devicePluggedInEvent(BatteryState batteryState),
     TResult uploadUserTrack(Track track),
     @required TResult orElse(),
   }) {
@@ -339,16 +481,16 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
-    @required TResult devicePluggedInEvent(DevicePluggedInEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return changeDischargingTrack(this);
   }
@@ -356,10 +498,10 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
-    TResult devicePluggedInEvent(DevicePluggedInEvent value),
     TResult uploadUserTrack(UploadUserTrack value),
     @required TResult orElse(),
   }) {
@@ -440,16 +582,16 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryState batteryState),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
-    @required TResult devicePluggedInEvent(BatteryState batteryState),
     @required TResult uploadUserTrack(Track track),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return playTrackEvent(track);
   }
@@ -457,10 +599,10 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryState batteryState),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
-    TResult devicePluggedInEvent(BatteryState batteryState),
     TResult uploadUserTrack(Track track),
     @required TResult orElse(),
   }) {
@@ -474,16 +616,16 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
-    @required TResult devicePluggedInEvent(DevicePluggedInEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return playTrackEvent(this);
   }
@@ -491,10 +633,10 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
-    TResult devicePluggedInEvent(DevicePluggedInEvent value),
     TResult uploadUserTrack(UploadUserTrack value),
     @required TResult orElse(),
   }) {
@@ -512,147 +654,6 @@ abstract class PlayTrackEvent implements AudioManagerEvent {
   Track get track;
   @JsonKey(ignore: true)
   $PlayTrackEventCopyWith<PlayTrackEvent> get copyWith;
-}
-
-/// @nodoc
-abstract class $DevicePluggedInEventCopyWith<$Res> {
-  factory $DevicePluggedInEventCopyWith(DevicePluggedInEvent value,
-          $Res Function(DevicePluggedInEvent) then) =
-      _$DevicePluggedInEventCopyWithImpl<$Res>;
-  $Res call({BatteryState batteryState});
-}
-
-/// @nodoc
-class _$DevicePluggedInEventCopyWithImpl<$Res>
-    extends _$AudioManagerEventCopyWithImpl<$Res>
-    implements $DevicePluggedInEventCopyWith<$Res> {
-  _$DevicePluggedInEventCopyWithImpl(
-      DevicePluggedInEvent _value, $Res Function(DevicePluggedInEvent) _then)
-      : super(_value, (v) => _then(v as DevicePluggedInEvent));
-
-  @override
-  DevicePluggedInEvent get _value => super._value as DevicePluggedInEvent;
-
-  @override
-  $Res call({
-    Object batteryState = freezed,
-  }) {
-    return _then(DevicePluggedInEvent(
-      batteryState == freezed
-          ? _value.batteryState
-          : batteryState as BatteryState,
-    ));
-  }
-}
-
-/// @nodoc
-class _$DevicePluggedInEvent implements DevicePluggedInEvent {
-  const _$DevicePluggedInEvent(this.batteryState)
-      : assert(batteryState != null);
-
-  @override
-  final BatteryState batteryState;
-
-  @override
-  String toString() {
-    return 'AudioManagerEvent.devicePluggedInEvent(batteryState: $batteryState)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is DevicePluggedInEvent &&
-            (identical(other.batteryState, batteryState) ||
-                const DeepCollectionEquality()
-                    .equals(other.batteryState, batteryState)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(batteryState);
-
-  @JsonKey(ignore: true)
-  @override
-  $DevicePluggedInEventCopyWith<DevicePluggedInEvent> get copyWith =>
-      _$DevicePluggedInEventCopyWithImpl<DevicePluggedInEvent>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult changeChargingTrack(Track track),
-    @required TResult changeDischargingTrack(Track track),
-    @required TResult playTrackEvent(Track track),
-    @required TResult devicePluggedInEvent(BatteryState batteryState),
-    @required TResult uploadUserTrack(Track track),
-  }) {
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
-    assert(uploadUserTrack != null);
-    return devicePluggedInEvent(batteryState);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult changeChargingTrack(Track track),
-    TResult changeDischargingTrack(Track track),
-    TResult playTrackEvent(Track track),
-    TResult devicePluggedInEvent(BatteryState batteryState),
-    TResult uploadUserTrack(Track track),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (devicePluggedInEvent != null) {
-      return devicePluggedInEvent(batteryState);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult changeChargingTrack(ChangeChargingTrack value),
-    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
-    @required TResult playTrackEvent(PlayTrackEvent value),
-    @required TResult devicePluggedInEvent(DevicePluggedInEvent value),
-    @required TResult uploadUserTrack(UploadUserTrack value),
-  }) {
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
-    assert(uploadUserTrack != null);
-    return devicePluggedInEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult changeChargingTrack(ChangeChargingTrack value),
-    TResult changeDischargingTrack(ChangeDischargingTrack value),
-    TResult playTrackEvent(PlayTrackEvent value),
-    TResult devicePluggedInEvent(DevicePluggedInEvent value),
-    TResult uploadUserTrack(UploadUserTrack value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (devicePluggedInEvent != null) {
-      return devicePluggedInEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DevicePluggedInEvent implements AudioManagerEvent {
-  const factory DevicePluggedInEvent(BatteryState batteryState) =
-      _$DevicePluggedInEvent;
-
-  BatteryState get batteryState;
-  @JsonKey(ignore: true)
-  $DevicePluggedInEventCopyWith<DevicePluggedInEvent> get copyWith;
 }
 
 /// @nodoc
@@ -716,16 +717,16 @@ class _$UploadUserTrack implements UploadUserTrack {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryState batteryState),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
-    @required TResult devicePluggedInEvent(BatteryState batteryState),
     @required TResult uploadUserTrack(Track track),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return uploadUserTrack(track);
   }
@@ -733,10 +734,10 @@ class _$UploadUserTrack implements UploadUserTrack {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryState batteryState),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
-    TResult devicePluggedInEvent(BatteryState batteryState),
     TResult uploadUserTrack(Track track),
     @required TResult orElse(),
   }) {
@@ -750,16 +751,16 @@ class _$UploadUserTrack implements UploadUserTrack {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
-    @required TResult devicePluggedInEvent(DevicePluggedInEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
+    assert(batteryStateChangedEvent != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
-    assert(devicePluggedInEvent != null);
     assert(uploadUserTrack != null);
     return uploadUserTrack(this);
   }
@@ -767,10 +768,10 @@ class _$UploadUserTrack implements UploadUserTrack {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
-    TResult devicePluggedInEvent(DevicePluggedInEvent value),
     TResult uploadUserTrack(UploadUserTrack value),
     @required TResult orElse(),
   }) {
@@ -793,6 +794,11 @@ abstract class UploadUserTrack implements AudioManagerEvent {
 /// @nodoc
 class _$AudioManagerStateTearOff {
   const _$AudioManagerStateTearOff();
+
+// ignore: unused_element
+  _AudioPlayedState audioPlayedState() {
+    return const _AudioPlayedState();
+  }
 
 // ignore: unused_element
   _ChangingTrackState changingTrackState() {
@@ -853,6 +859,7 @@ const $AudioManagerState = _$AudioManagerStateTearOff();
 mixin _$AudioManagerState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -866,6 +873,7 @@ mixin _$AudioManagerState {
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -880,6 +888,7 @@ mixin _$AudioManagerState {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -893,6 +902,7 @@ mixin _$AudioManagerState {
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -922,6 +932,151 @@ class _$AudioManagerStateCopyWithImpl<$Res>
   final AudioManagerState _value;
   // ignore: unused_field
   final $Res Function(AudioManagerState) _then;
+}
+
+/// @nodoc
+abstract class _$AudioPlayedStateCopyWith<$Res> {
+  factory _$AudioPlayedStateCopyWith(
+          _AudioPlayedState value, $Res Function(_AudioPlayedState) then) =
+      __$AudioPlayedStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$AudioPlayedStateCopyWithImpl<$Res>
+    extends _$AudioManagerStateCopyWithImpl<$Res>
+    implements _$AudioPlayedStateCopyWith<$Res> {
+  __$AudioPlayedStateCopyWithImpl(
+      _AudioPlayedState _value, $Res Function(_AudioPlayedState) _then)
+      : super(_value, (v) => _then(v as _AudioPlayedState));
+
+  @override
+  _AudioPlayedState get _value => super._value as _AudioPlayedState;
+}
+
+/// @nodoc
+class _$_AudioPlayedState implements _AudioPlayedState {
+  const _$_AudioPlayedState();
+
+  @override
+  String toString() {
+    return 'AudioManagerState.audioPlayedState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _AudioPlayedState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
+    @required TResult changingTrackState(),
+    @required TResult dischargingState(),
+    @required TResult initialState(),
+    @required TResult playingTestTrackState(),
+    @required TResult playingAudioState(),
+    @required TResult testTrackPlayedState(),
+    @required TResult trackPlayedState(),
+    @required TResult trackChangedState(),
+    @required TResult uploadingUserTrackState(),
+    @required TResult userTrackUploadedState(),
+  }) {
+    assert(audioPlayedState != null);
+    assert(changingTrackState != null);
+    assert(dischargingState != null);
+    assert(initialState != null);
+    assert(playingTestTrackState != null);
+    assert(playingAudioState != null);
+    assert(testTrackPlayedState != null);
+    assert(trackPlayedState != null);
+    assert(trackChangedState != null);
+    assert(uploadingUserTrackState != null);
+    assert(userTrackUploadedState != null);
+    return audioPlayedState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
+    TResult changingTrackState(),
+    TResult dischargingState(),
+    TResult initialState(),
+    TResult playingTestTrackState(),
+    TResult playingAudioState(),
+    TResult testTrackPlayedState(),
+    TResult trackPlayedState(),
+    TResult trackChangedState(),
+    TResult uploadingUserTrackState(),
+    TResult userTrackUploadedState(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (audioPlayedState != null) {
+      return audioPlayedState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
+    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult dischargingState(_DischargingState value),
+    @required TResult initialState(_InitialState value),
+    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingAudioState(_PlayingAudioState value),
+    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
+    @required TResult trackPlayedState(_TrackPlayedState value),
+    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
+    @required TResult userTrackUploadedState(_UserTrackUploadedState value),
+  }) {
+    assert(audioPlayedState != null);
+    assert(changingTrackState != null);
+    assert(dischargingState != null);
+    assert(initialState != null);
+    assert(playingTestTrackState != null);
+    assert(playingAudioState != null);
+    assert(testTrackPlayedState != null);
+    assert(trackPlayedState != null);
+    assert(trackChangedState != null);
+    assert(uploadingUserTrackState != null);
+    assert(userTrackUploadedState != null);
+    return audioPlayedState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
+    TResult changingTrackState(_ChangingTrackState value),
+    TResult dischargingState(_DischargingState value),
+    TResult initialState(_InitialState value),
+    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingAudioState(_PlayingAudioState value),
+    TResult testTrackPlayedState(_TestTrackPlayedState value),
+    TResult trackPlayedState(_TrackPlayedState value),
+    TResult trackChangedState(_TrackChangedState value),
+    TResult uploadingUserTrackState(_UploadingUserTrackState value),
+    TResult userTrackUploadedState(_UserTrackUploadedState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (audioPlayedState != null) {
+      return audioPlayedState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AudioPlayedState implements AudioManagerState {
+  const factory _AudioPlayedState() = _$_AudioPlayedState;
 }
 
 /// @nodoc
@@ -963,6 +1118,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -974,6 +1130,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -990,6 +1147,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1012,6 +1170,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1023,6 +1182,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1039,6 +1199,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -1102,6 +1263,7 @@ class _$_DischargingState implements _DischargingState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -1113,6 +1275,7 @@ class _$_DischargingState implements _DischargingState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1129,6 +1292,7 @@ class _$_DischargingState implements _DischargingState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1151,6 +1315,7 @@ class _$_DischargingState implements _DischargingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1162,6 +1327,7 @@ class _$_DischargingState implements _DischargingState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1178,6 +1344,7 @@ class _$_DischargingState implements _DischargingState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -1241,6 +1408,7 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -1252,6 +1420,7 @@ class _$_InitialState implements _InitialState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1268,6 +1437,7 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1290,6 +1460,7 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1301,6 +1472,7 @@ class _$_InitialState implements _InitialState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1317,6 +1489,7 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -1380,6 +1553,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -1391,6 +1565,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1407,6 +1582,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1429,6 +1605,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1440,6 +1617,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1456,6 +1634,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -1519,6 +1698,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -1530,6 +1710,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1546,6 +1727,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1568,6 +1750,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1579,6 +1762,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1595,6 +1779,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -1658,6 +1843,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -1669,6 +1855,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1685,6 +1872,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1707,6 +1895,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1718,6 +1907,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1734,6 +1924,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -1797,6 +1988,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -1808,6 +2000,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1824,6 +2017,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1846,6 +2040,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1857,6 +2052,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1873,6 +2069,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -1936,6 +2133,7 @@ class _$_TrackChangedState implements _TrackChangedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -1947,6 +2145,7 @@ class _$_TrackChangedState implements _TrackChangedState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -1963,6 +2162,7 @@ class _$_TrackChangedState implements _TrackChangedState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -1985,6 +2185,7 @@ class _$_TrackChangedState implements _TrackChangedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -1996,6 +2197,7 @@ class _$_TrackChangedState implements _TrackChangedState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -2012,6 +2214,7 @@ class _$_TrackChangedState implements _TrackChangedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -2076,6 +2279,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -2087,6 +2291,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -2103,6 +2308,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -2125,6 +2331,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -2136,6 +2343,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -2152,6 +2360,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
@@ -2215,6 +2424,7 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioPlayedState(),
     @required TResult changingTrackState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
@@ -2226,6 +2436,7 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
     @required TResult uploadingUserTrackState(),
     @required TResult userTrackUploadedState(),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -2242,6 +2453,7 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioPlayedState(),
     TResult changingTrackState(),
     TResult dischargingState(),
     TResult initialState(),
@@ -2264,6 +2476,7 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioPlayedState(_AudioPlayedState value),
     @required TResult changingTrackState(_ChangingTrackState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
@@ -2275,6 +2488,7 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
     @required TResult uploadingUserTrackState(_UploadingUserTrackState value),
     @required TResult userTrackUploadedState(_UserTrackUploadedState value),
   }) {
+    assert(audioPlayedState != null);
     assert(changingTrackState != null);
     assert(dischargingState != null);
     assert(initialState != null);
@@ -2291,6 +2505,7 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioPlayedState(_AudioPlayedState value),
     TResult changingTrackState(_ChangingTrackState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
