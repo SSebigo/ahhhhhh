@@ -22,7 +22,7 @@ class HomeEndDrawer extends StatelessWidget {
               Icons.chevron_right,
               color: Colors.black,
             ),
-            onTap: () => ExtendedNavigator.root.replace(Routes.changelogPage),
+            onTap: () => ExtendedNavigator.root.push(Routes.changelogPage),
           ),
         ],
       ),

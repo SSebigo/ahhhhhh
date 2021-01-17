@@ -39,7 +39,8 @@ class HomePage extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent,
+            brightness: Brightness.light,
             iconTheme: const IconThemeData(color: Colors.black),
             elevation: 0.0,
           ),

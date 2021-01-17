@@ -20,6 +20,12 @@ class OnboardingPage extends StatelessWidget with Getters {
       value: Themes.wineLightTheme(),
       child: Scaffold(
         backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          brightness: Brightness.light,
+          iconTheme: const IconThemeData(color: Colors.black),
+          elevation: 0.0,
+        ),
         body: SafeArea(
           child: IntroductionScreen(
             done: const Text(
