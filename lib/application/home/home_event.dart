@@ -4,12 +4,5 @@ part of 'home_bloc.dart';
 @freezed
 abstract class HomeEvent with _$HomeEvent {
   /// @nodoc
-  const factory HomeEvent.batteryStateChangedEvent(BatteryState state) =
-      BatteryStateChangedEvent;
-
-  /// @nodoc
-  const factory HomeEvent.centerImagePressedEvent() = CenterImagePressedEvent;
-
-  /// @nodoc
-  const factory HomeEvent.homePageLaunchedEvent() = HomePageLaunchedEvent;
+  const factory HomeEvent.visualPressedEvent() = VisualPressedEvent;
 }

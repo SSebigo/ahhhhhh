@@ -1,3 +1,4 @@
+import 'package:ahhhhhh/utils/getters.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
@@ -5,7 +6,6 @@ import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
 import 'package:ahhhhhh/domain/models/hive/session.dart';
 import 'package:ahhhhhh/utils/assets.dart';
 import 'package:ahhhhhh/utils/constants.dart';
-import 'package:ahhhhhh/utils/getters.dart';
 
 /// @nodoc
 @LazySingleton(as: ILocalSessionFacade)
@@ -33,10 +33,10 @@ class HiveLocalSessionFacade with Getters implements ILocalSessionFacade {
       Constants.session,
       session ??
           Session(
-            chargingTrack: tracks[0],
-            dischargingTrack: tracks[0],
-            neutralVisualUrl: Assets.yaranaikaNeutralImage,
-            pleasureVisualUrl: Assets.yaranaikaPleasureImage,
+            chargingVisualPath: Assets.yaranaikaChargingImage,
+            chargingTrack: tracks[0].toMap(),
+            dischargingVisualPath: Assets.yaranaikaDischargingImage,
+            dischargingTrack: tracks[0].toMap(),
           ),
     );
   }

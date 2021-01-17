@@ -1,37 +1,38 @@
-import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'visual_manager_bloc.freezed.dart';
-part 'visual_manager_event.dart';
-part 'visual_manager_state.dart';
+import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
+
+part 'visual_bloc.freezed.dart';
+part 'visual_event.dart';
+part 'visual_state.dart';
 
 /// @nodoc
 @injectable
-class VisualManagerBloc extends Bloc<VisualManagerEvent, VisualManagerState> {
+class VisualBloc extends Bloc<VisualEvent, VisualState> {
   /// @nodoc
-  VisualManagerBloc(
+  VisualBloc(
     this._localSessionFacade,
-  ) : super(VisualManagerState.initial());
+  ) : super(VisualState.initial());
 
   final ILocalSessionFacade _localSessionFacade;
 
   @override
-  Stream<VisualManagerState> mapEventToState(
-    VisualManagerEvent event,
+  Stream<VisualState> mapEventToState(
+    VisualEvent event,
   ) async* {
     yield* event.map(
+      chargingVisualPressedEvent: (value) async* {},
+      dischargingVisualPressedEvent: (value) async* {},
       homePageLaunchedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
 
         yield state.copyWith(
-          neutralVisualUrl: session.neutralVisualUrl,
-          pleasureVisualUrl: session.pleasureVisualUrl,
+          dischargingVisualPath: session.dischargingVisualPath,
+          chargingVisualPath: session.chargingVisualPath,
         );
       },
-      neutralVisualPressedEvent: (value) async* {},
-      pleasureVisualPressedEvent: (value) async* {},
       saveVisualPressedEvent: (value) async* {},
     );
     // if (event is NeutralFaceSelected) {

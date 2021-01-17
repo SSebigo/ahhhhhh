@@ -1,11 +1,15 @@
-import 'package:ahhhhhh/application/audio_manager/audio_manager_bloc.dart';
-import 'package:ahhhhhh/application/home/home_bloc.dart';
-import 'package:ahhhhhh/injection.dart';
-import 'package:ahhhhhh/presentation/layouts/home/home_body_layout.dart';
-import 'package:ahhhhhh/utils/themes.dart';
+import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:ahhhhhh/application/audio/audio_bloc.dart';
+import 'package:ahhhhhh/application/home/home_bloc.dart';
+import 'package:ahhhhhh/application/visual/visual_bloc.dart';
+import 'package:ahhhhhh/injection.dart';
+import 'package:ahhhhhh/presentation/layouts/home/home_body_layout.dart';
+import 'package:ahhhhhh/presentation/layouts/home/home_end_drawer.dart';
+import 'package:ahhhhhh/utils/themes.dart';
 
 /// @nodoc
 class HomePage extends StatelessWidget {
@@ -19,10 +23,17 @@ class HomePage extends StatelessWidget {
       value: Themes.wineLightTheme(),
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (_) => getIt<AudioManagerBloc>()),
+          BlocProvider(create: (_) => getIt<AudioBloc>()),
           BlocProvider(
-            create: (_) =>
-                getIt<HomeBloc>()..add(const HomeEvent.homePageLaunchedEvent()),
+            create: (_) => getIt<DeviceBatteryBloc>()
+              ..add(const DeviceBatteryEvent.homePageLaunchedEvent()),
+          ),
+          BlocProvider(
+            create: (_) => getIt<HomeBloc>(),
+          ),
+          BlocProvider(
+            create: (_) => getIt<VisualBloc>()
+              ..add(const VisualEvent.homePageLaunchedEvent()),
           ),
         ],
         child: Scaffold(
@@ -33,6 +44,7 @@ class HomePage extends StatelessWidget {
             elevation: 0.0,
           ),
           body: HomeBodyLayout(),
+          endDrawer: HomeEndDrawer(),
         ),
       ),
     );

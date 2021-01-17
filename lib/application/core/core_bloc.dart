@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:ahhhhhh/utils/hive.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -32,11 +33,13 @@ class CoreBloc extends Bloc<CoreEvent, CoreState> with Getters {
         if (session != null) {
           yield const CoreState.homeState();
         } else {
+          await deleteOldBoxes();
+
           session = Session(
-            chargingTrack: tracks[0],
-            dischargingTrack: tracks[0],
-            neutralVisualUrl: Assets.yaranaikaNeutralImage,
-            pleasureVisualUrl: Assets.yaranaikaPleasureImage,
+            chargingTrack: tracks[0].toMap(),
+            dischargingTrack: tracks[0].toMap(),
+            dischargingVisualPath: Assets.yaranaikaDischargingImage,
+            chargingVisualPath: Assets.yaranaikaChargingImage,
           );
 
           await _localSessionFacade.initializeSession(session);

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'audio_manager_bloc.dart';
+part of 'audio_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'audio_manager_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$AudioManagerEventTearOff {
-  const _$AudioManagerEventTearOff();
+class _$AudioEventTearOff {
+  const _$AudioEventTearOff();
 
 // ignore: unused_element
   BatteryStateChangedEvent batteryStateChangedEvent(BatteryState batteryState) {
@@ -51,10 +51,10 @@ class _$AudioManagerEventTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $AudioManagerEvent = _$AudioManagerEventTearOff();
+const $AudioEvent = _$AudioEventTearOff();
 
 /// @nodoc
-mixin _$AudioManagerEvent {
+mixin _$AudioEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
@@ -92,20 +92,19 @@ mixin _$AudioManagerEvent {
 }
 
 /// @nodoc
-abstract class $AudioManagerEventCopyWith<$Res> {
-  factory $AudioManagerEventCopyWith(
-          AudioManagerEvent value, $Res Function(AudioManagerEvent) then) =
-      _$AudioManagerEventCopyWithImpl<$Res>;
+abstract class $AudioEventCopyWith<$Res> {
+  factory $AudioEventCopyWith(
+          AudioEvent value, $Res Function(AudioEvent) then) =
+      _$AudioEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AudioManagerEventCopyWithImpl<$Res>
-    implements $AudioManagerEventCopyWith<$Res> {
-  _$AudioManagerEventCopyWithImpl(this._value, this._then);
+class _$AudioEventCopyWithImpl<$Res> implements $AudioEventCopyWith<$Res> {
+  _$AudioEventCopyWithImpl(this._value, this._then);
 
-  final AudioManagerEvent _value;
+  final AudioEvent _value;
   // ignore: unused_field
-  final $Res Function(AudioManagerEvent) _then;
+  final $Res Function(AudioEvent) _then;
 }
 
 /// @nodoc
@@ -118,7 +117,7 @@ abstract class $BatteryStateChangedEventCopyWith<$Res> {
 
 /// @nodoc
 class _$BatteryStateChangedEventCopyWithImpl<$Res>
-    extends _$AudioManagerEventCopyWithImpl<$Res>
+    extends _$AudioEventCopyWithImpl<$Res>
     implements $BatteryStateChangedEventCopyWith<$Res> {
   _$BatteryStateChangedEventCopyWithImpl(BatteryStateChangedEvent _value,
       $Res Function(BatteryStateChangedEvent) _then)
@@ -150,7 +149,7 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
 
   @override
   String toString() {
-    return 'AudioManagerEvent.batteryStateChangedEvent(batteryState: $batteryState)';
+    return 'AudioEvent.batteryStateChangedEvent(batteryState: $batteryState)';
   }
 
   @override
@@ -241,7 +240,7 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   }
 }
 
-abstract class BatteryStateChangedEvent implements AudioManagerEvent {
+abstract class BatteryStateChangedEvent implements AudioEvent {
   const factory BatteryStateChangedEvent(BatteryState batteryState) =
       _$BatteryStateChangedEvent;
 
@@ -260,7 +259,7 @@ abstract class $ChangeChargingTrackCopyWith<$Res> {
 
 /// @nodoc
 class _$ChangeChargingTrackCopyWithImpl<$Res>
-    extends _$AudioManagerEventCopyWithImpl<$Res>
+    extends _$AudioEventCopyWithImpl<$Res>
     implements $ChangeChargingTrackCopyWith<$Res> {
   _$ChangeChargingTrackCopyWithImpl(
       ChangeChargingTrack _value, $Res Function(ChangeChargingTrack) _then)
@@ -288,7 +287,7 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
 
   @override
   String toString() {
-    return 'AudioManagerEvent.changeChargingTrack(track: $track)';
+    return 'AudioEvent.changeChargingTrack(track: $track)';
   }
 
   @override
@@ -377,7 +376,7 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   }
 }
 
-abstract class ChangeChargingTrack implements AudioManagerEvent {
+abstract class ChangeChargingTrack implements AudioEvent {
   const factory ChangeChargingTrack(Track track) = _$ChangeChargingTrack;
 
   Track get track;
@@ -395,7 +394,7 @@ abstract class $ChangeDischargingTrackCopyWith<$Res> {
 
 /// @nodoc
 class _$ChangeDischargingTrackCopyWithImpl<$Res>
-    extends _$AudioManagerEventCopyWithImpl<$Res>
+    extends _$AudioEventCopyWithImpl<$Res>
     implements $ChangeDischargingTrackCopyWith<$Res> {
   _$ChangeDischargingTrackCopyWithImpl(ChangeDischargingTrack _value,
       $Res Function(ChangeDischargingTrack) _then)
@@ -423,7 +422,7 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
 
   @override
   String toString() {
-    return 'AudioManagerEvent.changeDischargingTrack(track: $track)';
+    return 'AudioEvent.changeDischargingTrack(track: $track)';
   }
 
   @override
@@ -513,7 +512,7 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   }
 }
 
-abstract class ChangeDischargingTrack implements AudioManagerEvent {
+abstract class ChangeDischargingTrack implements AudioEvent {
   const factory ChangeDischargingTrack(Track track) = _$ChangeDischargingTrack;
 
   Track get track;
@@ -530,8 +529,7 @@ abstract class $PlayTrackEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PlayTrackEventCopyWithImpl<$Res>
-    extends _$AudioManagerEventCopyWithImpl<$Res>
+class _$PlayTrackEventCopyWithImpl<$Res> extends _$AudioEventCopyWithImpl<$Res>
     implements $PlayTrackEventCopyWith<$Res> {
   _$PlayTrackEventCopyWithImpl(
       PlayTrackEvent _value, $Res Function(PlayTrackEvent) _then)
@@ -559,7 +557,7 @@ class _$PlayTrackEvent implements PlayTrackEvent {
 
   @override
   String toString() {
-    return 'AudioManagerEvent.playTrackEvent(track: $track)';
+    return 'AudioEvent.playTrackEvent(track: $track)';
   }
 
   @override
@@ -648,7 +646,7 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   }
 }
 
-abstract class PlayTrackEvent implements AudioManagerEvent {
+abstract class PlayTrackEvent implements AudioEvent {
   const factory PlayTrackEvent(Track track) = _$PlayTrackEvent;
 
   Track get track;
@@ -665,8 +663,7 @@ abstract class $UploadUserTrackCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadUserTrackCopyWithImpl<$Res>
-    extends _$AudioManagerEventCopyWithImpl<$Res>
+class _$UploadUserTrackCopyWithImpl<$Res> extends _$AudioEventCopyWithImpl<$Res>
     implements $UploadUserTrackCopyWith<$Res> {
   _$UploadUserTrackCopyWithImpl(
       UploadUserTrack _value, $Res Function(UploadUserTrack) _then)
@@ -694,7 +691,7 @@ class _$UploadUserTrack implements UploadUserTrack {
 
   @override
   String toString() {
-    return 'AudioManagerEvent.uploadUserTrack(track: $track)';
+    return 'AudioEvent.uploadUserTrack(track: $track)';
   }
 
   @override
@@ -783,7 +780,7 @@ class _$UploadUserTrack implements UploadUserTrack {
   }
 }
 
-abstract class UploadUserTrack implements AudioManagerEvent {
+abstract class UploadUserTrack implements AudioEvent {
   const factory UploadUserTrack(Track track) = _$UploadUserTrack;
 
   Track get track;
@@ -792,8 +789,8 @@ abstract class UploadUserTrack implements AudioManagerEvent {
 }
 
 /// @nodoc
-class _$AudioManagerStateTearOff {
-  const _$AudioManagerStateTearOff();
+class _$AudioStateTearOff {
+  const _$AudioStateTearOff();
 
 // ignore: unused_element
   _AudioPlayedState audioPlayedState() {
@@ -853,10 +850,10 @@ class _$AudioManagerStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $AudioManagerState = _$AudioManagerStateTearOff();
+const $AudioState = _$AudioStateTearOff();
 
 /// @nodoc
-mixin _$AudioManagerState {
+mixin _$AudioState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
@@ -918,20 +915,19 @@ mixin _$AudioManagerState {
 }
 
 /// @nodoc
-abstract class $AudioManagerStateCopyWith<$Res> {
-  factory $AudioManagerStateCopyWith(
-          AudioManagerState value, $Res Function(AudioManagerState) then) =
-      _$AudioManagerStateCopyWithImpl<$Res>;
+abstract class $AudioStateCopyWith<$Res> {
+  factory $AudioStateCopyWith(
+          AudioState value, $Res Function(AudioState) then) =
+      _$AudioStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AudioManagerStateCopyWithImpl<$Res>
-    implements $AudioManagerStateCopyWith<$Res> {
-  _$AudioManagerStateCopyWithImpl(this._value, this._then);
+class _$AudioStateCopyWithImpl<$Res> implements $AudioStateCopyWith<$Res> {
+  _$AudioStateCopyWithImpl(this._value, this._then);
 
-  final AudioManagerState _value;
+  final AudioState _value;
   // ignore: unused_field
-  final $Res Function(AudioManagerState) _then;
+  final $Res Function(AudioState) _then;
 }
 
 /// @nodoc
@@ -943,7 +939,7 @@ abstract class _$AudioPlayedStateCopyWith<$Res> {
 
 /// @nodoc
 class __$AudioPlayedStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$AudioPlayedStateCopyWith<$Res> {
   __$AudioPlayedStateCopyWithImpl(
       _AudioPlayedState _value, $Res Function(_AudioPlayedState) _then)
@@ -959,7 +955,7 @@ class _$_AudioPlayedState implements _AudioPlayedState {
 
   @override
   String toString() {
-    return 'AudioManagerState.audioPlayedState()';
+    return 'AudioState.audioPlayedState()';
   }
 
   @override
@@ -1075,7 +1071,7 @@ class _$_AudioPlayedState implements _AudioPlayedState {
   }
 }
 
-abstract class _AudioPlayedState implements AudioManagerState {
+abstract class _AudioPlayedState implements AudioState {
   const factory _AudioPlayedState() = _$_AudioPlayedState;
 }
 
@@ -1088,7 +1084,7 @@ abstract class _$ChangingTrackStateCopyWith<$Res> {
 
 /// @nodoc
 class __$ChangingTrackStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$ChangingTrackStateCopyWith<$Res> {
   __$ChangingTrackStateCopyWithImpl(
       _ChangingTrackState _value, $Res Function(_ChangingTrackState) _then)
@@ -1104,7 +1100,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
 
   @override
   String toString() {
-    return 'AudioManagerState.changingTrackState()';
+    return 'AudioState.changingTrackState()';
   }
 
   @override
@@ -1220,7 +1216,7 @@ class _$_ChangingTrackState implements _ChangingTrackState {
   }
 }
 
-abstract class _ChangingTrackState implements AudioManagerState {
+abstract class _ChangingTrackState implements AudioState {
   const factory _ChangingTrackState() = _$_ChangingTrackState;
 }
 
@@ -1233,7 +1229,7 @@ abstract class _$DischargingStateCopyWith<$Res> {
 
 /// @nodoc
 class __$DischargingStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$DischargingStateCopyWith<$Res> {
   __$DischargingStateCopyWithImpl(
       _DischargingState _value, $Res Function(_DischargingState) _then)
@@ -1249,7 +1245,7 @@ class _$_DischargingState implements _DischargingState {
 
   @override
   String toString() {
-    return 'AudioManagerState.dischargingState()';
+    return 'AudioState.dischargingState()';
   }
 
   @override
@@ -1365,7 +1361,7 @@ class _$_DischargingState implements _DischargingState {
   }
 }
 
-abstract class _DischargingState implements AudioManagerState {
+abstract class _DischargingState implements AudioState {
   const factory _DischargingState() = _$_DischargingState;
 }
 
@@ -1377,8 +1373,7 @@ abstract class _$InitialStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+class __$InitialStateCopyWithImpl<$Res> extends _$AudioStateCopyWithImpl<$Res>
     implements _$InitialStateCopyWith<$Res> {
   __$InitialStateCopyWithImpl(
       _InitialState _value, $Res Function(_InitialState) _then)
@@ -1394,7 +1389,7 @@ class _$_InitialState implements _InitialState {
 
   @override
   String toString() {
-    return 'AudioManagerState.initialState()';
+    return 'AudioState.initialState()';
   }
 
   @override
@@ -1510,7 +1505,7 @@ class _$_InitialState implements _InitialState {
   }
 }
 
-abstract class _InitialState implements AudioManagerState {
+abstract class _InitialState implements AudioState {
   const factory _InitialState() = _$_InitialState;
 }
 
@@ -1523,7 +1518,7 @@ abstract class _$PlayingTestTrackStateCopyWith<$Res> {
 
 /// @nodoc
 class __$PlayingTestTrackStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$PlayingTestTrackStateCopyWith<$Res> {
   __$PlayingTestTrackStateCopyWithImpl(_PlayingTestTrackState _value,
       $Res Function(_PlayingTestTrackState) _then)
@@ -1539,7 +1534,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
 
   @override
   String toString() {
-    return 'AudioManagerState.playingTestTrackState()';
+    return 'AudioState.playingTestTrackState()';
   }
 
   @override
@@ -1655,7 +1650,7 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
   }
 }
 
-abstract class _PlayingTestTrackState implements AudioManagerState {
+abstract class _PlayingTestTrackState implements AudioState {
   const factory _PlayingTestTrackState() = _$_PlayingTestTrackState;
 }
 
@@ -1668,7 +1663,7 @@ abstract class _$PlayingAudioStateCopyWith<$Res> {
 
 /// @nodoc
 class __$PlayingAudioStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$PlayingAudioStateCopyWith<$Res> {
   __$PlayingAudioStateCopyWithImpl(
       _PlayingAudioState _value, $Res Function(_PlayingAudioState) _then)
@@ -1684,7 +1679,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
 
   @override
   String toString() {
-    return 'AudioManagerState.playingAudioState()';
+    return 'AudioState.playingAudioState()';
   }
 
   @override
@@ -1800,7 +1795,7 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   }
 }
 
-abstract class _PlayingAudioState implements AudioManagerState {
+abstract class _PlayingAudioState implements AudioState {
   const factory _PlayingAudioState() = _$_PlayingAudioState;
 }
 
@@ -1813,7 +1808,7 @@ abstract class _$TestTrackPlayedStateCopyWith<$Res> {
 
 /// @nodoc
 class __$TestTrackPlayedStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$TestTrackPlayedStateCopyWith<$Res> {
   __$TestTrackPlayedStateCopyWithImpl(
       _TestTrackPlayedState _value, $Res Function(_TestTrackPlayedState) _then)
@@ -1829,7 +1824,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
 
   @override
   String toString() {
-    return 'AudioManagerState.testTrackPlayedState()';
+    return 'AudioState.testTrackPlayedState()';
   }
 
   @override
@@ -1945,7 +1940,7 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
   }
 }
 
-abstract class _TestTrackPlayedState implements AudioManagerState {
+abstract class _TestTrackPlayedState implements AudioState {
   const factory _TestTrackPlayedState() = _$_TestTrackPlayedState;
 }
 
@@ -1958,7 +1953,7 @@ abstract class _$TrackPlayedStateCopyWith<$Res> {
 
 /// @nodoc
 class __$TrackPlayedStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$TrackPlayedStateCopyWith<$Res> {
   __$TrackPlayedStateCopyWithImpl(
       _TrackPlayedState _value, $Res Function(_TrackPlayedState) _then)
@@ -1974,7 +1969,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
 
   @override
   String toString() {
-    return 'AudioManagerState.trackPlayedState()';
+    return 'AudioState.trackPlayedState()';
   }
 
   @override
@@ -2090,7 +2085,7 @@ class _$_TrackPlayedState implements _TrackPlayedState {
   }
 }
 
-abstract class _TrackPlayedState implements AudioManagerState {
+abstract class _TrackPlayedState implements AudioState {
   const factory _TrackPlayedState() = _$_TrackPlayedState;
 }
 
@@ -2103,7 +2098,7 @@ abstract class _$TrackChangedStateCopyWith<$Res> {
 
 /// @nodoc
 class __$TrackChangedStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$TrackChangedStateCopyWith<$Res> {
   __$TrackChangedStateCopyWithImpl(
       _TrackChangedState _value, $Res Function(_TrackChangedState) _then)
@@ -2119,7 +2114,7 @@ class _$_TrackChangedState implements _TrackChangedState {
 
   @override
   String toString() {
-    return 'AudioManagerState.trackChangedState()';
+    return 'AudioState.trackChangedState()';
   }
 
   @override
@@ -2235,7 +2230,7 @@ class _$_TrackChangedState implements _TrackChangedState {
   }
 }
 
-abstract class _TrackChangedState implements AudioManagerState {
+abstract class _TrackChangedState implements AudioState {
   const factory _TrackChangedState() = _$_TrackChangedState;
 }
 
@@ -2248,7 +2243,7 @@ abstract class _$UploadingUserTrackStateCopyWith<$Res> {
 
 /// @nodoc
 class __$UploadingUserTrackStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$UploadingUserTrackStateCopyWith<$Res> {
   __$UploadingUserTrackStateCopyWithImpl(_UploadingUserTrackState _value,
       $Res Function(_UploadingUserTrackState) _then)
@@ -2265,7 +2260,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
 
   @override
   String toString() {
-    return 'AudioManagerState.uploadingUserTrackState()';
+    return 'AudioState.uploadingUserTrackState()';
   }
 
   @override
@@ -2381,7 +2376,7 @@ class _$_UploadingUserTrackState implements _UploadingUserTrackState {
   }
 }
 
-abstract class _UploadingUserTrackState implements AudioManagerState {
+abstract class _UploadingUserTrackState implements AudioState {
   const factory _UploadingUserTrackState() = _$_UploadingUserTrackState;
 }
 
@@ -2394,7 +2389,7 @@ abstract class _$UserTrackUploadedStateCopyWith<$Res> {
 
 /// @nodoc
 class __$UserTrackUploadedStateCopyWithImpl<$Res>
-    extends _$AudioManagerStateCopyWithImpl<$Res>
+    extends _$AudioStateCopyWithImpl<$Res>
     implements _$UserTrackUploadedStateCopyWith<$Res> {
   __$UserTrackUploadedStateCopyWithImpl(_UserTrackUploadedState _value,
       $Res Function(_UserTrackUploadedState) _then)
@@ -2410,7 +2405,7 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
 
   @override
   String toString() {
-    return 'AudioManagerState.userTrackUploadedState()';
+    return 'AudioState.userTrackUploadedState()';
   }
 
   @override
@@ -2526,6 +2521,6 @@ class _$_UserTrackUploadedState implements _UserTrackUploadedState {
   }
 }
 
-abstract class _UserTrackUploadedState implements AudioManagerState {
+abstract class _UserTrackUploadedState implements AudioState {
   const factory _UserTrackUploadedState() = _$_UserTrackUploadedState;
 }

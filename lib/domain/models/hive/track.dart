@@ -5,13 +5,24 @@ part 'track.g.dart';
 
 /// @nodoc
 @HiveType(typeId: 1)
-class Track {
+class Track extends HiveObject {
   /// @nodoc
-  const Track({
+  Track({
     @required this.name,
     @required this.path,
     @required this.isAsset,
   });
+
+  /// @nodoc
+  factory Track.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
+    return Track(
+      name: map['name'],
+      path: map['path'],
+      isAsset: map['isAsset'],
+    );
+  }
 
   /// @nodoc
   @HiveField(0)
@@ -36,5 +47,14 @@ class Track {
       path: path ?? this.path,
       isAsset: isAsset ?? this.isAsset,
     );
+  }
+
+  /// @nodoc
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'path': path,
+      'isAsset': isAsset,
+    };
   }
 }

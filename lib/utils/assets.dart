@@ -23,12 +23,12 @@ class Assets {
   static const String uploadImage = '${Constants.assetsImages}upload.png';
 
   /// @nodoc
-  static const String yaranaikaNeutralImage =
-      '${Constants.assetsImages}yaranaika_neutral.png';
+  static const String yaranaikaDischargingImage =
+      '${Constants.assetsImages}yaranaika_discharging.png';
 
   /// @nodoc
-  static const String yaranaikaPleasureImage =
-      '${Constants.assetsImages}yaranaika_pleasure.png';
+  static const String yaranaikaChargingImage =
+      '${Constants.assetsImages}yaranaika_charging.png';
 
   // SECTION onboarding
   /// @nodoc

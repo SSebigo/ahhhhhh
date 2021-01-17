@@ -1,7 +1,5 @@
 import 'package:hive/hive.dart';
 
-import 'package:ahhhhhh/domain/models/hive/track.dart';
-
 part 'session.g.dart';
 
 /// @nodoc
@@ -9,40 +7,41 @@ part 'session.g.dart';
 class Session extends HiveObject {
   /// @nodoc
   Session({
+    this.chargingVisualPath,
     this.chargingTrack,
+    this.dischargingVisualPath,
     this.dischargingTrack,
-    this.neutralVisualUrl,
-    this.pleasureVisualUrl,
   });
 
   /// @nodoc
   @HiveField(0)
-  String neutralVisualUrl;
+  Map<String, dynamic> chargingTrack;
 
   /// @nodoc
   @HiveField(1)
-  String pleasureVisualUrl;
+  Map<String, dynamic> dischargingTrack;
 
   /// @nodoc
   @HiveField(2)
-  Track chargingTrack;
+  String chargingVisualPath;
 
   /// @nodoc
   @HiveField(3)
-  Track dischargingTrack;
+  String dischargingVisualPath;
 
   /// @nodoc
   Session copyWith({
-    String neutralVisualUrl,
-    String pleasureVisualUrl,
-    Track chargingTrack,
-    Track dischargingTrack,
+    Map<String, dynamic> chargingTrack,
+    Map<String, dynamic> dischargingTrack,
+    String chargingVisualPath,
+    String dischargingVisualPath,
   }) {
     return Session(
+      chargingVisualPath: chargingVisualPath ?? this.chargingVisualPath,
+      dischargingVisualPath:
+          dischargingVisualPath ?? this.dischargingVisualPath,
       chargingTrack: chargingTrack ?? this.chargingTrack,
       dischargingTrack: dischargingTrack ?? this.dischargingTrack,
-      neutralVisualUrl: neutralVisualUrl ?? this.neutralVisualUrl,
-      pleasureVisualUrl: pleasureVisualUrl ?? this.pleasureVisualUrl,
     );
   }
 }

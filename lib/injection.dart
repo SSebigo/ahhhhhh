@@ -8,6 +8,6 @@ GetIt getIt = GetIt.instance;
 
 /// @nodoc
 @InjectableInit()
-Future<void> configureInjection(String env) async {
-  await $initGetIt(getIt, environment: env);
+Future<void> configureInjection() async {
+  await $initGetIt(getIt);
 }

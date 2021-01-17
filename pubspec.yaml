@@ -14,7 +14,7 @@ description: Makes your phone go "ahhhhhh" when you plug it in.
 version: 2.0.0+19
 
 environment:
-  sdk: ">=2.3.0 <3.0.0"
+  sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
   flutter:

@@ -25,59 +25,55 @@ mixin Getters {
           explanation:
               // ignore: lines_longer_than_80_chars
               'When you plug/unplug your smarphone the image will change accordingly.',
-          title: 'State change',
+          title: 'Visual change',
         ),
         const OnboardingContent(
           coverURL: Assets.clickImage,
           explanation:
               // ignore: lines_longer_than_80_chars
               'Click on the image in the center of the screen to use your own.',
-          title: 'Use you own images',
+          title: 'Use your own images',
         ),
         const OnboardingContent(
           coverURL: Assets.uploadImage,
           explanation:
               // ignore: lines_longer_than_80_chars
-              'Upload your own sounds. Press a sound to preview it. Press & Hold on a sound to assign it to a state change (charging/discharging).',
-          title: 'Use you own sounds',
+              'Upload your own sounds. Press a sound to preview it. Press & Hold on a sound to assign it to a state (charging/discharging).',
+          title: 'Use your own sounds',
         ),
       ];
 
   /// @nodoc
   List<Track> get tracks => [
-        const Track(name: 'Savun', path: Assets.savunAudio, isAsset: true),
-        const Track(name: 'Terry', path: Assets.terryAudio, isAsset: true),
-        const Track(
-          name: 'Bison Yes',
-          path: Assets.bisonYesAudio,
-          isAsset: true,
-        ),
-        const Track(
+        Track(name: 'Savun', path: Assets.savunAudio, isAsset: true),
+        Track(name: 'Terry', path: Assets.terryAudio, isAsset: true),
+        Track(name: 'Bison Yes', path: Assets.bisonYesAudio, isAsset: true),
+        Track(
           name: 'It is wednesday my dudes',
           path: Assets.itsWednesdayAudio,
           isAsset: true,
         ),
-        const Track(
+        Track(
           name: 'Oh God, oh Jesus',
           path: Assets.ohGodOhJesusAudio,
           isAsset: true,
         ),
-        const Track(
+        Track(
           name: 'Yamete kudasai!',
           path: Assets.yamateV1Audio,
           isAsset: true,
         ),
-        const Track(
+        Track(
           name: 'Yamete kudasai! Moan v1',
           path: Assets.yameteMoanV1Audio,
           isAsset: true,
         ),
-        const Track(
+        Track(
           name: 'Yamete kudasai! Moan v2',
           path: Assets.yameteMoanV2Audio,
           isAsset: true,
         ),
-        const Track(
+        Track(
           name: 'Megumin Yamero!',
           path: Assets.meguminYameroAudio,
           isAsset: true,

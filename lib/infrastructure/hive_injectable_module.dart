@@ -19,10 +19,10 @@ abstract class HiveInjectableModule {
     final dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);
 
-    Hive.registerAdapter(SessionAdapter());
+    Hive.init(dirPath);
 
     // ignore: cascade_invocations
-    Hive.init(dirPath);
+    Hive.registerAdapter<Session>(SessionAdapter());
 
     return Hive.openBox<Session>(Constants.sessionsBox);
   }
@@ -35,10 +35,10 @@ abstract class HiveInjectableModule {
     final dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);
 
-    Hive.registerAdapter(TrackAdapter());
+    Hive.init(dirPath);
 
     // ignore: cascade_invocations
-    Hive.init(dirPath);
+    Hive.registerAdapter<Track>(TrackAdapter());
 
     return Hive.openBox<Track>(Constants.tracksBox);
   }

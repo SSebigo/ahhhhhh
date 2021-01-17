@@ -14,20 +14,8 @@ class _$HomeEventTearOff {
   const _$HomeEventTearOff();
 
 // ignore: unused_element
-  BatteryStateChangedEvent batteryStateChangedEvent(BatteryState state) {
-    return BatteryStateChangedEvent(
-      state,
-    );
-  }
-
-// ignore: unused_element
-  CenterImagePressedEvent centerImagePressedEvent() {
-    return const CenterImagePressedEvent();
-  }
-
-// ignore: unused_element
-  HomePageLaunchedEvent homePageLaunchedEvent() {
-    return const HomePageLaunchedEvent();
+  VisualPressedEvent visualPressedEvent() {
+    return const VisualPressedEvent();
   }
 }
 
@@ -39,28 +27,20 @@ const $HomeEvent = _$HomeEventTearOff();
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryState state),
-    @required TResult centerImagePressedEvent(),
-    @required TResult homePageLaunchedEvent(),
+    @required TResult visualPressedEvent(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryState state),
-    TResult centerImagePressedEvent(),
-    TResult homePageLaunchedEvent(),
+    TResult visualPressedEvent(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    @required TResult visualPressedEvent(VisualPressedEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    TResult visualPressedEvent(VisualPressedEvent value),
     @required TResult orElse(),
   });
 }
@@ -81,162 +61,36 @@ class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $BatteryStateChangedEventCopyWith<$Res> {
-  factory $BatteryStateChangedEventCopyWith(BatteryStateChangedEvent value,
-          $Res Function(BatteryStateChangedEvent) then) =
-      _$BatteryStateChangedEventCopyWithImpl<$Res>;
-  $Res call({BatteryState state});
+abstract class $VisualPressedEventCopyWith<$Res> {
+  factory $VisualPressedEventCopyWith(
+          VisualPressedEvent value, $Res Function(VisualPressedEvent) then) =
+      _$VisualPressedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BatteryStateChangedEventCopyWithImpl<$Res>
+class _$VisualPressedEventCopyWithImpl<$Res>
     extends _$HomeEventCopyWithImpl<$Res>
-    implements $BatteryStateChangedEventCopyWith<$Res> {
-  _$BatteryStateChangedEventCopyWithImpl(BatteryStateChangedEvent _value,
-      $Res Function(BatteryStateChangedEvent) _then)
-      : super(_value, (v) => _then(v as BatteryStateChangedEvent));
+    implements $VisualPressedEventCopyWith<$Res> {
+  _$VisualPressedEventCopyWithImpl(
+      VisualPressedEvent _value, $Res Function(VisualPressedEvent) _then)
+      : super(_value, (v) => _then(v as VisualPressedEvent));
 
   @override
-  BatteryStateChangedEvent get _value =>
-      super._value as BatteryStateChangedEvent;
-
-  @override
-  $Res call({
-    Object state = freezed,
-  }) {
-    return _then(BatteryStateChangedEvent(
-      state == freezed ? _value.state : state as BatteryState,
-    ));
-  }
+  VisualPressedEvent get _value => super._value as VisualPressedEvent;
 }
 
 /// @nodoc
-class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
-  const _$BatteryStateChangedEvent(this.state) : assert(state != null);
-
-  @override
-  final BatteryState state;
+class _$VisualPressedEvent implements VisualPressedEvent {
+  const _$VisualPressedEvent();
 
   @override
   String toString() {
-    return 'HomeEvent.batteryStateChangedEvent(state: $state)';
+    return 'HomeEvent.visualPressedEvent()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is BatteryStateChangedEvent &&
-            (identical(other.state, state) ||
-                const DeepCollectionEquality().equals(other.state, state)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(state);
-
-  @JsonKey(ignore: true)
-  @override
-  $BatteryStateChangedEventCopyWith<BatteryStateChangedEvent> get copyWith =>
-      _$BatteryStateChangedEventCopyWithImpl<BatteryStateChangedEvent>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryState state),
-    @required TResult centerImagePressedEvent(),
-    @required TResult homePageLaunchedEvent(),
-  }) {
-    assert(batteryStateChangedEvent != null);
-    assert(centerImagePressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    return batteryStateChangedEvent(state);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryState state),
-    TResult centerImagePressedEvent(),
-    TResult homePageLaunchedEvent(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (batteryStateChangedEvent != null) {
-      return batteryStateChangedEvent(state);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-  }) {
-    assert(batteryStateChangedEvent != null);
-    assert(centerImagePressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    return batteryStateChangedEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (batteryStateChangedEvent != null) {
-      return batteryStateChangedEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BatteryStateChangedEvent implements HomeEvent {
-  const factory BatteryStateChangedEvent(BatteryState state) =
-      _$BatteryStateChangedEvent;
-
-  BatteryState get state;
-  @JsonKey(ignore: true)
-  $BatteryStateChangedEventCopyWith<BatteryStateChangedEvent> get copyWith;
-}
-
-/// @nodoc
-abstract class $CenterImagePressedEventCopyWith<$Res> {
-  factory $CenterImagePressedEventCopyWith(CenterImagePressedEvent value,
-          $Res Function(CenterImagePressedEvent) then) =
-      _$CenterImagePressedEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$CenterImagePressedEventCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
-    implements $CenterImagePressedEventCopyWith<$Res> {
-  _$CenterImagePressedEventCopyWithImpl(CenterImagePressedEvent _value,
-      $Res Function(CenterImagePressedEvent) _then)
-      : super(_value, (v) => _then(v as CenterImagePressedEvent));
-
-  @override
-  CenterImagePressedEvent get _value => super._value as CenterImagePressedEvent;
-}
-
-/// @nodoc
-class _$CenterImagePressedEvent implements CenterImagePressedEvent {
-  const _$CenterImagePressedEvent();
-
-  @override
-  String toString() {
-    return 'HomeEvent.centerImagePressedEvent()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CenterImagePressedEvent);
+    return identical(this, other) || (other is VisualPressedEvent);
   }
 
   @override
@@ -245,27 +99,21 @@ class _$CenterImagePressedEvent implements CenterImagePressedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryState state),
-    @required TResult centerImagePressedEvent(),
-    @required TResult homePageLaunchedEvent(),
+    @required TResult visualPressedEvent(),
   }) {
-    assert(batteryStateChangedEvent != null);
-    assert(centerImagePressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    return centerImagePressedEvent();
+    assert(visualPressedEvent != null);
+    return visualPressedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryState state),
-    TResult centerImagePressedEvent(),
-    TResult homePageLaunchedEvent(),
+    TResult visualPressedEvent(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (centerImagePressedEvent != null) {
-      return centerImagePressedEvent();
+    if (visualPressedEvent != null) {
+      return visualPressedEvent();
     }
     return orElse();
   }
@@ -273,131 +121,28 @@ class _$CenterImagePressedEvent implements CenterImagePressedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    @required TResult visualPressedEvent(VisualPressedEvent value),
   }) {
-    assert(batteryStateChangedEvent != null);
-    assert(centerImagePressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    return centerImagePressedEvent(this);
+    assert(visualPressedEvent != null);
+    return visualPressedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    TResult visualPressedEvent(VisualPressedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (centerImagePressedEvent != null) {
-      return centerImagePressedEvent(this);
+    if (visualPressedEvent != null) {
+      return visualPressedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class CenterImagePressedEvent implements HomeEvent {
-  const factory CenterImagePressedEvent() = _$CenterImagePressedEvent;
-}
-
-/// @nodoc
-abstract class $HomePageLaunchedEventCopyWith<$Res> {
-  factory $HomePageLaunchedEventCopyWith(HomePageLaunchedEvent value,
-          $Res Function(HomePageLaunchedEvent) then) =
-      _$HomePageLaunchedEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$HomePageLaunchedEventCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
-    implements $HomePageLaunchedEventCopyWith<$Res> {
-  _$HomePageLaunchedEventCopyWithImpl(
-      HomePageLaunchedEvent _value, $Res Function(HomePageLaunchedEvent) _then)
-      : super(_value, (v) => _then(v as HomePageLaunchedEvent));
-
-  @override
-  HomePageLaunchedEvent get _value => super._value as HomePageLaunchedEvent;
-}
-
-/// @nodoc
-class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
-  const _$HomePageLaunchedEvent();
-
-  @override
-  String toString() {
-    return 'HomeEvent.homePageLaunchedEvent()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is HomePageLaunchedEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryState state),
-    @required TResult centerImagePressedEvent(),
-    @required TResult homePageLaunchedEvent(),
-  }) {
-    assert(batteryStateChangedEvent != null);
-    assert(centerImagePressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    return homePageLaunchedEvent();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryState state),
-    TResult centerImagePressedEvent(),
-    TResult homePageLaunchedEvent(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (homePageLaunchedEvent != null) {
-      return homePageLaunchedEvent();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-  }) {
-    assert(batteryStateChangedEvent != null);
-    assert(centerImagePressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    return homePageLaunchedEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult centerImagePressedEvent(CenterImagePressedEvent value),
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (homePageLaunchedEvent != null) {
-      return homePageLaunchedEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HomePageLaunchedEvent implements HomeEvent {
-  const factory HomePageLaunchedEvent() = _$HomePageLaunchedEvent;
+abstract class VisualPressedEvent implements HomeEvent {
+  const factory VisualPressedEvent() = _$VisualPressedEvent;
 }
 
 /// @nodoc
@@ -405,26 +150,23 @@ class _$HomeStateTearOff {
   const _$HomeStateTearOff();
 
 // ignore: unused_element
-  _BatteryStateChangedState batteryStateChangedState(
-      BatteryState batteryState) {
-    return _BatteryStateChangedState(
-      batteryState,
-    );
+  _IdleState idleState() {
+    return const _IdleState();
   }
 
 // ignore: unused_element
-  _InitialState initialState() {
-    return const _InitialState();
+  _MovingToIdleState movingToIdleState() {
+    return const _MovingToIdleState();
   }
 
 // ignore: unused_element
-  _NeutralFaceState neutralFaceState() {
-    return const _NeutralFaceState();
+  _MovingToUpdateVisualState movingToUploadVisualState() {
+    return const _MovingToUpdateVisualState();
   }
 
 // ignore: unused_element
-  _PleasureFaceState pleasureFaceState() {
-    return const _PleasureFaceState();
+  _UploadVisualState uploadVisualState() {
+    return const _UploadVisualState();
   }
 }
 
@@ -436,32 +178,33 @@ const $HomeState = _$HomeStateTearOff();
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedState(BatteryState batteryState),
-    @required TResult initialState(),
-    @required TResult neutralFaceState(),
-    @required TResult pleasureFaceState(),
+    @required TResult idleState(),
+    @required TResult movingToIdleState(),
+    @required TResult movingToUploadVisualState(),
+    @required TResult uploadVisualState(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedState(BatteryState batteryState),
-    TResult initialState(),
-    TResult neutralFaceState(),
-    TResult pleasureFaceState(),
+    TResult idleState(),
+    TResult movingToIdleState(),
+    TResult movingToUploadVisualState(),
+    TResult uploadVisualState(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedState(_BatteryStateChangedState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult neutralFaceState(_NeutralFaceState value),
-    @required TResult pleasureFaceState(_PleasureFaceState value),
+    @required TResult idleState(_IdleState value),
+    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required
+        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    @required TResult uploadVisualState(_UploadVisualState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedState(_BatteryStateChangedState value),
-    TResult initialState(_InitialState value),
-    TResult neutralFaceState(_NeutralFaceState value),
-    TResult pleasureFaceState(_PleasureFaceState value),
+    TResult idleState(_IdleState value),
+    TResult movingToIdleState(_MovingToIdleState value),
+    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    TResult uploadVisualState(_UploadVisualState value),
     @required TResult orElse(),
   });
 }
@@ -482,171 +225,34 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$BatteryStateChangedStateCopyWith<$Res> {
-  factory _$BatteryStateChangedStateCopyWith(_BatteryStateChangedState value,
-          $Res Function(_BatteryStateChangedState) then) =
-      __$BatteryStateChangedStateCopyWithImpl<$Res>;
-  $Res call({BatteryState batteryState});
+abstract class _$IdleStateCopyWith<$Res> {
+  factory _$IdleStateCopyWith(
+          _IdleState value, $Res Function(_IdleState) then) =
+      __$IdleStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BatteryStateChangedStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res>
-    implements _$BatteryStateChangedStateCopyWith<$Res> {
-  __$BatteryStateChangedStateCopyWithImpl(_BatteryStateChangedState _value,
-      $Res Function(_BatteryStateChangedState) _then)
-      : super(_value, (v) => _then(v as _BatteryStateChangedState));
+class __$IdleStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+    implements _$IdleStateCopyWith<$Res> {
+  __$IdleStateCopyWithImpl(_IdleState _value, $Res Function(_IdleState) _then)
+      : super(_value, (v) => _then(v as _IdleState));
 
   @override
-  _BatteryStateChangedState get _value =>
-      super._value as _BatteryStateChangedState;
-
-  @override
-  $Res call({
-    Object batteryState = freezed,
-  }) {
-    return _then(_BatteryStateChangedState(
-      batteryState == freezed
-          ? _value.batteryState
-          : batteryState as BatteryState,
-    ));
-  }
+  _IdleState get _value => super._value as _IdleState;
 }
 
 /// @nodoc
-class _$_BatteryStateChangedState implements _BatteryStateChangedState {
-  const _$_BatteryStateChangedState(this.batteryState)
-      : assert(batteryState != null);
-
-  @override
-  final BatteryState batteryState;
+class _$_IdleState implements _IdleState {
+  const _$_IdleState();
 
   @override
   String toString() {
-    return 'HomeState.batteryStateChangedState(batteryState: $batteryState)';
+    return 'HomeState.idleState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _BatteryStateChangedState &&
-            (identical(other.batteryState, batteryState) ||
-                const DeepCollectionEquality()
-                    .equals(other.batteryState, batteryState)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(batteryState);
-
-  @JsonKey(ignore: true)
-  @override
-  _$BatteryStateChangedStateCopyWith<_BatteryStateChangedState> get copyWith =>
-      __$BatteryStateChangedStateCopyWithImpl<_BatteryStateChangedState>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedState(BatteryState batteryState),
-    @required TResult initialState(),
-    @required TResult neutralFaceState(),
-    @required TResult pleasureFaceState(),
-  }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return batteryStateChangedState(batteryState);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedState(BatteryState batteryState),
-    TResult initialState(),
-    TResult neutralFaceState(),
-    TResult pleasureFaceState(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (batteryStateChangedState != null) {
-      return batteryStateChangedState(batteryState);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedState(_BatteryStateChangedState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult neutralFaceState(_NeutralFaceState value),
-    @required TResult pleasureFaceState(_PleasureFaceState value),
-  }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return batteryStateChangedState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedState(_BatteryStateChangedState value),
-    TResult initialState(_InitialState value),
-    TResult neutralFaceState(_NeutralFaceState value),
-    TResult pleasureFaceState(_PleasureFaceState value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (batteryStateChangedState != null) {
-      return batteryStateChangedState(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BatteryStateChangedState implements HomeState {
-  const factory _BatteryStateChangedState(BatteryState batteryState) =
-      _$_BatteryStateChangedState;
-
-  BatteryState get batteryState;
-  @JsonKey(ignore: true)
-  _$BatteryStateChangedStateCopyWith<_BatteryStateChangedState> get copyWith;
-}
-
-/// @nodoc
-abstract class _$InitialStateCopyWith<$Res> {
-  factory _$InitialStateCopyWith(
-          _InitialState value, $Res Function(_InitialState) then) =
-      __$InitialStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
-    implements _$InitialStateCopyWith<$Res> {
-  __$InitialStateCopyWithImpl(
-      _InitialState _value, $Res Function(_InitialState) _then)
-      : super(_value, (v) => _then(v as _InitialState));
-
-  @override
-  _InitialState get _value => super._value as _InitialState;
-}
-
-/// @nodoc
-class _$_InitialState implements _InitialState {
-  const _$_InitialState();
-
-  @override
-  String toString() {
-    return 'HomeState.initialState()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitialState);
+    return identical(this, other) || (other is _IdleState);
   }
 
   @override
@@ -655,30 +261,30 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedState(BatteryState batteryState),
-    @required TResult initialState(),
-    @required TResult neutralFaceState(),
-    @required TResult pleasureFaceState(),
+    @required TResult idleState(),
+    @required TResult movingToIdleState(),
+    @required TResult movingToUploadVisualState(),
+    @required TResult uploadVisualState(),
   }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return initialState();
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return idleState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedState(BatteryState batteryState),
-    TResult initialState(),
-    TResult neutralFaceState(),
-    TResult pleasureFaceState(),
+    TResult idleState(),
+    TResult movingToIdleState(),
+    TResult movingToUploadVisualState(),
+    TResult uploadVisualState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (initialState != null) {
-      return initialState();
+    if (idleState != null) {
+      return idleState();
     }
     return orElse();
   }
@@ -686,70 +292,71 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedState(_BatteryStateChangedState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult neutralFaceState(_NeutralFaceState value),
-    @required TResult pleasureFaceState(_PleasureFaceState value),
+    @required TResult idleState(_IdleState value),
+    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required
+        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    @required TResult uploadVisualState(_UploadVisualState value),
   }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return initialState(this);
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return idleState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedState(_BatteryStateChangedState value),
-    TResult initialState(_InitialState value),
-    TResult neutralFaceState(_NeutralFaceState value),
-    TResult pleasureFaceState(_PleasureFaceState value),
+    TResult idleState(_IdleState value),
+    TResult movingToIdleState(_MovingToIdleState value),
+    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    TResult uploadVisualState(_UploadVisualState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (initialState != null) {
-      return initialState(this);
+    if (idleState != null) {
+      return idleState(this);
     }
     return orElse();
   }
 }
 
-abstract class _InitialState implements HomeState {
-  const factory _InitialState() = _$_InitialState;
+abstract class _IdleState implements HomeState {
+  const factory _IdleState() = _$_IdleState;
 }
 
 /// @nodoc
-abstract class _$NeutralFaceStateCopyWith<$Res> {
-  factory _$NeutralFaceStateCopyWith(
-          _NeutralFaceState value, $Res Function(_NeutralFaceState) then) =
-      __$NeutralFaceStateCopyWithImpl<$Res>;
+abstract class _$MovingToIdleStateCopyWith<$Res> {
+  factory _$MovingToIdleStateCopyWith(
+          _MovingToIdleState value, $Res Function(_MovingToIdleState) then) =
+      __$MovingToIdleStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NeutralFaceStateCopyWithImpl<$Res>
+class __$MovingToIdleStateCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res>
-    implements _$NeutralFaceStateCopyWith<$Res> {
-  __$NeutralFaceStateCopyWithImpl(
-      _NeutralFaceState _value, $Res Function(_NeutralFaceState) _then)
-      : super(_value, (v) => _then(v as _NeutralFaceState));
+    implements _$MovingToIdleStateCopyWith<$Res> {
+  __$MovingToIdleStateCopyWithImpl(
+      _MovingToIdleState _value, $Res Function(_MovingToIdleState) _then)
+      : super(_value, (v) => _then(v as _MovingToIdleState));
 
   @override
-  _NeutralFaceState get _value => super._value as _NeutralFaceState;
+  _MovingToIdleState get _value => super._value as _MovingToIdleState;
 }
 
 /// @nodoc
-class _$_NeutralFaceState implements _NeutralFaceState {
-  const _$_NeutralFaceState();
+class _$_MovingToIdleState implements _MovingToIdleState {
+  const _$_MovingToIdleState();
 
   @override
   String toString() {
-    return 'HomeState.neutralFaceState()';
+    return 'HomeState.movingToIdleState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NeutralFaceState);
+    return identical(this, other) || (other is _MovingToIdleState);
   }
 
   @override
@@ -758,30 +365,30 @@ class _$_NeutralFaceState implements _NeutralFaceState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedState(BatteryState batteryState),
-    @required TResult initialState(),
-    @required TResult neutralFaceState(),
-    @required TResult pleasureFaceState(),
+    @required TResult idleState(),
+    @required TResult movingToIdleState(),
+    @required TResult movingToUploadVisualState(),
+    @required TResult uploadVisualState(),
   }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return neutralFaceState();
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return movingToIdleState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedState(BatteryState batteryState),
-    TResult initialState(),
-    TResult neutralFaceState(),
-    TResult pleasureFaceState(),
+    TResult idleState(),
+    TResult movingToIdleState(),
+    TResult movingToUploadVisualState(),
+    TResult uploadVisualState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (neutralFaceState != null) {
-      return neutralFaceState();
+    if (movingToIdleState != null) {
+      return movingToIdleState();
     }
     return orElse();
   }
@@ -789,70 +396,72 @@ class _$_NeutralFaceState implements _NeutralFaceState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedState(_BatteryStateChangedState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult neutralFaceState(_NeutralFaceState value),
-    @required TResult pleasureFaceState(_PleasureFaceState value),
+    @required TResult idleState(_IdleState value),
+    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required
+        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    @required TResult uploadVisualState(_UploadVisualState value),
   }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return neutralFaceState(this);
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return movingToIdleState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedState(_BatteryStateChangedState value),
-    TResult initialState(_InitialState value),
-    TResult neutralFaceState(_NeutralFaceState value),
-    TResult pleasureFaceState(_PleasureFaceState value),
+    TResult idleState(_IdleState value),
+    TResult movingToIdleState(_MovingToIdleState value),
+    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    TResult uploadVisualState(_UploadVisualState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (neutralFaceState != null) {
-      return neutralFaceState(this);
+    if (movingToIdleState != null) {
+      return movingToIdleState(this);
     }
     return orElse();
   }
 }
 
-abstract class _NeutralFaceState implements HomeState {
-  const factory _NeutralFaceState() = _$_NeutralFaceState;
+abstract class _MovingToIdleState implements HomeState {
+  const factory _MovingToIdleState() = _$_MovingToIdleState;
 }
 
 /// @nodoc
-abstract class _$PleasureFaceStateCopyWith<$Res> {
-  factory _$PleasureFaceStateCopyWith(
-          _PleasureFaceState value, $Res Function(_PleasureFaceState) then) =
-      __$PleasureFaceStateCopyWithImpl<$Res>;
+abstract class _$MovingToUpdateVisualStateCopyWith<$Res> {
+  factory _$MovingToUpdateVisualStateCopyWith(_MovingToUpdateVisualState value,
+          $Res Function(_MovingToUpdateVisualState) then) =
+      __$MovingToUpdateVisualStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$PleasureFaceStateCopyWithImpl<$Res>
+class __$MovingToUpdateVisualStateCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res>
-    implements _$PleasureFaceStateCopyWith<$Res> {
-  __$PleasureFaceStateCopyWithImpl(
-      _PleasureFaceState _value, $Res Function(_PleasureFaceState) _then)
-      : super(_value, (v) => _then(v as _PleasureFaceState));
+    implements _$MovingToUpdateVisualStateCopyWith<$Res> {
+  __$MovingToUpdateVisualStateCopyWithImpl(_MovingToUpdateVisualState _value,
+      $Res Function(_MovingToUpdateVisualState) _then)
+      : super(_value, (v) => _then(v as _MovingToUpdateVisualState));
 
   @override
-  _PleasureFaceState get _value => super._value as _PleasureFaceState;
+  _MovingToUpdateVisualState get _value =>
+      super._value as _MovingToUpdateVisualState;
 }
 
 /// @nodoc
-class _$_PleasureFaceState implements _PleasureFaceState {
-  const _$_PleasureFaceState();
+class _$_MovingToUpdateVisualState implements _MovingToUpdateVisualState {
+  const _$_MovingToUpdateVisualState();
 
   @override
   String toString() {
-    return 'HomeState.pleasureFaceState()';
+    return 'HomeState.movingToUploadVisualState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PleasureFaceState);
+    return identical(this, other) || (other is _MovingToUpdateVisualState);
   }
 
   @override
@@ -861,30 +470,30 @@ class _$_PleasureFaceState implements _PleasureFaceState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult batteryStateChangedState(BatteryState batteryState),
-    @required TResult initialState(),
-    @required TResult neutralFaceState(),
-    @required TResult pleasureFaceState(),
+    @required TResult idleState(),
+    @required TResult movingToIdleState(),
+    @required TResult movingToUploadVisualState(),
+    @required TResult uploadVisualState(),
   }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return pleasureFaceState();
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return movingToUploadVisualState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult batteryStateChangedState(BatteryState batteryState),
-    TResult initialState(),
-    TResult neutralFaceState(),
-    TResult pleasureFaceState(),
+    TResult idleState(),
+    TResult movingToIdleState(),
+    TResult movingToUploadVisualState(),
+    TResult uploadVisualState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (pleasureFaceState != null) {
-      return pleasureFaceState();
+    if (movingToUploadVisualState != null) {
+      return movingToUploadVisualState();
     }
     return orElse();
   }
@@ -892,35 +501,140 @@ class _$_PleasureFaceState implements _PleasureFaceState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult batteryStateChangedState(_BatteryStateChangedState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult neutralFaceState(_NeutralFaceState value),
-    @required TResult pleasureFaceState(_PleasureFaceState value),
+    @required TResult idleState(_IdleState value),
+    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required
+        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    @required TResult uploadVisualState(_UploadVisualState value),
   }) {
-    assert(batteryStateChangedState != null);
-    assert(initialState != null);
-    assert(neutralFaceState != null);
-    assert(pleasureFaceState != null);
-    return pleasureFaceState(this);
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return movingToUploadVisualState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult batteryStateChangedState(_BatteryStateChangedState value),
-    TResult initialState(_InitialState value),
-    TResult neutralFaceState(_NeutralFaceState value),
-    TResult pleasureFaceState(_PleasureFaceState value),
+    TResult idleState(_IdleState value),
+    TResult movingToIdleState(_MovingToIdleState value),
+    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    TResult uploadVisualState(_UploadVisualState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (pleasureFaceState != null) {
-      return pleasureFaceState(this);
+    if (movingToUploadVisualState != null) {
+      return movingToUploadVisualState(this);
     }
     return orElse();
   }
 }
 
-abstract class _PleasureFaceState implements HomeState {
-  const factory _PleasureFaceState() = _$_PleasureFaceState;
+abstract class _MovingToUpdateVisualState implements HomeState {
+  const factory _MovingToUpdateVisualState() = _$_MovingToUpdateVisualState;
+}
+
+/// @nodoc
+abstract class _$UploadVisualStateCopyWith<$Res> {
+  factory _$UploadVisualStateCopyWith(
+          _UploadVisualState value, $Res Function(_UploadVisualState) then) =
+      __$UploadVisualStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UploadVisualStateCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res>
+    implements _$UploadVisualStateCopyWith<$Res> {
+  __$UploadVisualStateCopyWithImpl(
+      _UploadVisualState _value, $Res Function(_UploadVisualState) _then)
+      : super(_value, (v) => _then(v as _UploadVisualState));
+
+  @override
+  _UploadVisualState get _value => super._value as _UploadVisualState;
+}
+
+/// @nodoc
+class _$_UploadVisualState implements _UploadVisualState {
+  const _$_UploadVisualState();
+
+  @override
+  String toString() {
+    return 'HomeState.uploadVisualState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _UploadVisualState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult idleState(),
+    @required TResult movingToIdleState(),
+    @required TResult movingToUploadVisualState(),
+    @required TResult uploadVisualState(),
+  }) {
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return uploadVisualState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult idleState(),
+    TResult movingToIdleState(),
+    TResult movingToUploadVisualState(),
+    TResult uploadVisualState(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (uploadVisualState != null) {
+      return uploadVisualState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult idleState(_IdleState value),
+    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required
+        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    @required TResult uploadVisualState(_UploadVisualState value),
+  }) {
+    assert(idleState != null);
+    assert(movingToIdleState != null);
+    assert(movingToUploadVisualState != null);
+    assert(uploadVisualState != null);
+    return uploadVisualState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult idleState(_IdleState value),
+    TResult movingToIdleState(_MovingToIdleState value),
+    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
+    TResult uploadVisualState(_UploadVisualState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (uploadVisualState != null) {
+      return uploadVisualState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UploadVisualState implements HomeState {
+  const factory _UploadVisualState() = _$_UploadVisualState;
 }
