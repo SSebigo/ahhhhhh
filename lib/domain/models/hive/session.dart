@@ -7,6 +7,7 @@ part 'session.g.dart';
 class Session extends HiveObject {
   /// @nodoc
   Session({
+    this.batteryFullTrack,
     this.chargingVisualPath,
     this.chargingTrack,
     this.dischargingVisualPath,
@@ -15,28 +16,34 @@ class Session extends HiveObject {
 
   /// @nodoc
   @HiveField(0)
-  Map<String, dynamic> chargingTrack;
+  Map<String, dynamic> batteryFullTrack;
 
   /// @nodoc
   @HiveField(1)
-  Map<String, dynamic> dischargingTrack;
+  Map<String, dynamic> chargingTrack;
 
   /// @nodoc
   @HiveField(2)
-  String chargingVisualPath;
+  Map<String, dynamic> dischargingTrack;
 
   /// @nodoc
   @HiveField(3)
+  String chargingVisualPath;
+
+  /// @nodoc
+  @HiveField(4)
   String dischargingVisualPath;
 
   /// @nodoc
   Session copyWith({
+    Map<String, dynamic> batteryFullTrack,
     Map<String, dynamic> chargingTrack,
     Map<String, dynamic> dischargingTrack,
     String chargingVisualPath,
     String dischargingVisualPath,
   }) {
     return Session(
+      batteryFullTrack: batteryFullTrack ?? this.batteryFullTrack,
       chargingVisualPath: chargingVisualPath ?? this.chargingVisualPath,
       dischargingVisualPath:
           dischargingVisualPath ?? this.dischargingVisualPath,

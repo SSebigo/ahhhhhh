@@ -41,19 +41,27 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       batteryStateChangedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
 
-        if (value.batteryState == BatteryState.discharging) {
-          yield const AudioState.playingAudioState();
+        yield const AudioState.playingAudioState();
 
+        if (value.batteryState == BatteryState.full) {
+          await _playAudioTrack(track: Track.fromMap(session.batteryFullTrack));
+        } else if (value.batteryState == BatteryState.discharging) {
           await _playAudioTrack(track: Track.fromMap(session.dischargingTrack));
-
-          yield const AudioState.audioPlayedState();
         } else {
-          yield const AudioState.playingAudioState();
-
           await _playAudioTrack(track: Track.fromMap(session.chargingTrack));
-
-          yield const AudioState.audioPlayedState();
         }
+
+        yield const AudioState.audioPlayedState();
+      },
+      changeBatteryFullTrack: (value) async* {
+        yield const AudioState.changingTrackState();
+
+        final session = _localSessionFacade.fetchSession()
+          ..batteryFullTrack = value.track.toMap();
+
+        await _localSessionFacade.updateSession(session);
+
+        yield const AudioState.trackChangedState();
       },
       changeChargingTrack: (value) async* {
         yield const AudioState.changingTrackState();

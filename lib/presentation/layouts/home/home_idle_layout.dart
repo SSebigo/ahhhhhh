@@ -12,8 +12,6 @@ import 'package:ahhhhhh/utils/extensions.dart';
 class HomeIdleLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context).size;
-
     return Center(
       child: BlocBuilder<DeviceBatteryBloc, DeviceBatteryState>(
         builder: (context, deviceBatteryState) {

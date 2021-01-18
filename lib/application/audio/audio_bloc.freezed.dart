@@ -21,6 +21,13 @@ class _$AudioEventTearOff {
   }
 
 // ignore: unused_element
+  ChangeBatteryFullTrack changeBatteryFullTrack(Track track) {
+    return ChangeBatteryFullTrack(
+      track,
+    );
+  }
+
+// ignore: unused_element
   ChangeChargingTrack changeChargingTrack(Track track) {
     return ChangeChargingTrack(
       track,
@@ -58,6 +65,7 @@ mixin _$AudioEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeBatteryFullTrack(Track track),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
@@ -66,6 +74,7 @@ mixin _$AudioEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeBatteryFullTrack(Track track),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
@@ -75,6 +84,7 @@ mixin _$AudioEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
@@ -83,6 +93,7 @@ mixin _$AudioEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
@@ -175,12 +186,14 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeBatteryFullTrack(Track track),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
     @required TResult uploadUserTrack(Track track),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -192,6 +205,7 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeBatteryFullTrack(Track track),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
@@ -209,12 +223,14 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -226,6 +242,7 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
@@ -247,6 +264,148 @@ abstract class BatteryStateChangedEvent implements AudioEvent {
   BatteryState get batteryState;
   @JsonKey(ignore: true)
   $BatteryStateChangedEventCopyWith<BatteryStateChangedEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class $ChangeBatteryFullTrackCopyWith<$Res> {
+  factory $ChangeBatteryFullTrackCopyWith(ChangeBatteryFullTrack value,
+          $Res Function(ChangeBatteryFullTrack) then) =
+      _$ChangeBatteryFullTrackCopyWithImpl<$Res>;
+  $Res call({Track track});
+}
+
+/// @nodoc
+class _$ChangeBatteryFullTrackCopyWithImpl<$Res>
+    extends _$AudioEventCopyWithImpl<$Res>
+    implements $ChangeBatteryFullTrackCopyWith<$Res> {
+  _$ChangeBatteryFullTrackCopyWithImpl(ChangeBatteryFullTrack _value,
+      $Res Function(ChangeBatteryFullTrack) _then)
+      : super(_value, (v) => _then(v as ChangeBatteryFullTrack));
+
+  @override
+  ChangeBatteryFullTrack get _value => super._value as ChangeBatteryFullTrack;
+
+  @override
+  $Res call({
+    Object track = freezed,
+  }) {
+    return _then(ChangeBatteryFullTrack(
+      track == freezed ? _value.track : track as Track,
+    ));
+  }
+}
+
+/// @nodoc
+class _$ChangeBatteryFullTrack implements ChangeBatteryFullTrack {
+  const _$ChangeBatteryFullTrack(this.track) : assert(track != null);
+
+  @override
+  final Track track;
+
+  @override
+  String toString() {
+    return 'AudioEvent.changeBatteryFullTrack(track: $track)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ChangeBatteryFullTrack &&
+            (identical(other.track, track) ||
+                const DeepCollectionEquality().equals(other.track, track)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(track);
+
+  @JsonKey(ignore: true)
+  @override
+  $ChangeBatteryFullTrackCopyWith<ChangeBatteryFullTrack> get copyWith =>
+      _$ChangeBatteryFullTrackCopyWithImpl<ChangeBatteryFullTrack>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeBatteryFullTrack(Track track),
+    @required TResult changeChargingTrack(Track track),
+    @required TResult changeDischargingTrack(Track track),
+    @required TResult playTrackEvent(Track track),
+    @required TResult uploadUserTrack(Track track),
+  }) {
+    assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
+    assert(changeChargingTrack != null);
+    assert(changeDischargingTrack != null);
+    assert(playTrackEvent != null);
+    assert(uploadUserTrack != null);
+    return changeBatteryFullTrack(track);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeBatteryFullTrack(Track track),
+    TResult changeChargingTrack(Track track),
+    TResult changeDischargingTrack(Track track),
+    TResult playTrackEvent(Track track),
+    TResult uploadUserTrack(Track track),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeBatteryFullTrack != null) {
+      return changeBatteryFullTrack(track);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
+    @required TResult changeChargingTrack(ChangeChargingTrack value),
+    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
+    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult uploadUserTrack(UploadUserTrack value),
+  }) {
+    assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
+    assert(changeChargingTrack != null);
+    assert(changeDischargingTrack != null);
+    assert(playTrackEvent != null);
+    assert(uploadUserTrack != null);
+    return changeBatteryFullTrack(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
+    TResult changeChargingTrack(ChangeChargingTrack value),
+    TResult changeDischargingTrack(ChangeDischargingTrack value),
+    TResult playTrackEvent(PlayTrackEvent value),
+    TResult uploadUserTrack(UploadUserTrack value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeBatteryFullTrack != null) {
+      return changeBatteryFullTrack(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeBatteryFullTrack implements AudioEvent {
+  const factory ChangeBatteryFullTrack(Track track) = _$ChangeBatteryFullTrack;
+
+  Track get track;
+  @JsonKey(ignore: true)
+  $ChangeBatteryFullTrackCopyWith<ChangeBatteryFullTrack> get copyWith;
 }
 
 /// @nodoc
@@ -311,12 +470,14 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeBatteryFullTrack(Track track),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
     @required TResult uploadUserTrack(Track track),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -328,6 +489,7 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeBatteryFullTrack(Track track),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
@@ -345,12 +507,14 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -362,6 +526,7 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
@@ -447,12 +612,14 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeBatteryFullTrack(Track track),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
     @required TResult uploadUserTrack(Track track),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -464,6 +631,7 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeBatteryFullTrack(Track track),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
@@ -481,12 +649,14 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -498,6 +668,7 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
@@ -581,12 +752,14 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeBatteryFullTrack(Track track),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
     @required TResult uploadUserTrack(Track track),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -598,6 +771,7 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeBatteryFullTrack(Track track),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
@@ -615,12 +789,14 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -632,6 +808,7 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),
@@ -715,12 +892,14 @@ class _$UploadUserTrack implements UploadUserTrack {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
+    @required TResult changeBatteryFullTrack(Track track),
     @required TResult changeChargingTrack(Track track),
     @required TResult changeDischargingTrack(Track track),
     @required TResult playTrackEvent(Track track),
     @required TResult uploadUserTrack(Track track),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -732,6 +911,7 @@ class _$UploadUserTrack implements UploadUserTrack {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
+    TResult changeBatteryFullTrack(Track track),
     TResult changeChargingTrack(Track track),
     TResult changeDischargingTrack(Track track),
     TResult playTrackEvent(Track track),
@@ -749,12 +929,14 @@ class _$UploadUserTrack implements UploadUserTrack {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     @required TResult changeChargingTrack(ChangeChargingTrack value),
     @required TResult changeDischargingTrack(ChangeDischargingTrack value),
     @required TResult playTrackEvent(PlayTrackEvent value),
     @required TResult uploadUserTrack(UploadUserTrack value),
   }) {
     assert(batteryStateChangedEvent != null);
+    assert(changeBatteryFullTrack != null);
     assert(changeChargingTrack != null);
     assert(changeDischargingTrack != null);
     assert(playTrackEvent != null);
@@ -766,6 +948,7 @@ class _$UploadUserTrack implements UploadUserTrack {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
+    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
     TResult changeChargingTrack(ChangeChargingTrack value),
     TResult changeDischargingTrack(ChangeDischargingTrack value),
     TResult playTrackEvent(PlayTrackEvent value),

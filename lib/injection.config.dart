@@ -11,6 +11,7 @@ import 'package:injectable/injectable.dart';
 import 'application/audio/audio_bloc.dart';
 import 'application/core/core_bloc.dart';
 import 'application/device_battery/device_battery_bloc.dart';
+import 'application/drawer/drawer_bloc.dart';
 import 'infrastructure/hive_injectable_module.dart';
 import 'infrastructure/hive_local_session_facade.dart';
 import 'infrastructure/hive_local_track_facade.dart';
@@ -45,6 +46,8 @@ Future<GetIt> $initGetIt(
   gh.factory<AudioBloc>(
       () => AudioBloc(get<ILocalSessionFacade>(), get<ILocalTrackFacade>()));
   gh.factory<CoreBloc>(() => CoreBloc(get<ILocalSessionFacade>()));
+  gh.factory<DrawerBloc>(
+      () => DrawerBloc(get<ILocalSessionFacade>(), get<ILocalTrackFacade>()));
   return get;
 }
 
