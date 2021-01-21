@@ -1,4 +1,5 @@
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
+import 'package:ahhhhhh/utils/palettes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ahhhhhh/domain/models/hive/track.dart';
@@ -73,7 +74,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                 Container(
                   color:
                       selectedTrack.name == drawerState.batteryFullTrack['name']
-                          ? const Color(0xFFFACE8A)
+                          ? Palettes.orangeYellow
                           : Colors.transparent,
                   child: ListTile(
                     title: const Text(
@@ -96,7 +97,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                 ),
                 Container(
                   color: selectedTrack.name == drawerState.chargingTrack['name']
-                      ? const Color(0xFFFACE8A)
+                      ? Palettes.orangeYellow
                       : Colors.transparent,
                   child: ListTile(
                     title: const Text(
@@ -120,7 +121,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                 Container(
                   color:
                       selectedTrack.name == drawerState.dischargingTrack['name']
-                          ? const Color(0xFFFACE8A)
+                          ? Palettes.orangeYellow
                           : Colors.transparent,
                   child: ListTile(
                     title: const Text(

@@ -15,9 +15,9 @@ class ChangelogPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('CHANGELOGS'),
-          backgroundColor: Colors.transparent,
-          brightness: Brightness.light,
-          iconTheme: const IconThemeData(color: Colors.black),
+          backgroundColor: Colors.black,
+          brightness: Brightness.dark,
+          iconTheme: const IconThemeData(color: Colors.white),
           elevation: 0.0,
         ),
         body: SafeArea(

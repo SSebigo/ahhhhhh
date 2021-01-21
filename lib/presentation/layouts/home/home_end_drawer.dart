@@ -6,6 +6,7 @@ import 'package:ahhhhhh/presentation/widgets/home/home_drawer_section_tile.dart'
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_separator.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_tile.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_track_selection_dialog.dart';
+import 'package:ahhhhhh/utils/functions.dart';
 import 'package:ahhhhhh/utils/getters.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +27,14 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                 title: 'CHANGELOGS',
               ),
               HomeDrawerTile(
+                icon: Icons.chevron_right,
+                onTap: () => ExtendedNavigator.root.push(Routes.aboutPage),
+                title: 'ABOUT',
+              ),
+              HomeDrawerTile(
                 icon: Icons.file_upload,
-                onTap: () => ExtendedNavigator.root.push(Routes.changelogPage),
+                onTap: () =>
+                    ExtendedNavigator.root.push(Routes.uploadTrackPage),
                 title: 'Upload a sound',
               ),
               HomeDrawerSeparator(),
@@ -150,7 +157,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                 ),
               ),
               HomeDrawerSeparator(),
-              const SizedBox(height: 55),
+              SizedBox(height: getSmartBannerHeight(context)),
             ],
           );
         },

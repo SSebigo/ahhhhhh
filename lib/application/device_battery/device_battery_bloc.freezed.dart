@@ -297,6 +297,11 @@ class _$DeviceBatteryStateTearOff {
   }
 
 // ignore: unused_element
+  _ChangingBatteryState changingBatteryState() {
+    return const _ChangingBatteryState();
+  }
+
+// ignore: unused_element
   _InitialState initialState() {
     return const _InitialState();
   }
@@ -311,22 +316,26 @@ mixin _$DeviceBatteryState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedState(BatteryState batteryState),
+    @required TResult changingBatteryState(),
     @required TResult initialState(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedState(BatteryState batteryState),
+    TResult changingBatteryState(),
     TResult initialState(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedState(_BatteryStateChangedState value),
+    @required TResult changingBatteryState(_ChangingBatteryState value),
     @required TResult initialState(_InitialState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedState(_BatteryStateChangedState value),
+    TResult changingBatteryState(_ChangingBatteryState value),
     TResult initialState(_InitialState value),
     @required TResult orElse(),
   });
@@ -417,9 +426,11 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedState(BatteryState batteryState),
+    @required TResult changingBatteryState(),
     @required TResult initialState(),
   }) {
     assert(batteryStateChangedState != null);
+    assert(changingBatteryState != null);
     assert(initialState != null);
     return batteryStateChangedState(batteryState);
   }
@@ -428,6 +439,7 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedState(BatteryState batteryState),
+    TResult changingBatteryState(),
     TResult initialState(),
     @required TResult orElse(),
   }) {
@@ -442,9 +454,11 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedState(_BatteryStateChangedState value),
+    @required TResult changingBatteryState(_ChangingBatteryState value),
     @required TResult initialState(_InitialState value),
   }) {
     assert(batteryStateChangedState != null);
+    assert(changingBatteryState != null);
     assert(initialState != null);
     return batteryStateChangedState(this);
   }
@@ -453,6 +467,7 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedState(_BatteryStateChangedState value),
+    TResult changingBatteryState(_ChangingBatteryState value),
     TResult initialState(_InitialState value),
     @required TResult orElse(),
   }) {
@@ -471,6 +486,103 @@ abstract class _BatteryStateChangedState implements DeviceBatteryState {
   BatteryState get batteryState;
   @JsonKey(ignore: true)
   _$BatteryStateChangedStateCopyWith<_BatteryStateChangedState> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ChangingBatteryStateCopyWith<$Res> {
+  factory _$ChangingBatteryStateCopyWith(_ChangingBatteryState value,
+          $Res Function(_ChangingBatteryState) then) =
+      __$ChangingBatteryStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ChangingBatteryStateCopyWithImpl<$Res>
+    extends _$DeviceBatteryStateCopyWithImpl<$Res>
+    implements _$ChangingBatteryStateCopyWith<$Res> {
+  __$ChangingBatteryStateCopyWithImpl(
+      _ChangingBatteryState _value, $Res Function(_ChangingBatteryState) _then)
+      : super(_value, (v) => _then(v as _ChangingBatteryState));
+
+  @override
+  _ChangingBatteryState get _value => super._value as _ChangingBatteryState;
+}
+
+/// @nodoc
+class _$_ChangingBatteryState implements _ChangingBatteryState {
+  const _$_ChangingBatteryState();
+
+  @override
+  String toString() {
+    return 'DeviceBatteryState.changingBatteryState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ChangingBatteryState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult batteryStateChangedState(BatteryState batteryState),
+    @required TResult changingBatteryState(),
+    @required TResult initialState(),
+  }) {
+    assert(batteryStateChangedState != null);
+    assert(changingBatteryState != null);
+    assert(initialState != null);
+    return changingBatteryState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult batteryStateChangedState(BatteryState batteryState),
+    TResult changingBatteryState(),
+    TResult initialState(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (changingBatteryState != null) {
+      return changingBatteryState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult batteryStateChangedState(_BatteryStateChangedState value),
+    @required TResult changingBatteryState(_ChangingBatteryState value),
+    @required TResult initialState(_InitialState value),
+  }) {
+    assert(batteryStateChangedState != null);
+    assert(changingBatteryState != null);
+    assert(initialState != null);
+    return changingBatteryState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult batteryStateChangedState(_BatteryStateChangedState value),
+    TResult changingBatteryState(_ChangingBatteryState value),
+    TResult initialState(_InitialState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (changingBatteryState != null) {
+      return changingBatteryState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangingBatteryState implements DeviceBatteryState {
+  const factory _ChangingBatteryState() = _$_ChangingBatteryState;
 }
 
 /// @nodoc
@@ -513,9 +625,11 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedState(BatteryState batteryState),
+    @required TResult changingBatteryState(),
     @required TResult initialState(),
   }) {
     assert(batteryStateChangedState != null);
+    assert(changingBatteryState != null);
     assert(initialState != null);
     return initialState();
   }
@@ -524,6 +638,7 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedState(BatteryState batteryState),
+    TResult changingBatteryState(),
     TResult initialState(),
     @required TResult orElse(),
   }) {
@@ -538,9 +653,11 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedState(_BatteryStateChangedState value),
+    @required TResult changingBatteryState(_ChangingBatteryState value),
     @required TResult initialState(_InitialState value),
   }) {
     assert(batteryStateChangedState != null);
+    assert(changingBatteryState != null);
     assert(initialState != null);
     return initialState(this);
   }
@@ -549,6 +666,7 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedState(_BatteryStateChangedState value),
+    TResult changingBatteryState(_ChangingBatteryState value),
     TResult initialState(_InitialState value),
     @required TResult orElse(),
   }) {

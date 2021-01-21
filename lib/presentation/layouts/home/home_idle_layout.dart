@@ -17,7 +17,7 @@ class HomeIdleLayout extends StatelessWidget {
         builder: (context, deviceBatteryState) {
           return BlocBuilder<VisualBloc, VisualState>(
             builder: (context, visualManagerState) {
-              return deviceBatteryState.map(
+              return deviceBatteryState.maybeMap(
                 batteryStateChangedState: (value) {
                   return HomeVisual(
                     visualIsAsset:
@@ -29,7 +29,7 @@ class HomeIdleLayout extends StatelessWidget {
                         : visualManagerState.chargingVisualPath,
                   );
                 },
-                initialState: (value) {
+                orElse: () {
                   return HomeVisualLayout(
                     visual: visualManagerState.dischargingVisualPath.isEmpty
                         ? Container()

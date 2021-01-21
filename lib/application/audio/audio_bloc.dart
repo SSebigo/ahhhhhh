@@ -8,7 +8,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
-import 'package:ahhhhhh/domain/facades/i_local_track_facade.dart';
 import 'package:ahhhhhh/domain/models/hive/track.dart';
 
 part 'audio_bloc.freezed.dart';
@@ -21,11 +20,9 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
   /// @nodoc
   AudioBloc(
     this._localSessionFacade,
-    this._localTrackFacade,
   ) : super(const AudioState.initialState());
 
   final ILocalSessionFacade _localSessionFacade;
-  final ILocalTrackFacade _localTrackFacade;
 
   bool _isTrackPlaying = false;
 
@@ -95,13 +92,6 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
         await _playAudioTrack(track: value.track);
 
         yield const AudioState.testTrackPlayedState();
-      },
-      uploadUserTrack: (value) async* {
-        yield const AudioState.uploadingUserTrackState();
-
-        await _localTrackFacade.addTrack(value.track.name, value.track);
-
-        yield const AudioState.userTrackUploadedState();
       },
     );
   }

@@ -29,10 +29,4 @@ abstract class AudioState with _$AudioState {
 
   /// @nodoc
   const factory AudioState.trackChangedState() = _TrackChangedState;
-
-  /// @nodoc
-  const factory AudioState.uploadingUserTrackState() = _UploadingUserTrackState;
-
-  /// @nodoc
-  const factory AudioState.userTrackUploadedState() = _UserTrackUploadedState;
 }

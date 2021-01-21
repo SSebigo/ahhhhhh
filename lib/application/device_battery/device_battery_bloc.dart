@@ -24,6 +24,8 @@ class DeviceBatteryBloc extends Bloc<DeviceBatteryEvent, DeviceBatteryState> {
   ) async* {
     yield* event.map(
       batteryStateChangedEvent: (value) async* {
+        yield const DeviceBatteryState.changingBatteryState();
+
         yield DeviceBatteryState.batteryStateChangedState(value.state);
       },
       homePageLaunchedEvent: (value) async* {

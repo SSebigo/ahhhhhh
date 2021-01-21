@@ -22,7 +22,4 @@ abstract class AudioEvent with _$AudioEvent {
 
   /// @nodoc
   const factory AudioEvent.playTrackEvent(Track track) = PlayTrackEvent;
-
-  /// @nodoc
-  const factory AudioEvent.uploadUserTrack(Track track) = UploadUserTrack;
 }

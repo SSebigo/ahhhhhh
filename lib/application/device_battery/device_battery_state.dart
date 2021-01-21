@@ -9,5 +9,9 @@ abstract class DeviceBatteryState with _$DeviceBatteryState {
   ) = _BatteryStateChangedState;
 
   /// @nodoc
+  const factory DeviceBatteryState.changingBatteryState() =
+      _ChangingBatteryState;
+
+  /// @nodoc
   const factory DeviceBatteryState.initialState() = _InitialState;
 }
