@@ -14,8 +14,13 @@ class _$HomeEventTearOff {
   const _$HomeEventTearOff();
 
 // ignore: unused_element
-  VisualPressedEvent visualPressedEvent() {
-    return const VisualPressedEvent();
+  GoToVisualSelectionEvent goToVisualSelectionEvent() {
+    return const GoToVisualSelectionEvent();
+  }
+
+// ignore: unused_element
+  VisualSelectedOrCanceledEvent visualSelectedOrCanceledEvent() {
+    return const VisualSelectedOrCanceledEvent();
   }
 }
 
@@ -27,20 +32,26 @@ const $HomeEvent = _$HomeEventTearOff();
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult visualPressedEvent(),
+    @required TResult goToVisualSelectionEvent(),
+    @required TResult visualSelectedOrCanceledEvent(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult visualPressedEvent(),
+    TResult goToVisualSelectionEvent(),
+    TResult visualSelectedOrCanceledEvent(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult visualPressedEvent(VisualPressedEvent value),
+    @required TResult goToVisualSelectionEvent(GoToVisualSelectionEvent value),
+    @required
+        TResult visualSelectedOrCanceledEvent(
+            VisualSelectedOrCanceledEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult visualPressedEvent(VisualPressedEvent value),
+    TResult goToVisualSelectionEvent(GoToVisualSelectionEvent value),
+    TResult visualSelectedOrCanceledEvent(VisualSelectedOrCanceledEvent value),
     @required TResult orElse(),
   });
 }
@@ -61,36 +72,37 @@ class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $VisualPressedEventCopyWith<$Res> {
-  factory $VisualPressedEventCopyWith(
-          VisualPressedEvent value, $Res Function(VisualPressedEvent) then) =
-      _$VisualPressedEventCopyWithImpl<$Res>;
+abstract class $GoToVisualSelectionEventCopyWith<$Res> {
+  factory $GoToVisualSelectionEventCopyWith(GoToVisualSelectionEvent value,
+          $Res Function(GoToVisualSelectionEvent) then) =
+      _$GoToVisualSelectionEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$VisualPressedEventCopyWithImpl<$Res>
+class _$GoToVisualSelectionEventCopyWithImpl<$Res>
     extends _$HomeEventCopyWithImpl<$Res>
-    implements $VisualPressedEventCopyWith<$Res> {
-  _$VisualPressedEventCopyWithImpl(
-      VisualPressedEvent _value, $Res Function(VisualPressedEvent) _then)
-      : super(_value, (v) => _then(v as VisualPressedEvent));
+    implements $GoToVisualSelectionEventCopyWith<$Res> {
+  _$GoToVisualSelectionEventCopyWithImpl(GoToVisualSelectionEvent _value,
+      $Res Function(GoToVisualSelectionEvent) _then)
+      : super(_value, (v) => _then(v as GoToVisualSelectionEvent));
 
   @override
-  VisualPressedEvent get _value => super._value as VisualPressedEvent;
+  GoToVisualSelectionEvent get _value =>
+      super._value as GoToVisualSelectionEvent;
 }
 
 /// @nodoc
-class _$VisualPressedEvent implements VisualPressedEvent {
-  const _$VisualPressedEvent();
+class _$GoToVisualSelectionEvent implements GoToVisualSelectionEvent {
+  const _$GoToVisualSelectionEvent();
 
   @override
   String toString() {
-    return 'HomeEvent.visualPressedEvent()';
+    return 'HomeEvent.goToVisualSelectionEvent()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is VisualPressedEvent);
+    return identical(this, other) || (other is GoToVisualSelectionEvent);
   }
 
   @override
@@ -99,21 +111,24 @@ class _$VisualPressedEvent implements VisualPressedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult visualPressedEvent(),
+    @required TResult goToVisualSelectionEvent(),
+    @required TResult visualSelectedOrCanceledEvent(),
   }) {
-    assert(visualPressedEvent != null);
-    return visualPressedEvent();
+    assert(goToVisualSelectionEvent != null);
+    assert(visualSelectedOrCanceledEvent != null);
+    return goToVisualSelectionEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult visualPressedEvent(),
+    TResult goToVisualSelectionEvent(),
+    TResult visualSelectedOrCanceledEvent(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (visualPressedEvent != null) {
-      return visualPressedEvent();
+    if (goToVisualSelectionEvent != null) {
+      return goToVisualSelectionEvent();
     }
     return orElse();
   }
@@ -121,28 +136,130 @@ class _$VisualPressedEvent implements VisualPressedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult visualPressedEvent(VisualPressedEvent value),
+    @required TResult goToVisualSelectionEvent(GoToVisualSelectionEvent value),
+    @required
+        TResult visualSelectedOrCanceledEvent(
+            VisualSelectedOrCanceledEvent value),
   }) {
-    assert(visualPressedEvent != null);
-    return visualPressedEvent(this);
+    assert(goToVisualSelectionEvent != null);
+    assert(visualSelectedOrCanceledEvent != null);
+    return goToVisualSelectionEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult visualPressedEvent(VisualPressedEvent value),
+    TResult goToVisualSelectionEvent(GoToVisualSelectionEvent value),
+    TResult visualSelectedOrCanceledEvent(VisualSelectedOrCanceledEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (visualPressedEvent != null) {
-      return visualPressedEvent(this);
+    if (goToVisualSelectionEvent != null) {
+      return goToVisualSelectionEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class VisualPressedEvent implements HomeEvent {
-  const factory VisualPressedEvent() = _$VisualPressedEvent;
+abstract class GoToVisualSelectionEvent implements HomeEvent {
+  const factory GoToVisualSelectionEvent() = _$GoToVisualSelectionEvent;
+}
+
+/// @nodoc
+abstract class $VisualSelectedOrCanceledEventCopyWith<$Res> {
+  factory $VisualSelectedOrCanceledEventCopyWith(
+          VisualSelectedOrCanceledEvent value,
+          $Res Function(VisualSelectedOrCanceledEvent) then) =
+      _$VisualSelectedOrCanceledEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$VisualSelectedOrCanceledEventCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res>
+    implements $VisualSelectedOrCanceledEventCopyWith<$Res> {
+  _$VisualSelectedOrCanceledEventCopyWithImpl(
+      VisualSelectedOrCanceledEvent _value,
+      $Res Function(VisualSelectedOrCanceledEvent) _then)
+      : super(_value, (v) => _then(v as VisualSelectedOrCanceledEvent));
+
+  @override
+  VisualSelectedOrCanceledEvent get _value =>
+      super._value as VisualSelectedOrCanceledEvent;
+}
+
+/// @nodoc
+class _$VisualSelectedOrCanceledEvent implements VisualSelectedOrCanceledEvent {
+  const _$VisualSelectedOrCanceledEvent();
+
+  @override
+  String toString() {
+    return 'HomeEvent.visualSelectedOrCanceledEvent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is VisualSelectedOrCanceledEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult goToVisualSelectionEvent(),
+    @required TResult visualSelectedOrCanceledEvent(),
+  }) {
+    assert(goToVisualSelectionEvent != null);
+    assert(visualSelectedOrCanceledEvent != null);
+    return visualSelectedOrCanceledEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult goToVisualSelectionEvent(),
+    TResult visualSelectedOrCanceledEvent(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (visualSelectedOrCanceledEvent != null) {
+      return visualSelectedOrCanceledEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult goToVisualSelectionEvent(GoToVisualSelectionEvent value),
+    @required
+        TResult visualSelectedOrCanceledEvent(
+            VisualSelectedOrCanceledEvent value),
+  }) {
+    assert(goToVisualSelectionEvent != null);
+    assert(visualSelectedOrCanceledEvent != null);
+    return visualSelectedOrCanceledEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult goToVisualSelectionEvent(GoToVisualSelectionEvent value),
+    TResult visualSelectedOrCanceledEvent(VisualSelectedOrCanceledEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (visualSelectedOrCanceledEvent != null) {
+      return visualSelectedOrCanceledEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VisualSelectedOrCanceledEvent implements HomeEvent {
+  const factory VisualSelectedOrCanceledEvent() =
+      _$VisualSelectedOrCanceledEvent;
 }
 
 /// @nodoc
@@ -150,23 +267,23 @@ class _$HomeStateTearOff {
   const _$HomeStateTearOff();
 
 // ignore: unused_element
-  _IdleState idleState() {
-    return const _IdleState();
+  _DefaultState defaultState() {
+    return const _DefaultState();
   }
 
 // ignore: unused_element
-  _MovingToIdleState movingToIdleState() {
-    return const _MovingToIdleState();
+  _MovingToDefaultState movingToDefaultState() {
+    return const _MovingToDefaultState();
   }
 
 // ignore: unused_element
-  _MovingToUpdateVisualState movingToUploadVisualState() {
-    return const _MovingToUpdateVisualState();
+  _MovingToVisualSelectionState movingToVisualSelectionState() {
+    return const _MovingToVisualSelectionState();
   }
 
 // ignore: unused_element
-  _UploadVisualState uploadVisualState() {
-    return const _UploadVisualState();
+  _SelectVisualState selectVisualState() {
+    return const _SelectVisualState();
   }
 }
 
@@ -178,33 +295,34 @@ const $HomeState = _$HomeStateTearOff();
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult idleState(),
-    @required TResult movingToIdleState(),
-    @required TResult movingToUploadVisualState(),
-    @required TResult uploadVisualState(),
+    @required TResult defaultState(),
+    @required TResult movingToDefaultState(),
+    @required TResult movingToVisualSelectionState(),
+    @required TResult selectVisualState(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult idleState(),
-    TResult movingToIdleState(),
-    TResult movingToUploadVisualState(),
-    TResult uploadVisualState(),
+    TResult defaultState(),
+    TResult movingToDefaultState(),
+    TResult movingToVisualSelectionState(),
+    TResult selectVisualState(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult idleState(_IdleState value),
-    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required TResult defaultState(_DefaultState value),
+    @required TResult movingToDefaultState(_MovingToDefaultState value),
     @required
-        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    @required TResult uploadVisualState(_UploadVisualState value),
+        TResult movingToVisualSelectionState(
+            _MovingToVisualSelectionState value),
+    @required TResult selectVisualState(_SelectVisualState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult idleState(_IdleState value),
-    TResult movingToIdleState(_MovingToIdleState value),
-    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    TResult uploadVisualState(_UploadVisualState value),
+    TResult defaultState(_DefaultState value),
+    TResult movingToDefaultState(_MovingToDefaultState value),
+    TResult movingToVisualSelectionState(_MovingToVisualSelectionState value),
+    TResult selectVisualState(_SelectVisualState value),
     @required TResult orElse(),
   });
 }
@@ -225,34 +343,35 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$IdleStateCopyWith<$Res> {
-  factory _$IdleStateCopyWith(
-          _IdleState value, $Res Function(_IdleState) then) =
-      __$IdleStateCopyWithImpl<$Res>;
+abstract class _$DefaultStateCopyWith<$Res> {
+  factory _$DefaultStateCopyWith(
+          _DefaultState value, $Res Function(_DefaultState) then) =
+      __$DefaultStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$IdleStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
-    implements _$IdleStateCopyWith<$Res> {
-  __$IdleStateCopyWithImpl(_IdleState _value, $Res Function(_IdleState) _then)
-      : super(_value, (v) => _then(v as _IdleState));
+class __$DefaultStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+    implements _$DefaultStateCopyWith<$Res> {
+  __$DefaultStateCopyWithImpl(
+      _DefaultState _value, $Res Function(_DefaultState) _then)
+      : super(_value, (v) => _then(v as _DefaultState));
 
   @override
-  _IdleState get _value => super._value as _IdleState;
+  _DefaultState get _value => super._value as _DefaultState;
 }
 
 /// @nodoc
-class _$_IdleState implements _IdleState {
-  const _$_IdleState();
+class _$_DefaultState implements _DefaultState {
+  const _$_DefaultState();
 
   @override
   String toString() {
-    return 'HomeState.idleState()';
+    return 'HomeState.defaultState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _IdleState);
+    return identical(this, other) || (other is _DefaultState);
   }
 
   @override
@@ -261,30 +380,30 @@ class _$_IdleState implements _IdleState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult idleState(),
-    @required TResult movingToIdleState(),
-    @required TResult movingToUploadVisualState(),
-    @required TResult uploadVisualState(),
+    @required TResult defaultState(),
+    @required TResult movingToDefaultState(),
+    @required TResult movingToVisualSelectionState(),
+    @required TResult selectVisualState(),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return idleState();
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return defaultState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult idleState(),
-    TResult movingToIdleState(),
-    TResult movingToUploadVisualState(),
-    TResult uploadVisualState(),
+    TResult defaultState(),
+    TResult movingToDefaultState(),
+    TResult movingToVisualSelectionState(),
+    TResult selectVisualState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (idleState != null) {
-      return idleState();
+    if (defaultState != null) {
+      return defaultState();
     }
     return orElse();
   }
@@ -292,71 +411,72 @@ class _$_IdleState implements _IdleState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult idleState(_IdleState value),
-    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required TResult defaultState(_DefaultState value),
+    @required TResult movingToDefaultState(_MovingToDefaultState value),
     @required
-        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    @required TResult uploadVisualState(_UploadVisualState value),
+        TResult movingToVisualSelectionState(
+            _MovingToVisualSelectionState value),
+    @required TResult selectVisualState(_SelectVisualState value),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return idleState(this);
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return defaultState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult idleState(_IdleState value),
-    TResult movingToIdleState(_MovingToIdleState value),
-    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    TResult uploadVisualState(_UploadVisualState value),
+    TResult defaultState(_DefaultState value),
+    TResult movingToDefaultState(_MovingToDefaultState value),
+    TResult movingToVisualSelectionState(_MovingToVisualSelectionState value),
+    TResult selectVisualState(_SelectVisualState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (idleState != null) {
-      return idleState(this);
+    if (defaultState != null) {
+      return defaultState(this);
     }
     return orElse();
   }
 }
 
-abstract class _IdleState implements HomeState {
-  const factory _IdleState() = _$_IdleState;
+abstract class _DefaultState implements HomeState {
+  const factory _DefaultState() = _$_DefaultState;
 }
 
 /// @nodoc
-abstract class _$MovingToIdleStateCopyWith<$Res> {
-  factory _$MovingToIdleStateCopyWith(
-          _MovingToIdleState value, $Res Function(_MovingToIdleState) then) =
-      __$MovingToIdleStateCopyWithImpl<$Res>;
+abstract class _$MovingToDefaultStateCopyWith<$Res> {
+  factory _$MovingToDefaultStateCopyWith(_MovingToDefaultState value,
+          $Res Function(_MovingToDefaultState) then) =
+      __$MovingToDefaultStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$MovingToIdleStateCopyWithImpl<$Res>
+class __$MovingToDefaultStateCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res>
-    implements _$MovingToIdleStateCopyWith<$Res> {
-  __$MovingToIdleStateCopyWithImpl(
-      _MovingToIdleState _value, $Res Function(_MovingToIdleState) _then)
-      : super(_value, (v) => _then(v as _MovingToIdleState));
+    implements _$MovingToDefaultStateCopyWith<$Res> {
+  __$MovingToDefaultStateCopyWithImpl(
+      _MovingToDefaultState _value, $Res Function(_MovingToDefaultState) _then)
+      : super(_value, (v) => _then(v as _MovingToDefaultState));
 
   @override
-  _MovingToIdleState get _value => super._value as _MovingToIdleState;
+  _MovingToDefaultState get _value => super._value as _MovingToDefaultState;
 }
 
 /// @nodoc
-class _$_MovingToIdleState implements _MovingToIdleState {
-  const _$_MovingToIdleState();
+class _$_MovingToDefaultState implements _MovingToDefaultState {
+  const _$_MovingToDefaultState();
 
   @override
   String toString() {
-    return 'HomeState.movingToIdleState()';
+    return 'HomeState.movingToDefaultState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MovingToIdleState);
+    return identical(this, other) || (other is _MovingToDefaultState);
   }
 
   @override
@@ -365,30 +485,30 @@ class _$_MovingToIdleState implements _MovingToIdleState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult idleState(),
-    @required TResult movingToIdleState(),
-    @required TResult movingToUploadVisualState(),
-    @required TResult uploadVisualState(),
+    @required TResult defaultState(),
+    @required TResult movingToDefaultState(),
+    @required TResult movingToVisualSelectionState(),
+    @required TResult selectVisualState(),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return movingToIdleState();
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return movingToDefaultState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult idleState(),
-    TResult movingToIdleState(),
-    TResult movingToUploadVisualState(),
-    TResult uploadVisualState(),
+    TResult defaultState(),
+    TResult movingToDefaultState(),
+    TResult movingToVisualSelectionState(),
+    TResult selectVisualState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (movingToIdleState != null) {
-      return movingToIdleState();
+    if (movingToDefaultState != null) {
+      return movingToDefaultState();
     }
     return orElse();
   }
@@ -396,72 +516,75 @@ class _$_MovingToIdleState implements _MovingToIdleState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult idleState(_IdleState value),
-    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required TResult defaultState(_DefaultState value),
+    @required TResult movingToDefaultState(_MovingToDefaultState value),
     @required
-        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    @required TResult uploadVisualState(_UploadVisualState value),
+        TResult movingToVisualSelectionState(
+            _MovingToVisualSelectionState value),
+    @required TResult selectVisualState(_SelectVisualState value),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return movingToIdleState(this);
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return movingToDefaultState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult idleState(_IdleState value),
-    TResult movingToIdleState(_MovingToIdleState value),
-    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    TResult uploadVisualState(_UploadVisualState value),
+    TResult defaultState(_DefaultState value),
+    TResult movingToDefaultState(_MovingToDefaultState value),
+    TResult movingToVisualSelectionState(_MovingToVisualSelectionState value),
+    TResult selectVisualState(_SelectVisualState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (movingToIdleState != null) {
-      return movingToIdleState(this);
+    if (movingToDefaultState != null) {
+      return movingToDefaultState(this);
     }
     return orElse();
   }
 }
 
-abstract class _MovingToIdleState implements HomeState {
-  const factory _MovingToIdleState() = _$_MovingToIdleState;
+abstract class _MovingToDefaultState implements HomeState {
+  const factory _MovingToDefaultState() = _$_MovingToDefaultState;
 }
 
 /// @nodoc
-abstract class _$MovingToUpdateVisualStateCopyWith<$Res> {
-  factory _$MovingToUpdateVisualStateCopyWith(_MovingToUpdateVisualState value,
-          $Res Function(_MovingToUpdateVisualState) then) =
-      __$MovingToUpdateVisualStateCopyWithImpl<$Res>;
+abstract class _$MovingToVisualSelectionStateCopyWith<$Res> {
+  factory _$MovingToVisualSelectionStateCopyWith(
+          _MovingToVisualSelectionState value,
+          $Res Function(_MovingToVisualSelectionState) then) =
+      __$MovingToVisualSelectionStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$MovingToUpdateVisualStateCopyWithImpl<$Res>
+class __$MovingToVisualSelectionStateCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res>
-    implements _$MovingToUpdateVisualStateCopyWith<$Res> {
-  __$MovingToUpdateVisualStateCopyWithImpl(_MovingToUpdateVisualState _value,
-      $Res Function(_MovingToUpdateVisualState) _then)
-      : super(_value, (v) => _then(v as _MovingToUpdateVisualState));
+    implements _$MovingToVisualSelectionStateCopyWith<$Res> {
+  __$MovingToVisualSelectionStateCopyWithImpl(
+      _MovingToVisualSelectionState _value,
+      $Res Function(_MovingToVisualSelectionState) _then)
+      : super(_value, (v) => _then(v as _MovingToVisualSelectionState));
 
   @override
-  _MovingToUpdateVisualState get _value =>
-      super._value as _MovingToUpdateVisualState;
+  _MovingToVisualSelectionState get _value =>
+      super._value as _MovingToVisualSelectionState;
 }
 
 /// @nodoc
-class _$_MovingToUpdateVisualState implements _MovingToUpdateVisualState {
-  const _$_MovingToUpdateVisualState();
+class _$_MovingToVisualSelectionState implements _MovingToVisualSelectionState {
+  const _$_MovingToVisualSelectionState();
 
   @override
   String toString() {
-    return 'HomeState.movingToUploadVisualState()';
+    return 'HomeState.movingToVisualSelectionState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MovingToUpdateVisualState);
+    return identical(this, other) || (other is _MovingToVisualSelectionState);
   }
 
   @override
@@ -470,30 +593,30 @@ class _$_MovingToUpdateVisualState implements _MovingToUpdateVisualState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult idleState(),
-    @required TResult movingToIdleState(),
-    @required TResult movingToUploadVisualState(),
-    @required TResult uploadVisualState(),
+    @required TResult defaultState(),
+    @required TResult movingToDefaultState(),
+    @required TResult movingToVisualSelectionState(),
+    @required TResult selectVisualState(),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return movingToUploadVisualState();
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return movingToVisualSelectionState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult idleState(),
-    TResult movingToIdleState(),
-    TResult movingToUploadVisualState(),
-    TResult uploadVisualState(),
+    TResult defaultState(),
+    TResult movingToDefaultState(),
+    TResult movingToVisualSelectionState(),
+    TResult selectVisualState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (movingToUploadVisualState != null) {
-      return movingToUploadVisualState();
+    if (movingToVisualSelectionState != null) {
+      return movingToVisualSelectionState();
     }
     return orElse();
   }
@@ -501,71 +624,73 @@ class _$_MovingToUpdateVisualState implements _MovingToUpdateVisualState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult idleState(_IdleState value),
-    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required TResult defaultState(_DefaultState value),
+    @required TResult movingToDefaultState(_MovingToDefaultState value),
     @required
-        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    @required TResult uploadVisualState(_UploadVisualState value),
+        TResult movingToVisualSelectionState(
+            _MovingToVisualSelectionState value),
+    @required TResult selectVisualState(_SelectVisualState value),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return movingToUploadVisualState(this);
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return movingToVisualSelectionState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult idleState(_IdleState value),
-    TResult movingToIdleState(_MovingToIdleState value),
-    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    TResult uploadVisualState(_UploadVisualState value),
+    TResult defaultState(_DefaultState value),
+    TResult movingToDefaultState(_MovingToDefaultState value),
+    TResult movingToVisualSelectionState(_MovingToVisualSelectionState value),
+    TResult selectVisualState(_SelectVisualState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (movingToUploadVisualState != null) {
-      return movingToUploadVisualState(this);
+    if (movingToVisualSelectionState != null) {
+      return movingToVisualSelectionState(this);
     }
     return orElse();
   }
 }
 
-abstract class _MovingToUpdateVisualState implements HomeState {
-  const factory _MovingToUpdateVisualState() = _$_MovingToUpdateVisualState;
+abstract class _MovingToVisualSelectionState implements HomeState {
+  const factory _MovingToVisualSelectionState() =
+      _$_MovingToVisualSelectionState;
 }
 
 /// @nodoc
-abstract class _$UploadVisualStateCopyWith<$Res> {
-  factory _$UploadVisualStateCopyWith(
-          _UploadVisualState value, $Res Function(_UploadVisualState) then) =
-      __$UploadVisualStateCopyWithImpl<$Res>;
+abstract class _$SelectVisualStateCopyWith<$Res> {
+  factory _$SelectVisualStateCopyWith(
+          _SelectVisualState value, $Res Function(_SelectVisualState) then) =
+      __$SelectVisualStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UploadVisualStateCopyWithImpl<$Res>
+class __$SelectVisualStateCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res>
-    implements _$UploadVisualStateCopyWith<$Res> {
-  __$UploadVisualStateCopyWithImpl(
-      _UploadVisualState _value, $Res Function(_UploadVisualState) _then)
-      : super(_value, (v) => _then(v as _UploadVisualState));
+    implements _$SelectVisualStateCopyWith<$Res> {
+  __$SelectVisualStateCopyWithImpl(
+      _SelectVisualState _value, $Res Function(_SelectVisualState) _then)
+      : super(_value, (v) => _then(v as _SelectVisualState));
 
   @override
-  _UploadVisualState get _value => super._value as _UploadVisualState;
+  _SelectVisualState get _value => super._value as _SelectVisualState;
 }
 
 /// @nodoc
-class _$_UploadVisualState implements _UploadVisualState {
-  const _$_UploadVisualState();
+class _$_SelectVisualState implements _SelectVisualState {
+  const _$_SelectVisualState();
 
   @override
   String toString() {
-    return 'HomeState.uploadVisualState()';
+    return 'HomeState.selectVisualState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UploadVisualState);
+    return identical(this, other) || (other is _SelectVisualState);
   }
 
   @override
@@ -574,30 +699,30 @@ class _$_UploadVisualState implements _UploadVisualState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult idleState(),
-    @required TResult movingToIdleState(),
-    @required TResult movingToUploadVisualState(),
-    @required TResult uploadVisualState(),
+    @required TResult defaultState(),
+    @required TResult movingToDefaultState(),
+    @required TResult movingToVisualSelectionState(),
+    @required TResult selectVisualState(),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return uploadVisualState();
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return selectVisualState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult idleState(),
-    TResult movingToIdleState(),
-    TResult movingToUploadVisualState(),
-    TResult uploadVisualState(),
+    TResult defaultState(),
+    TResult movingToDefaultState(),
+    TResult movingToVisualSelectionState(),
+    TResult selectVisualState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (uploadVisualState != null) {
-      return uploadVisualState();
+    if (selectVisualState != null) {
+      return selectVisualState();
     }
     return orElse();
   }
@@ -605,36 +730,37 @@ class _$_UploadVisualState implements _UploadVisualState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult idleState(_IdleState value),
-    @required TResult movingToIdleState(_MovingToIdleState value),
+    @required TResult defaultState(_DefaultState value),
+    @required TResult movingToDefaultState(_MovingToDefaultState value),
     @required
-        TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    @required TResult uploadVisualState(_UploadVisualState value),
+        TResult movingToVisualSelectionState(
+            _MovingToVisualSelectionState value),
+    @required TResult selectVisualState(_SelectVisualState value),
   }) {
-    assert(idleState != null);
-    assert(movingToIdleState != null);
-    assert(movingToUploadVisualState != null);
-    assert(uploadVisualState != null);
-    return uploadVisualState(this);
+    assert(defaultState != null);
+    assert(movingToDefaultState != null);
+    assert(movingToVisualSelectionState != null);
+    assert(selectVisualState != null);
+    return selectVisualState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult idleState(_IdleState value),
-    TResult movingToIdleState(_MovingToIdleState value),
-    TResult movingToUploadVisualState(_MovingToUpdateVisualState value),
-    TResult uploadVisualState(_UploadVisualState value),
+    TResult defaultState(_DefaultState value),
+    TResult movingToDefaultState(_MovingToDefaultState value),
+    TResult movingToVisualSelectionState(_MovingToVisualSelectionState value),
+    TResult selectVisualState(_SelectVisualState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (uploadVisualState != null) {
-      return uploadVisualState(this);
+    if (selectVisualState != null) {
+      return selectVisualState(this);
     }
     return orElse();
   }
 }
 
-abstract class _UploadVisualState implements HomeState {
-  const factory _UploadVisualState() = _$_UploadVisualState;
+abstract class _SelectVisualState implements HomeState {
+  const factory _SelectVisualState() = _$_SelectVisualState;
 }

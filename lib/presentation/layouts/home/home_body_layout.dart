@@ -1,4 +1,6 @@
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
+import 'package:ahhhhhh/presentation/widgets/ahhhhhh_button.dart';
+import 'package:ahhhhhh/utils/getters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +15,7 @@ class HomeBodyLayout extends StatefulWidget {
   _HomeBodyLayoutState createState() => _HomeBodyLayoutState();
 }
 
-class _HomeBodyLayoutState extends State<HomeBodyLayout> {
+class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
   // BannerAd _bannerAd;
 
   @override
@@ -66,17 +68,38 @@ class _HomeBodyLayoutState extends State<HomeBodyLayout> {
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, homeState) {
           return homeState.map(
-            idleState: (value) {
-              return HomeIdleLayout();
+            defaultState: (value) {
+              return GestureDetector(
+                child: HomeIdleLayout(),
+                onTap: () => context
+                    .read<HomeBloc>()
+                    .add(const HomeEvent.goToVisualSelectionEvent()),
+              );
             },
-            movingToIdleState: (value) {
-              return Container();
+            movingToDefaultState: (value) {
+              return const Center(child: CircularProgressIndicator());
             },
-            movingToUploadVisualState: (value) {
-              return Container();
+            movingToVisualSelectionState: (value) {
+              return const Center(child: CircularProgressIndicator());
             },
-            uploadVisualState: (value) {
-              return Container();
+            selectVisualState: (value) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: ListView(
+                  children: <Widget>[
+                    AhhhhhhButton(
+                      fontSize: 25.0,
+                      title: 'Cancel',
+                      onPressed: () => context
+                          .read<HomeBloc>()
+                          .add(const HomeEvent.visualSelectedOrCanceledEvent()),
+                    ),
+                    ...visuals.map(
+                      (visual) => Container(),
+                    ),
+                  ],
+                ),
+              );
             },
           );
         },

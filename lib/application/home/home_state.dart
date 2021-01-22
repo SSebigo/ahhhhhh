@@ -4,15 +4,15 @@ part of 'home_bloc.dart';
 @freezed
 abstract class HomeState with _$HomeState {
   /// @nodoc
-  const factory HomeState.idleState() = _IdleState;
+  const factory HomeState.defaultState() = _DefaultState;
 
   /// @nodoc
-  const factory HomeState.movingToIdleState() = _MovingToIdleState;
+  const factory HomeState.movingToDefaultState() = _MovingToDefaultState;
 
   /// @nodoc
-  const factory HomeState.movingToUploadVisualState() =
-      _MovingToUpdateVisualState;
+  const factory HomeState.movingToVisualSelectionState() =
+      _MovingToVisualSelectionState;
 
   /// @nodoc
-  const factory HomeState.uploadVisualState() = _UploadVisualState;
+  const factory HomeState.selectVisualState() = _SelectVisualState;
 }

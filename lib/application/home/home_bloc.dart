@@ -11,14 +11,21 @@ part 'home_state.dart';
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc
-  HomeBloc() : super(const HomeState.idleState());
+  HomeBloc() : super(const HomeState.defaultState());
 
   @override
   Stream<HomeState> mapEventToState(
     HomeEvent event,
   ) async* {
     yield* event.map(
-      visualPressedEvent: (value) async* {},
+      goToVisualSelectionEvent: (value) async* {
+        yield const HomeState.movingToVisualSelectionState();
+        yield const HomeState.selectVisualState();
+      },
+      visualSelectedOrCanceledEvent: (value) async* {
+        yield const HomeState.movingToDefaultState();
+        yield const HomeState.defaultState();
+      },
     );
   }
 }

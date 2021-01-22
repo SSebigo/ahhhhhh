@@ -22,14 +22,6 @@ class Assets {
   /// @nodoc
   static const String uploadImage = '${Constants.assetsImages}upload.png';
 
-  /// @nodoc
-  static const String yaranaikaDischargingImage =
-      '${Constants.assetsImages}yaranaika_discharging.png';
-
-  /// @nodoc
-  static const String yaranaikaChargingImage =
-      '${Constants.assetsImages}yaranaika_charging.png';
-
   // SECTION onboarding
   /// @nodoc
   static const String screen1Onboarding =
@@ -42,6 +34,55 @@ class Assets {
   /// @nodoc
   static const String screen3Onboarding =
       '${Constants.assetsImages}ahhhhhh_onboarding_design_screen_3.png';
+
+  // SECTION visuals
+  /// @nodoc
+  static const String aikuroChargingImage =
+      '${Constants.assetsImages}aikuro_charging.png';
+
+  /// @nodoc
+  static const String aikuroDischargingImage =
+      '${Constants.assetsImages}aikuro_discharging.png';
+
+  /// @nodoc
+  static const String animeGirlChargingImage =
+      '${Constants.assetsImages}anime_girl_charging.png';
+
+  /// @nodoc
+  static const String animeGirlDischargingImage =
+      '${Constants.assetsImages}anime_girl_discharging.png';
+
+  /// @nodoc
+  static const String chikaChargingImage =
+      '${Constants.assetsImages}chika_charging.png';
+
+  /// @nodoc
+  static const String chikaDischargingImage =
+      '${Constants.assetsImages}chika_discharging.png';
+
+  /// @nodoc
+  static const String drakeChargingImage =
+      '${Constants.assetsImages}drake_charging.png';
+
+  /// @nodoc
+  static const String drakeDischargingImage =
+      '${Constants.assetsImages}drake_discharging.png';
+
+  /// @nodoc
+  static const String marioChargingImage =
+      '${Constants.assetsImages}mario_charging.png';
+
+  /// @nodoc
+  static const String marioDischargingImage =
+      '${Constants.assetsImages}mario_discharging.png';
+
+  /// @nodoc
+  static const String yaranaikaChargingImage =
+      '${Constants.assetsImages}yaranaika_charging.png';
+
+  /// @nodoc
+  static const String yaranaikaDischargingImage =
+      '${Constants.assetsImages}yaranaika_discharging.png';
 
   // SECTION audios
   /// @nodoc

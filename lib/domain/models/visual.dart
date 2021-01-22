@@ -2,7 +2,8 @@
 class Visual {
   /// @nodoc
   Visual({
-    this.path,
+    this.chargingVisualPath,
+    this.dischargingVisualPath,
     this.name,
   });
 
@@ -11,24 +12,31 @@ class Visual {
     if (map == null) return null;
 
     return Visual(
-      path: map['path'],
+      chargingVisualPath: map['chargingVisualPath'],
+      dischargingVisualPath: map['dischargingVisualPath'],
       name: map['name'],
     );
   }
 
   /// @nodoc
-  final String path;
+  final String chargingVisualPath;
+
+  /// @nodoc
+  final String dischargingVisualPath;
 
   /// @nodoc
   final String name;
 
   /// @nodoc
   Visual copyWith({
-    String path,
+    String chargingVisualPath,
+    String dischargingVisualPath,
     String name,
   }) {
     return Visual(
-      path: path ?? this.path,
+      chargingVisualPath: chargingVisualPath ?? this.chargingVisualPath,
+      dischargingVisualPath:
+          dischargingVisualPath ?? this.dischargingVisualPath,
       name: name ?? this.name,
     );
   }
@@ -36,7 +44,8 @@ class Visual {
   /// @nodoc
   Map<String, dynamic> toMap() {
     return {
-      'path': path,
+      'chargingVisualPath': chargingVisualPath,
+      'dischargingVisualPath': dischargingVisualPath,
       'name': name,
     };
   }

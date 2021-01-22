@@ -1,3 +1,4 @@
+import 'package:ahhhhhh/domain/models/visual.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -23,8 +24,6 @@ class VisualBloc extends Bloc<VisualEvent, VisualState> {
     VisualEvent event,
   ) async* {
     yield* event.map(
-      chargingVisualPressedEvent: (value) async* {},
-      dischargingVisualPressedEvent: (value) async* {},
       homePageLaunchedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
 
@@ -33,23 +32,7 @@ class VisualBloc extends Bloc<VisualEvent, VisualState> {
           chargingVisualPath: session.chargingVisualPath,
         );
       },
-      saveVisualPressedEvent: (value) async* {},
+      visualSelectedEvent: (value) async* {},
     );
-    // if (event is NeutralFaceSelected) {
-    //   yield DisplayPreviewNeutralFace(event.image);
-    // }
-    // if (event is PleasuredFaceSelected) {
-    //   yield DisplayPreviewPleasuredFace(event.image);
-    // }
-    // if (event is FacesModified) {
-    //   yield ModifyingFaces();
-    //   await Future.wait([
-    //     _storage.setFaceData(
-    //         Constants.sessionNeutralFace, event.neutralFacePath),
-    //     _storage.setFaceData(
-    //         Constants.sessionPleasureFace, event.pleasureFacePath),
-    //   ]);
-    //   yield FacesHaveBeenModified();
-    // }
   }
 }

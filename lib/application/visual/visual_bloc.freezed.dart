@@ -14,23 +14,15 @@ class _$VisualEventTearOff {
   const _$VisualEventTearOff();
 
 // ignore: unused_element
-  ChargingVisualPressedEvent chargingVisualPressedEvent() {
-    return const ChargingVisualPressedEvent();
-  }
-
-// ignore: unused_element
-  DischargingVisualPressedEvent dischargingVisualPressedEvent() {
-    return const DischargingVisualPressedEvent();
-  }
-
-// ignore: unused_element
   HomePageLaunchedEvent homePageLaunchedEvent() {
     return const HomePageLaunchedEvent();
   }
 
 // ignore: unused_element
-  SaveVisualPressedEvent saveVisualPressedEvent() {
-    return const SaveVisualPressedEvent();
+  VisualSelectedEvent visualSelectedEvent(Visual visual) {
+    return VisualSelectedEvent(
+      visual,
+    );
   }
 }
 
@@ -42,35 +34,24 @@ const $VisualEvent = _$VisualEventTearOff();
 mixin _$VisualEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult chargingVisualPressedEvent(),
-    @required TResult dischargingVisualPressedEvent(),
     @required TResult homePageLaunchedEvent(),
-    @required TResult saveVisualPressedEvent(),
+    @required TResult visualSelectedEvent(Visual visual),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult chargingVisualPressedEvent(),
-    TResult dischargingVisualPressedEvent(),
     TResult homePageLaunchedEvent(),
-    TResult saveVisualPressedEvent(),
+    TResult visualSelectedEvent(Visual visual),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required
-        TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    @required
-        TResult dischargingVisualPressedEvent(
-            DischargingVisualPressedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
+    @required TResult visualSelectedEvent(VisualSelectedEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    TResult dischargingVisualPressedEvent(DischargingVisualPressedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
+    TResult visualSelectedEvent(VisualSelectedEvent value),
     @required TResult orElse(),
   });
 }
@@ -89,223 +70,6 @@ class _$VisualEventCopyWithImpl<$Res> implements $VisualEventCopyWith<$Res> {
   final VisualEvent _value;
   // ignore: unused_field
   final $Res Function(VisualEvent) _then;
-}
-
-/// @nodoc
-abstract class $ChargingVisualPressedEventCopyWith<$Res> {
-  factory $ChargingVisualPressedEventCopyWith(ChargingVisualPressedEvent value,
-          $Res Function(ChargingVisualPressedEvent) then) =
-      _$ChargingVisualPressedEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$ChargingVisualPressedEventCopyWithImpl<$Res>
-    extends _$VisualEventCopyWithImpl<$Res>
-    implements $ChargingVisualPressedEventCopyWith<$Res> {
-  _$ChargingVisualPressedEventCopyWithImpl(ChargingVisualPressedEvent _value,
-      $Res Function(ChargingVisualPressedEvent) _then)
-      : super(_value, (v) => _then(v as ChargingVisualPressedEvent));
-
-  @override
-  ChargingVisualPressedEvent get _value =>
-      super._value as ChargingVisualPressedEvent;
-}
-
-/// @nodoc
-class _$ChargingVisualPressedEvent implements ChargingVisualPressedEvent {
-  const _$ChargingVisualPressedEvent();
-
-  @override
-  String toString() {
-    return 'VisualEvent.chargingVisualPressedEvent()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ChargingVisualPressedEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult chargingVisualPressedEvent(),
-    @required TResult dischargingVisualPressedEvent(),
-    @required TResult homePageLaunchedEvent(),
-    @required TResult saveVisualPressedEvent(),
-  }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
-    return chargingVisualPressedEvent();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult chargingVisualPressedEvent(),
-    TResult dischargingVisualPressedEvent(),
-    TResult homePageLaunchedEvent(),
-    TResult saveVisualPressedEvent(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chargingVisualPressedEvent != null) {
-      return chargingVisualPressedEvent();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    @required
-        TResult dischargingVisualPressedEvent(
-            DischargingVisualPressedEvent value),
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
-  }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
-    return chargingVisualPressedEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    TResult dischargingVisualPressedEvent(DischargingVisualPressedEvent value),
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chargingVisualPressedEvent != null) {
-      return chargingVisualPressedEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChargingVisualPressedEvent implements VisualEvent {
-  const factory ChargingVisualPressedEvent() = _$ChargingVisualPressedEvent;
-}
-
-/// @nodoc
-abstract class $DischargingVisualPressedEventCopyWith<$Res> {
-  factory $DischargingVisualPressedEventCopyWith(
-          DischargingVisualPressedEvent value,
-          $Res Function(DischargingVisualPressedEvent) then) =
-      _$DischargingVisualPressedEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$DischargingVisualPressedEventCopyWithImpl<$Res>
-    extends _$VisualEventCopyWithImpl<$Res>
-    implements $DischargingVisualPressedEventCopyWith<$Res> {
-  _$DischargingVisualPressedEventCopyWithImpl(
-      DischargingVisualPressedEvent _value,
-      $Res Function(DischargingVisualPressedEvent) _then)
-      : super(_value, (v) => _then(v as DischargingVisualPressedEvent));
-
-  @override
-  DischargingVisualPressedEvent get _value =>
-      super._value as DischargingVisualPressedEvent;
-}
-
-/// @nodoc
-class _$DischargingVisualPressedEvent implements DischargingVisualPressedEvent {
-  const _$DischargingVisualPressedEvent();
-
-  @override
-  String toString() {
-    return 'VisualEvent.dischargingVisualPressedEvent()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DischargingVisualPressedEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult chargingVisualPressedEvent(),
-    @required TResult dischargingVisualPressedEvent(),
-    @required TResult homePageLaunchedEvent(),
-    @required TResult saveVisualPressedEvent(),
-  }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
-    return dischargingVisualPressedEvent();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult chargingVisualPressedEvent(),
-    TResult dischargingVisualPressedEvent(),
-    TResult homePageLaunchedEvent(),
-    TResult saveVisualPressedEvent(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (dischargingVisualPressedEvent != null) {
-      return dischargingVisualPressedEvent();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    @required
-        TResult dischargingVisualPressedEvent(
-            DischargingVisualPressedEvent value),
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
-  }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
-    assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
-    return dischargingVisualPressedEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    TResult dischargingVisualPressedEvent(DischargingVisualPressedEvent value),
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (dischargingVisualPressedEvent != null) {
-      return dischargingVisualPressedEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DischargingVisualPressedEvent implements VisualEvent {
-  const factory DischargingVisualPressedEvent() =
-      _$DischargingVisualPressedEvent;
 }
 
 /// @nodoc
@@ -347,25 +111,19 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult chargingVisualPressedEvent(),
-    @required TResult dischargingVisualPressedEvent(),
     @required TResult homePageLaunchedEvent(),
-    @required TResult saveVisualPressedEvent(),
+    @required TResult visualSelectedEvent(Visual visual),
   }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
     assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
+    assert(visualSelectedEvent != null);
     return homePageLaunchedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult chargingVisualPressedEvent(),
-    TResult dischargingVisualPressedEvent(),
     TResult homePageLaunchedEvent(),
-    TResult saveVisualPressedEvent(),
+    TResult visualSelectedEvent(Visual visual),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -378,28 +136,19 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required
-        TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    @required
-        TResult dischargingVisualPressedEvent(
-            DischargingVisualPressedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
+    @required TResult visualSelectedEvent(VisualSelectedEvent value),
   }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
     assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
+    assert(visualSelectedEvent != null);
     return homePageLaunchedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    TResult dischargingVisualPressedEvent(DischargingVisualPressedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
+    TResult visualSelectedEvent(VisualSelectedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -415,68 +164,84 @@ abstract class HomePageLaunchedEvent implements VisualEvent {
 }
 
 /// @nodoc
-abstract class $SaveVisualPressedEventCopyWith<$Res> {
-  factory $SaveVisualPressedEventCopyWith(SaveVisualPressedEvent value,
-          $Res Function(SaveVisualPressedEvent) then) =
-      _$SaveVisualPressedEventCopyWithImpl<$Res>;
+abstract class $VisualSelectedEventCopyWith<$Res> {
+  factory $VisualSelectedEventCopyWith(
+          VisualSelectedEvent value, $Res Function(VisualSelectedEvent) then) =
+      _$VisualSelectedEventCopyWithImpl<$Res>;
+  $Res call({Visual visual});
 }
 
 /// @nodoc
-class _$SaveVisualPressedEventCopyWithImpl<$Res>
+class _$VisualSelectedEventCopyWithImpl<$Res>
     extends _$VisualEventCopyWithImpl<$Res>
-    implements $SaveVisualPressedEventCopyWith<$Res> {
-  _$SaveVisualPressedEventCopyWithImpl(SaveVisualPressedEvent _value,
-      $Res Function(SaveVisualPressedEvent) _then)
-      : super(_value, (v) => _then(v as SaveVisualPressedEvent));
+    implements $VisualSelectedEventCopyWith<$Res> {
+  _$VisualSelectedEventCopyWithImpl(
+      VisualSelectedEvent _value, $Res Function(VisualSelectedEvent) _then)
+      : super(_value, (v) => _then(v as VisualSelectedEvent));
 
   @override
-  SaveVisualPressedEvent get _value => super._value as SaveVisualPressedEvent;
+  VisualSelectedEvent get _value => super._value as VisualSelectedEvent;
+
+  @override
+  $Res call({
+    Object visual = freezed,
+  }) {
+    return _then(VisualSelectedEvent(
+      visual == freezed ? _value.visual : visual as Visual,
+    ));
+  }
 }
 
 /// @nodoc
-class _$SaveVisualPressedEvent implements SaveVisualPressedEvent {
-  const _$SaveVisualPressedEvent();
+class _$VisualSelectedEvent implements VisualSelectedEvent {
+  const _$VisualSelectedEvent(this.visual) : assert(visual != null);
+
+  @override
+  final Visual visual;
 
   @override
   String toString() {
-    return 'VisualEvent.saveVisualPressedEvent()';
+    return 'VisualEvent.visualSelectedEvent(visual: $visual)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SaveVisualPressedEvent);
+    return identical(this, other) ||
+        (other is VisualSelectedEvent &&
+            (identical(other.visual, visual) ||
+                const DeepCollectionEquality().equals(other.visual, visual)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(visual);
+
+  @JsonKey(ignore: true)
+  @override
+  $VisualSelectedEventCopyWith<VisualSelectedEvent> get copyWith =>
+      _$VisualSelectedEventCopyWithImpl<VisualSelectedEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult chargingVisualPressedEvent(),
-    @required TResult dischargingVisualPressedEvent(),
     @required TResult homePageLaunchedEvent(),
-    @required TResult saveVisualPressedEvent(),
+    @required TResult visualSelectedEvent(Visual visual),
   }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
     assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
-    return saveVisualPressedEvent();
+    assert(visualSelectedEvent != null);
+    return visualSelectedEvent(visual);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult chargingVisualPressedEvent(),
-    TResult dischargingVisualPressedEvent(),
     TResult homePageLaunchedEvent(),
-    TResult saveVisualPressedEvent(),
+    TResult visualSelectedEvent(Visual visual),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (saveVisualPressedEvent != null) {
-      return saveVisualPressedEvent();
+    if (visualSelectedEvent != null) {
+      return visualSelectedEvent(visual);
     }
     return orElse();
   }
@@ -484,40 +249,35 @@ class _$SaveVisualPressedEvent implements SaveVisualPressedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required
-        TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    @required
-        TResult dischargingVisualPressedEvent(
-            DischargingVisualPressedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
+    @required TResult visualSelectedEvent(VisualSelectedEvent value),
   }) {
-    assert(chargingVisualPressedEvent != null);
-    assert(dischargingVisualPressedEvent != null);
     assert(homePageLaunchedEvent != null);
-    assert(saveVisualPressedEvent != null);
-    return saveVisualPressedEvent(this);
+    assert(visualSelectedEvent != null);
+    return visualSelectedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult chargingVisualPressedEvent(ChargingVisualPressedEvent value),
-    TResult dischargingVisualPressedEvent(DischargingVisualPressedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult saveVisualPressedEvent(SaveVisualPressedEvent value),
+    TResult visualSelectedEvent(VisualSelectedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (saveVisualPressedEvent != null) {
-      return saveVisualPressedEvent(this);
+    if (visualSelectedEvent != null) {
+      return visualSelectedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class SaveVisualPressedEvent implements VisualEvent {
-  const factory SaveVisualPressedEvent() = _$SaveVisualPressedEvent;
+abstract class VisualSelectedEvent implements VisualEvent {
+  const factory VisualSelectedEvent(Visual visual) = _$VisualSelectedEvent;
+
+  Visual get visual;
+  @JsonKey(ignore: true)
+  $VisualSelectedEventCopyWith<VisualSelectedEvent> get copyWith;
 }
 
 /// @nodoc

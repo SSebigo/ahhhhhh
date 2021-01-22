@@ -228,5 +228,36 @@ mixin Getters {
       ];
 
   /// @nodoc
-  List<Visual> get visuals => [];
+  List<Visual> get visuals => [
+        Visual(
+          chargingVisualPath: Assets.aikuroChargingImage,
+          dischargingVisualPath: Assets.aikuroDischargingImage,
+          name: 'Aikuro',
+        ),
+        Visual(
+          chargingVisualPath: Assets.animeGirlChargingImage,
+          dischargingVisualPath: Assets.animeGirlDischargingImage,
+          name: 'Anime Girl',
+        ),
+        Visual(
+          chargingVisualPath: Assets.chikaChargingImage,
+          dischargingVisualPath: Assets.chikaDischargingImage,
+          name: 'Chika',
+        ),
+        Visual(
+          chargingVisualPath: Assets.drakeChargingImage,
+          dischargingVisualPath: Assets.drakeDischargingImage,
+          name: 'Drake',
+        ),
+        Visual(
+          chargingVisualPath: Assets.marioChargingImage,
+          dischargingVisualPath: Assets.marioDischargingImage,
+          name: 'Mario',
+        ),
+        Visual(
+          chargingVisualPath: Assets.yaranaikaChargingImage,
+          dischargingVisualPath: Assets.yaranaikaDischargingImage,
+          name: 'Yaranaika',
+        ),
+      ];
 }

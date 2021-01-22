@@ -4,5 +4,9 @@ part of 'home_bloc.dart';
 @freezed
 abstract class HomeEvent with _$HomeEvent {
   /// @nodoc
-  const factory HomeEvent.visualPressedEvent() = VisualPressedEvent;
+  const factory HomeEvent.goToVisualSelectionEvent() = GoToVisualSelectionEvent;
+
+  /// @nodoc
+  const factory HomeEvent.visualSelectedOrCanceledEvent() =
+      VisualSelectedOrCanceledEvent;
 }
