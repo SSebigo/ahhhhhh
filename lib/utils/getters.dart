@@ -32,15 +32,8 @@ mixin Getters {
           coverURL: Assets.clickImage,
           explanation:
               // ignore: lines_longer_than_80_chars
-              'Click on the image in the center of the screen to use your own.',
-          title: 'Use your own images',
-        ),
-        const OnboardingContent(
-          coverURL: Assets.uploadImage,
-          explanation:
-              // ignore: lines_longer_than_80_chars
-              'Upload your own sounds. Press a sound to preview it. Press & Hold on a sound to assign it to a state (charging/discharging).',
-          title: 'Use your own sounds',
+              'Press the image in the center of the screen to customize.',
+          title: 'Custom visual',
         ),
       ];
 

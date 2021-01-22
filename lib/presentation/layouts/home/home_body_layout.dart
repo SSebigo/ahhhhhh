@@ -1,17 +1,19 @@
-import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
-import 'package:ahhhhhh/application/visual/visual_bloc.dart';
-import 'package:ahhhhhh/presentation/widgets/ahhhhhh_button.dart';
-import 'package:ahhhhhh/presentation/widgets/home/home_visual.dart';
-import 'package:ahhhhhh/utils/functions.dart';
-import 'package:ahhhhhh/utils/getters.dart';
-import 'package:ahhhhhh/utils/palettes.dart';
+import 'package:ahhhhhh/ad_manager.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:ahhhhhh/application/audio/audio_bloc.dart';
 import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
+import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/application/home/home_bloc.dart';
+import 'package:ahhhhhh/application/visual/visual_bloc.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_idle_layout.dart';
+import 'package:ahhhhhh/presentation/widgets/ahhhhhh_button.dart';
+import 'package:ahhhhhh/presentation/widgets/home/home_visual.dart';
+import 'package:ahhhhhh/utils/functions.dart';
+import 'package:ahhhhhh/utils/getters.dart';
+import 'package:ahhhhhh/utils/palettes.dart';
 
 /// @nodoc
 class HomeBodyLayout extends StatefulWidget {
@@ -20,24 +22,23 @@ class HomeBodyLayout extends StatefulWidget {
 }
 
 class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
-  // BannerAd _bannerAd;
+  BannerAd _bannerAd;
 
   @override
   void initState() {
     super.initState();
 
-    // _bannerAd = BannerAd(
-    //   adUnitId: AdManager.bannerAdUnitId,
-    //   size: AdSize.smartBanner,
-    // );
-    // _bannerAd
-    //   ..load()
-    //   ..show();
+    _bannerAd = BannerAd(
+      adUnitId: AdManager.bannerAdUnitId,
+      size: AdSize.smartBanner,
+    )
+      ..load()
+      ..show();
   }
 
   @override
   void dispose() {
-    // _bannerAd?.dispose();
+    _bannerAd?.dispose();
     super.dispose();
   }
 

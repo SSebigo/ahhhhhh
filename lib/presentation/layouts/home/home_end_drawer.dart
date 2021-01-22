@@ -31,12 +31,6 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                 onTap: () => ExtendedNavigator.root.push(Routes.aboutPage),
                 title: 'ABOUT',
               ),
-              HomeDrawerTile(
-                icon: Icons.file_upload,
-                onTap: () =>
-                    ExtendedNavigator.root.push(Routes.uploadTrackPage),
-                title: 'Upload a sound',
-              ),
               HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Battery full sound:'),
               ListTile(
@@ -82,46 +76,6 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                 color: Colors.black38,
                 context: context,
                 tiles: tracks.map(
-                  (Track track) => ListTile(
-                    title: Text(
-                      track.name,
-                      style: const TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
-                    onTap: () => context
-                        .read<AudioBloc>()
-                        .add(AudioEvent.playTrackEvent(track)),
-                    onLongPress: () => showDialog(
-                      context: context,
-                      builder: (_) => HomeTrackSelectionDialog(
-                        onBatteryFullTapped: () {
-                          context
-                              .read<AudioBloc>()
-                              .add(AudioEvent.changeBatteryFullTrack(track));
-                        },
-                        onChargingTapped: () {
-                          context
-                              .read<AudioBloc>()
-                              .add(AudioEvent.changeChargingTrack(track));
-                        },
-                        onDischargingTapped: () {
-                          context
-                              .read<AudioBloc>()
-                              .add(AudioEvent.changeDischargingTrack(track));
-                        },
-                        selectedTrack: track,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              HomeDrawerSeparator(),
-              const HomeDrawerSectionTile(title: 'Your sounds:'),
-              ...ListTile.divideTiles(
-                color: Colors.black38,
-                context: context,
-                tiles: drawerState.tracks.map(
                   (Track track) => ListTile(
                     title: Text(
                       track.name,

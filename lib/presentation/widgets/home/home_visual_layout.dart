@@ -42,10 +42,12 @@ class HomeVisualLayout extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20.0),
-          child: Image.asset(
-            visualPath,
-            fit: BoxFit.cover,
-          ),
+          child: visualPath.isNotEmpty
+              ? Image.asset(
+                  visualPath,
+                  fit: BoxFit.cover,
+                )
+              : Container(),
         ),
       ),
     );

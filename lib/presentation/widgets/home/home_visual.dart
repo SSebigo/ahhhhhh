@@ -28,12 +28,14 @@ class HomeVisual extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-        visualPath,
-        fit: BoxFit.cover,
-        height: height ?? mediaQuery.width / 2.5,
-        width: width ?? mediaQuery.width / 2.5,
-      ),
+      child: visualPath.isNotEmpty
+          ? Image.asset(
+              visualPath,
+              fit: BoxFit.cover,
+              height: height ?? mediaQuery.width / 2.5,
+              width: width ?? mediaQuery.width / 2.5,
+            )
+          : Container(),
     );
   }
 }
