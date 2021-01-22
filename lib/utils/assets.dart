@@ -38,43 +38,43 @@ class Assets {
   // SECTION visuals
   /// @nodoc
   static const String aikuroChargingImage =
-      '${Constants.assetsImages}aikuro_charging.png';
+      '${Constants.assetsImages}aikuro_charging.jpg';
 
   /// @nodoc
   static const String aikuroDischargingImage =
-      '${Constants.assetsImages}aikuro_discharging.png';
+      '${Constants.assetsImages}aikuro_discharging.jpg';
 
   /// @nodoc
   static const String animeGirlChargingImage =
-      '${Constants.assetsImages}anime_girl_charging.png';
+      '${Constants.assetsImages}anime_girl_charging.jpg';
 
   /// @nodoc
   static const String animeGirlDischargingImage =
-      '${Constants.assetsImages}anime_girl_discharging.png';
+      '${Constants.assetsImages}anime_girl_discharging.jpg';
 
   /// @nodoc
   static const String chikaChargingImage =
-      '${Constants.assetsImages}chika_charging.png';
+      '${Constants.assetsImages}chika_charging.jpg';
 
   /// @nodoc
   static const String chikaDischargingImage =
-      '${Constants.assetsImages}chika_discharging.png';
+      '${Constants.assetsImages}chika_discharging.jpg';
 
   /// @nodoc
   static const String drakeChargingImage =
-      '${Constants.assetsImages}drake_charging.png';
+      '${Constants.assetsImages}drake_charging.jpg';
 
   /// @nodoc
   static const String drakeDischargingImage =
-      '${Constants.assetsImages}drake_discharging.png';
+      '${Constants.assetsImages}drake_discharging.jpg';
 
   /// @nodoc
   static const String marioChargingImage =
-      '${Constants.assetsImages}mario_charging.png';
+      '${Constants.assetsImages}mario_charging.jpg';
 
   /// @nodoc
   static const String marioDischargingImage =
-      '${Constants.assetsImages}mario_discharging.png';
+      '${Constants.assetsImages}mario_discharging.jpg';
 
   /// @nodoc
   static const String yaranaikaChargingImage =
