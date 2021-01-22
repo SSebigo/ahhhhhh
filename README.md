@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/assets/images/ahhhhhh_logoV2.png" width="30%">
-</p>
+![Logo](https://github.com/SSebigo/ahhhhhh/blob/master/screenshot_1.png)
 
 </br>
 
