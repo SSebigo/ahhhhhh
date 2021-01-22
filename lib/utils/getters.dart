@@ -250,6 +250,11 @@ mixin Getters {
           name: 'Drake',
         ),
         Visual(
+          chargingVisualPath: Assets.geordiChargingImage,
+          dischargingVisualPath: Assets.geordiDischargingImage,
+          name: 'Geordi',
+        ),
+        Visual(
           chargingVisualPath: Assets.marioChargingImage,
           dischargingVisualPath: Assets.marioDischargingImage,
           name: 'Mario',

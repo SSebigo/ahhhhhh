@@ -69,6 +69,14 @@ class Assets {
       '${Constants.assetsImages}drake_discharging.jpg';
 
   /// @nodoc
+  static const String geordiChargingImage =
+      '${Constants.assetsImages}geordi_charging.jpg';
+
+  /// @nodoc
+  static const String geordiDischargingImage =
+      '${Constants.assetsImages}geordi_discharging.jpg';
+
+  /// @nodoc
   static const String marioChargingImage =
       '${Constants.assetsImages}mario_charging.jpg';
 

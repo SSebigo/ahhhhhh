@@ -1,6 +1,10 @@
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
+import 'package:ahhhhhh/application/visual/visual_bloc.dart';
 import 'package:ahhhhhh/presentation/widgets/ahhhhhh_button.dart';
+import 'package:ahhhhhh/presentation/widgets/home/home_visual.dart';
+import 'package:ahhhhhh/utils/functions.dart';
 import 'package:ahhhhhh/utils/getters.dart';
+import 'package:ahhhhhh/utils/palettes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -85,19 +89,73 @@ class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
             selectVisualState: (value) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: ListView(
-                  children: <Widget>[
-                    AhhhhhhButton(
-                      fontSize: 25.0,
-                      title: 'Cancel',
-                      onPressed: () => context
-                          .read<HomeBloc>()
-                          .add(const HomeEvent.visualSelectedOrCanceledEvent()),
-                    ),
-                    ...visuals.map(
-                      (visual) => Container(),
-                    ),
-                  ],
+                child: BlocBuilder<VisualBloc, VisualState>(
+                  builder: (context, visualState) {
+                    return ListView(
+                      children: <Widget>[
+                        const SizedBox(height: 20),
+                        AhhhhhhButton(
+                          fontSize: 25.0,
+                          title: 'Cancel',
+                          onPressed: () => context.read<HomeBloc>().add(
+                              const HomeEvent.visualSelectedOrCanceledEvent()),
+                        ),
+                        const SizedBox(height: 30),
+                        ...visuals.map(
+                          (visual) => Padding(
+                            padding: const EdgeInsets.only(bottom: 30.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                context.read<VisualBloc>().add(
+                                    VisualEvent.visualSelectedEvent(visual));
+                                context.read<HomeBloc>().add(const HomeEvent
+                                    .visualSelectedOrCanceledEvent());
+                              },
+                              child: Column(
+                                children: [
+                                  Text(
+                                    visual.name,
+                                    style: visual.chargingVisualPath ==
+                                                visualState
+                                                    .chargingVisualPath &&
+                                            visual.dischargingVisualPath ==
+                                                visualState
+                                                    .dischargingVisualPath
+                                        ? const TextStyle(
+                                            color: Palettes.orangeYellow,
+                                            fontFamily: 'VarelaRound',
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )
+                                        : const TextStyle(
+                                            color: Colors.black,
+                                            fontFamily: 'VarelaRound',
+                                            fontSize: 16.0,
+                                          ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      HomeVisual(
+                                        visualPath:
+                                            visual.dischargingVisualPath,
+                                      ),
+                                      HomeVisual(
+                                        visualPath: visual.chargingVisualPath,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: getSmartBannerHeight(context)),
+                      ],
+                    );
+                  },
                 ),
               );
             },

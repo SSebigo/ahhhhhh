@@ -1,6 +1,8 @@
-import 'package:ahhhhhh/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'package:ahhhhhh/utils/functions.dart';
+import 'package:ahhhhhh/utils/themes.dart';
 
 /// @nodoc
 class ChangelogPage extends StatelessWidget {
@@ -123,6 +125,7 @@ class ChangelogPage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: getSmartBannerHeight(context)),
             ],
           ),
         ),

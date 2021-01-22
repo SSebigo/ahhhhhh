@@ -1,12 +1,10 @@
-import 'package:ahhhhhh/presentation/widgets/home/home_visual_layout.dart';
 import 'package:battery/battery.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
 import 'package:ahhhhhh/application/visual/visual_bloc.dart';
-import 'package:ahhhhhh/presentation/widgets/home/home_visual.dart';
-import 'package:ahhhhhh/utils/extensions.dart';
+import 'package:ahhhhhh/presentation/widgets/home/home_visual_layout.dart';
 
 /// @nodoc
 class HomeIdleLayout extends StatelessWidget {
@@ -19,11 +17,7 @@ class HomeIdleLayout extends StatelessWidget {
             builder: (context, visualManagerState) {
               return deviceBatteryState.maybeMap(
                 batteryStateChangedState: (value) {
-                  return HomeVisual(
-                    visualIsAsset:
-                        value.batteryState == BatteryState.discharging
-                            ? visualManagerState.dischargingVisualPath.isAsset
-                            : visualManagerState.chargingVisualPath.isAsset,
+                  return HomeVisualLayout(
                     visualPath: value.batteryState == BatteryState.discharging
                         ? visualManagerState.dischargingVisualPath
                         : visualManagerState.chargingVisualPath,
@@ -31,12 +25,7 @@ class HomeIdleLayout extends StatelessWidget {
                 },
                 orElse: () {
                   return HomeVisualLayout(
-                    visual: visualManagerState.dischargingVisualPath.isEmpty
-                        ? Container()
-                        : Image.asset(
-                            visualManagerState.dischargingVisualPath,
-                            fit: BoxFit.cover,
-                          ),
+                    visualPath: visualManagerState.dischargingVisualPath,
                   );
                 },
               );

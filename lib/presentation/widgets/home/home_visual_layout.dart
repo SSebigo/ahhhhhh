@@ -5,19 +5,27 @@ class HomeVisualLayout extends StatelessWidget {
   /// @nodoc
   const HomeVisualLayout({
     Key key,
-    @required this.visual,
+    this.height,
+    this.width,
+    @required this.visualPath,
   }) : super(key: key);
 
   /// @nodoc
-  final Widget visual;
+  final double height;
+
+  /// @nodoc
+  final double width;
+
+  /// @nodoc
+  final String visualPath;
 
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
 
     return Container(
-      width: mediaQuery.width / 1.3,
-      height: mediaQuery.width / 1.3,
+      width: width ?? mediaQuery.width / 1.3,
+      height: height ?? mediaQuery.width / 1.3,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.0),
@@ -34,7 +42,10 @@ class HomeVisualLayout extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20.0),
-          child: visual,
+          child: Image.asset(
+            visualPath,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
