@@ -42,11 +42,11 @@ Makes your smartphone moan, scream or laugh when charging, discharging or full
 ### SCREENSHOTS
 
 <p align="center">
-<img src="https://github.com/SSebigo/ahhhhhh/tree/master/screenshots/screenshot_1.jpg" height="100">
-<img src="https://github.com/SSebigo/ahhhhhh/tree/master/screenshots/screenshot_2.jpg" height="100">
-<img src="https://github.com/SSebigo/ahhhhhh/tree/master/screenshots/screenshot_3.jpg" height="100">
-<img src="https://github.com/SSebigo/ahhhhhh/tree/master/screenshots/screenshot_4.jpg" height="100">
-<img src="https://github.com/SSebigo/ahhhhhh/tree/master/screenshots/screenshot_5.jpg" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_1.png" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_2.png" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_3.png" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_4.png" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_5.png" height="100">
 </p>
 
 ## Author
