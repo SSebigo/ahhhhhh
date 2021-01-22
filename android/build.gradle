@@ -1,12 +1,15 @@
 buildscript {
+    ext.kotlin_version = '1.4.21'
     repositories {
         google()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.2'
-        classpath 'com.google.gms:google-services:4.3.3'
+        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.4'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
     }
 }
 
@@ -14,10 +17,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-           maven {
-           // [required] background_fetch
-           url "${project(':background_fetch').projectDir}/libs"
-        }
     }
 }
 

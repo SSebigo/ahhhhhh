@@ -1,32 +1,33 @@
+# Welcome to Ahhhhhh 👋
+
 <p align="center">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/assets/img/ahhhhhh_logoV2.png" width="30%">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/assets/images/logo.png" alt="Logo" height="100">
 </p>
 
 </br>
 
-<h1 align="center">Welcome to Ahhhhhh 👋</h1>
 <p>
-  <img src="https://img.shields.io/badge/version-1.6.1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/SSebigo/white-whistle#readme">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-no-brightgreen.svg" target="_blank" />
-  </a>
-  <a href="https://github.com/SSebigo/white-whistle/graphs/commit-activity">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />
-  </a>
-  <a href="https://github.com/SSebigo/white-whistle/blob/master/LICENSE">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
-  </a>
+<img src="https://img.shields.io/badge/version-1.6.1-blue.svg?cacheSeconds=2592000" />
+<a href="https://github.com/SSebigo/ahhhhhh#readme">
+<img alt="Documentation" src="https://img.shields.io/badge/documentation-no-brightgreen.svg" target="_blank" />
+</a>
+<a href="https://github.com/SSebigo/ahhhhhh/graphs/commit-activity">
+<img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />
+</a>
+<a href="https://github.com/SSebigo/ahhhhhh/blob/master/LICENSE">
+<img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
+</a>
 </p>
 
-> Makes your phone go "ahhhhhh" when plugged in
+Makes your smartphone moan, scream or laugh when charging, discharging or full
 
 > ⚠️This project is a way for me to try things for other projects so it may sometimes not work because I pushed broken code deliberately
 
 ---
 
-### GET IT ON PLAY STORE
+## GET IT ON PLAY STORE
 
-<a href='https://play.google.com/store/apps/details?id=io.killy.ahhhhhh&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width=25%/></a>
+<a href='https://play.google.com/store/apps/details?id=io.killy.ahhhhhh&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="75"/></a>
 
 ---
 
@@ -41,29 +42,115 @@
 ### SCREENSHOTS
 
 <p align="center">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20190906-170431.jpg" width="25%">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20190906-170447.jpg" width="25%">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20190918-162814.jpg" width="25%">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20191009-011720.jpg" width="25%">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20191009-011733.jpg" width="25%">
-  <img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/Screenshot_20191009-011752.jpg" width="25%">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_1.jpg" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_2.jpg" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_3.jpg" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_4.jpg" height="100">
+<img src="https://github.com/SSebigo/ahhhhhh/blob/master/screenshots/screenshot_5.jpg" height="100">
 </p>
 
 ## Author
 
-👤 **SSebigo <killy.sebigo@gmail.com>**
+👤 **SSebigo <ahhhhhh.sebigo@gmail.com>**
 
 * Github: [@SSebigo](https://github.com/SSebigo)
 
 ## 🤝 Contributing
 
-1. [Install Flutter](https://flutter.dev/docs/get-started/install)
+* [Install Flutter](https://flutter.dev/docs/get-started/install)
+* Clone the project: ```git clone https://github.com/SSebigo/ahhhhhh.git```
+* Create a ```AndroidManifest.xml``` in ```android/app/src/main/``` and paste the following:
+
+``` xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.killy.ahhhhhh">
+    <!-- io.flutter.app.FlutterApplication is an android.app.Application that
+         calls FlutterMain.startInitialization(this); in its onCreate method.
+         In most cases you can leave this as-is, but you if you want to provide
+         additional functionality it is fine to subclass or reimplement
+         FlutterApplication and put your custom class here. -->
+    <application
+        android:name="io.flutter.app.FlutterApplication"
+        android:label="ahhhhhh"
+        android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="[ADMOB_APP_ID]"/>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <!-- Displays an Android View that continues showing the launch screen
+                 Drawable until Flutter paints its first frame, then this splash
+                 screen fades out. A splash screen is useful to avoid any visual
+                 gap between the end of Android's launch screen and the painting of
+                 Flutter's first frame. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.SplashScreenDrawable"
+              android:resource="@drawable/launch_background"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+</manifest>
+```
+
+* Create a ```ad_manager.dart``` in ```lib/``` and paste the following:
+
+``` dart
+import 'dart:io';
+
+/// @nocode
+class AdManager {
+  /// @nocode
+  static String get appId {
+    /// @nocode
+    if (Platform.isAndroid) {
+      return '[ADMOB_APP_ID]';
+    } else if (Platform.isIOS) {
+      return '[ADMOB_APP_ID]';
+    } else {
+      throw UnsupportedError('Unsupported platform');
+    }
+  }
+
+  /// @nocode
+  static String get bannerAdUnitId {
+    if (Platform.isAndroid) {
+      return '[BANNER_ID]';
+    } else if (Platform.isIOS) {
+      return '[BANNER_ID]';
+    } else {
+      throw UnsupportedError('Unsupported platform');
+    }
+  }
+}
+```
+
+* Open an emulator or plug in your prefered device
+* Run ```flutter clean; flutter pub get; flutter run```
+
 ---
-2. Clone the project: ```git clone https://github.com/SSebigo/ahhhhhh.git```
----
-3. Open an emulator or plug in your prefered device
-4. ```flutter run```
----
+
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/SSebigo/ahhhhhh/issues).
 
 ## Show your support
@@ -72,5 +159,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2019 [SSebigo <killy.sebigo@gmail.com>](https://github.com/SSebigo).<br />
+Copyright © 2021 [SSebigo <ahhhhhh.sebigo@gmail.com>](https://github.com/SSebigo).
+
 This project is [MIT](https://github.com/SSebigo/ahhhhhh/blob/master/LICENSE) licensed.

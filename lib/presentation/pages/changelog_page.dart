@@ -1,0 +1,67 @@
+import 'package:ahhhhhh/presentation/widgets/changelog/changelog.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'package:ahhhhhh/utils/functions.dart';
+import 'package:ahhhhhh/utils/themes.dart';
+
+/// @nodoc
+class ChangelogPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: Themes.wineLightTheme(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('CHANGELOGS'),
+          backgroundColor: Colors.black,
+          brightness: Brightness.dark,
+          iconTheme: const IconThemeData(color: Colors.white),
+          elevation: 0.0,
+        ),
+        body: SafeArea(
+          child: ListView(
+            children: [
+              const Changelog(
+                version: '1.9.0',
+                changes: <String>[
+                  '- User can now select a sound for:',
+                  '1. Phone plugged/Fully charged',
+                  '2. Phone unplugged',
+                  '- User has to longpress a sound to assign it to plug/unplug.',
+                ],
+              ),
+              const Changelog(
+                version: '1.10.0',
+                changes: <String>[
+                  '- User can add their own audio files.',
+                  '''- Updated sounds list & visual to prevent accidental ad clicks.''',
+                ],
+              ),
+              const Changelog(
+                version: '2.0.0',
+                changes: <String>[
+                  '- UI update.',
+                  '- Onboarding updated.',
+                  '- New sounds added.',
+                  '- New visuals added.',
+                  '- About page added.',
+                  '''- User can now choose a different visual when pressing the central visual.''',
+                  '- Charging & battery full are now distinct states.',
+                  "- Upload custom sounds' feature has been removed.",
+                  "- Upload custom visuals' feature has been removed.",
+                  '''- Play audio when app in background's feature has been removed.''',
+                ],
+              ),
+              SizedBox(height: getSmartBannerHeight(context)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

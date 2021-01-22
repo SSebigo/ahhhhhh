@@ -1,30 +1,32 @@
 import 'package:bloc/bloc.dart';
 import 'package:logger/logger.dart';
 
+/// @nodoc
 class SimpleBlocObserver extends BlocObserver {
-  final Logger logger = Logger();
+  /// @nodoc
+  final Logger _logger = Logger();
 
   @override
   void onEvent(Bloc bloc, Object event) {
+    _logger.d('${bloc.runtimeType} $event');
     super.onEvent(bloc, event);
-    logger.d(event);
   }
 
   @override
   void onChange(Cubit cubit, Change change) {
+    _logger.d('${cubit.runtimeType} $change');
     super.onChange(cubit, change);
-    logger.d('event: $change');
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
+    _logger.d('${bloc.runtimeType} $transition');
     super.onTransition(bloc, transition);
-    logger.d(transition);
   }
 
   @override
-  void onError(Cubit cubit, Object error, StackTrace stacktrace) {
-    super.onError(cubit, error, stacktrace);
-    logger.d('$error, $stacktrace');
+  void onError(Cubit cubit, Object error, StackTrace stackTrace) {
+    _logger.e('${cubit.runtimeType} $error $stackTrace');
+    super.onError(cubit, error, stackTrace);
   }
 }

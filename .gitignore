@@ -40,6 +40,7 @@
 **/android/**/GeneratedPluginRegistrant.java
 **/android/key.properties
 **/android/app/google-services.json
+**/android/app/src/main/AndroidManifest.xml
 
 # iOS/XCode related
 **/ios/**/*.mode1v3
@@ -67,6 +68,7 @@
 **/ios/Flutter/flutter_assets/
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/Runner/Info.plist
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
@@ -74,3 +76,7 @@
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# Others
+**/lib/ad_manager.dart
+**/.flutter-plugins-dependencies
