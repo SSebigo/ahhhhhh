@@ -9,17 +9,17 @@ abstract class AudioEvent with _$AudioEvent {
   ) = BatteryStateChangedEvent;
 
   /// @nodoc
-  const factory AudioEvent.changeBatteryFullTrack(Track track) =
-      ChangeBatteryFullTrack;
+  const factory AudioEvent.changeBatteryFullAudio(Audio audio) =
+      ChangeBatteryFullAudio;
 
   /// @nodoc
-  const factory AudioEvent.changeChargingTrack(Track track) =
-      ChangeChargingTrack;
+  const factory AudioEvent.changeChargingAudio(Audio audio) =
+      ChangeChargingAudio;
 
   /// @nodoc
-  const factory AudioEvent.changeDischargingTrack(Track track) =
-      ChangeDischargingTrack;
+  const factory AudioEvent.changeDischargingAudio(Audio audio) =
+      ChangeDischargingAudio;
 
   /// @nodoc
-  const factory AudioEvent.playTrackEvent(Track track) = PlayTrackEvent;
+  const factory AudioEvent.playAudioEvent(Audio audio) = PlayAudioEvent;
 }

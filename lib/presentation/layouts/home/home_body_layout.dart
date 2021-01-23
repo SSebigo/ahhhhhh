@@ -1,8 +1,8 @@
-import 'package:ahhhhhh/ad_manager.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:ahhhhhh/ad_manager.dart';
 import 'package:ahhhhhh/application/audio/audio_bloc.dart';
 import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
@@ -49,10 +49,10 @@ class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
         BlocListener<AudioBloc, AudioState>(
           listener: (context, audioState) {
             audioState.maybeMap(
-              trackChangedState: (_) {
+              audioChangedState: (_) {
                 context
                     .read<DrawerBloc>()
-                    .add(const DrawerEvent.trackAssignedEvent());
+                    .add(const DrawerEvent.audioAssignedEvent());
               },
               orElse: () {},
             );

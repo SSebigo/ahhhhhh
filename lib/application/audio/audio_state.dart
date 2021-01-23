@@ -7,7 +7,7 @@ abstract class AudioState with _$AudioState {
   const factory AudioState.audioPlayedState() = _AudioPlayedState;
 
   /// @nodoc
-  const factory AudioState.changingTrackState() = _ChangingTrackState;
+  const factory AudioState.changingAudioState() = _ChangingAudioState;
 
   /// @nodoc
   const factory AudioState.dischargingState() = _DischargingState;
@@ -16,17 +16,14 @@ abstract class AudioState with _$AudioState {
   const factory AudioState.initialState() = _InitialState;
 
   /// @nodoc
-  const factory AudioState.playingTestTrackState() = _PlayingTestTrackState;
+  const factory AudioState.playingTestAudioState() = _PlayingTestAudioState;
 
   /// @nodoc
   const factory AudioState.playingAudioState() = _PlayingAudioState;
 
   /// @nodoc
-  const factory AudioState.testTrackPlayedState() = _TestTrackPlayedState;
+  const factory AudioState.testAudioPlayedState() = _TestAudioPlayedState;
 
   /// @nodoc
-  const factory AudioState.trackPlayedState() = _TrackPlayedState;
-
-  /// @nodoc
-  const factory AudioState.trackChangedState() = _TrackChangedState;
+  const factory AudioState.audioChangedState() = _AudioChangedState;
 }

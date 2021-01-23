@@ -4,8 +4,8 @@ part of 'drawer_bloc.dart';
 @freezed
 abstract class DrawerEvent with _$DrawerEvent {
   /// @nodoc
-  const factory DrawerEvent.homePageLaunchedEvent() = HomePageLaunchedEvent;
+  const factory DrawerEvent.audioAssignedEvent() = AudioAssignedEvent;
 
   /// @nodoc
-  const factory DrawerEvent.trackAssignedEvent() = TrackAssignedEvent;
+  const factory DrawerEvent.homePageLaunchedEvent() = HomePageLaunchedEvent;
 }

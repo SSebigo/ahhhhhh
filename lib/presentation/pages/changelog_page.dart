@@ -57,6 +57,13 @@ class ChangelogPage extends StatelessWidget {
                   '''- Play audio when app in background's feature has been removed.''',
                 ],
               ),
+              const Changelog(
+                version: '2.1.0',
+                changes: <String>[
+                  '- Ahhhhhh is now available on iPhone.',
+                  '- Bug fixes.',
+                ],
+              ),
               SizedBox(height: getSmartBannerHeight(context)),
             ],
           ),

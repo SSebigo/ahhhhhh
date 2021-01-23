@@ -34,9 +34,9 @@ class HiveLocalSessionFacade with Getters implements ILocalSessionFacade {
       session ??
           Session(
             chargingVisualPath: Assets.yaranaikaChargingImage,
-            chargingTrack: tracks[0].toMap(),
+            chargingAudio: audios[0].toMap(),
             dischargingVisualPath: Assets.yaranaikaDischargingImage,
-            dischargingTrack: tracks[0].toMap(),
+            dischargingAudio: audios[0].toMap(),
           ),
     );
   }

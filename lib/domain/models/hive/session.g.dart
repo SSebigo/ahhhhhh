@@ -17,11 +17,11 @@ class SessionAdapter extends TypeAdapter<Session> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Session(
-      batteryFullTrack: (fields[0] as Map)?.cast<String, dynamic>(),
+      batteryFullAudio: (fields[0] as Map)?.cast<String, dynamic>(),
       chargingVisualPath: fields[3] as String,
-      chargingTrack: (fields[1] as Map)?.cast<String, dynamic>(),
+      chargingAudio: (fields[1] as Map)?.cast<String, dynamic>(),
       dischargingVisualPath: fields[4] as String,
-      dischargingTrack: (fields[2] as Map)?.cast<String, dynamic>(),
+      dischargingAudio: (fields[2] as Map)?.cast<String, dynamic>(),
     );
   }
 
@@ -30,11 +30,11 @@ class SessionAdapter extends TypeAdapter<Session> {
     writer
       ..writeByte(5)
       ..writeByte(0)
-      ..write(obj.batteryFullTrack)
+      ..write(obj.batteryFullAudio)
       ..writeByte(1)
-      ..write(obj.chargingTrack)
+      ..write(obj.chargingAudio)
       ..writeByte(2)
-      ..write(obj.dischargingTrack)
+      ..write(obj.dischargingAudio)
       ..writeByte(3)
       ..write(obj.chargingVisualPath)
       ..writeByte(4)

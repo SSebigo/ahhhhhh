@@ -7,24 +7,24 @@ part 'session.g.dart';
 class Session extends HiveObject {
   /// @nodoc
   Session({
-    this.batteryFullTrack,
+    this.batteryFullAudio,
     this.chargingVisualPath,
-    this.chargingTrack,
+    this.chargingAudio,
     this.dischargingVisualPath,
-    this.dischargingTrack,
+    this.dischargingAudio,
   });
 
   /// @nodoc
   @HiveField(0)
-  Map<String, dynamic> batteryFullTrack;
+  Map<String, dynamic> batteryFullAudio;
 
   /// @nodoc
   @HiveField(1)
-  Map<String, dynamic> chargingTrack;
+  Map<String, dynamic> chargingAudio;
 
   /// @nodoc
   @HiveField(2)
-  Map<String, dynamic> dischargingTrack;
+  Map<String, dynamic> dischargingAudio;
 
   /// @nodoc
   @HiveField(3)
@@ -36,19 +36,19 @@ class Session extends HiveObject {
 
   /// @nodoc
   Session copyWith({
-    Map<String, dynamic> batteryFullTrack,
-    Map<String, dynamic> chargingTrack,
-    Map<String, dynamic> dischargingTrack,
+    Map<String, dynamic> batteryFullAudio,
+    Map<String, dynamic> chargingAudio,
+    Map<String, dynamic> dischargingAudio,
     String chargingVisualPath,
     String dischargingVisualPath,
   }) {
     return Session(
-      batteryFullTrack: batteryFullTrack ?? this.batteryFullTrack,
+      batteryFullAudio: batteryFullAudio ?? this.batteryFullAudio,
       chargingVisualPath: chargingVisualPath ?? this.chargingVisualPath,
       dischargingVisualPath:
           dischargingVisualPath ?? this.dischargingVisualPath,
-      chargingTrack: chargingTrack ?? this.chargingTrack,
-      dischargingTrack: dischargingTrack ?? this.dischargingTrack,
+      chargingAudio: chargingAudio ?? this.chargingAudio,
+      dischargingAudio: dischargingAudio ?? this.dischargingAudio,
     );
   }
 }

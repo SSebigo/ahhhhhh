@@ -5,17 +5,17 @@ part of 'drawer_bloc.dart';
 abstract class DrawerState with _$DrawerState {
   /// @nodoc
   const factory DrawerState({
-    @required Map<String, dynamic> batteryFullTrack,
-    @required Map<String, dynamic> chargingTrack,
-    @required Map<String, dynamic> dischargingTrack,
-    @required List<Track> tracks,
+    @required List<Audio> audios,
+    @required Map<String, dynamic> batteryFullAudio,
+    @required Map<String, dynamic> chargingAudio,
+    @required Map<String, dynamic> dischargingAudio,
   }) = _DrawerState;
 
   /// @nodoc
   factory DrawerState.initial() => const DrawerState(
-        batteryFullTrack: <String, dynamic>{},
-        chargingTrack: <String, dynamic>{},
-        dischargingTrack: <String, dynamic>{},
-        tracks: <Track>[],
+        audios: <Audio>[],
+        batteryFullAudio: <String, dynamic>{},
+        chargingAudio: <String, dynamic>{},
+        dischargingAudio: <String, dynamic>{},
       );
 }
