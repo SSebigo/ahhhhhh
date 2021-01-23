@@ -8,7 +8,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
-import 'package:ahhhhhh/domain/models/hive/track.dart';
+import 'package:ahhhhhh/domain/models/hive/audio.dart';
 
 part 'audio_bloc.freezed.dart';
 part 'audio_event.dart';
@@ -24,7 +24,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
 
   final ILocalSessionFacade _localSessionFacade;
 
-  bool _isTrackPlaying = false;
+  bool _isAudioPlaying = false;
 
   /// @nodoc
   final AudioCache _audioCache =
@@ -41,76 +41,76 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
         yield const AudioState.playingAudioState();
 
         if (value.batteryState == BatteryState.full) {
-          await _playAudioTrack(track: Track.fromMap(session.batteryFullTrack));
+          await _playAudio(audio: Audio.fromMap(session.batteryFullAudio));
         } else if (value.batteryState == BatteryState.discharging) {
-          await _playAudioTrack(track: Track.fromMap(session.dischargingTrack));
+          await _playAudio(audio: Audio.fromMap(session.dischargingAudio));
         } else {
-          await _playAudioTrack(track: Track.fromMap(session.chargingTrack));
+          await _playAudio(audio: Audio.fromMap(session.chargingAudio));
         }
 
         yield const AudioState.audioPlayedState();
       },
-      changeBatteryFullTrack: (value) async* {
-        yield const AudioState.changingTrackState();
+      changeBatteryFullAudio: (value) async* {
+        yield const AudioState.changingAudioState();
 
         final session = _localSessionFacade.fetchSession()
-          ..batteryFullTrack = value.track.toMap();
+          ..batteryFullAudio = value.audio.toMap();
 
         await _localSessionFacade.updateSession(session);
 
-        yield const AudioState.trackChangedState();
+        yield const AudioState.audioChangedState();
       },
-      changeChargingTrack: (value) async* {
-        yield const AudioState.changingTrackState();
+      changeChargingAudio: (value) async* {
+        yield const AudioState.changingAudioState();
 
         final session = _localSessionFacade.fetchSession()
-          ..chargingTrack = value.track.toMap();
+          ..chargingAudio = value.audio.toMap();
 
         await _localSessionFacade.updateSession(session);
 
-        yield const AudioState.trackChangedState();
+        yield const AudioState.audioChangedState();
       },
-      changeDischargingTrack: (value) async* {
-        yield const AudioState.changingTrackState();
+      changeDischargingAudio: (value) async* {
+        yield const AudioState.changingAudioState();
 
         final session = _localSessionFacade.fetchSession()
-          ..dischargingTrack = value.track.toMap();
+          ..dischargingAudio = value.audio.toMap();
 
         await _localSessionFacade.updateSession(session);
 
-        yield const AudioState.trackChangedState();
+        yield const AudioState.audioChangedState();
       },
-      playTrackEvent: (value) async* {
-        yield const AudioState.playingTestTrackState();
+      playAudioEvent: (value) async* {
+        yield const AudioState.playingTestAudioState();
 
-        if (_isTrackPlaying) {
-          await _stopAudioTrack();
+        if (_isAudioPlaying) {
+          await _stopAudio();
         }
 
-        _isTrackPlaying = true;
+        _isAudioPlaying = true;
 
-        await _playAudioTrack(track: value.track);
+        await _playAudio(audio: value.audio);
 
-        yield const AudioState.testTrackPlayedState();
+        yield const AudioState.testAudioPlayedState();
       },
     );
   }
 
   /// @nodoc
-  Future<void> _playAudioTrack({Track track}) async {
-    track.isAsset
-        ? await _audioCache.play(track.path).whenComplete(() {
-            _isTrackPlaying = false;
+  Future<void> _playAudio({Audio audio}) async {
+    audio.isAsset
+        ? await _audioCache.play(audio.path).whenComplete(() {
+            _isAudioPlaying = false;
           })
         : await _audioCache.fixedPlayer
-            .play(track.path, isLocal: true)
+            .play(audio.path, isLocal: true)
             .whenComplete(() {
-            _isTrackPlaying = false;
+            _isAudioPlaying = false;
           });
   }
 
   /// @nodoc
-  Future<int> _stopAudioTrack() {
+  Future<int> _stopAudio() {
     return _audioCache.fixedPlayer.stop();
   }
 }

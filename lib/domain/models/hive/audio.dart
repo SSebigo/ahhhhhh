@@ -1,23 +1,23 @@
 import 'package:flutter/widgets.dart';
 import 'package:hive/hive.dart';
 
-part 'track.g.dart';
+part 'audio.g.dart';
 
 /// @nodoc
 @HiveType(typeId: 1)
-class Track extends HiveObject {
+class Audio extends HiveObject {
   /// @nodoc
-  Track({
+  Audio({
     @required this.name,
     @required this.path,
     @required this.isAsset,
   });
 
   /// @nodoc
-  factory Track.fromMap(Map<String, dynamic> map) {
+  factory Audio.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
-    return Track(
+    return Audio(
       name: map['name'],
       path: map['path'],
       isAsset: map['isAsset'],
@@ -37,12 +37,12 @@ class Track extends HiveObject {
   final bool isAsset;
 
   /// @nodoc
-  Track copyWith({
+  Audio copyWith({
     String name,
     String path,
     bool isAsset,
   }) {
-    return Track(
+    return Audio(
       name: name ?? this.name,
       path: path ?? this.path,
       isAsset: isAsset ?? this.isAsset,

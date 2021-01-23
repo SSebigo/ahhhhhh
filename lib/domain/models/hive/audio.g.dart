@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'track.dart';
+part of 'audio.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TrackAdapter extends TypeAdapter<Track> {
+class AudioAdapter extends TypeAdapter<Audio> {
   @override
   final int typeId = 1;
 
   @override
-  Track read(BinaryReader reader) {
+  Audio read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Track(
+    return Audio(
       name: fields[0] as String,
       path: fields[1] as String,
       isAsset: fields[2] as bool,
@@ -24,7 +24,7 @@ class TrackAdapter extends TypeAdapter<Track> {
   }
 
   @override
-  void write(BinaryWriter writer, Track obj) {
+  void write(BinaryWriter writer, Audio obj) {
     writer
       ..writeByte(3)
       ..writeByte(0)
@@ -41,7 +41,7 @@ class TrackAdapter extends TypeAdapter<Track> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TrackAdapter &&
+      other is AudioAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -5,14 +5,14 @@ class Constants {
   static const String sessionsBox = 'sessionsBox';
 
   /// @nodoc
-  static const String tracksBox = 'tracksBox';
+  static const String audiosBox = 'audiosBox';
 
-  // SECTION Hive track
+  // SECTION Hive audio
   /// @nodoc
   static const String session = 'session';
 
   /// @nodoc
-  static const String track = 'track';
+  static const String audio = 'audio';
 
   // SECTON assets
   /// @nodoc

@@ -1,35 +1,35 @@
-import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
-import 'package:ahhhhhh/utils/palettes.dart';
 import 'package:flutter/material.dart';
-
-import 'package:ahhhhhh/domain/models/hive/track.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
+import 'package:ahhhhhh/domain/models/hive/audio.dart';
+import 'package:ahhhhhh/utils/palettes.dart';
+
 /// @nodoc
-class HomeTrackSelectionDialog extends StatelessWidget {
+class HomeAudioSelectionDialog extends StatelessWidget {
   /// @nodoc
-  const HomeTrackSelectionDialog({
+  const HomeAudioSelectionDialog({
     Key key,
-    // @required this.batteryFullTrack,
-    // @required this.chargingTrack,
-    // @required this.dischargingTrack,
+    // @required this.batteryFullAudio,
+    // @required this.chargingAudio,
+    // @required this.dischargingAudio,
     @required this.onBatteryFullTapped,
     @required this.onChargingTapped,
     @required this.onDischargingTapped,
-    @required this.selectedTrack,
+    @required this.selectedAudio,
   }) : super(key: key);
 
   // /// @nodoc
-  // final Track batteryFullTrack;
+  // final Audio batteryFullAudio;
 
   // /// @nodoc
-  // final Track chargingTrack;
+  // final Audio chargingAudio;
 
   // /// @nodoc
-  // final Track dischargingTrack;
+  // final Audio dischargingAudio;
 
   /// @nodoc
-  final Track selectedTrack;
+  final Audio selectedAudio;
 
   /// @nodoc
   final VoidCallback onBatteryFullTapped;
@@ -61,7 +61,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Text(
-                    'Assign "${selectedTrack.name}" to:',
+                    'Assign "${selectedAudio.name}" to:',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       color: Colors.black,
@@ -73,7 +73,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 Container(
                   color:
-                      selectedTrack.name == drawerState.batteryFullTrack['name']
+                      selectedAudio.name == drawerState.batteryFullAudio['name']
                           ? Palettes.orangeYellow
                           : Colors.transparent,
                   child: ListTile(
@@ -85,8 +85,8 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    trailing: selectedTrack.name ==
-                            drawerState.batteryFullTrack['name']
+                    trailing: selectedAudio.name ==
+                            drawerState.batteryFullAudio['name']
                         ? const Icon(
                             Icons.check,
                             color: Colors.black,
@@ -96,7 +96,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  color: selectedTrack.name == drawerState.chargingTrack['name']
+                  color: selectedAudio.name == drawerState.chargingAudio['name']
                       ? Palettes.orangeYellow
                       : Colors.transparent,
                   child: ListTile(
@@ -109,7 +109,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                       ),
                     ),
                     trailing:
-                        selectedTrack.name == drawerState.chargingTrack['name']
+                        selectedAudio.name == drawerState.chargingAudio['name']
                             ? const Icon(
                                 Icons.check,
                                 color: Colors.black,
@@ -120,7 +120,7 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                 ),
                 Container(
                   color:
-                      selectedTrack.name == drawerState.dischargingTrack['name']
+                      selectedAudio.name == drawerState.dischargingAudio['name']
                           ? Palettes.orangeYellow
                           : Colors.transparent,
                   child: ListTile(
@@ -132,8 +132,8 @@ class HomeTrackSelectionDialog extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    trailing: selectedTrack.name ==
-                            drawerState.dischargingTrack['name']
+                    trailing: selectedAudio.name ==
+                            drawerState.dischargingAudio['name']
                         ? const Icon(
                             Icons.check,
                             color: Colors.black,

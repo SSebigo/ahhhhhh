@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:ahhhhhh/domain/facades/i_local_track_facade.dart';
-import 'package:ahhhhhh/domain/models/hive/track.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import 'package:ahhhhhh/domain/facades/i_local_audio_facade.dart';
 import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
+import 'package:ahhhhhh/domain/models/hive/audio.dart';
 
 part 'drawer_bloc.freezed.dart';
 part 'drawer_event.dart';
@@ -18,35 +18,35 @@ class DrawerBloc extends Bloc<DrawerEvent, DrawerState> {
   /// @nodoc
   DrawerBloc(
     this._localSessionFacade,
-    this._localTrackFacade,
+    this._localAudioFacade,
   ) : super(DrawerState.initial());
 
   final ILocalSessionFacade _localSessionFacade;
-  final ILocalTrackFacade _localTrackFacade;
+  final ILocalAudioFacade _localAudioFacade;
 
   @override
   Stream<DrawerState> mapEventToState(
     DrawerEvent event,
   ) async* {
     yield* event.map(
-      homePageLaunchedEvent: (value) async* {
+      audioAssignedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
-        final tracks = _localTrackFacade.fetchAllTracks();
 
         yield state.copyWith(
-          batteryFullTrack: session.batteryFullTrack,
-          chargingTrack: session.chargingTrack,
-          dischargingTrack: session.dischargingTrack,
-          tracks: tracks,
+          batteryFullAudio: session.batteryFullAudio,
+          chargingAudio: session.chargingAudio,
+          dischargingAudio: session.dischargingAudio,
         );
       },
-      trackAssignedEvent: (value) async* {
+      homePageLaunchedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
+        final audios = _localAudioFacade.fetchAllAudios();
 
         yield state.copyWith(
-          batteryFullTrack: session.batteryFullTrack,
-          chargingTrack: session.chargingTrack,
-          dischargingTrack: session.dischargingTrack,
+          audios: audios,
+          batteryFullAudio: session.batteryFullAudio,
+          chargingAudio: session.chargingAudio,
+          dischargingAudio: session.dischargingAudio,
         );
       },
     );

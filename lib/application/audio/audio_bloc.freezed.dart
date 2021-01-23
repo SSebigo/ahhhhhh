@@ -21,30 +21,30 @@ class _$AudioEventTearOff {
   }
 
 // ignore: unused_element
-  ChangeBatteryFullTrack changeBatteryFullTrack(Track track) {
-    return ChangeBatteryFullTrack(
-      track,
+  ChangeBatteryFullAudio changeBatteryFullAudio(Audio audio) {
+    return ChangeBatteryFullAudio(
+      audio,
     );
   }
 
 // ignore: unused_element
-  ChangeChargingTrack changeChargingTrack(Track track) {
-    return ChangeChargingTrack(
-      track,
+  ChangeChargingAudio changeChargingAudio(Audio audio) {
+    return ChangeChargingAudio(
+      audio,
     );
   }
 
 // ignore: unused_element
-  ChangeDischargingTrack changeDischargingTrack(Track track) {
-    return ChangeDischargingTrack(
-      track,
+  ChangeDischargingAudio changeDischargingAudio(Audio audio) {
+    return ChangeDischargingAudio(
+      audio,
     );
   }
 
 // ignore: unused_element
-  PlayTrackEvent playTrackEvent(Track track) {
-    return PlayTrackEvent(
-      track,
+  PlayAudioEvent playAudioEvent(Audio audio) {
+    return PlayAudioEvent(
+      audio,
     );
   }
 }
@@ -58,35 +58,35 @@ mixin _$AudioEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
-    @required TResult changeBatteryFullTrack(Track track),
-    @required TResult changeChargingTrack(Track track),
-    @required TResult changeDischargingTrack(Track track),
-    @required TResult playTrackEvent(Track track),
+    @required TResult changeBatteryFullAudio(Audio audio),
+    @required TResult changeChargingAudio(Audio audio),
+    @required TResult changeDischargingAudio(Audio audio),
+    @required TResult playAudioEvent(Audio audio),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
-    TResult changeBatteryFullTrack(Track track),
-    TResult changeChargingTrack(Track track),
-    TResult changeDischargingTrack(Track track),
-    TResult playTrackEvent(Track track),
+    TResult changeBatteryFullAudio(Audio audio),
+    TResult changeChargingAudio(Audio audio),
+    TResult changeDischargingAudio(Audio audio),
+    TResult playAudioEvent(Audio audio),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    @required TResult changeChargingTrack(ChangeChargingTrack value),
-    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
-    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    @required TResult changeChargingAudio(ChangeChargingAudio value),
+    @required TResult changeDischargingAudio(ChangeDischargingAudio value),
+    @required TResult playAudioEvent(PlayAudioEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    TResult changeChargingTrack(ChangeChargingTrack value),
-    TResult changeDischargingTrack(ChangeDischargingTrack value),
-    TResult playTrackEvent(PlayTrackEvent value),
+    TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    TResult changeChargingAudio(ChangeChargingAudio value),
+    TResult changeDischargingAudio(ChangeDischargingAudio value),
+    TResult playAudioEvent(PlayAudioEvent value),
     @required TResult orElse(),
   });
 }
@@ -175,16 +175,16 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
-    @required TResult changeBatteryFullTrack(Track track),
-    @required TResult changeChargingTrack(Track track),
-    @required TResult changeDischargingTrack(Track track),
-    @required TResult playTrackEvent(Track track),
+    @required TResult changeBatteryFullAudio(Audio audio),
+    @required TResult changeChargingAudio(Audio audio),
+    @required TResult changeDischargingAudio(Audio audio),
+    @required TResult playAudioEvent(Audio audio),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
     return batteryStateChangedEvent(batteryState);
   }
 
@@ -192,10 +192,10 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
-    TResult changeBatteryFullTrack(Track track),
-    TResult changeChargingTrack(Track track),
-    TResult changeDischargingTrack(Track track),
-    TResult playTrackEvent(Track track),
+    TResult changeBatteryFullAudio(Audio audio),
+    TResult changeChargingAudio(Audio audio),
+    TResult changeDischargingAudio(Audio audio),
+    TResult playAudioEvent(Audio audio),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -209,16 +209,16 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    @required TResult changeChargingTrack(ChangeChargingTrack value),
-    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
-    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    @required TResult changeChargingAudio(ChangeChargingAudio value),
+    @required TResult changeDischargingAudio(ChangeDischargingAudio value),
+    @required TResult playAudioEvent(PlayAudioEvent value),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
     return batteryStateChangedEvent(this);
   }
 
@@ -226,10 +226,10 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    TResult changeChargingTrack(ChangeChargingTrack value),
-    TResult changeDischargingTrack(ChangeDischargingTrack value),
-    TResult playTrackEvent(PlayTrackEvent value),
+    TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    TResult changeChargingAudio(ChangeChargingAudio value),
+    TResult changeDischargingAudio(ChangeDischargingAudio value),
+    TResult playAudioEvent(PlayAudioEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -250,94 +250,94 @@ abstract class BatteryStateChangedEvent implements AudioEvent {
 }
 
 /// @nodoc
-abstract class $ChangeBatteryFullTrackCopyWith<$Res> {
-  factory $ChangeBatteryFullTrackCopyWith(ChangeBatteryFullTrack value,
-          $Res Function(ChangeBatteryFullTrack) then) =
-      _$ChangeBatteryFullTrackCopyWithImpl<$Res>;
-  $Res call({Track track});
+abstract class $ChangeBatteryFullAudioCopyWith<$Res> {
+  factory $ChangeBatteryFullAudioCopyWith(ChangeBatteryFullAudio value,
+          $Res Function(ChangeBatteryFullAudio) then) =
+      _$ChangeBatteryFullAudioCopyWithImpl<$Res>;
+  $Res call({Audio audio});
 }
 
 /// @nodoc
-class _$ChangeBatteryFullTrackCopyWithImpl<$Res>
+class _$ChangeBatteryFullAudioCopyWithImpl<$Res>
     extends _$AudioEventCopyWithImpl<$Res>
-    implements $ChangeBatteryFullTrackCopyWith<$Res> {
-  _$ChangeBatteryFullTrackCopyWithImpl(ChangeBatteryFullTrack _value,
-      $Res Function(ChangeBatteryFullTrack) _then)
-      : super(_value, (v) => _then(v as ChangeBatteryFullTrack));
+    implements $ChangeBatteryFullAudioCopyWith<$Res> {
+  _$ChangeBatteryFullAudioCopyWithImpl(ChangeBatteryFullAudio _value,
+      $Res Function(ChangeBatteryFullAudio) _then)
+      : super(_value, (v) => _then(v as ChangeBatteryFullAudio));
 
   @override
-  ChangeBatteryFullTrack get _value => super._value as ChangeBatteryFullTrack;
+  ChangeBatteryFullAudio get _value => super._value as ChangeBatteryFullAudio;
 
   @override
   $Res call({
-    Object track = freezed,
+    Object audio = freezed,
   }) {
-    return _then(ChangeBatteryFullTrack(
-      track == freezed ? _value.track : track as Track,
+    return _then(ChangeBatteryFullAudio(
+      audio == freezed ? _value.audio : audio as Audio,
     ));
   }
 }
 
 /// @nodoc
-class _$ChangeBatteryFullTrack implements ChangeBatteryFullTrack {
-  const _$ChangeBatteryFullTrack(this.track) : assert(track != null);
+class _$ChangeBatteryFullAudio implements ChangeBatteryFullAudio {
+  const _$ChangeBatteryFullAudio(this.audio) : assert(audio != null);
 
   @override
-  final Track track;
+  final Audio audio;
 
   @override
   String toString() {
-    return 'AudioEvent.changeBatteryFullTrack(track: $track)';
+    return 'AudioEvent.changeBatteryFullAudio(audio: $audio)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChangeBatteryFullTrack &&
-            (identical(other.track, track) ||
-                const DeepCollectionEquality().equals(other.track, track)));
+        (other is ChangeBatteryFullAudio &&
+            (identical(other.audio, audio) ||
+                const DeepCollectionEquality().equals(other.audio, audio)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(track);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(audio);
 
   @JsonKey(ignore: true)
   @override
-  $ChangeBatteryFullTrackCopyWith<ChangeBatteryFullTrack> get copyWith =>
-      _$ChangeBatteryFullTrackCopyWithImpl<ChangeBatteryFullTrack>(
+  $ChangeBatteryFullAudioCopyWith<ChangeBatteryFullAudio> get copyWith =>
+      _$ChangeBatteryFullAudioCopyWithImpl<ChangeBatteryFullAudio>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
-    @required TResult changeBatteryFullTrack(Track track),
-    @required TResult changeChargingTrack(Track track),
-    @required TResult changeDischargingTrack(Track track),
-    @required TResult playTrackEvent(Track track),
+    @required TResult changeBatteryFullAudio(Audio audio),
+    @required TResult changeChargingAudio(Audio audio),
+    @required TResult changeDischargingAudio(Audio audio),
+    @required TResult playAudioEvent(Audio audio),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return changeBatteryFullTrack(track);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return changeBatteryFullAudio(audio);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
-    TResult changeBatteryFullTrack(Track track),
-    TResult changeChargingTrack(Track track),
-    TResult changeDischargingTrack(Track track),
-    TResult playTrackEvent(Track track),
+    TResult changeBatteryFullAudio(Audio audio),
+    TResult changeChargingAudio(Audio audio),
+    TResult changeDischargingAudio(Audio audio),
+    TResult playAudioEvent(Audio audio),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changeBatteryFullTrack != null) {
-      return changeBatteryFullTrack(track);
+    if (changeBatteryFullAudio != null) {
+      return changeBatteryFullAudio(audio);
     }
     return orElse();
   }
@@ -346,133 +346,133 @@ class _$ChangeBatteryFullTrack implements ChangeBatteryFullTrack {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    @required TResult changeChargingTrack(ChangeChargingTrack value),
-    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
-    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    @required TResult changeChargingAudio(ChangeChargingAudio value),
+    @required TResult changeDischargingAudio(ChangeDischargingAudio value),
+    @required TResult playAudioEvent(PlayAudioEvent value),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return changeBatteryFullTrack(this);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return changeBatteryFullAudio(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    TResult changeChargingTrack(ChangeChargingTrack value),
-    TResult changeDischargingTrack(ChangeDischargingTrack value),
-    TResult playTrackEvent(PlayTrackEvent value),
+    TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    TResult changeChargingAudio(ChangeChargingAudio value),
+    TResult changeDischargingAudio(ChangeDischargingAudio value),
+    TResult playAudioEvent(PlayAudioEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changeBatteryFullTrack != null) {
-      return changeBatteryFullTrack(this);
+    if (changeBatteryFullAudio != null) {
+      return changeBatteryFullAudio(this);
     }
     return orElse();
   }
 }
 
-abstract class ChangeBatteryFullTrack implements AudioEvent {
-  const factory ChangeBatteryFullTrack(Track track) = _$ChangeBatteryFullTrack;
+abstract class ChangeBatteryFullAudio implements AudioEvent {
+  const factory ChangeBatteryFullAudio(Audio audio) = _$ChangeBatteryFullAudio;
 
-  Track get track;
+  Audio get audio;
   @JsonKey(ignore: true)
-  $ChangeBatteryFullTrackCopyWith<ChangeBatteryFullTrack> get copyWith;
+  $ChangeBatteryFullAudioCopyWith<ChangeBatteryFullAudio> get copyWith;
 }
 
 /// @nodoc
-abstract class $ChangeChargingTrackCopyWith<$Res> {
-  factory $ChangeChargingTrackCopyWith(
-          ChangeChargingTrack value, $Res Function(ChangeChargingTrack) then) =
-      _$ChangeChargingTrackCopyWithImpl<$Res>;
-  $Res call({Track track});
+abstract class $ChangeChargingAudioCopyWith<$Res> {
+  factory $ChangeChargingAudioCopyWith(
+          ChangeChargingAudio value, $Res Function(ChangeChargingAudio) then) =
+      _$ChangeChargingAudioCopyWithImpl<$Res>;
+  $Res call({Audio audio});
 }
 
 /// @nodoc
-class _$ChangeChargingTrackCopyWithImpl<$Res>
+class _$ChangeChargingAudioCopyWithImpl<$Res>
     extends _$AudioEventCopyWithImpl<$Res>
-    implements $ChangeChargingTrackCopyWith<$Res> {
-  _$ChangeChargingTrackCopyWithImpl(
-      ChangeChargingTrack _value, $Res Function(ChangeChargingTrack) _then)
-      : super(_value, (v) => _then(v as ChangeChargingTrack));
+    implements $ChangeChargingAudioCopyWith<$Res> {
+  _$ChangeChargingAudioCopyWithImpl(
+      ChangeChargingAudio _value, $Res Function(ChangeChargingAudio) _then)
+      : super(_value, (v) => _then(v as ChangeChargingAudio));
 
   @override
-  ChangeChargingTrack get _value => super._value as ChangeChargingTrack;
+  ChangeChargingAudio get _value => super._value as ChangeChargingAudio;
 
   @override
   $Res call({
-    Object track = freezed,
+    Object audio = freezed,
   }) {
-    return _then(ChangeChargingTrack(
-      track == freezed ? _value.track : track as Track,
+    return _then(ChangeChargingAudio(
+      audio == freezed ? _value.audio : audio as Audio,
     ));
   }
 }
 
 /// @nodoc
-class _$ChangeChargingTrack implements ChangeChargingTrack {
-  const _$ChangeChargingTrack(this.track) : assert(track != null);
+class _$ChangeChargingAudio implements ChangeChargingAudio {
+  const _$ChangeChargingAudio(this.audio) : assert(audio != null);
 
   @override
-  final Track track;
+  final Audio audio;
 
   @override
   String toString() {
-    return 'AudioEvent.changeChargingTrack(track: $track)';
+    return 'AudioEvent.changeChargingAudio(audio: $audio)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChangeChargingTrack &&
-            (identical(other.track, track) ||
-                const DeepCollectionEquality().equals(other.track, track)));
+        (other is ChangeChargingAudio &&
+            (identical(other.audio, audio) ||
+                const DeepCollectionEquality().equals(other.audio, audio)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(track);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(audio);
 
   @JsonKey(ignore: true)
   @override
-  $ChangeChargingTrackCopyWith<ChangeChargingTrack> get copyWith =>
-      _$ChangeChargingTrackCopyWithImpl<ChangeChargingTrack>(this, _$identity);
+  $ChangeChargingAudioCopyWith<ChangeChargingAudio> get copyWith =>
+      _$ChangeChargingAudioCopyWithImpl<ChangeChargingAudio>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
-    @required TResult changeBatteryFullTrack(Track track),
-    @required TResult changeChargingTrack(Track track),
-    @required TResult changeDischargingTrack(Track track),
-    @required TResult playTrackEvent(Track track),
+    @required TResult changeBatteryFullAudio(Audio audio),
+    @required TResult changeChargingAudio(Audio audio),
+    @required TResult changeDischargingAudio(Audio audio),
+    @required TResult playAudioEvent(Audio audio),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return changeChargingTrack(track);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return changeChargingAudio(audio);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
-    TResult changeBatteryFullTrack(Track track),
-    TResult changeChargingTrack(Track track),
-    TResult changeDischargingTrack(Track track),
-    TResult playTrackEvent(Track track),
+    TResult changeBatteryFullAudio(Audio audio),
+    TResult changeChargingAudio(Audio audio),
+    TResult changeDischargingAudio(Audio audio),
+    TResult playAudioEvent(Audio audio),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changeChargingTrack != null) {
-      return changeChargingTrack(track);
+    if (changeChargingAudio != null) {
+      return changeChargingAudio(audio);
     }
     return orElse();
   }
@@ -481,134 +481,134 @@ class _$ChangeChargingTrack implements ChangeChargingTrack {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    @required TResult changeChargingTrack(ChangeChargingTrack value),
-    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
-    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    @required TResult changeChargingAudio(ChangeChargingAudio value),
+    @required TResult changeDischargingAudio(ChangeDischargingAudio value),
+    @required TResult playAudioEvent(PlayAudioEvent value),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return changeChargingTrack(this);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return changeChargingAudio(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    TResult changeChargingTrack(ChangeChargingTrack value),
-    TResult changeDischargingTrack(ChangeDischargingTrack value),
-    TResult playTrackEvent(PlayTrackEvent value),
+    TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    TResult changeChargingAudio(ChangeChargingAudio value),
+    TResult changeDischargingAudio(ChangeDischargingAudio value),
+    TResult playAudioEvent(PlayAudioEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changeChargingTrack != null) {
-      return changeChargingTrack(this);
+    if (changeChargingAudio != null) {
+      return changeChargingAudio(this);
     }
     return orElse();
   }
 }
 
-abstract class ChangeChargingTrack implements AudioEvent {
-  const factory ChangeChargingTrack(Track track) = _$ChangeChargingTrack;
+abstract class ChangeChargingAudio implements AudioEvent {
+  const factory ChangeChargingAudio(Audio audio) = _$ChangeChargingAudio;
 
-  Track get track;
+  Audio get audio;
   @JsonKey(ignore: true)
-  $ChangeChargingTrackCopyWith<ChangeChargingTrack> get copyWith;
+  $ChangeChargingAudioCopyWith<ChangeChargingAudio> get copyWith;
 }
 
 /// @nodoc
-abstract class $ChangeDischargingTrackCopyWith<$Res> {
-  factory $ChangeDischargingTrackCopyWith(ChangeDischargingTrack value,
-          $Res Function(ChangeDischargingTrack) then) =
-      _$ChangeDischargingTrackCopyWithImpl<$Res>;
-  $Res call({Track track});
+abstract class $ChangeDischargingAudioCopyWith<$Res> {
+  factory $ChangeDischargingAudioCopyWith(ChangeDischargingAudio value,
+          $Res Function(ChangeDischargingAudio) then) =
+      _$ChangeDischargingAudioCopyWithImpl<$Res>;
+  $Res call({Audio audio});
 }
 
 /// @nodoc
-class _$ChangeDischargingTrackCopyWithImpl<$Res>
+class _$ChangeDischargingAudioCopyWithImpl<$Res>
     extends _$AudioEventCopyWithImpl<$Res>
-    implements $ChangeDischargingTrackCopyWith<$Res> {
-  _$ChangeDischargingTrackCopyWithImpl(ChangeDischargingTrack _value,
-      $Res Function(ChangeDischargingTrack) _then)
-      : super(_value, (v) => _then(v as ChangeDischargingTrack));
+    implements $ChangeDischargingAudioCopyWith<$Res> {
+  _$ChangeDischargingAudioCopyWithImpl(ChangeDischargingAudio _value,
+      $Res Function(ChangeDischargingAudio) _then)
+      : super(_value, (v) => _then(v as ChangeDischargingAudio));
 
   @override
-  ChangeDischargingTrack get _value => super._value as ChangeDischargingTrack;
+  ChangeDischargingAudio get _value => super._value as ChangeDischargingAudio;
 
   @override
   $Res call({
-    Object track = freezed,
+    Object audio = freezed,
   }) {
-    return _then(ChangeDischargingTrack(
-      track == freezed ? _value.track : track as Track,
+    return _then(ChangeDischargingAudio(
+      audio == freezed ? _value.audio : audio as Audio,
     ));
   }
 }
 
 /// @nodoc
-class _$ChangeDischargingTrack implements ChangeDischargingTrack {
-  const _$ChangeDischargingTrack(this.track) : assert(track != null);
+class _$ChangeDischargingAudio implements ChangeDischargingAudio {
+  const _$ChangeDischargingAudio(this.audio) : assert(audio != null);
 
   @override
-  final Track track;
+  final Audio audio;
 
   @override
   String toString() {
-    return 'AudioEvent.changeDischargingTrack(track: $track)';
+    return 'AudioEvent.changeDischargingAudio(audio: $audio)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChangeDischargingTrack &&
-            (identical(other.track, track) ||
-                const DeepCollectionEquality().equals(other.track, track)));
+        (other is ChangeDischargingAudio &&
+            (identical(other.audio, audio) ||
+                const DeepCollectionEquality().equals(other.audio, audio)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(track);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(audio);
 
   @JsonKey(ignore: true)
   @override
-  $ChangeDischargingTrackCopyWith<ChangeDischargingTrack> get copyWith =>
-      _$ChangeDischargingTrackCopyWithImpl<ChangeDischargingTrack>(
+  $ChangeDischargingAudioCopyWith<ChangeDischargingAudio> get copyWith =>
+      _$ChangeDischargingAudioCopyWithImpl<ChangeDischargingAudio>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
-    @required TResult changeBatteryFullTrack(Track track),
-    @required TResult changeChargingTrack(Track track),
-    @required TResult changeDischargingTrack(Track track),
-    @required TResult playTrackEvent(Track track),
+    @required TResult changeBatteryFullAudio(Audio audio),
+    @required TResult changeChargingAudio(Audio audio),
+    @required TResult changeDischargingAudio(Audio audio),
+    @required TResult playAudioEvent(Audio audio),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return changeDischargingTrack(track);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return changeDischargingAudio(audio);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
-    TResult changeBatteryFullTrack(Track track),
-    TResult changeChargingTrack(Track track),
-    TResult changeDischargingTrack(Track track),
-    TResult playTrackEvent(Track track),
+    TResult changeBatteryFullAudio(Audio audio),
+    TResult changeChargingAudio(Audio audio),
+    TResult changeDischargingAudio(Audio audio),
+    TResult playAudioEvent(Audio audio),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changeDischargingTrack != null) {
-      return changeDischargingTrack(track);
+    if (changeDischargingAudio != null) {
+      return changeDischargingAudio(audio);
     }
     return orElse();
   }
@@ -617,132 +617,132 @@ class _$ChangeDischargingTrack implements ChangeDischargingTrack {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    @required TResult changeChargingTrack(ChangeChargingTrack value),
-    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
-    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    @required TResult changeChargingAudio(ChangeChargingAudio value),
+    @required TResult changeDischargingAudio(ChangeDischargingAudio value),
+    @required TResult playAudioEvent(PlayAudioEvent value),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return changeDischargingTrack(this);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return changeDischargingAudio(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    TResult changeChargingTrack(ChangeChargingTrack value),
-    TResult changeDischargingTrack(ChangeDischargingTrack value),
-    TResult playTrackEvent(PlayTrackEvent value),
+    TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    TResult changeChargingAudio(ChangeChargingAudio value),
+    TResult changeDischargingAudio(ChangeDischargingAudio value),
+    TResult playAudioEvent(PlayAudioEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changeDischargingTrack != null) {
-      return changeDischargingTrack(this);
+    if (changeDischargingAudio != null) {
+      return changeDischargingAudio(this);
     }
     return orElse();
   }
 }
 
-abstract class ChangeDischargingTrack implements AudioEvent {
-  const factory ChangeDischargingTrack(Track track) = _$ChangeDischargingTrack;
+abstract class ChangeDischargingAudio implements AudioEvent {
+  const factory ChangeDischargingAudio(Audio audio) = _$ChangeDischargingAudio;
 
-  Track get track;
+  Audio get audio;
   @JsonKey(ignore: true)
-  $ChangeDischargingTrackCopyWith<ChangeDischargingTrack> get copyWith;
+  $ChangeDischargingAudioCopyWith<ChangeDischargingAudio> get copyWith;
 }
 
 /// @nodoc
-abstract class $PlayTrackEventCopyWith<$Res> {
-  factory $PlayTrackEventCopyWith(
-          PlayTrackEvent value, $Res Function(PlayTrackEvent) then) =
-      _$PlayTrackEventCopyWithImpl<$Res>;
-  $Res call({Track track});
+abstract class $PlayAudioEventCopyWith<$Res> {
+  factory $PlayAudioEventCopyWith(
+          PlayAudioEvent value, $Res Function(PlayAudioEvent) then) =
+      _$PlayAudioEventCopyWithImpl<$Res>;
+  $Res call({Audio audio});
 }
 
 /// @nodoc
-class _$PlayTrackEventCopyWithImpl<$Res> extends _$AudioEventCopyWithImpl<$Res>
-    implements $PlayTrackEventCopyWith<$Res> {
-  _$PlayTrackEventCopyWithImpl(
-      PlayTrackEvent _value, $Res Function(PlayTrackEvent) _then)
-      : super(_value, (v) => _then(v as PlayTrackEvent));
+class _$PlayAudioEventCopyWithImpl<$Res> extends _$AudioEventCopyWithImpl<$Res>
+    implements $PlayAudioEventCopyWith<$Res> {
+  _$PlayAudioEventCopyWithImpl(
+      PlayAudioEvent _value, $Res Function(PlayAudioEvent) _then)
+      : super(_value, (v) => _then(v as PlayAudioEvent));
 
   @override
-  PlayTrackEvent get _value => super._value as PlayTrackEvent;
+  PlayAudioEvent get _value => super._value as PlayAudioEvent;
 
   @override
   $Res call({
-    Object track = freezed,
+    Object audio = freezed,
   }) {
-    return _then(PlayTrackEvent(
-      track == freezed ? _value.track : track as Track,
+    return _then(PlayAudioEvent(
+      audio == freezed ? _value.audio : audio as Audio,
     ));
   }
 }
 
 /// @nodoc
-class _$PlayTrackEvent implements PlayTrackEvent {
-  const _$PlayTrackEvent(this.track) : assert(track != null);
+class _$PlayAudioEvent implements PlayAudioEvent {
+  const _$PlayAudioEvent(this.audio) : assert(audio != null);
 
   @override
-  final Track track;
+  final Audio audio;
 
   @override
   String toString() {
-    return 'AudioEvent.playTrackEvent(track: $track)';
+    return 'AudioEvent.playAudioEvent(audio: $audio)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PlayTrackEvent &&
-            (identical(other.track, track) ||
-                const DeepCollectionEquality().equals(other.track, track)));
+        (other is PlayAudioEvent &&
+            (identical(other.audio, audio) ||
+                const DeepCollectionEquality().equals(other.audio, audio)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(track);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(audio);
 
   @JsonKey(ignore: true)
   @override
-  $PlayTrackEventCopyWith<PlayTrackEvent> get copyWith =>
-      _$PlayTrackEventCopyWithImpl<PlayTrackEvent>(this, _$identity);
+  $PlayAudioEventCopyWith<PlayAudioEvent> get copyWith =>
+      _$PlayAudioEventCopyWithImpl<PlayAudioEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryState batteryState),
-    @required TResult changeBatteryFullTrack(Track track),
-    @required TResult changeChargingTrack(Track track),
-    @required TResult changeDischargingTrack(Track track),
-    @required TResult playTrackEvent(Track track),
+    @required TResult changeBatteryFullAudio(Audio audio),
+    @required TResult changeChargingAudio(Audio audio),
+    @required TResult changeDischargingAudio(Audio audio),
+    @required TResult playAudioEvent(Audio audio),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return playTrackEvent(track);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return playAudioEvent(audio);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryState batteryState),
-    TResult changeBatteryFullTrack(Track track),
-    TResult changeChargingTrack(Track track),
-    TResult changeDischargingTrack(Track track),
-    TResult playTrackEvent(Track track),
+    TResult changeBatteryFullAudio(Audio audio),
+    TResult changeChargingAudio(Audio audio),
+    TResult changeDischargingAudio(Audio audio),
+    TResult playAudioEvent(Audio audio),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (playTrackEvent != null) {
-      return playTrackEvent(track);
+    if (playAudioEvent != null) {
+      return playAudioEvent(audio);
     }
     return orElse();
   }
@@ -751,43 +751,43 @@ class _$PlayTrackEvent implements PlayTrackEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    @required TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    @required TResult changeChargingTrack(ChangeChargingTrack value),
-    @required TResult changeDischargingTrack(ChangeDischargingTrack value),
-    @required TResult playTrackEvent(PlayTrackEvent value),
+    @required TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    @required TResult changeChargingAudio(ChangeChargingAudio value),
+    @required TResult changeDischargingAudio(ChangeDischargingAudio value),
+    @required TResult playAudioEvent(PlayAudioEvent value),
   }) {
     assert(batteryStateChangedEvent != null);
-    assert(changeBatteryFullTrack != null);
-    assert(changeChargingTrack != null);
-    assert(changeDischargingTrack != null);
-    assert(playTrackEvent != null);
-    return playTrackEvent(this);
+    assert(changeBatteryFullAudio != null);
+    assert(changeChargingAudio != null);
+    assert(changeDischargingAudio != null);
+    assert(playAudioEvent != null);
+    return playAudioEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult batteryStateChangedEvent(BatteryStateChangedEvent value),
-    TResult changeBatteryFullTrack(ChangeBatteryFullTrack value),
-    TResult changeChargingTrack(ChangeChargingTrack value),
-    TResult changeDischargingTrack(ChangeDischargingTrack value),
-    TResult playTrackEvent(PlayTrackEvent value),
+    TResult changeBatteryFullAudio(ChangeBatteryFullAudio value),
+    TResult changeChargingAudio(ChangeChargingAudio value),
+    TResult changeDischargingAudio(ChangeDischargingAudio value),
+    TResult playAudioEvent(PlayAudioEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (playTrackEvent != null) {
-      return playTrackEvent(this);
+    if (playAudioEvent != null) {
+      return playAudioEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class PlayTrackEvent implements AudioEvent {
-  const factory PlayTrackEvent(Track track) = _$PlayTrackEvent;
+abstract class PlayAudioEvent implements AudioEvent {
+  const factory PlayAudioEvent(Audio audio) = _$PlayAudioEvent;
 
-  Track get track;
+  Audio get audio;
   @JsonKey(ignore: true)
-  $PlayTrackEventCopyWith<PlayTrackEvent> get copyWith;
+  $PlayAudioEventCopyWith<PlayAudioEvent> get copyWith;
 }
 
 /// @nodoc
@@ -800,8 +800,8 @@ class _$AudioStateTearOff {
   }
 
 // ignore: unused_element
-  _ChangingTrackState changingTrackState() {
-    return const _ChangingTrackState();
+  _ChangingAudioState changingAudioState() {
+    return const _ChangingAudioState();
   }
 
 // ignore: unused_element
@@ -815,8 +815,8 @@ class _$AudioStateTearOff {
   }
 
 // ignore: unused_element
-  _PlayingTestTrackState playingTestTrackState() {
-    return const _PlayingTestTrackState();
+  _PlayingTestAudioState playingTestAudioState() {
+    return const _PlayingTestAudioState();
   }
 
 // ignore: unused_element
@@ -825,18 +825,13 @@ class _$AudioStateTearOff {
   }
 
 // ignore: unused_element
-  _TestTrackPlayedState testTrackPlayedState() {
-    return const _TestTrackPlayedState();
+  _TestAudioPlayedState testAudioPlayedState() {
+    return const _TestAudioPlayedState();
   }
 
 // ignore: unused_element
-  _TrackPlayedState trackPlayedState() {
-    return const _TrackPlayedState();
-  }
-
-// ignore: unused_element
-  _TrackChangedState trackChangedState() {
-    return const _TrackChangedState();
+  _AudioChangedState audioChangedState() {
+    return const _AudioChangedState();
   }
 }
 
@@ -849,51 +844,47 @@ mixin _$AudioState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   });
 }
@@ -954,24 +945,22 @@ class _$_AudioPlayedState implements _AudioPlayedState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return audioPlayedState();
   }
 
@@ -979,14 +968,13 @@ class _$_AudioPlayedState implements _AudioPlayedState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1000,24 +988,22 @@ class _$_AudioPlayedState implements _AudioPlayedState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return audioPlayedState(this);
   }
 
@@ -1025,14 +1011,13 @@ class _$_AudioPlayedState implements _AudioPlayedState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1048,36 +1033,36 @@ abstract class _AudioPlayedState implements AudioState {
 }
 
 /// @nodoc
-abstract class _$ChangingTrackStateCopyWith<$Res> {
-  factory _$ChangingTrackStateCopyWith(
-          _ChangingTrackState value, $Res Function(_ChangingTrackState) then) =
-      __$ChangingTrackStateCopyWithImpl<$Res>;
+abstract class _$ChangingAudioStateCopyWith<$Res> {
+  factory _$ChangingAudioStateCopyWith(
+          _ChangingAudioState value, $Res Function(_ChangingAudioState) then) =
+      __$ChangingAudioStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangingTrackStateCopyWithImpl<$Res>
+class __$ChangingAudioStateCopyWithImpl<$Res>
     extends _$AudioStateCopyWithImpl<$Res>
-    implements _$ChangingTrackStateCopyWith<$Res> {
-  __$ChangingTrackStateCopyWithImpl(
-      _ChangingTrackState _value, $Res Function(_ChangingTrackState) _then)
-      : super(_value, (v) => _then(v as _ChangingTrackState));
+    implements _$ChangingAudioStateCopyWith<$Res> {
+  __$ChangingAudioStateCopyWithImpl(
+      _ChangingAudioState _value, $Res Function(_ChangingAudioState) _then)
+      : super(_value, (v) => _then(v as _ChangingAudioState));
 
   @override
-  _ChangingTrackState get _value => super._value as _ChangingTrackState;
+  _ChangingAudioState get _value => super._value as _ChangingAudioState;
 }
 
 /// @nodoc
-class _$_ChangingTrackState implements _ChangingTrackState {
-  const _$_ChangingTrackState();
+class _$_ChangingAudioState implements _ChangingAudioState {
+  const _$_ChangingAudioState();
 
   @override
   String toString() {
-    return 'AudioState.changingTrackState()';
+    return 'AudioState.changingAudioState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ChangingTrackState);
+    return identical(this, other) || (other is _ChangingAudioState);
   }
 
   @override
@@ -1087,44 +1072,41 @@ class _$_ChangingTrackState implements _ChangingTrackState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return changingTrackState();
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return changingAudioState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changingTrackState != null) {
-      return changingTrackState();
+    if (changingAudioState != null) {
+      return changingAudioState();
     }
     return orElse();
   }
@@ -1133,51 +1115,48 @@ class _$_ChangingTrackState implements _ChangingTrackState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return changingTrackState(this);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return changingAudioState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changingTrackState != null) {
-      return changingTrackState(this);
+    if (changingAudioState != null) {
+      return changingAudioState(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangingTrackState implements AudioState {
-  const factory _ChangingTrackState() = _$_ChangingTrackState;
+abstract class _ChangingAudioState implements AudioState {
+  const factory _ChangingAudioState() = _$_ChangingAudioState;
 }
 
 /// @nodoc
@@ -1220,24 +1199,22 @@ class _$_DischargingState implements _DischargingState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return dischargingState();
   }
 
@@ -1245,14 +1222,13 @@ class _$_DischargingState implements _DischargingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1266,24 +1242,22 @@ class _$_DischargingState implements _DischargingState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return dischargingState(this);
   }
 
@@ -1291,14 +1265,13 @@ class _$_DischargingState implements _DischargingState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1352,24 +1325,22 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return initialState();
   }
 
@@ -1377,14 +1348,13 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1398,24 +1368,22 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return initialState(this);
   }
 
@@ -1423,14 +1391,13 @@ class _$_InitialState implements _InitialState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1446,36 +1413,36 @@ abstract class _InitialState implements AudioState {
 }
 
 /// @nodoc
-abstract class _$PlayingTestTrackStateCopyWith<$Res> {
-  factory _$PlayingTestTrackStateCopyWith(_PlayingTestTrackState value,
-          $Res Function(_PlayingTestTrackState) then) =
-      __$PlayingTestTrackStateCopyWithImpl<$Res>;
+abstract class _$PlayingTestAudioStateCopyWith<$Res> {
+  factory _$PlayingTestAudioStateCopyWith(_PlayingTestAudioState value,
+          $Res Function(_PlayingTestAudioState) then) =
+      __$PlayingTestAudioStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$PlayingTestTrackStateCopyWithImpl<$Res>
+class __$PlayingTestAudioStateCopyWithImpl<$Res>
     extends _$AudioStateCopyWithImpl<$Res>
-    implements _$PlayingTestTrackStateCopyWith<$Res> {
-  __$PlayingTestTrackStateCopyWithImpl(_PlayingTestTrackState _value,
-      $Res Function(_PlayingTestTrackState) _then)
-      : super(_value, (v) => _then(v as _PlayingTestTrackState));
+    implements _$PlayingTestAudioStateCopyWith<$Res> {
+  __$PlayingTestAudioStateCopyWithImpl(_PlayingTestAudioState _value,
+      $Res Function(_PlayingTestAudioState) _then)
+      : super(_value, (v) => _then(v as _PlayingTestAudioState));
 
   @override
-  _PlayingTestTrackState get _value => super._value as _PlayingTestTrackState;
+  _PlayingTestAudioState get _value => super._value as _PlayingTestAudioState;
 }
 
 /// @nodoc
-class _$_PlayingTestTrackState implements _PlayingTestTrackState {
-  const _$_PlayingTestTrackState();
+class _$_PlayingTestAudioState implements _PlayingTestAudioState {
+  const _$_PlayingTestAudioState();
 
   @override
   String toString() {
-    return 'AudioState.playingTestTrackState()';
+    return 'AudioState.playingTestAudioState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PlayingTestTrackState);
+    return identical(this, other) || (other is _PlayingTestAudioState);
   }
 
   @override
@@ -1485,44 +1452,41 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return playingTestTrackState();
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return playingTestAudioState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (playingTestTrackState != null) {
-      return playingTestTrackState();
+    if (playingTestAudioState != null) {
+      return playingTestAudioState();
     }
     return orElse();
   }
@@ -1531,51 +1495,48 @@ class _$_PlayingTestTrackState implements _PlayingTestTrackState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return playingTestTrackState(this);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return playingTestAudioState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (playingTestTrackState != null) {
-      return playingTestTrackState(this);
+    if (playingTestAudioState != null) {
+      return playingTestAudioState(this);
     }
     return orElse();
   }
 }
 
-abstract class _PlayingTestTrackState implements AudioState {
-  const factory _PlayingTestTrackState() = _$_PlayingTestTrackState;
+abstract class _PlayingTestAudioState implements AudioState {
+  const factory _PlayingTestAudioState() = _$_PlayingTestAudioState;
 }
 
 /// @nodoc
@@ -1618,24 +1579,22 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return playingAudioState();
   }
 
@@ -1643,14 +1602,13 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1664,24 +1622,22 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
     return playingAudioState(this);
   }
 
@@ -1689,14 +1645,13 @@ class _$_PlayingAudioState implements _PlayingAudioState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1712,36 +1667,36 @@ abstract class _PlayingAudioState implements AudioState {
 }
 
 /// @nodoc
-abstract class _$TestTrackPlayedStateCopyWith<$Res> {
-  factory _$TestTrackPlayedStateCopyWith(_TestTrackPlayedState value,
-          $Res Function(_TestTrackPlayedState) then) =
-      __$TestTrackPlayedStateCopyWithImpl<$Res>;
+abstract class _$TestAudioPlayedStateCopyWith<$Res> {
+  factory _$TestAudioPlayedStateCopyWith(_TestAudioPlayedState value,
+          $Res Function(_TestAudioPlayedState) then) =
+      __$TestAudioPlayedStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$TestTrackPlayedStateCopyWithImpl<$Res>
+class __$TestAudioPlayedStateCopyWithImpl<$Res>
     extends _$AudioStateCopyWithImpl<$Res>
-    implements _$TestTrackPlayedStateCopyWith<$Res> {
-  __$TestTrackPlayedStateCopyWithImpl(
-      _TestTrackPlayedState _value, $Res Function(_TestTrackPlayedState) _then)
-      : super(_value, (v) => _then(v as _TestTrackPlayedState));
+    implements _$TestAudioPlayedStateCopyWith<$Res> {
+  __$TestAudioPlayedStateCopyWithImpl(
+      _TestAudioPlayedState _value, $Res Function(_TestAudioPlayedState) _then)
+      : super(_value, (v) => _then(v as _TestAudioPlayedState));
 
   @override
-  _TestTrackPlayedState get _value => super._value as _TestTrackPlayedState;
+  _TestAudioPlayedState get _value => super._value as _TestAudioPlayedState;
 }
 
 /// @nodoc
-class _$_TestTrackPlayedState implements _TestTrackPlayedState {
-  const _$_TestTrackPlayedState();
+class _$_TestAudioPlayedState implements _TestAudioPlayedState {
+  const _$_TestAudioPlayedState();
 
   @override
   String toString() {
-    return 'AudioState.testTrackPlayedState()';
+    return 'AudioState.testAudioPlayedState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TestTrackPlayedState);
+    return identical(this, other) || (other is _TestAudioPlayedState);
   }
 
   @override
@@ -1751,44 +1706,41 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return testTrackPlayedState();
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return testAudioPlayedState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (testTrackPlayedState != null) {
-      return testTrackPlayedState();
+    if (testAudioPlayedState != null) {
+      return testAudioPlayedState();
     }
     return orElse();
   }
@@ -1797,84 +1749,81 @@ class _$_TestTrackPlayedState implements _TestTrackPlayedState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return testTrackPlayedState(this);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return testAudioPlayedState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (testTrackPlayedState != null) {
-      return testTrackPlayedState(this);
+    if (testAudioPlayedState != null) {
+      return testAudioPlayedState(this);
     }
     return orElse();
   }
 }
 
-abstract class _TestTrackPlayedState implements AudioState {
-  const factory _TestTrackPlayedState() = _$_TestTrackPlayedState;
+abstract class _TestAudioPlayedState implements AudioState {
+  const factory _TestAudioPlayedState() = _$_TestAudioPlayedState;
 }
 
 /// @nodoc
-abstract class _$TrackPlayedStateCopyWith<$Res> {
-  factory _$TrackPlayedStateCopyWith(
-          _TrackPlayedState value, $Res Function(_TrackPlayedState) then) =
-      __$TrackPlayedStateCopyWithImpl<$Res>;
+abstract class _$AudioChangedStateCopyWith<$Res> {
+  factory _$AudioChangedStateCopyWith(
+          _AudioChangedState value, $Res Function(_AudioChangedState) then) =
+      __$AudioChangedStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$TrackPlayedStateCopyWithImpl<$Res>
+class __$AudioChangedStateCopyWithImpl<$Res>
     extends _$AudioStateCopyWithImpl<$Res>
-    implements _$TrackPlayedStateCopyWith<$Res> {
-  __$TrackPlayedStateCopyWithImpl(
-      _TrackPlayedState _value, $Res Function(_TrackPlayedState) _then)
-      : super(_value, (v) => _then(v as _TrackPlayedState));
+    implements _$AudioChangedStateCopyWith<$Res> {
+  __$AudioChangedStateCopyWithImpl(
+      _AudioChangedState _value, $Res Function(_AudioChangedState) _then)
+      : super(_value, (v) => _then(v as _AudioChangedState));
 
   @override
-  _TrackPlayedState get _value => super._value as _TrackPlayedState;
+  _AudioChangedState get _value => super._value as _AudioChangedState;
 }
 
 /// @nodoc
-class _$_TrackPlayedState implements _TrackPlayedState {
-  const _$_TrackPlayedState();
+class _$_AudioChangedState implements _AudioChangedState {
+  const _$_AudioChangedState();
 
   @override
   String toString() {
-    return 'AudioState.trackPlayedState()';
+    return 'AudioState.audioChangedState()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TrackPlayedState);
+    return identical(this, other) || (other is _AudioChangedState);
   }
 
   @override
@@ -1884,44 +1833,41 @@ class _$_TrackPlayedState implements _TrackPlayedState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
+    @required TResult changingAudioState(),
     @required TResult dischargingState(),
     @required TResult initialState(),
-    @required TResult playingTestTrackState(),
+    @required TResult playingTestAudioState(),
     @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
+    @required TResult testAudioPlayedState(),
+    @required TResult audioChangedState(),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return trackPlayedState();
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return audioChangedState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioPlayedState(),
-    TResult changingTrackState(),
+    TResult changingAudioState(),
     TResult dischargingState(),
     TResult initialState(),
-    TResult playingTestTrackState(),
+    TResult playingTestAudioState(),
     TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
+    TResult testAudioPlayedState(),
+    TResult audioChangedState(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (trackPlayedState != null) {
-      return trackPlayedState();
+    if (audioChangedState != null) {
+      return audioChangedState();
     }
     return orElse();
   }
@@ -1930,182 +1876,46 @@ class _$_TrackPlayedState implements _TrackPlayedState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
+    @required TResult changingAudioState(_ChangingAudioState value),
     @required TResult dischargingState(_DischargingState value),
     @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
+    @required TResult playingTestAudioState(_PlayingTestAudioState value),
     @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
+    @required TResult testAudioPlayedState(_TestAudioPlayedState value),
+    @required TResult audioChangedState(_AudioChangedState value),
   }) {
     assert(audioPlayedState != null);
-    assert(changingTrackState != null);
+    assert(changingAudioState != null);
     assert(dischargingState != null);
     assert(initialState != null);
-    assert(playingTestTrackState != null);
+    assert(playingTestAudioState != null);
     assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return trackPlayedState(this);
+    assert(testAudioPlayedState != null);
+    assert(audioChangedState != null);
+    return audioChangedState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
+    TResult changingAudioState(_ChangingAudioState value),
     TResult dischargingState(_DischargingState value),
     TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
+    TResult playingTestAudioState(_PlayingTestAudioState value),
     TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
+    TResult testAudioPlayedState(_TestAudioPlayedState value),
+    TResult audioChangedState(_AudioChangedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (trackPlayedState != null) {
-      return trackPlayedState(this);
+    if (audioChangedState != null) {
+      return audioChangedState(this);
     }
     return orElse();
   }
 }
 
-abstract class _TrackPlayedState implements AudioState {
-  const factory _TrackPlayedState() = _$_TrackPlayedState;
-}
-
-/// @nodoc
-abstract class _$TrackChangedStateCopyWith<$Res> {
-  factory _$TrackChangedStateCopyWith(
-          _TrackChangedState value, $Res Function(_TrackChangedState) then) =
-      __$TrackChangedStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$TrackChangedStateCopyWithImpl<$Res>
-    extends _$AudioStateCopyWithImpl<$Res>
-    implements _$TrackChangedStateCopyWith<$Res> {
-  __$TrackChangedStateCopyWithImpl(
-      _TrackChangedState _value, $Res Function(_TrackChangedState) _then)
-      : super(_value, (v) => _then(v as _TrackChangedState));
-
-  @override
-  _TrackChangedState get _value => super._value as _TrackChangedState;
-}
-
-/// @nodoc
-class _$_TrackChangedState implements _TrackChangedState {
-  const _$_TrackChangedState();
-
-  @override
-  String toString() {
-    return 'AudioState.trackChangedState()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TrackChangedState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult audioPlayedState(),
-    @required TResult changingTrackState(),
-    @required TResult dischargingState(),
-    @required TResult initialState(),
-    @required TResult playingTestTrackState(),
-    @required TResult playingAudioState(),
-    @required TResult testTrackPlayedState(),
-    @required TResult trackPlayedState(),
-    @required TResult trackChangedState(),
-  }) {
-    assert(audioPlayedState != null);
-    assert(changingTrackState != null);
-    assert(dischargingState != null);
-    assert(initialState != null);
-    assert(playingTestTrackState != null);
-    assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return trackChangedState();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult audioPlayedState(),
-    TResult changingTrackState(),
-    TResult dischargingState(),
-    TResult initialState(),
-    TResult playingTestTrackState(),
-    TResult playingAudioState(),
-    TResult testTrackPlayedState(),
-    TResult trackPlayedState(),
-    TResult trackChangedState(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (trackChangedState != null) {
-      return trackChangedState();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult audioPlayedState(_AudioPlayedState value),
-    @required TResult changingTrackState(_ChangingTrackState value),
-    @required TResult dischargingState(_DischargingState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult playingTestTrackState(_PlayingTestTrackState value),
-    @required TResult playingAudioState(_PlayingAudioState value),
-    @required TResult testTrackPlayedState(_TestTrackPlayedState value),
-    @required TResult trackPlayedState(_TrackPlayedState value),
-    @required TResult trackChangedState(_TrackChangedState value),
-  }) {
-    assert(audioPlayedState != null);
-    assert(changingTrackState != null);
-    assert(dischargingState != null);
-    assert(initialState != null);
-    assert(playingTestTrackState != null);
-    assert(playingAudioState != null);
-    assert(testTrackPlayedState != null);
-    assert(trackPlayedState != null);
-    assert(trackChangedState != null);
-    return trackChangedState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult audioPlayedState(_AudioPlayedState value),
-    TResult changingTrackState(_ChangingTrackState value),
-    TResult dischargingState(_DischargingState value),
-    TResult initialState(_InitialState value),
-    TResult playingTestTrackState(_PlayingTestTrackState value),
-    TResult playingAudioState(_PlayingAudioState value),
-    TResult testTrackPlayedState(_TestTrackPlayedState value),
-    TResult trackPlayedState(_TrackPlayedState value),
-    TResult trackChangedState(_TrackChangedState value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (trackChangedState != null) {
-      return trackChangedState(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _TrackChangedState implements AudioState {
-  const factory _TrackChangedState() = _$_TrackChangedState;
+abstract class _AudioChangedState implements AudioState {
+  const factory _AudioChangedState() = _$_AudioChangedState;
 }

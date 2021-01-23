@@ -14,13 +14,13 @@ class _$DrawerEventTearOff {
   const _$DrawerEventTearOff();
 
 // ignore: unused_element
-  HomePageLaunchedEvent homePageLaunchedEvent() {
-    return const HomePageLaunchedEvent();
+  AudioAssignedEvent audioAssignedEvent() {
+    return const AudioAssignedEvent();
   }
 
 // ignore: unused_element
-  TrackAssignedEvent trackAssignedEvent() {
-    return const TrackAssignedEvent();
+  HomePageLaunchedEvent homePageLaunchedEvent() {
+    return const HomePageLaunchedEvent();
   }
 }
 
@@ -32,24 +32,24 @@ const $DrawerEvent = _$DrawerEventTearOff();
 mixin _$DrawerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioAssignedEvent(),
     @required TResult homePageLaunchedEvent(),
-    @required TResult trackAssignedEvent(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioAssignedEvent(),
     TResult homePageLaunchedEvent(),
-    TResult trackAssignedEvent(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioAssignedEvent(AudioAssignedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult trackAssignedEvent(TrackAssignedEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioAssignedEvent(AudioAssignedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult trackAssignedEvent(TrackAssignedEvent value),
     @required TResult orElse(),
   });
 }
@@ -68,6 +68,97 @@ class _$DrawerEventCopyWithImpl<$Res> implements $DrawerEventCopyWith<$Res> {
   final DrawerEvent _value;
   // ignore: unused_field
   final $Res Function(DrawerEvent) _then;
+}
+
+/// @nodoc
+abstract class $AudioAssignedEventCopyWith<$Res> {
+  factory $AudioAssignedEventCopyWith(
+          AudioAssignedEvent value, $Res Function(AudioAssignedEvent) then) =
+      _$AudioAssignedEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$AudioAssignedEventCopyWithImpl<$Res>
+    extends _$DrawerEventCopyWithImpl<$Res>
+    implements $AudioAssignedEventCopyWith<$Res> {
+  _$AudioAssignedEventCopyWithImpl(
+      AudioAssignedEvent _value, $Res Function(AudioAssignedEvent) _then)
+      : super(_value, (v) => _then(v as AudioAssignedEvent));
+
+  @override
+  AudioAssignedEvent get _value => super._value as AudioAssignedEvent;
+}
+
+/// @nodoc
+class _$AudioAssignedEvent implements AudioAssignedEvent {
+  const _$AudioAssignedEvent();
+
+  @override
+  String toString() {
+    return 'DrawerEvent.audioAssignedEvent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AudioAssignedEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult audioAssignedEvent(),
+    @required TResult homePageLaunchedEvent(),
+  }) {
+    assert(audioAssignedEvent != null);
+    assert(homePageLaunchedEvent != null);
+    return audioAssignedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult audioAssignedEvent(),
+    TResult homePageLaunchedEvent(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (audioAssignedEvent != null) {
+      return audioAssignedEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult audioAssignedEvent(AudioAssignedEvent value),
+    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+  }) {
+    assert(audioAssignedEvent != null);
+    assert(homePageLaunchedEvent != null);
+    return audioAssignedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult audioAssignedEvent(AudioAssignedEvent value),
+    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (audioAssignedEvent != null) {
+      return audioAssignedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AudioAssignedEvent implements DrawerEvent {
+  const factory AudioAssignedEvent() = _$AudioAssignedEvent;
 }
 
 /// @nodoc
@@ -109,19 +200,19 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult audioAssignedEvent(),
     @required TResult homePageLaunchedEvent(),
-    @required TResult trackAssignedEvent(),
   }) {
+    assert(audioAssignedEvent != null);
     assert(homePageLaunchedEvent != null);
-    assert(trackAssignedEvent != null);
     return homePageLaunchedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult audioAssignedEvent(),
     TResult homePageLaunchedEvent(),
-    TResult trackAssignedEvent(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -134,19 +225,19 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult audioAssignedEvent(AudioAssignedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult trackAssignedEvent(TrackAssignedEvent value),
   }) {
+    assert(audioAssignedEvent != null);
     assert(homePageLaunchedEvent != null);
-    assert(trackAssignedEvent != null);
     return homePageLaunchedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult audioAssignedEvent(AudioAssignedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult trackAssignedEvent(TrackAssignedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -162,111 +253,20 @@ abstract class HomePageLaunchedEvent implements DrawerEvent {
 }
 
 /// @nodoc
-abstract class $TrackAssignedEventCopyWith<$Res> {
-  factory $TrackAssignedEventCopyWith(
-          TrackAssignedEvent value, $Res Function(TrackAssignedEvent) then) =
-      _$TrackAssignedEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$TrackAssignedEventCopyWithImpl<$Res>
-    extends _$DrawerEventCopyWithImpl<$Res>
-    implements $TrackAssignedEventCopyWith<$Res> {
-  _$TrackAssignedEventCopyWithImpl(
-      TrackAssignedEvent _value, $Res Function(TrackAssignedEvent) _then)
-      : super(_value, (v) => _then(v as TrackAssignedEvent));
-
-  @override
-  TrackAssignedEvent get _value => super._value as TrackAssignedEvent;
-}
-
-/// @nodoc
-class _$TrackAssignedEvent implements TrackAssignedEvent {
-  const _$TrackAssignedEvent();
-
-  @override
-  String toString() {
-    return 'DrawerEvent.trackAssignedEvent()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is TrackAssignedEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(),
-    @required TResult trackAssignedEvent(),
-  }) {
-    assert(homePageLaunchedEvent != null);
-    assert(trackAssignedEvent != null);
-    return trackAssignedEvent();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homePageLaunchedEvent(),
-    TResult trackAssignedEvent(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (trackAssignedEvent != null) {
-      return trackAssignedEvent();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult trackAssignedEvent(TrackAssignedEvent value),
-  }) {
-    assert(homePageLaunchedEvent != null);
-    assert(trackAssignedEvent != null);
-    return trackAssignedEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult trackAssignedEvent(TrackAssignedEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (trackAssignedEvent != null) {
-      return trackAssignedEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class TrackAssignedEvent implements DrawerEvent {
-  const factory TrackAssignedEvent() = _$TrackAssignedEvent;
-}
-
-/// @nodoc
 class _$DrawerStateTearOff {
   const _$DrawerStateTearOff();
 
 // ignore: unused_element
   _DrawerState call(
-      {@required Map<String, dynamic> batteryFullTrack,
-      @required Map<String, dynamic> chargingTrack,
-      @required Map<String, dynamic> dischargingTrack,
-      @required List<Track> tracks}) {
+      {@required List<Audio> audios,
+      @required Map<String, dynamic> batteryFullAudio,
+      @required Map<String, dynamic> chargingAudio,
+      @required Map<String, dynamic> dischargingAudio}) {
     return _DrawerState(
-      batteryFullTrack: batteryFullTrack,
-      chargingTrack: chargingTrack,
-      dischargingTrack: dischargingTrack,
-      tracks: tracks,
+      audios: audios,
+      batteryFullAudio: batteryFullAudio,
+      chargingAudio: chargingAudio,
+      dischargingAudio: dischargingAudio,
     );
   }
 }
@@ -277,10 +277,10 @@ const $DrawerState = _$DrawerStateTearOff();
 
 /// @nodoc
 mixin _$DrawerState {
-  Map<String, dynamic> get batteryFullTrack;
-  Map<String, dynamic> get chargingTrack;
-  Map<String, dynamic> get dischargingTrack;
-  List<Track> get tracks;
+  List<Audio> get audios;
+  Map<String, dynamic> get batteryFullAudio;
+  Map<String, dynamic> get chargingAudio;
+  Map<String, dynamic> get dischargingAudio;
 
   @JsonKey(ignore: true)
   $DrawerStateCopyWith<DrawerState> get copyWith;
@@ -292,10 +292,10 @@ abstract class $DrawerStateCopyWith<$Res> {
           DrawerState value, $Res Function(DrawerState) then) =
       _$DrawerStateCopyWithImpl<$Res>;
   $Res call(
-      {Map<String, dynamic> batteryFullTrack,
-      Map<String, dynamic> chargingTrack,
-      Map<String, dynamic> dischargingTrack,
-      List<Track> tracks});
+      {List<Audio> audios,
+      Map<String, dynamic> batteryFullAudio,
+      Map<String, dynamic> chargingAudio,
+      Map<String, dynamic> dischargingAudio});
 }
 
 /// @nodoc
@@ -308,22 +308,22 @@ class _$DrawerStateCopyWithImpl<$Res> implements $DrawerStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object batteryFullTrack = freezed,
-    Object chargingTrack = freezed,
-    Object dischargingTrack = freezed,
-    Object tracks = freezed,
+    Object audios = freezed,
+    Object batteryFullAudio = freezed,
+    Object chargingAudio = freezed,
+    Object dischargingAudio = freezed,
   }) {
     return _then(_value.copyWith(
-      batteryFullTrack: batteryFullTrack == freezed
-          ? _value.batteryFullTrack
-          : batteryFullTrack as Map<String, dynamic>,
-      chargingTrack: chargingTrack == freezed
-          ? _value.chargingTrack
-          : chargingTrack as Map<String, dynamic>,
-      dischargingTrack: dischargingTrack == freezed
-          ? _value.dischargingTrack
-          : dischargingTrack as Map<String, dynamic>,
-      tracks: tracks == freezed ? _value.tracks : tracks as List<Track>,
+      audios: audios == freezed ? _value.audios : audios as List<Audio>,
+      batteryFullAudio: batteryFullAudio == freezed
+          ? _value.batteryFullAudio
+          : batteryFullAudio as Map<String, dynamic>,
+      chargingAudio: chargingAudio == freezed
+          ? _value.chargingAudio
+          : chargingAudio as Map<String, dynamic>,
+      dischargingAudio: dischargingAudio == freezed
+          ? _value.dischargingAudio
+          : dischargingAudio as Map<String, dynamic>,
     ));
   }
 }
@@ -336,10 +336,10 @@ abstract class _$DrawerStateCopyWith<$Res>
       __$DrawerStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Map<String, dynamic> batteryFullTrack,
-      Map<String, dynamic> chargingTrack,
-      Map<String, dynamic> dischargingTrack,
-      List<Track> tracks});
+      {List<Audio> audios,
+      Map<String, dynamic> batteryFullAudio,
+      Map<String, dynamic> chargingAudio,
+      Map<String, dynamic> dischargingAudio});
 }
 
 /// @nodoc
@@ -354,22 +354,22 @@ class __$DrawerStateCopyWithImpl<$Res> extends _$DrawerStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object batteryFullTrack = freezed,
-    Object chargingTrack = freezed,
-    Object dischargingTrack = freezed,
-    Object tracks = freezed,
+    Object audios = freezed,
+    Object batteryFullAudio = freezed,
+    Object chargingAudio = freezed,
+    Object dischargingAudio = freezed,
   }) {
     return _then(_DrawerState(
-      batteryFullTrack: batteryFullTrack == freezed
-          ? _value.batteryFullTrack
-          : batteryFullTrack as Map<String, dynamic>,
-      chargingTrack: chargingTrack == freezed
-          ? _value.chargingTrack
-          : chargingTrack as Map<String, dynamic>,
-      dischargingTrack: dischargingTrack == freezed
-          ? _value.dischargingTrack
-          : dischargingTrack as Map<String, dynamic>,
-      tracks: tracks == freezed ? _value.tracks : tracks as List<Track>,
+      audios: audios == freezed ? _value.audios : audios as List<Audio>,
+      batteryFullAudio: batteryFullAudio == freezed
+          ? _value.batteryFullAudio
+          : batteryFullAudio as Map<String, dynamic>,
+      chargingAudio: chargingAudio == freezed
+          ? _value.chargingAudio
+          : chargingAudio as Map<String, dynamic>,
+      dischargingAudio: dischargingAudio == freezed
+          ? _value.dischargingAudio
+          : dischargingAudio as Map<String, dynamic>,
     ));
   }
 }
@@ -377,53 +377,53 @@ class __$DrawerStateCopyWithImpl<$Res> extends _$DrawerStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_DrawerState implements _DrawerState {
   const _$_DrawerState(
-      {@required this.batteryFullTrack,
-      @required this.chargingTrack,
-      @required this.dischargingTrack,
-      @required this.tracks})
-      : assert(batteryFullTrack != null),
-        assert(chargingTrack != null),
-        assert(dischargingTrack != null),
-        assert(tracks != null);
+      {@required this.audios,
+      @required this.batteryFullAudio,
+      @required this.chargingAudio,
+      @required this.dischargingAudio})
+      : assert(audios != null),
+        assert(batteryFullAudio != null),
+        assert(chargingAudio != null),
+        assert(dischargingAudio != null);
 
   @override
-  final Map<String, dynamic> batteryFullTrack;
+  final List<Audio> audios;
   @override
-  final Map<String, dynamic> chargingTrack;
+  final Map<String, dynamic> batteryFullAudio;
   @override
-  final Map<String, dynamic> dischargingTrack;
+  final Map<String, dynamic> chargingAudio;
   @override
-  final List<Track> tracks;
+  final Map<String, dynamic> dischargingAudio;
 
   @override
   String toString() {
-    return 'DrawerState(batteryFullTrack: $batteryFullTrack, chargingTrack: $chargingTrack, dischargingTrack: $dischargingTrack, tracks: $tracks)';
+    return 'DrawerState(audios: $audios, batteryFullAudio: $batteryFullAudio, chargingAudio: $chargingAudio, dischargingAudio: $dischargingAudio)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DrawerState &&
-            (identical(other.batteryFullTrack, batteryFullTrack) ||
+            (identical(other.audios, audios) ||
+                const DeepCollectionEquality().equals(other.audios, audios)) &&
+            (identical(other.batteryFullAudio, batteryFullAudio) ||
                 const DeepCollectionEquality()
-                    .equals(other.batteryFullTrack, batteryFullTrack)) &&
-            (identical(other.chargingTrack, chargingTrack) ||
+                    .equals(other.batteryFullAudio, batteryFullAudio)) &&
+            (identical(other.chargingAudio, chargingAudio) ||
                 const DeepCollectionEquality()
-                    .equals(other.chargingTrack, chargingTrack)) &&
-            (identical(other.dischargingTrack, dischargingTrack) ||
+                    .equals(other.chargingAudio, chargingAudio)) &&
+            (identical(other.dischargingAudio, dischargingAudio) ||
                 const DeepCollectionEquality()
-                    .equals(other.dischargingTrack, dischargingTrack)) &&
-            (identical(other.tracks, tracks) ||
-                const DeepCollectionEquality().equals(other.tracks, tracks)));
+                    .equals(other.dischargingAudio, dischargingAudio)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(batteryFullTrack) ^
-      const DeepCollectionEquality().hash(chargingTrack) ^
-      const DeepCollectionEquality().hash(dischargingTrack) ^
-      const DeepCollectionEquality().hash(tracks);
+      const DeepCollectionEquality().hash(audios) ^
+      const DeepCollectionEquality().hash(batteryFullAudio) ^
+      const DeepCollectionEquality().hash(chargingAudio) ^
+      const DeepCollectionEquality().hash(dischargingAudio);
 
   @JsonKey(ignore: true)
   @override
@@ -433,19 +433,19 @@ class _$_DrawerState implements _DrawerState {
 
 abstract class _DrawerState implements DrawerState {
   const factory _DrawerState(
-      {@required Map<String, dynamic> batteryFullTrack,
-      @required Map<String, dynamic> chargingTrack,
-      @required Map<String, dynamic> dischargingTrack,
-      @required List<Track> tracks}) = _$_DrawerState;
+      {@required List<Audio> audios,
+      @required Map<String, dynamic> batteryFullAudio,
+      @required Map<String, dynamic> chargingAudio,
+      @required Map<String, dynamic> dischargingAudio}) = _$_DrawerState;
 
   @override
-  Map<String, dynamic> get batteryFullTrack;
+  List<Audio> get audios;
   @override
-  Map<String, dynamic> get chargingTrack;
+  Map<String, dynamic> get batteryFullAudio;
   @override
-  Map<String, dynamic> get dischargingTrack;
+  Map<String, dynamic> get chargingAudio;
   @override
-  List<Track> get tracks;
+  Map<String, dynamic> get dischargingAudio;
   @override
   @JsonKey(ignore: true)
   _$DrawerStateCopyWith<_DrawerState> get copyWith;
