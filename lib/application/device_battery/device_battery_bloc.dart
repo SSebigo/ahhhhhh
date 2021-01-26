@@ -18,6 +18,12 @@ class DeviceBatteryBloc extends Bloc<DeviceBatteryEvent, DeviceBatteryState> {
   final Battery _battery = Battery();
   StreamSubscription<BatteryState> _batteryStateSubscription;
 
+  /// @nodoc
+  BatteryState previousBatteryState;
+
+  /// @nodoc
+  BatteryState currentBatteryState;
+
   @override
   Stream<DeviceBatteryState> mapEventToState(
     DeviceBatteryEvent event,
@@ -32,7 +38,14 @@ class DeviceBatteryBloc extends Bloc<DeviceBatteryEvent, DeviceBatteryState> {
         await _batteryStateSubscription?.cancel();
         _batteryStateSubscription = _battery.onBatteryStateChanged.listen(
           (BatteryState state) {
-            add(DeviceBatteryEvent.batteryStateChangedEvent(state));
+            previousBatteryState = currentBatteryState;
+            currentBatteryState = state;
+
+            if (currentBatteryState != previousBatteryState) {
+              add(DeviceBatteryEvent.batteryStateChangedEvent(
+                currentBatteryState,
+              ));
+            }
           },
         );
       },

@@ -64,6 +64,13 @@ class ChangelogPage extends StatelessWidget {
                   '- Bug fixes.',
                 ],
               ),
+              const Changelog(
+                version: '2.1.1',
+                changes: <String>[
+                  '- Ahhhhhh has been refused by the App Store.',
+                  '- Bug fixes.',
+                ],
+              ),
               SizedBox(height: getSmartBannerHeight(context)),
             ],
           ),
