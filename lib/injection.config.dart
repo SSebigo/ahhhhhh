@@ -21,6 +21,7 @@ import 'application/home/home_bloc.dart';
 import 'domain/facades/i_local_audio_facade.dart';
 import 'domain/facades/i_local_session_facade.dart';
 import 'domain/models/hive/session.dart';
+import 'application/upload_audio_form/upload_audio_form_bloc.dart';
 import 'application/visual/visual_bloc.dart';
 
 /// adds generated dependencies
@@ -44,6 +45,8 @@ Future<GetIt> $initGetIt(
       () => HiveLocalAudioFacade(get<hive.Box<Audio>>()));
   gh.lazySingleton<ILocalSessionFacade>(
       () => HiveLocalSessionFacade(get<hive.Box<Session>>()));
+  gh.factory<UploadAudioFormBloc>(
+      () => UploadAudioFormBloc(get<ILocalAudioFacade>()));
   gh.factory<VisualBloc>(() => VisualBloc(get<ILocalSessionFacade>()));
   gh.factory<AudioBloc>(() => AudioBloc(get<ILocalSessionFacade>()));
   gh.factory<CoreBloc>(() => CoreBloc(get<ILocalSessionFacade>()));

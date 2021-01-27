@@ -49,6 +49,13 @@ class DrawerBloc extends Bloc<DrawerEvent, DrawerState> {
           dischargingAudio: session.dischargingAudio,
         );
       },
+      userAudioUploadedEvent: (value) async* {
+        final audios = _localAudioFacade.fetchAllAudios();
+
+        yield state.copyWith(
+          audios: audios,
+        );
+      },
     );
   }
 }

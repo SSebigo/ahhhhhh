@@ -71,6 +71,13 @@ class ChangelogPage extends StatelessWidget {
                   '- Bug fixes.',
                 ],
               ),
+              const Changelog(
+                version: '2.2.0',
+                changes: <String>[
+                  '''- Custom audio files' feature is back babyyyyyyyy!!!!!!!!!!!!!!''',
+                  '- Bug fixes.',
+                ],
+              ),
               SizedBox(height: getSmartBannerHeight(context)),
             ],
           ),

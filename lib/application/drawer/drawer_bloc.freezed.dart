@@ -22,6 +22,11 @@ class _$DrawerEventTearOff {
   HomePageLaunchedEvent homePageLaunchedEvent() {
     return const HomePageLaunchedEvent();
   }
+
+// ignore: unused_element
+  UserAudioUploadedEvent userAudioUploadedEvent() {
+    return const UserAudioUploadedEvent();
+  }
 }
 
 /// @nodoc
@@ -34,22 +39,26 @@ mixin _$DrawerEvent {
   TResult when<TResult extends Object>({
     @required TResult audioAssignedEvent(),
     @required TResult homePageLaunchedEvent(),
+    @required TResult userAudioUploadedEvent(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult audioAssignedEvent(),
     TResult homePageLaunchedEvent(),
+    TResult userAudioUploadedEvent(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult audioAssignedEvent(AudioAssignedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    @required TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult audioAssignedEvent(AudioAssignedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
     @required TResult orElse(),
   });
 }
@@ -111,9 +120,11 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
   TResult when<TResult extends Object>({
     @required TResult audioAssignedEvent(),
     @required TResult homePageLaunchedEvent(),
+    @required TResult userAudioUploadedEvent(),
   }) {
     assert(audioAssignedEvent != null);
     assert(homePageLaunchedEvent != null);
+    assert(userAudioUploadedEvent != null);
     return audioAssignedEvent();
   }
 
@@ -122,6 +133,7 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
   TResult maybeWhen<TResult extends Object>({
     TResult audioAssignedEvent(),
     TResult homePageLaunchedEvent(),
+    TResult userAudioUploadedEvent(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -136,9 +148,11 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
   TResult map<TResult extends Object>({
     @required TResult audioAssignedEvent(AudioAssignedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    @required TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
   }) {
     assert(audioAssignedEvent != null);
     assert(homePageLaunchedEvent != null);
+    assert(userAudioUploadedEvent != null);
     return audioAssignedEvent(this);
   }
 
@@ -147,6 +161,7 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
   TResult maybeMap<TResult extends Object>({
     TResult audioAssignedEvent(AudioAssignedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -202,9 +217,11 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   TResult when<TResult extends Object>({
     @required TResult audioAssignedEvent(),
     @required TResult homePageLaunchedEvent(),
+    @required TResult userAudioUploadedEvent(),
   }) {
     assert(audioAssignedEvent != null);
     assert(homePageLaunchedEvent != null);
+    assert(userAudioUploadedEvent != null);
     return homePageLaunchedEvent();
   }
 
@@ -213,6 +230,7 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   TResult maybeWhen<TResult extends Object>({
     TResult audioAssignedEvent(),
     TResult homePageLaunchedEvent(),
+    TResult userAudioUploadedEvent(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -227,9 +245,11 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   TResult map<TResult extends Object>({
     @required TResult audioAssignedEvent(AudioAssignedEvent value),
     @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    @required TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
   }) {
     assert(audioAssignedEvent != null);
     assert(homePageLaunchedEvent != null);
+    assert(userAudioUploadedEvent != null);
     return homePageLaunchedEvent(this);
   }
 
@@ -238,6 +258,7 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   TResult maybeMap<TResult extends Object>({
     TResult audioAssignedEvent(AudioAssignedEvent value),
     TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -250,6 +271,103 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 
 abstract class HomePageLaunchedEvent implements DrawerEvent {
   const factory HomePageLaunchedEvent() = _$HomePageLaunchedEvent;
+}
+
+/// @nodoc
+abstract class $UserAudioUploadedEventCopyWith<$Res> {
+  factory $UserAudioUploadedEventCopyWith(UserAudioUploadedEvent value,
+          $Res Function(UserAudioUploadedEvent) then) =
+      _$UserAudioUploadedEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$UserAudioUploadedEventCopyWithImpl<$Res>
+    extends _$DrawerEventCopyWithImpl<$Res>
+    implements $UserAudioUploadedEventCopyWith<$Res> {
+  _$UserAudioUploadedEventCopyWithImpl(UserAudioUploadedEvent _value,
+      $Res Function(UserAudioUploadedEvent) _then)
+      : super(_value, (v) => _then(v as UserAudioUploadedEvent));
+
+  @override
+  UserAudioUploadedEvent get _value => super._value as UserAudioUploadedEvent;
+}
+
+/// @nodoc
+class _$UserAudioUploadedEvent implements UserAudioUploadedEvent {
+  const _$UserAudioUploadedEvent();
+
+  @override
+  String toString() {
+    return 'DrawerEvent.userAudioUploadedEvent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is UserAudioUploadedEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult audioAssignedEvent(),
+    @required TResult homePageLaunchedEvent(),
+    @required TResult userAudioUploadedEvent(),
+  }) {
+    assert(audioAssignedEvent != null);
+    assert(homePageLaunchedEvent != null);
+    assert(userAudioUploadedEvent != null);
+    return userAudioUploadedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult audioAssignedEvent(),
+    TResult homePageLaunchedEvent(),
+    TResult userAudioUploadedEvent(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (userAudioUploadedEvent != null) {
+      return userAudioUploadedEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult audioAssignedEvent(AudioAssignedEvent value),
+    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    @required TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
+  }) {
+    assert(audioAssignedEvent != null);
+    assert(homePageLaunchedEvent != null);
+    assert(userAudioUploadedEvent != null);
+    return userAudioUploadedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult audioAssignedEvent(AudioAssignedEvent value),
+    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
+    TResult userAudioUploadedEvent(UserAudioUploadedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (userAudioUploadedEvent != null) {
+      return userAudioUploadedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserAudioUploadedEvent implements DrawerEvent {
+  const factory UserAudioUploadedEvent() = _$UserAudioUploadedEvent;
 }
 
 /// @nodoc

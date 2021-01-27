@@ -38,7 +38,7 @@ mixin Getters {
       ];
 
   /// @nodoc
-  List<Audio> get audios => [
+  List<Audio> get defaultAudios => [
         Audio(name: 'Ara Ara v1', path: Assets.araAraV1Audio, isAsset: true),
         Audio(name: 'Bison Yes', path: Assets.bisonYesAudio, isAsset: true),
         Audio(

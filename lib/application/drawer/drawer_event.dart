@@ -8,4 +8,7 @@ abstract class DrawerEvent with _$DrawerEvent {
 
   /// @nodoc
   const factory DrawerEvent.homePageLaunchedEvent() = HomePageLaunchedEvent;
+
+  /// @nodoc
+  const factory DrawerEvent.userAudioUploadedEvent() = UserAudioUploadedEvent;
 }

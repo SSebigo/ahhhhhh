@@ -32,6 +32,12 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                 onTap: () => ExtendedNavigator.root.push(Routes.aboutPage),
                 title: 'ABOUT',
               ),
+              HomeDrawerTile(
+                icon: Icons.file_upload,
+                onTap: () =>
+                    ExtendedNavigator.root.push(Routes.uploadAudioPage),
+                title: 'Upload a sound',
+              ),
               HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Battery full sound:'),
               ListTile(
@@ -76,7 +82,47 @@ class HomeEndDrawer extends StatelessWidget with Getters {
               ...ListTile.divideTiles(
                 color: Colors.black38,
                 context: context,
-                tiles: audios.map(
+                tiles: defaultAudios.map(
+                  (Audio audio) => ListTile(
+                    title: Text(
+                      audio.name,
+                      style: const TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                    onTap: () => context
+                        .read<AudioBloc>()
+                        .add(AudioEvent.playAudioEvent(audio)),
+                    onLongPress: () => showDialog(
+                      context: context,
+                      builder: (_) => HomeAudioSelectionDialog(
+                        onBatteryFullTapped: () {
+                          context
+                              .read<AudioBloc>()
+                              .add(AudioEvent.changeBatteryFullAudio(audio));
+                        },
+                        onChargingTapped: () {
+                          context
+                              .read<AudioBloc>()
+                              .add(AudioEvent.changeChargingAudio(audio));
+                        },
+                        onDischargingTapped: () {
+                          context
+                              .read<AudioBloc>()
+                              .add(AudioEvent.changeDischargingAudio(audio));
+                        },
+                        selectedAudio: audio,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              HomeDrawerSeparator(),
+              const HomeDrawerSectionTile(title: 'Your sounds:'),
+              ...ListTile.divideTiles(
+                color: Colors.black38,
+                context: context,
+                tiles: drawerState.audios.map(
                   (Audio audio) => ListTile(
                     title: Text(
                       audio.name,

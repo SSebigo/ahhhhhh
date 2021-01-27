@@ -11,7 +11,7 @@ description: Makes your smartphone moan, scream or laugh when charging, discharg
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 2.1.2+22
+version: 2.2.0+23
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -19,17 +19,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  audioplayers: ^0.17.2
+  audioplayers: ^0.17.3
   auto_route: ^0.6.9
   battery: ^1.0.11
   cupertino_icons: ^1.0.0
   equatable: ^1.2.5
+  file_picker: ^2.1.5+1
   firebase_admob: ^0.11.0+1
   flutter_bloc: ^6.1.1
   flutter_launcher_icons: ^0.8.1
   flutter_swiper: ^1.1.6
   freezed_annotation: ^0.12.0
-  get_it: ^5.0.4
+  get_it: ^5.0.6
   hive: ^1.4.4+1
   hive_flutter: ^0.3.1
   injectable: ^1.0.7
@@ -43,7 +44,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   auto_route_generator: ^0.6.10
-  build_runner: ^1.10.13
+  build_runner: ^1.11.0
   freezed: ^0.12.7
   hive_generator: ^0.8.2
   injectable_generator: ^1.0.7

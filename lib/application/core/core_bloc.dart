@@ -36,9 +36,9 @@ class CoreBloc extends Bloc<CoreEvent, CoreState> with Getters {
           await deleteOldBoxes();
 
           session = Session(
-            batteryFullAudio: audios[0].toMap(),
-            chargingAudio: audios[0].toMap(),
-            dischargingAudio: audios[0].toMap(),
+            batteryFullAudio: defaultAudios[0].toMap(),
+            chargingAudio: defaultAudios[0].toMap(),
+            dischargingAudio: defaultAudios[0].toMap(),
             dischargingVisualPath: Assets.yaranaikaDischargingImage,
             chargingVisualPath: Assets.yaranaikaChargingImage,
           );

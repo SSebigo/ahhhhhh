@@ -13,6 +13,7 @@ import '../pages/changelog_page.dart';
 import '../pages/home_page.dart';
 import '../pages/onboarding_page.dart';
 import '../pages/splash_page.dart';
+import '../pages/upload_audio_page.dart';
 
 class Routes {
   static const String aboutPage = '/about-page';
@@ -20,12 +21,14 @@ class Routes {
   static const String homePage = '/home-page';
   static const String onboardingPage = '/onboarding-page';
   static const String splashPage = '/';
+  static const String uploadAudioPage = '/upload-audio-page';
   static const all = <String>{
     aboutPage,
     changelogPage,
     homePage,
     onboardingPage,
     splashPage,
+    uploadAudioPage,
   };
 }
 
@@ -38,6 +41,7 @@ class AhhhhhhRouter extends RouterBase {
     RouteDef(Routes.homePage, page: HomePage),
     RouteDef(Routes.onboardingPage, page: OnboardingPage),
     RouteDef(Routes.splashPage, page: SplashPage),
+    RouteDef(Routes.uploadAudioPage, page: UploadAudioPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -69,6 +73,12 @@ class AhhhhhhRouter extends RouterBase {
     SplashPage: (data) {
       return buildAdaptivePageRoute<dynamic>(
         builder: (context) => SplashPage(),
+        settings: data,
+      );
+    },
+    UploadAudioPage: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => UploadAudioPage(),
         settings: data,
       );
     },
