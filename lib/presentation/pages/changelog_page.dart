@@ -78,6 +78,12 @@ class ChangelogPage extends StatelessWidget {
                   '- Bug fixes.',
                 ],
               ),
+              const Changelog(
+                version: '2.2.1',
+                changes: <String>[
+                  '- Bug fixes.',
+                ],
+              ),
               SizedBox(height: getSmartBannerHeight(context)),
             ],
           ),

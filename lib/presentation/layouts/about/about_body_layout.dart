@@ -58,7 +58,7 @@ class AboutBodyLayout extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Text('12/01/2021 12:49'),
+            subtitle: Text('29/01/2021 21:05'),
           ),
           ListTile(
             title: const Text(

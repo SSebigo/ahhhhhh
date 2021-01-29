@@ -11,7 +11,7 @@ description: Makes your smartphone moan, scream or laugh when charging, discharg
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 2.2.0+23
+version: 2.2.1+24
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -36,7 +36,7 @@ dependencies:
   injectable: ^1.0.7
   introduction_screen: ^1.0.9
   logger: ^0.9.4
-  package_info: ^0.4.3+2
+  package_info: ^0.4.3+4
   path_provider: ^1.6.27
   url_launcher: ^5.7.10
 
