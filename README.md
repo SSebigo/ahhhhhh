@@ -7,7 +7,7 @@
 </br>
 
 <p>
-<img src="https://img.shields.io/badge/version-1.6.1-blue.svg?cacheSeconds=2592000" />
+<img src="https://img.shields.io/badge/version-2.2.1-blue.svg?cacheSeconds=2592000" />
 <a href="https://github.com/SSebigo/ahhhhhh#readme">
 <img alt="Documentation" src="https://img.shields.io/badge/documentation-no-brightgreen.svg" target="_blank" />
 </a>
