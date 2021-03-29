@@ -157,6 +157,13 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Give a ⭐️ if this project helped you!
 
+## Donate
+
+BTC:
+ETH:
+DOT:
+KSM:
+
 ## 📝 License
 
 Copyright © 2021 [SSebigo <ahhhhhh.sebigo@gmail.com>](https://github.com/SSebigo).
