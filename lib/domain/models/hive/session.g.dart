@@ -17,11 +17,11 @@ class SessionAdapter extends TypeAdapter<Session> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Session(
-      batteryFullAudio: (fields[0] as Map)?.cast<String, dynamic>(),
-      chargingVisualPath: fields[3] as String,
-      chargingAudio: (fields[1] as Map)?.cast<String, dynamic>(),
-      dischargingVisualPath: fields[4] as String,
-      dischargingAudio: (fields[2] as Map)?.cast<String, dynamic>(),
+      batteryFullAudio: (fields[0] as Map?)?.cast<String, dynamic>(),
+      chargingVisualPath: fields[3] as String?,
+      chargingAudio: (fields[1] as Map?)?.cast<String, dynamic>(),
+      dischargingVisualPath: fields[4] as String?,
+      dischargingAudio: (fields[2] as Map?)?.cast<String, dynamic>(),
     );
   }
 

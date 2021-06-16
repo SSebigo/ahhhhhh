@@ -21,14 +21,14 @@ class HiveLocalSessionFacade with Getters implements ILocalSessionFacade {
   }
 
   @override
-  Session fetchSession() {
+  Session? fetchSession() {
     final session = _sessionsBox.get(Constants.session);
 
     return session;
   }
 
   @override
-  Future<void> initializeSession(Session session) async {
+  Future<void> initializeSession(Session? session) async {
     await _sessionsBox.put(
       Constants.session,
       session ??
@@ -42,7 +42,7 @@ class HiveLocalSessionFacade with Getters implements ILocalSessionFacade {
   }
 
   @override
-  Future<Session> updateSession(Session session) async {
+  Future<Session?> updateSession(Session session) async {
     await _sessionsBox.put(Constants.session, session);
 
     final savedSession = _sessionsBox.get(Constants.session);

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'upload_audio_form_bloc.dart';
 
@@ -9,60 +9,63 @@ part of 'upload_audio_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$UploadAudioFormEventTearOff {
   const _$UploadAudioFormEventTearOff();
 
-// ignore: unused_element
   NameChangedEVT nameChangedEVT(String name) {
     return NameChangedEVT(
       name,
     );
   }
 
-// ignore: unused_element
   SaveUserAudioEvent saveUserAudioEvent() {
     return const SaveUserAudioEvent();
   }
 
-// ignore: unused_element
   UploadUserAudioEvent uploadUserAudioEvent() {
     return const UploadUserAudioEvent();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UploadAudioFormEvent = _$UploadAudioFormEventTearOff();
 
 /// @nodoc
 mixin _$UploadAudioFormEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult nameChangedEVT(String name),
-    @required TResult saveUserAudioEvent(),
-    @required TResult uploadUserAudioEvent(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChangedEVT,
+    required TResult Function() saveUserAudioEvent,
+    required TResult Function() uploadUserAudioEvent,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult nameChangedEVT(String name),
-    TResult saveUserAudioEvent(),
-    TResult uploadUserAudioEvent(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChangedEVT,
+    TResult Function()? saveUserAudioEvent,
+    TResult Function()? uploadUserAudioEvent,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult nameChangedEVT(NameChangedEVT value),
-    @required TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    @required TResult uploadUserAudioEvent(UploadUserAudioEvent value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
+    required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult nameChangedEVT(NameChangedEVT value),
-    TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    TResult uploadUserAudioEvent(UploadUserAudioEvent value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -103,17 +106,21 @@ class _$NameChangedEVTCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object name = freezed,
+    Object? name = freezed,
   }) {
     return _then(NameChangedEVT(
-      name == freezed ? _value.name : name as String,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$NameChangedEVT implements NameChangedEVT {
-  const _$NameChangedEVT(this.name) : assert(name != null);
+  const _$NameChangedEVT(this.name);
 
   @override
   final String name;
@@ -142,26 +149,22 @@ class _$NameChangedEVT implements NameChangedEVT {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult nameChangedEVT(String name),
-    @required TResult saveUserAudioEvent(),
-    @required TResult uploadUserAudioEvent(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChangedEVT,
+    required TResult Function() saveUserAudioEvent,
+    required TResult Function() uploadUserAudioEvent,
   }) {
-    assert(nameChangedEVT != null);
-    assert(saveUserAudioEvent != null);
-    assert(uploadUserAudioEvent != null);
     return nameChangedEVT(name);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult nameChangedEVT(String name),
-    TResult saveUserAudioEvent(),
-    TResult uploadUserAudioEvent(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChangedEVT,
+    TResult Function()? saveUserAudioEvent,
+    TResult Function()? uploadUserAudioEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChangedEVT != null) {
       return nameChangedEVT(name);
     }
@@ -170,26 +173,22 @@ class _$NameChangedEVT implements NameChangedEVT {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult nameChangedEVT(NameChangedEVT value),
-    @required TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    @required TResult uploadUserAudioEvent(UploadUserAudioEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
+    required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
   }) {
-    assert(nameChangedEVT != null);
-    assert(saveUserAudioEvent != null);
-    assert(uploadUserAudioEvent != null);
     return nameChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult nameChangedEVT(NameChangedEVT value),
-    TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    TResult uploadUserAudioEvent(UploadUserAudioEvent value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChangedEVT != null) {
       return nameChangedEVT(this);
     }
@@ -200,9 +199,10 @@ class _$NameChangedEVT implements NameChangedEVT {
 abstract class NameChangedEVT implements UploadAudioFormEvent {
   const factory NameChangedEVT(String name) = _$NameChangedEVT;
 
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NameChangedEVTCopyWith<NameChangedEVT> get copyWith;
+  $NameChangedEVTCopyWith<NameChangedEVT> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -225,6 +225,7 @@ class _$SaveUserAudioEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   const _$SaveUserAudioEvent();
 
@@ -243,26 +244,22 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult nameChangedEVT(String name),
-    @required TResult saveUserAudioEvent(),
-    @required TResult uploadUserAudioEvent(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChangedEVT,
+    required TResult Function() saveUserAudioEvent,
+    required TResult Function() uploadUserAudioEvent,
   }) {
-    assert(nameChangedEVT != null);
-    assert(saveUserAudioEvent != null);
-    assert(uploadUserAudioEvent != null);
     return saveUserAudioEvent();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult nameChangedEVT(String name),
-    TResult saveUserAudioEvent(),
-    TResult uploadUserAudioEvent(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChangedEVT,
+    TResult Function()? saveUserAudioEvent,
+    TResult Function()? uploadUserAudioEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (saveUserAudioEvent != null) {
       return saveUserAudioEvent();
     }
@@ -271,26 +268,22 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult nameChangedEVT(NameChangedEVT value),
-    @required TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    @required TResult uploadUserAudioEvent(UploadUserAudioEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
+    required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
   }) {
-    assert(nameChangedEVT != null);
-    assert(saveUserAudioEvent != null);
-    assert(uploadUserAudioEvent != null);
     return saveUserAudioEvent(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult nameChangedEVT(NameChangedEVT value),
-    TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    TResult uploadUserAudioEvent(UploadUserAudioEvent value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (saveUserAudioEvent != null) {
       return saveUserAudioEvent(this);
     }
@@ -322,6 +315,7 @@ class _$UploadUserAudioEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   const _$UploadUserAudioEvent();
 
@@ -340,26 +334,22 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult nameChangedEVT(String name),
-    @required TResult saveUserAudioEvent(),
-    @required TResult uploadUserAudioEvent(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChangedEVT,
+    required TResult Function() saveUserAudioEvent,
+    required TResult Function() uploadUserAudioEvent,
   }) {
-    assert(nameChangedEVT != null);
-    assert(saveUserAudioEvent != null);
-    assert(uploadUserAudioEvent != null);
     return uploadUserAudioEvent();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult nameChangedEVT(String name),
-    TResult saveUserAudioEvent(),
-    TResult uploadUserAudioEvent(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChangedEVT,
+    TResult Function()? saveUserAudioEvent,
+    TResult Function()? uploadUserAudioEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (uploadUserAudioEvent != null) {
       return uploadUserAudioEvent();
     }
@@ -368,26 +358,22 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult nameChangedEVT(NameChangedEVT value),
-    @required TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    @required TResult uploadUserAudioEvent(UploadUserAudioEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
+    required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
   }) {
-    assert(nameChangedEVT != null);
-    assert(saveUserAudioEvent != null);
-    assert(uploadUserAudioEvent != null);
     return uploadUserAudioEvent(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult nameChangedEVT(NameChangedEVT value),
-    TResult saveUserAudioEvent(SaveUserAudioEvent value),
-    TResult uploadUserAudioEvent(UploadUserAudioEvent value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (uploadUserAudioEvent != null) {
       return uploadUserAudioEvent(this);
     }
@@ -403,13 +389,12 @@ abstract class UploadUserAudioEvent implements UploadAudioFormEvent {
 class _$UploadAudioFormStateTearOff {
   const _$UploadAudioFormStateTearOff();
 
-// ignore: unused_element
   _UploadAudioFormState call(
-      {@required bool audioUploaded,
-      @required bool formCompleted,
-      @required String audioOriginalName,
-      @required String audioPath,
-      @required String name}) {
+      {required bool audioUploaded,
+      required bool formCompleted,
+      required String audioOriginalName,
+      required String audioPath,
+      required String name}) {
     return _UploadAudioFormState(
       audioUploaded: audioUploaded,
       formCompleted: formCompleted,
@@ -421,19 +406,19 @@ class _$UploadAudioFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UploadAudioFormState = _$UploadAudioFormStateTearOff();
 
 /// @nodoc
 mixin _$UploadAudioFormState {
-  bool get audioUploaded;
-  bool get formCompleted;
-  String get audioOriginalName;
-  String get audioPath;
-  String get name;
+  bool get audioUploaded => throw _privateConstructorUsedError;
+  bool get formCompleted => throw _privateConstructorUsedError;
+  String get audioOriginalName => throw _privateConstructorUsedError;
+  String get audioPath => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UploadAudioFormStateCopyWith<UploadAudioFormState> get copyWith;
+  $UploadAudioFormStateCopyWith<UploadAudioFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -460,24 +445,33 @@ class _$UploadAudioFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object audioUploaded = freezed,
-    Object formCompleted = freezed,
-    Object audioOriginalName = freezed,
-    Object audioPath = freezed,
-    Object name = freezed,
+    Object? audioUploaded = freezed,
+    Object? formCompleted = freezed,
+    Object? audioOriginalName = freezed,
+    Object? audioPath = freezed,
+    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
       audioUploaded: audioUploaded == freezed
           ? _value.audioUploaded
-          : audioUploaded as bool,
+          : audioUploaded // ignore: cast_nullable_to_non_nullable
+              as bool,
       formCompleted: formCompleted == freezed
           ? _value.formCompleted
-          : formCompleted as bool,
+          : formCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
       audioOriginalName: audioOriginalName == freezed
           ? _value.audioOriginalName
-          : audioOriginalName as String,
-      audioPath: audioPath == freezed ? _value.audioPath : audioPath as String,
-      name: name == freezed ? _value.name : name as String,
+          : audioOriginalName // ignore: cast_nullable_to_non_nullable
+              as String,
+      audioPath: audioPath == freezed
+          ? _value.audioPath
+          : audioPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -510,41 +504,46 @@ class __$UploadAudioFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object audioUploaded = freezed,
-    Object formCompleted = freezed,
-    Object audioOriginalName = freezed,
-    Object audioPath = freezed,
-    Object name = freezed,
+    Object? audioUploaded = freezed,
+    Object? formCompleted = freezed,
+    Object? audioOriginalName = freezed,
+    Object? audioPath = freezed,
+    Object? name = freezed,
   }) {
     return _then(_UploadAudioFormState(
       audioUploaded: audioUploaded == freezed
           ? _value.audioUploaded
-          : audioUploaded as bool,
+          : audioUploaded // ignore: cast_nullable_to_non_nullable
+              as bool,
       formCompleted: formCompleted == freezed
           ? _value.formCompleted
-          : formCompleted as bool,
+          : formCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
       audioOriginalName: audioOriginalName == freezed
           ? _value.audioOriginalName
-          : audioOriginalName as String,
-      audioPath: audioPath == freezed ? _value.audioPath : audioPath as String,
-      name: name == freezed ? _value.name : name as String,
+          : audioOriginalName // ignore: cast_nullable_to_non_nullable
+              as String,
+      audioPath: audioPath == freezed
+          ? _value.audioPath
+          : audioPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_UploadAudioFormState implements _UploadAudioFormState {
   const _$_UploadAudioFormState(
-      {@required this.audioUploaded,
-      @required this.formCompleted,
-      @required this.audioOriginalName,
-      @required this.audioPath,
-      @required this.name})
-      : assert(audioUploaded != null),
-        assert(formCompleted != null),
-        assert(audioOriginalName != null),
-        assert(audioPath != null),
-        assert(name != null);
+      {required this.audioUploaded,
+      required this.formCompleted,
+      required this.audioOriginalName,
+      required this.audioPath,
+      required this.name});
 
   @override
   final bool audioUploaded;
@@ -600,23 +599,24 @@ class _$_UploadAudioFormState implements _UploadAudioFormState {
 
 abstract class _UploadAudioFormState implements UploadAudioFormState {
   const factory _UploadAudioFormState(
-      {@required bool audioUploaded,
-      @required bool formCompleted,
-      @required String audioOriginalName,
-      @required String audioPath,
-      @required String name}) = _$_UploadAudioFormState;
+      {required bool audioUploaded,
+      required bool formCompleted,
+      required String audioOriginalName,
+      required String audioPath,
+      required String name}) = _$_UploadAudioFormState;
 
   @override
-  bool get audioUploaded;
+  bool get audioUploaded => throw _privateConstructorUsedError;
   @override
-  bool get formCompleted;
+  bool get formCompleted => throw _privateConstructorUsedError;
   @override
-  String get audioOriginalName;
+  String get audioOriginalName => throw _privateConstructorUsedError;
   @override
-  String get audioPath;
+  String get audioPath => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UploadAudioFormStateCopyWith<_UploadAudioFormState> get copyWith;
+  _$UploadAudioFormStateCopyWith<_UploadAudioFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

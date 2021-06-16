@@ -16,31 +16,31 @@ class Session extends HiveObject {
 
   /// @nodoc
   @HiveField(0)
-  Map<String, dynamic> batteryFullAudio;
+  Map<String, dynamic>? batteryFullAudio;
 
   /// @nodoc
   @HiveField(1)
-  Map<String, dynamic> chargingAudio;
+  Map<String, dynamic>? chargingAudio;
 
   /// @nodoc
   @HiveField(2)
-  Map<String, dynamic> dischargingAudio;
+  Map<String, dynamic>? dischargingAudio;
 
   /// @nodoc
   @HiveField(3)
-  String chargingVisualPath;
+  String? chargingVisualPath;
 
   /// @nodoc
   @HiveField(4)
-  String dischargingVisualPath;
+  String? dischargingVisualPath;
 
   /// @nodoc
   Session copyWith({
-    Map<String, dynamic> batteryFullAudio,
-    Map<String, dynamic> chargingAudio,
-    Map<String, dynamic> dischargingAudio,
-    String chargingVisualPath,
-    String dischargingVisualPath,
+    Map<String, dynamic>? batteryFullAudio,
+    Map<String, dynamic>? chargingAudio,
+    Map<String, dynamic>? dischargingAudio,
+    String? chargingVisualPath,
+    String? dischargingVisualPath,
   }) {
     return Session(
       batteryFullAudio: batteryFullAudio ?? this.batteryFullAudio,

@@ -11,8 +11,6 @@ class OnboardingContent extends Equatable {
 
   /// @nodoc
   factory OnboardingContent.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return OnboardingContent(
       title: map['title'],
       explanation: map['explanation'],
@@ -21,19 +19,19 @@ class OnboardingContent extends Equatable {
   }
 
   /// @nodoc
-  final String coverURL;
+  final String? coverURL;
 
   /// @nodoc
-  final String explanation;
+  final String? explanation;
 
   /// @nodoc
-  final String title;
+  final String? title;
 
   /// @nodoc
   OnboardingContent copyWith({
-    String coverURL,
-    String explanation,
-    String title,
+    String? coverURL,
+    String? explanation,
+    String? title,
   }) {
     return OnboardingContent(
       coverURL: coverURL ?? this.coverURL,
@@ -52,7 +50,7 @@ class OnboardingContent extends Equatable {
   }
 
   @override
-  List<Object> get props => [coverURL, explanation, title];
+  List<Object?> get props => [coverURL, explanation, title];
 
   @override
   bool get stringify => true;

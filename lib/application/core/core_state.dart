@@ -2,7 +2,7 @@ part of 'core_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class CoreState with _$CoreState {
+class CoreState with _$CoreState {
   /// @nodoc
   const factory CoreState.homeState() = _HomeState;
 

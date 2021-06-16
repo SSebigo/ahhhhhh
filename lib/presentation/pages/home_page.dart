@@ -1,10 +1,9 @@
 import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
-import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:ahhhhhh/application/audio/audio_bloc.dart';
+import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/application/home/home_bloc.dart';
 import 'package:ahhhhhh/application/visual/visual_bloc.dart';
 import 'package:ahhhhhh/injection.dart';
@@ -14,6 +13,9 @@ import 'package:ahhhhhh/utils/themes.dart';
 
 /// @nodoc
 class HomePage extends StatefulWidget {
+  /// @nodoc
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -35,7 +37,6 @@ class _HomePageState extends State<HomePage> {
       value: Themes.wineLightTheme(),
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (_) => getIt<AudioBloc>()),
           BlocProvider(
             create: (_) => getIt<DeviceBatteryBloc>()
               ..add(const DeviceBatteryEvent.homePageLaunchedEvent()),
@@ -56,8 +57,8 @@ class _HomePageState extends State<HomePage> {
             iconTheme: const IconThemeData(color: Colors.black),
             elevation: 0.0,
           ),
-          body: HomeBodyLayout(),
-          endDrawer: HomeEndDrawer(),
+          body: const HomeBodyLayout(),
+          endDrawer: const HomeEndDrawer(),
         ),
       ),
     );

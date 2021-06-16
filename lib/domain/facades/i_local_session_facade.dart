@@ -6,11 +6,11 @@ abstract class ILocalSessionFacade {
   Future<void> deleteSession();
 
   /// @nodoc
-  Session fetchSession();
+  Session? fetchSession();
 
   /// @nodoc
-  Future<void> initializeSession(Session session);
+  Future<void> initializeSession(Session? session);
 
   /// @nodoc
-  Future<Session> updateSession(Session session);
+  Future<Session?> updateSession(Session session);
 }

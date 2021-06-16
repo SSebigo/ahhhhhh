@@ -9,8 +9,6 @@ class Visual {
 
   /// @nodoc
   factory Visual.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return Visual(
       chargingVisualPath: map['chargingVisualPath'],
       dischargingVisualPath: map['dischargingVisualPath'],
@@ -19,19 +17,19 @@ class Visual {
   }
 
   /// @nodoc
-  final String chargingVisualPath;
+  final String? chargingVisualPath;
 
   /// @nodoc
-  final String dischargingVisualPath;
+  final String? dischargingVisualPath;
 
   /// @nodoc
-  final String name;
+  final String? name;
 
   /// @nodoc
   Visual copyWith({
-    String chargingVisualPath,
-    String dischargingVisualPath,
-    String name,
+    String? chargingVisualPath,
+    String? dischargingVisualPath,
+    String? name,
   }) {
     return Visual(
       chargingVisualPath: chargingVisualPath ?? this.chargingVisualPath,

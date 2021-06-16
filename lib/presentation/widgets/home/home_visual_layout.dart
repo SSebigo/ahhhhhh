@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 class HomeVisualLayout extends StatelessWidget {
   /// @nodoc
   const HomeVisualLayout({
-    Key key,
+    Key? key,
     this.height,
     this.width,
-    @required this.visualPath,
+    required this.visualPath,
   }) : super(key: key);
 
   /// @nodoc
-  final double height;
+  final double? height;
 
   /// @nodoc
-  final double width;
+  final double? width;
 
   /// @nodoc
   final String visualPath;

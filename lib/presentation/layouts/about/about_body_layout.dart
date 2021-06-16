@@ -1,13 +1,16 @@
-import 'package:ahhhhhh/application/about/about_bloc.dart';
-import 'package:ahhhhhh/utils/constants.dart';
-import 'package:flutter/material.dart';
-
 import 'package:ahhhhhh/utils/functions.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:ahhhhhh/application/about/about_bloc.dart';
+import 'package:ahhhhhh/utils/constants.dart';
+
 /// @nodoc
 class AboutBodyLayout extends StatelessWidget {
+  /// @nodoc
+  const AboutBodyLayout({Key? key}) : super(key: key);
+
   Future<void> _launchUrl(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -58,7 +61,7 @@ class AboutBodyLayout extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Text('29/01/2021 21:05'),
+            subtitle: Text('16/06/2021 22:03'),
           ),
           ListTile(
             title: const Text(

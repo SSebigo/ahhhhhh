@@ -28,7 +28,7 @@ class HiveLocalAudioFacade implements ILocalAudioFacade {
   }
 
   @override
-  Audio fetchAudio(String key) {
+  Audio? fetchAudio(String key) {
     final audio = _audiosBox.get(key);
 
     return audio;

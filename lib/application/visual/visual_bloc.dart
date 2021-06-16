@@ -27,22 +27,28 @@ class VisualBloc extends Bloc<VisualEvent, VisualState> {
       homePageLaunchedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
 
-        yield state.copyWith(
-          chargingVisualPath: session.chargingVisualPath,
-          dischargingVisualPath: session.dischargingVisualPath,
-        );
+        if (session != null) {
+          yield state.copyWith(
+            chargingVisualPath: session.chargingVisualPath,
+            dischargingVisualPath: session.dischargingVisualPath,
+          );
+        }
       },
       visualSelectedEvent: (value) async* {
-        final session = _localSessionFacade.fetchSession()
-          ..chargingVisualPath = value.visual.chargingVisualPath
-          ..dischargingVisualPath = value.visual.dischargingVisualPath;
+        final session = _localSessionFacade.fetchSession();
 
-        await _localSessionFacade.updateSession(session);
+        if (session != null) {
+          session
+            ..chargingVisualPath = value.visual.chargingVisualPath
+            ..dischargingVisualPath = value.visual.dischargingVisualPath;
 
-        yield state.copyWith(
-          chargingVisualPath: value.visual.chargingVisualPath,
-          dischargingVisualPath: value.visual.dischargingVisualPath,
-        );
+          await _localSessionFacade.updateSession(session);
+
+          yield state.copyWith(
+            chargingVisualPath: value.visual.chargingVisualPath,
+            dischargingVisualPath: value.visual.dischargingVisualPath,
+          );
+        }
       },
     );
   }

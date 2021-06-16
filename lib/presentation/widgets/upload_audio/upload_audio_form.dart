@@ -7,6 +7,9 @@ import 'package:ahhhhhh/application/upload_audio_form/upload_audio_form_bloc.dar
 
 /// @nodoc
 class UploadAudioForm extends StatelessWidget {
+  /// @nodoc
+  const UploadAudioForm({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
@@ -17,7 +20,7 @@ class UploadAudioForm extends StatelessWidget {
           context
               .read<DrawerBloc>()
               .add(const DrawerEvent.userAudioUploadedEvent());
-          ExtendedNavigator.root.pop();
+          context.router.pop();
         }
       },
       child: Form(
@@ -93,16 +96,18 @@ class UploadAudioForm extends StatelessWidget {
                     return SizedBox(
                       height: 60.0,
                       width: mediaQuery.width,
-                      child: FlatButton(
-                        color: uploadAudioFormState.formCompleted
-                            ? const Color(0xFFFFB43F)
-                            : Colors.grey,
+                      child: TextButton(
                         onPressed: uploadAudioFormState.formCompleted
                             ? () => context.read<UploadAudioFormBloc>().add(
                                 const UploadAudioFormEvent.saveUserAudioEvent())
                             : null,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                        style: TextButton.styleFrom(
+                          backgroundColor: uploadAudioFormState.formCompleted
+                              ? const Color(0xFFFFB43F)
+                              : Colors.grey,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
                         child: Text(
                           'UPLOAD',

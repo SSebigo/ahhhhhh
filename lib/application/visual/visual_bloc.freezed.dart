@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'visual_bloc.dart';
 
@@ -9,16 +9,17 @@ part of 'visual_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$VisualEventTearOff {
   const _$VisualEventTearOff();
 
-// ignore: unused_element
   HomePageLaunchedEvent homePageLaunchedEvent() {
     return const HomePageLaunchedEvent();
   }
 
-// ignore: unused_element
   VisualSelectedEvent visualSelectedEvent(Visual visual) {
     return VisualSelectedEvent(
       visual,
@@ -27,33 +28,37 @@ class _$VisualEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $VisualEvent = _$VisualEventTearOff();
 
 /// @nodoc
 mixin _$VisualEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(),
-    @required TResult visualSelectedEvent(Visual visual),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() homePageLaunchedEvent,
+    required TResult Function(Visual visual) visualSelectedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homePageLaunchedEvent(),
-    TResult visualSelectedEvent(Visual visual),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homePageLaunchedEvent,
+    TResult Function(Visual visual)? visualSelectedEvent,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult visualSelectedEvent(VisualSelectedEvent value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomePageLaunchedEvent value)
+        homePageLaunchedEvent,
+    required TResult Function(VisualSelectedEvent value) visualSelectedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult visualSelectedEvent(VisualSelectedEvent value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -92,6 +97,7 @@ class _$HomePageLaunchedEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   const _$HomePageLaunchedEvent();
 
@@ -110,23 +116,20 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(),
-    @required TResult visualSelectedEvent(Visual visual),
+  TResult when<TResult extends Object?>({
+    required TResult Function() homePageLaunchedEvent,
+    required TResult Function(Visual visual) visualSelectedEvent,
   }) {
-    assert(homePageLaunchedEvent != null);
-    assert(visualSelectedEvent != null);
     return homePageLaunchedEvent();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homePageLaunchedEvent(),
-    TResult visualSelectedEvent(Visual visual),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homePageLaunchedEvent,
+    TResult Function(Visual visual)? visualSelectedEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (homePageLaunchedEvent != null) {
       return homePageLaunchedEvent();
     }
@@ -135,23 +138,21 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult visualSelectedEvent(VisualSelectedEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomePageLaunchedEvent value)
+        homePageLaunchedEvent,
+    required TResult Function(VisualSelectedEvent value) visualSelectedEvent,
   }) {
-    assert(homePageLaunchedEvent != null);
-    assert(visualSelectedEvent != null);
     return homePageLaunchedEvent(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult visualSelectedEvent(VisualSelectedEvent value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (homePageLaunchedEvent != null) {
       return homePageLaunchedEvent(this);
     }
@@ -184,17 +185,21 @@ class _$VisualSelectedEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object visual = freezed,
+    Object? visual = freezed,
   }) {
     return _then(VisualSelectedEvent(
-      visual == freezed ? _value.visual : visual as Visual,
+      visual == freezed
+          ? _value.visual
+          : visual // ignore: cast_nullable_to_non_nullable
+              as Visual,
     ));
   }
 }
 
 /// @nodoc
+
 class _$VisualSelectedEvent implements VisualSelectedEvent {
-  const _$VisualSelectedEvent(this.visual) : assert(visual != null);
+  const _$VisualSelectedEvent(this.visual);
 
   @override
   final Visual visual;
@@ -223,23 +228,20 @@ class _$VisualSelectedEvent implements VisualSelectedEvent {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(),
-    @required TResult visualSelectedEvent(Visual visual),
+  TResult when<TResult extends Object?>({
+    required TResult Function() homePageLaunchedEvent,
+    required TResult Function(Visual visual) visualSelectedEvent,
   }) {
-    assert(homePageLaunchedEvent != null);
-    assert(visualSelectedEvent != null);
     return visualSelectedEvent(visual);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homePageLaunchedEvent(),
-    TResult visualSelectedEvent(Visual visual),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homePageLaunchedEvent,
+    TResult Function(Visual visual)? visualSelectedEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (visualSelectedEvent != null) {
       return visualSelectedEvent(visual);
     }
@@ -248,23 +250,21 @@ class _$VisualSelectedEvent implements VisualSelectedEvent {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    @required TResult visualSelectedEvent(VisualSelectedEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomePageLaunchedEvent value)
+        homePageLaunchedEvent,
+    required TResult Function(VisualSelectedEvent value) visualSelectedEvent,
   }) {
-    assert(homePageLaunchedEvent != null);
-    assert(visualSelectedEvent != null);
     return visualSelectedEvent(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homePageLaunchedEvent(HomePageLaunchedEvent value),
-    TResult visualSelectedEvent(VisualSelectedEvent value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (visualSelectedEvent != null) {
       return visualSelectedEvent(this);
     }
@@ -275,19 +275,19 @@ class _$VisualSelectedEvent implements VisualSelectedEvent {
 abstract class VisualSelectedEvent implements VisualEvent {
   const factory VisualSelectedEvent(Visual visual) = _$VisualSelectedEvent;
 
-  Visual get visual;
+  Visual get visual => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VisualSelectedEventCopyWith<VisualSelectedEvent> get copyWith;
+  $VisualSelectedEventCopyWith<VisualSelectedEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$VisualStateTearOff {
   const _$VisualStateTearOff();
 
-// ignore: unused_element
   _VisualState call(
-      {@required String chargingVisualPath,
-      @required String dischargingVisualPath}) {
+      {required String? chargingVisualPath,
+      required String? dischargingVisualPath}) {
     return _VisualState(
       chargingVisualPath: chargingVisualPath,
       dischargingVisualPath: dischargingVisualPath,
@@ -296,16 +296,16 @@ class _$VisualStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $VisualState = _$VisualStateTearOff();
 
 /// @nodoc
 mixin _$VisualState {
-  String get chargingVisualPath;
-  String get dischargingVisualPath;
+  String? get chargingVisualPath => throw _privateConstructorUsedError;
+  String? get dischargingVisualPath => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $VisualStateCopyWith<VisualState> get copyWith;
+  $VisualStateCopyWith<VisualState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -313,7 +313,7 @@ abstract class $VisualStateCopyWith<$Res> {
   factory $VisualStateCopyWith(
           VisualState value, $Res Function(VisualState) then) =
       _$VisualStateCopyWithImpl<$Res>;
-  $Res call({String chargingVisualPath, String dischargingVisualPath});
+  $Res call({String? chargingVisualPath, String? dischargingVisualPath});
 }
 
 /// @nodoc
@@ -326,16 +326,18 @@ class _$VisualStateCopyWithImpl<$Res> implements $VisualStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object chargingVisualPath = freezed,
-    Object dischargingVisualPath = freezed,
+    Object? chargingVisualPath = freezed,
+    Object? dischargingVisualPath = freezed,
   }) {
     return _then(_value.copyWith(
       chargingVisualPath: chargingVisualPath == freezed
           ? _value.chargingVisualPath
-          : chargingVisualPath as String,
+          : chargingVisualPath // ignore: cast_nullable_to_non_nullable
+              as String?,
       dischargingVisualPath: dischargingVisualPath == freezed
           ? _value.dischargingVisualPath
-          : dischargingVisualPath as String,
+          : dischargingVisualPath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -347,7 +349,7 @@ abstract class _$VisualStateCopyWith<$Res>
           _VisualState value, $Res Function(_VisualState) then) =
       __$VisualStateCopyWithImpl<$Res>;
   @override
-  $Res call({String chargingVisualPath, String dischargingVisualPath});
+  $Res call({String? chargingVisualPath, String? dischargingVisualPath});
 }
 
 /// @nodoc
@@ -362,31 +364,32 @@ class __$VisualStateCopyWithImpl<$Res> extends _$VisualStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chargingVisualPath = freezed,
-    Object dischargingVisualPath = freezed,
+    Object? chargingVisualPath = freezed,
+    Object? dischargingVisualPath = freezed,
   }) {
     return _then(_VisualState(
       chargingVisualPath: chargingVisualPath == freezed
           ? _value.chargingVisualPath
-          : chargingVisualPath as String,
+          : chargingVisualPath // ignore: cast_nullable_to_non_nullable
+              as String?,
       dischargingVisualPath: dischargingVisualPath == freezed
           ? _value.dischargingVisualPath
-          : dischargingVisualPath as String,
+          : dischargingVisualPath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_VisualState implements _VisualState {
   const _$_VisualState(
-      {@required this.chargingVisualPath, @required this.dischargingVisualPath})
-      : assert(chargingVisualPath != null),
-        assert(dischargingVisualPath != null);
+      {required this.chargingVisualPath, required this.dischargingVisualPath});
 
   @override
-  final String chargingVisualPath;
+  final String? chargingVisualPath;
   @override
-  final String dischargingVisualPath;
+  final String? dischargingVisualPath;
 
   @override
   String toString() {
@@ -419,14 +422,15 @@ class _$_VisualState implements _VisualState {
 
 abstract class _VisualState implements VisualState {
   const factory _VisualState(
-      {@required String chargingVisualPath,
-      @required String dischargingVisualPath}) = _$_VisualState;
+      {required String? chargingVisualPath,
+      required String? dischargingVisualPath}) = _$_VisualState;
 
   @override
-  String get chargingVisualPath;
+  String? get chargingVisualPath => throw _privateConstructorUsedError;
   @override
-  String get dischargingVisualPath;
+  String? get dischargingVisualPath => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$VisualStateCopyWith<_VisualState> get copyWith;
+  _$VisualStateCopyWith<_VisualState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

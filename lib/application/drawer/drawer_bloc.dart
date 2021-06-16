@@ -32,22 +32,26 @@ class DrawerBloc extends Bloc<DrawerEvent, DrawerState> {
       audioAssignedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
 
-        yield state.copyWith(
-          batteryFullAudio: session.batteryFullAudio,
-          chargingAudio: session.chargingAudio,
-          dischargingAudio: session.dischargingAudio,
-        );
+        if (session != null) {
+          yield state.copyWith(
+            batteryFullAudio: session.batteryFullAudio,
+            chargingAudio: session.chargingAudio,
+            dischargingAudio: session.dischargingAudio,
+          );
+        }
       },
       homePageLaunchedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
         final audios = _localAudioFacade.fetchAllAudios();
 
-        yield state.copyWith(
-          audios: audios,
-          batteryFullAudio: session.batteryFullAudio,
-          chargingAudio: session.chargingAudio,
-          dischargingAudio: session.dischargingAudio,
-        );
+        if (session != null) {
+          yield state.copyWith(
+            audios: audios,
+            batteryFullAudio: session.batteryFullAudio,
+            chargingAudio: session.chargingAudio,
+            dischargingAudio: session.dischargingAudio,
+          );
+        }
       },
       userAudioUploadedEvent: (value) async* {
         final audios = _localAudioFacade.fetchAllAudios();

@@ -8,6 +8,9 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 /// @nodoc
 class OnboardingPage extends StatelessWidget with Getters {
+  /// @nodoc
+  const OnboardingPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
@@ -37,8 +40,9 @@ class OnboardingPage extends StatelessWidget with Getters {
                 letterSpacing: 1.0,
               ),
             ),
+            showNextButton: false,
             dotsDecorator: const DotsDecorator(color: Colors.black26),
-            onDone: () => ExtendedNavigator.root.replace(Routes.homePage),
+            onDone: () => context.router.root.replace(const HomeRoute()),
             pages: [
               for (var i = 0; i < onboardingContents.length; i++)
                 PageViewModel(
@@ -46,7 +50,7 @@ class OnboardingPage extends StatelessWidget with Getters {
                   body: onboardingContents[i].explanation,
                   image: Center(
                     child: Image.asset(
-                      onboardingContents[i].coverURL,
+                      onboardingContents[i].coverURL!,
                       width: mediaQuery.width / 2,
                     ),
                   ),

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class HomeDrawerTile extends StatelessWidget {
   /// @nodoc
   const HomeDrawerTile({
-    Key key,
-    @required this.icon,
-    @required this.onTap,
-    @required this.title,
+    Key? key,
+    required this.icon,
+    required this.onTap,
+    required this.title,
   }) : super(key: key);
 
   /// @nodoc

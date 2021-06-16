@@ -2,11 +2,11 @@ part of 'visual_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class VisualState with _$VisualState {
+class VisualState with _$VisualState {
   /// @nodoc
   const factory VisualState({
-    @required String chargingVisualPath,
-    @required String dischargingVisualPath,
+    required String? chargingVisualPath,
+    required String? dischargingVisualPath,
   }) = _VisualState;
 
   /// @nodoc

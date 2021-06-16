@@ -1,3 +1,4 @@
+import 'package:ahhhhhh/utils/functions.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,11 +11,13 @@ import 'package:ahhhhhh/presentation/widgets/home/home_audio_selection_dialog.da
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_section_tile.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_separator.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_tile.dart';
-import 'package:ahhhhhh/utils/functions.dart';
 import 'package:ahhhhhh/utils/getters.dart';
 
 /// @nodoc
 class HomeEndDrawer extends StatelessWidget with Getters {
+  /// @nodoc
+  const HomeEndDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -24,60 +27,59 @@ class HomeEndDrawer extends StatelessWidget with Getters {
             children: <Widget>[
               HomeDrawerTile(
                 icon: Icons.chevron_right,
-                onTap: () => ExtendedNavigator.root.push(Routes.changelogPage),
+                onTap: () => context.router.root.push(const ChangelogRoute()),
                 title: 'CHANGELOGS',
               ),
               HomeDrawerTile(
                 icon: Icons.chevron_right,
-                onTap: () => ExtendedNavigator.root.push(Routes.aboutPage),
+                onTap: () => context.router.root.push(const AboutRoute()),
                 title: 'ABOUT',
               ),
               HomeDrawerTile(
                 icon: Icons.file_upload,
-                onTap: () =>
-                    ExtendedNavigator.root.push(Routes.uploadAudioPage),
+                onTap: () => context.router.root.push(const UploadAudioRoute()),
                 title: 'Upload a sound',
               ),
-              HomeDrawerSeparator(),
+              const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Battery full sound:'),
               ListTile(
                 title: Text(
-                  drawerState.batteryFullAudio['name'] ?? '',
+                  drawerState.batteryFullAudio!['name'] ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
                 onTap: () => context
                     .read<AudioBloc>()
                     .add(AudioEvent.playAudioEvent(Audio.fromMap(
-                      drawerState.batteryFullAudio,
+                      drawerState.batteryFullAudio!,
                     ))),
               ),
-              HomeDrawerSeparator(),
+              const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Charging sound:'),
               ListTile(
                 title: Text(
-                  drawerState.chargingAudio['name'] ?? '',
+                  drawerState.chargingAudio!['name'] ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
                 onTap: () => context
                     .read<AudioBloc>()
                     .add(AudioEvent.playAudioEvent(Audio.fromMap(
-                      drawerState.chargingAudio,
+                      drawerState.chargingAudio!,
                     ))),
               ),
-              HomeDrawerSeparator(),
+              const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Discharging sound:'),
               ListTile(
                 title: Text(
-                  drawerState.dischargingAudio['name'] ?? '',
+                  drawerState.dischargingAudio!['name'] ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
                 onTap: () => context
                     .read<AudioBloc>()
                     .add(AudioEvent.playAudioEvent(Audio.fromMap(
-                      drawerState.dischargingAudio,
+                      drawerState.dischargingAudio!,
                     ))),
               ),
-              HomeDrawerSeparator(),
+              const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Default sounds:'),
               ...ListTile.divideTiles(
                 color: Colors.black38,
@@ -117,7 +119,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                   ),
                 ),
               ),
-              HomeDrawerSeparator(),
+              const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Your sounds:'),
               ...ListTile.divideTiles(
                 color: Colors.black38,
@@ -157,7 +159,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                   ),
                 ),
               ),
-              HomeDrawerSeparator(),
+              const HomeDrawerSeparator(),
               SizedBox(height: getSmartBannerHeight(context)),
             ],
           );

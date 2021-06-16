@@ -11,6 +11,9 @@ import 'package:ahhhhhh/utils/themes.dart';
 
 /// @nodoc
 class SplashPage extends StatelessWidget {
+  /// @nodoc
+  const SplashPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -24,9 +27,9 @@ class SplashPage extends StatelessWidget {
         body: BlocListener<CoreBloc, CoreState>(
           listener: (context, state) {
             state.maybeMap(
-              homeState: (_) => ExtendedNavigator.root.replace(Routes.homePage),
+              homeState: (_) => context.router.root.replace(const HomeRoute()),
               onboardingState: (_) =>
-                  ExtendedNavigator.root.replace(Routes.onboardingPage),
+                  context.router.root.replace(const OnboardingRoute()),
               orElse: () {},
             );
           },
@@ -46,8 +49,8 @@ class SplashPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 25.0),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 25.0),
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: SplashCopyright(),

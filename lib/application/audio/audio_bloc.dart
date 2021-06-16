@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:battery/battery.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,47 +37,69 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       batteryStateChangedEvent: (value) async* {
         final session = _localSessionFacade.fetchSession();
 
-        yield const AudioState.playingAudioState();
+        if (session != null) {
+          yield const AudioState.playingAudioState();
 
-        if (value.batteryState == BatteryState.full) {
-          await _playAudio(audio: Audio.fromMap(session.batteryFullAudio));
-        } else if (value.batteryState == BatteryState.discharging) {
-          await _playAudio(audio: Audio.fromMap(session.dischargingAudio));
-        } else {
-          await _playAudio(audio: Audio.fromMap(session.chargingAudio));
+          if (value.batteryState == BatteryState.full) {
+            final batteryFullAudio = session.batteryFullAudio;
+
+            if (batteryFullAudio != null) {
+              await _playAudio(Audio.fromMap(batteryFullAudio));
+            }
+          } else if (value.batteryState == BatteryState.discharging) {
+            final dischargingAudio = session.dischargingAudio;
+
+            if (dischargingAudio != null) {
+              await _playAudio(Audio.fromMap(dischargingAudio));
+            }
+          } else {
+            final chargingAudio = session.chargingAudio;
+
+            if (chargingAudio != null) {
+              await _playAudio(Audio.fromMap(chargingAudio));
+            }
+          }
+
+          yield const AudioState.audioPlayedState();
         }
-
-        yield const AudioState.audioPlayedState();
       },
       changeBatteryFullAudio: (value) async* {
-        yield const AudioState.changingAudioState();
+        final session = _localSessionFacade.fetchSession();
 
-        final session = _localSessionFacade.fetchSession()
-          ..batteryFullAudio = value.audio.toMap();
+        if (session != null) {
+          yield const AudioState.changingAudioState();
 
-        await _localSessionFacade.updateSession(session);
+          session.batteryFullAudio = value.audio.toMap();
 
-        yield const AudioState.audioChangedState();
+          await _localSessionFacade.updateSession(session);
+
+          yield const AudioState.audioChangedState();
+        }
       },
       changeChargingAudio: (value) async* {
-        yield const AudioState.changingAudioState();
+        final session = _localSessionFacade.fetchSession();
 
-        final session = _localSessionFacade.fetchSession()
-          ..chargingAudio = value.audio.toMap();
+        if (session != null) {
+          yield const AudioState.changingAudioState();
 
-        await _localSessionFacade.updateSession(session);
+          session.chargingAudio = value.audio.toMap();
 
-        yield const AudioState.audioChangedState();
+          await _localSessionFacade.updateSession(session);
+
+          yield const AudioState.audioChangedState();
+        }
       },
       changeDischargingAudio: (value) async* {
-        yield const AudioState.changingAudioState();
+        final session = _localSessionFacade.fetchSession();
+        if (session != null) {
+          yield const AudioState.changingAudioState();
 
-        final session = _localSessionFacade.fetchSession()
-          ..dischargingAudio = value.audio.toMap();
+          session.dischargingAudio = value.audio.toMap();
 
-        await _localSessionFacade.updateSession(session);
+          await _localSessionFacade.updateSession(session);
 
-        yield const AudioState.audioChangedState();
+          yield const AudioState.audioChangedState();
+        }
       },
       playAudioEvent: (value) async* {
         yield const AudioState.playingTestAudioState();
@@ -89,7 +110,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
 
         _isAudioPlaying = true;
 
-        await _playAudio(audio: value.audio);
+        await _playAudio(value.audio);
 
         yield const AudioState.testAudioPlayedState();
       },
@@ -97,20 +118,29 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
   }
 
   /// @nodoc
-  Future<void> _playAudio({Audio audio}) async {
+  Future<void> _playAudio(Audio audio) async {
+    final fixedPlayer = _audioCache.fixedPlayer;
+
     audio.isAsset
         ? await _audioCache.play(audio.path).whenComplete(() {
             _isAudioPlaying = false;
           })
-        : await _audioCache.fixedPlayer
-            .play(audio.path, isLocal: true)
-            .whenComplete(() {
-            _isAudioPlaying = false;
-          });
+        : fixedPlayer != null
+            ? await fixedPlayer
+                .play(audio.path, isLocal: true)
+                .whenComplete(() {
+                _isAudioPlaying = false;
+              })
+            : Future<void>.value(null);
   }
 
   /// @nodoc
   Future<int> _stopAudio() {
-    return _audioCache.fixedPlayer.stop();
+    final fixedPlayer = _audioCache.fixedPlayer;
+
+    if (fixedPlayer != null) {
+      return fixedPlayer.stop();
+    }
+    return Future<int>.value(0);
   }
 }

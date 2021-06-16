@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'core_bloc.dart';
 
@@ -9,40 +9,45 @@ part of 'core_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CoreEventTearOff {
   const _$CoreEventTearOff();
 
-// ignore: unused_element
   AppStartedEvent appStartedEvent() {
     return const AppStartedEvent();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CoreEvent = _$CoreEventTearOff();
 
 /// @nodoc
 mixin _$CoreEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult appStartedEvent(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() appStartedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult appStartedEvent(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? appStartedEvent,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult appStartedEvent(AppStartedEvent value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppStartedEvent value) appStartedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult appStartedEvent(AppStartedEvent value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppStartedEvent value)? appStartedEvent,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -79,6 +84,7 @@ class _$AppStartedEventCopyWithImpl<$Res> extends _$CoreEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$AppStartedEvent implements AppStartedEvent {
   const _$AppStartedEvent();
 
@@ -97,20 +103,18 @@ class _$AppStartedEvent implements AppStartedEvent {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult appStartedEvent(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() appStartedEvent,
   }) {
-    assert(appStartedEvent != null);
     return appStartedEvent();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult appStartedEvent(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? appStartedEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (appStartedEvent != null) {
       return appStartedEvent();
     }
@@ -119,20 +123,18 @@ class _$AppStartedEvent implements AppStartedEvent {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult appStartedEvent(AppStartedEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppStartedEvent value) appStartedEvent,
   }) {
-    assert(appStartedEvent != null);
     return appStartedEvent(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult appStartedEvent(AppStartedEvent value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppStartedEvent value)? appStartedEvent,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (appStartedEvent != null) {
       return appStartedEvent(this);
     }
@@ -148,54 +150,54 @@ abstract class AppStartedEvent implements CoreEvent {
 class _$CoreStateTearOff {
   const _$CoreStateTearOff();
 
-// ignore: unused_element
   _HomeState homeState() {
     return const _HomeState();
   }
 
-// ignore: unused_element
   _InitialState initialState() {
     return const _InitialState();
   }
 
-// ignore: unused_element
   _OnboardingState onboardingState() {
     return const _OnboardingState();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CoreState = _$CoreStateTearOff();
 
 /// @nodoc
 mixin _$CoreState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homeState(),
-    @required TResult initialState(),
-    @required TResult onboardingState(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() homeState,
+    required TResult Function() initialState,
+    required TResult Function() onboardingState,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homeState(),
-    TResult initialState(),
-    TResult onboardingState(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homeState(_HomeState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult onboardingState(_OnboardingState value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeState value) homeState,
+    required TResult Function(_InitialState value) initialState,
+    required TResult Function(_OnboardingState value) onboardingState,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homeState(_HomeState value),
-    TResult initialState(_InitialState value),
-    TResult onboardingState(_OnboardingState value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -231,6 +233,7 @@ class __$HomeStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_HomeState implements _HomeState {
   const _$_HomeState();
 
@@ -249,26 +252,22 @@ class _$_HomeState implements _HomeState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homeState(),
-    @required TResult initialState(),
-    @required TResult onboardingState(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() homeState,
+    required TResult Function() initialState,
+    required TResult Function() onboardingState,
   }) {
-    assert(homeState != null);
-    assert(initialState != null);
-    assert(onboardingState != null);
     return homeState();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homeState(),
-    TResult initialState(),
-    TResult onboardingState(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (homeState != null) {
       return homeState();
     }
@@ -277,26 +276,22 @@ class _$_HomeState implements _HomeState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homeState(_HomeState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult onboardingState(_OnboardingState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeState value) homeState,
+    required TResult Function(_InitialState value) initialState,
+    required TResult Function(_OnboardingState value) onboardingState,
   }) {
-    assert(homeState != null);
-    assert(initialState != null);
-    assert(onboardingState != null);
     return homeState(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homeState(_HomeState value),
-    TResult initialState(_InitialState value),
-    TResult onboardingState(_OnboardingState value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (homeState != null) {
       return homeState(this);
     }
@@ -327,6 +322,7 @@ class __$InitialStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_InitialState implements _InitialState {
   const _$_InitialState();
 
@@ -345,26 +341,22 @@ class _$_InitialState implements _InitialState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homeState(),
-    @required TResult initialState(),
-    @required TResult onboardingState(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() homeState,
+    required TResult Function() initialState,
+    required TResult Function() onboardingState,
   }) {
-    assert(homeState != null);
-    assert(initialState != null);
-    assert(onboardingState != null);
     return initialState();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homeState(),
-    TResult initialState(),
-    TResult onboardingState(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialState != null) {
       return initialState();
     }
@@ -373,26 +365,22 @@ class _$_InitialState implements _InitialState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homeState(_HomeState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult onboardingState(_OnboardingState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeState value) homeState,
+    required TResult Function(_InitialState value) initialState,
+    required TResult Function(_OnboardingState value) onboardingState,
   }) {
-    assert(homeState != null);
-    assert(initialState != null);
-    assert(onboardingState != null);
     return initialState(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homeState(_HomeState value),
-    TResult initialState(_InitialState value),
-    TResult onboardingState(_OnboardingState value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialState != null) {
       return initialState(this);
     }
@@ -423,6 +411,7 @@ class __$OnboardingStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_OnboardingState implements _OnboardingState {
   const _$_OnboardingState();
 
@@ -441,26 +430,22 @@ class _$_OnboardingState implements _OnboardingState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homeState(),
-    @required TResult initialState(),
-    @required TResult onboardingState(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() homeState,
+    required TResult Function() initialState,
+    required TResult Function() onboardingState,
   }) {
-    assert(homeState != null);
-    assert(initialState != null);
-    assert(onboardingState != null);
     return onboardingState();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homeState(),
-    TResult initialState(),
-    TResult onboardingState(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (onboardingState != null) {
       return onboardingState();
     }
@@ -469,26 +454,22 @@ class _$_OnboardingState implements _OnboardingState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homeState(_HomeState value),
-    @required TResult initialState(_InitialState value),
-    @required TResult onboardingState(_OnboardingState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeState value) homeState,
+    required TResult Function(_InitialState value) initialState,
+    required TResult Function(_OnboardingState value) onboardingState,
   }) {
-    assert(homeState != null);
-    assert(initialState != null);
-    assert(onboardingState != null);
     return onboardingState(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homeState(_HomeState value),
-    TResult initialState(_InitialState value),
-    TResult onboardingState(_OnboardingState value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (onboardingState != null) {
       return onboardingState(this);
     }

@@ -12,5 +12,5 @@ abstract class ILocalAudioFacade {
   List<Audio> fetchAllAudios();
 
   /// @nodoc
-  Audio fetchAudio(String key);
+  Audio? fetchAudio(String key);
 }

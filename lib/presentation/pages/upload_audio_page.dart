@@ -9,6 +9,9 @@ import 'package:ahhhhhh/utils/themes.dart';
 
 /// @nodoc
 class UploadAudioPage extends StatelessWidget {
+  /// @nodoc
+  const UploadAudioPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -27,7 +30,7 @@ class UploadAudioPage extends StatelessWidget {
         ),
         body: BlocProvider(
           create: (_) => getIt<UploadAudioFormBloc>(),
-          child: UploadAudioForm(),
+          child: const UploadAudioForm(),
         ),
       ),
     );

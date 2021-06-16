@@ -55,20 +55,23 @@ class UploadAudioFormBloc
             await FilePicker.platform.pickFiles(type: FileType.audio);
 
         if (result != null) {
-          final audioAsFile = File(result.files.single.path);
+          final path = result.files.single.path;
 
-          final appDocDir = await getApplicationDocumentsDirectory();
-          final audioPath =
-              appDocDir.uri.resolve(p.basename(result.files.single.path)).path;
-          final audio = await audioAsFile.copy(audioPath);
+          if (path != null) {
+            final audioAsFile = File(path);
 
-          final originalName = audio.path.split('/').last;
+            final appDocDir = await getApplicationDocumentsDirectory();
+            final audioPath = appDocDir.uri.resolve(p.basename(path)).path;
+            final audio = await audioAsFile.copy(audioPath);
 
-          yield state.copyWith(
-            audioOriginalName: originalName,
-            audioPath: audio.path,
-            formCompleted: state.name.isNotEmpty && audioPath.isNotEmpty,
-          );
+            final originalName = audio.path.split('/').last;
+
+            yield state.copyWith(
+              audioOriginalName: originalName,
+              audioPath: audio.path,
+              formCompleted: state.name.isNotEmpty && audioPath.isNotEmpty,
+            );
+          }
         }
       },
     );

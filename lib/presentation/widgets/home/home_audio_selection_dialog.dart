@@ -9,24 +9,12 @@ import 'package:ahhhhhh/utils/palettes.dart';
 class HomeAudioSelectionDialog extends StatelessWidget {
   /// @nodoc
   const HomeAudioSelectionDialog({
-    Key key,
-    // @required this.batteryFullAudio,
-    // @required this.chargingAudio,
-    // @required this.dischargingAudio,
-    @required this.onBatteryFullTapped,
-    @required this.onChargingTapped,
-    @required this.onDischargingTapped,
-    @required this.selectedAudio,
+    Key? key,
+    required this.onBatteryFullTapped,
+    required this.onChargingTapped,
+    required this.onDischargingTapped,
+    required this.selectedAudio,
   }) : super(key: key);
-
-  // /// @nodoc
-  // final Audio batteryFullAudio;
-
-  // /// @nodoc
-  // final Audio chargingAudio;
-
-  // /// @nodoc
-  // final Audio dischargingAudio;
 
   /// @nodoc
   final Audio selectedAudio;
@@ -72,10 +60,10 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                 ),
                 const SizedBox(height: 20.0),
                 Container(
-                  color:
-                      selectedAudio.name == drawerState.batteryFullAudio['name']
-                          ? Palettes.orangeYellow
-                          : Colors.transparent,
+                  color: selectedAudio.name ==
+                          drawerState.batteryFullAudio!['name']
+                      ? Palettes.orangeYellow
+                      : Colors.transparent,
                   child: ListTile(
                     title: const Text(
                       'BATTERY FULL',
@@ -86,7 +74,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                       ),
                     ),
                     trailing: selectedAudio.name ==
-                            drawerState.batteryFullAudio['name']
+                            drawerState.batteryFullAudio!['name']
                         ? const Icon(
                             Icons.check,
                             color: Colors.black,
@@ -96,9 +84,10 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  color: selectedAudio.name == drawerState.chargingAudio['name']
-                      ? Palettes.orangeYellow
-                      : Colors.transparent,
+                  color:
+                      selectedAudio.name == drawerState.chargingAudio!['name']
+                          ? Palettes.orangeYellow
+                          : Colors.transparent,
                   child: ListTile(
                     title: const Text(
                       'CHARGING',
@@ -109,7 +98,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                       ),
                     ),
                     trailing:
-                        selectedAudio.name == drawerState.chargingAudio['name']
+                        selectedAudio.name == drawerState.chargingAudio!['name']
                             ? const Icon(
                                 Icons.check,
                                 color: Colors.black,
@@ -119,10 +108,10 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  color:
-                      selectedAudio.name == drawerState.dischargingAudio['name']
-                          ? Palettes.orangeYellow
-                          : Colors.transparent,
+                  color: selectedAudio.name ==
+                          drawerState.dischargingAudio!['name']
+                      ? Palettes.orangeYellow
+                      : Colors.transparent,
                   child: ListTile(
                     title: const Text(
                       'DISCHARGING',
@@ -133,7 +122,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                       ),
                     ),
                     trailing: selectedAudio.name ==
-                            drawerState.dischargingAudio['name']
+                            drawerState.dischargingAudio!['name']
                         ? const Icon(
                             Icons.check,
                             color: Colors.black,

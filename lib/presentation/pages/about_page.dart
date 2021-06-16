@@ -8,6 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// @nodoc
 class AboutPage extends StatelessWidget {
+  /// @nodoc
+  const AboutPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -27,7 +30,7 @@ class AboutPage extends StatelessWidget {
         body: BlocProvider(
           create: (context) => getIt<AboutBloc>()
             ..add(const AboutEvent.aboutPageLaunchedEvent()),
-          child: AboutBodyLayout(),
+          child: const AboutBodyLayout(),
         ),
       ),
     );

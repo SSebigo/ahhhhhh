@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class Changelog extends StatelessWidget {
   /// @nodoc
   const Changelog({
-    Key key,
-    this.changes,
-    @required this.version,
+    Key? key,
+    this.changes = const <String>[],
+    required this.version,
   }) : super(key: key);
 
   /// @nodoc
@@ -37,7 +37,7 @@ class Changelog extends StatelessWidget {
             child: SizedBox(
               width: mediaQuery.width,
               child: Text(
-                '$change',
+                change,
                 textAlign: TextAlign.left,
                 style: const TextStyle(
                   color: Colors.black,

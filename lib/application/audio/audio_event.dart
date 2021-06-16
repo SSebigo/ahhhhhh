@@ -2,7 +2,7 @@ part of 'audio_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class AudioEvent with _$AudioEvent {
+class AudioEvent with _$AudioEvent {
   /// @nodoc
   const factory AudioEvent.batteryStateChangedEvent(
     BatteryState batteryState,

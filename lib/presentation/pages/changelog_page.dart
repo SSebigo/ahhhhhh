@@ -1,12 +1,15 @@
-import 'package:ahhhhhh/presentation/widgets/changelog/changelog.dart';
+import 'package:ahhhhhh/utils/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:ahhhhhh/utils/functions.dart';
+import 'package:ahhhhhh/presentation/widgets/changelog/changelog.dart';
 import 'package:ahhhhhh/utils/themes.dart';
 
 /// @nodoc
 class ChangelogPage extends StatelessWidget {
+  /// @nodoc
+  const ChangelogPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -81,6 +84,13 @@ class ChangelogPage extends StatelessWidget {
               const Changelog(
                 version: '2.2.1',
                 changes: <String>[
+                  '- Bug fixes.',
+                ],
+              ),
+              const Changelog(
+                version: '2.3.0',
+                changes: <String>[
+                  '''- Ahhhhhh now runs in the background if the app is not completely shut.''',
                   '- Bug fixes.',
                 ],
               ),

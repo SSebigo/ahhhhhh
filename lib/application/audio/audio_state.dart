@@ -2,7 +2,7 @@ part of 'audio_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class AudioState with _$AudioState {
+class AudioState with _$AudioState {
   /// @nodoc
   const factory AudioState.audioPlayedState() = _AudioPlayedState;
 
