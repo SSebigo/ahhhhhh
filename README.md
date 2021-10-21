@@ -21,7 +21,7 @@
 
 Makes your smartphone moan, scream or laugh when charging, discharging or full
 
-> ⚠️This project is a way for me to try things for other projects so it may sometimes not work because I pushed broken code deliberately
+> ⚠️This project is a way for me to try things for other projects so it might sometimes not work because I pushed broken code deliberately
 
 ---
 
