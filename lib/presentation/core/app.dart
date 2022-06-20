@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-
 import 'package:ahhhhhh/presentation/routes/router.gr.dart';
+import 'package:flutter/material.dart';
 
 /// @nodoc
 class App extends StatelessWidget {
   /// @nodoc
-  App({Key? key}) : super(key: key);
+  App({super.key});
 
   final _appRouter = AppRouter();
 

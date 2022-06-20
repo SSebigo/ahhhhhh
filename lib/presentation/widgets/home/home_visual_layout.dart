@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class HomeVisualLayout extends StatelessWidget {
   /// @nodoc
   const HomeVisualLayout({
-    Key? key,
+    super.key,
     this.height,
     this.width,
     required this.visualPath,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final double? height;
@@ -28,7 +28,7 @@ class HomeVisualLayout extends StatelessWidget {
       height: height ?? mediaQuery.width / 1.3,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -39,9 +39,9 @@ class HomeVisualLayout extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(20),
           child: visualPath.isNotEmpty
               ? Image.asset(
                   visualPath,

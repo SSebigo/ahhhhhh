@@ -1,14 +1,13 @@
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
+import 'package:ahhhhhh/application/upload_audio_form/upload_audio_form_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:ahhhhhh/application/upload_audio_form/upload_audio_form_bloc.dart';
-
 /// @nodoc
 class UploadAudioForm extends StatelessWidget {
   /// @nodoc
-  const UploadAudioForm({Key? key}) : super(key: key);
+  const UploadAudioForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,32 +24,31 @@ class UploadAudioForm extends StatelessWidget {
       },
       child: Form(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          padding: const EdgeInsets.symmetric(horizontal: 25),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 50),
                 const Text(
                   'SOUND NAME:',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20.0,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextField(
                   decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 20),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black26,
-                        width: 2.0,
+                        width: 2,
                       ),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(width: 2.0),
+                      borderSide: BorderSide(width: 2),
                     ),
                     hintText: "e.g. Oh shit, It's wednesday, Whassa",
                     hintStyle: TextStyle(
@@ -64,10 +62,10 @@ class UploadAudioForm extends StatelessWidget {
                       .read<UploadAudioFormBloc>()
                       .add(UploadAudioFormEvent.nameChangedEVT(value)),
                 ),
-                const SizedBox(height: 25.0),
+                const SizedBox(height: 25),
                 BlocBuilder<UploadAudioFormBloc, UploadAudioFormState>(
                   builder: (context, uploadAudioFormState) {
-                    return Container(
+                    return ColoredBox(
                       color: const Color(0xFFFFB43F),
                       child: ListTile(
                         title: Text(
@@ -76,7 +74,7 @@ class UploadAudioForm extends StatelessWidget {
                               : 'Select file',
                           style: const TextStyle(
                             color: Colors.black,
-                            fontSize: 18.0,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -85,21 +83,24 @@ class UploadAudioForm extends StatelessWidget {
                           color: Colors.black,
                         ),
                         onTap: () => context.read<UploadAudioFormBloc>().add(
-                            const UploadAudioFormEvent.uploadUserAudioEvent()),
+                              const UploadAudioFormEvent.uploadUserAudioEvent(),
+                            ),
                       ),
                     );
                   },
                 ),
-                const SizedBox(height: 20.0),
+                const SizedBox(height: 20),
                 BlocBuilder<UploadAudioFormBloc, UploadAudioFormState>(
                   builder: (context, uploadAudioFormState) {
                     return SizedBox(
-                      height: 60.0,
+                      height: 60,
                       width: mediaQuery.width,
                       child: TextButton(
                         onPressed: uploadAudioFormState.formCompleted
                             ? () => context.read<UploadAudioFormBloc>().add(
-                                const UploadAudioFormEvent.saveUserAudioEvent())
+                                  const UploadAudioFormEvent
+                                      .saveUserAudioEvent(),
+                                )
                             : null,
                         style: TextButton.styleFrom(
                           backgroundColor: uploadAudioFormState.formCompleted
@@ -115,7 +116,7 @@ class UploadAudioForm extends StatelessWidget {
                             color: uploadAudioFormState.formCompleted
                                 ? Colors.black
                                 : Colors.black45,
-                            fontSize: 20.0,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

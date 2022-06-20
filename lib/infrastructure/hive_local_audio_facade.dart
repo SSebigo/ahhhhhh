@@ -1,8 +1,7 @@
-import 'package:hive/hive.dart';
-import 'package:injectable/injectable.dart';
-
 import 'package:ahhhhhh/domain/facades/i_local_audio_facade.dart';
 import 'package:ahhhhhh/domain/models/hive/audio.dart';
+import 'package:hive/hive.dart';
+import 'package:injectable/injectable.dart';
 
 /// @nodoc
 @LazySingleton(as: ILocalAudioFacade)

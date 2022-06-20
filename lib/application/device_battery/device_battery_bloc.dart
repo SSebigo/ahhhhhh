@@ -46,9 +46,11 @@ class DeviceBatteryBloc extends Bloc<DeviceBatteryEvent, DeviceBatteryState> {
             if (previousBatteryState != null &&
                 currentBatteryState != null &&
                 currentBatteryState != previousBatteryState) {
-              add(DeviceBatteryEvent.batteryStateChangedEvent(
-                currentBatteryState!,
-              ));
+              add(
+                DeviceBatteryEvent.batteryStateChangedEvent(
+                  currentBatteryState!,
+                ),
+              );
             }
           },
         );

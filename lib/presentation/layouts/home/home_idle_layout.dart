@@ -1,19 +1,18 @@
-import 'package:battery/battery.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
 import 'package:ahhhhhh/application/visual/visual_bloc.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_visual_layout.dart';
+import 'package:battery/battery.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 /// @nodoc
 class HomeIdleLayout extends StatelessWidget {
   /// @nodoc
   const HomeIdleLayout({
-    Key? key,
+    super.key,
     required this.bannerAd,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final BannerAd? bannerAd;
@@ -25,7 +24,7 @@ class HomeIdleLayout extends StatelessWidget {
     if (height != null && height > 0) {
       return height.toDouble();
     }
-    return 0.0;
+    return 0;
   }
 
   /// @nodoc
@@ -35,7 +34,7 @@ class HomeIdleLayout extends StatelessWidget {
     if (width != null && width > 0) {
       return width.toDouble();
     }
-    return 0.0;
+    return 0;
   }
 
   @override

@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 class AhhhhhhButton extends StatelessWidget {
   /// @nodoc
   const AhhhhhhButton({
-    Key? key,
+    super.key,
     this.color = Palettes.orangeYellow,
     this.fontSize = 35.0,
     required this.onPressed,
     required this.title,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final Color color;
@@ -29,14 +29,14 @@ class AhhhhhhButton extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context).size;
 
     return SizedBox(
-      height: 60.0,
+      height: 60,
       width: mediaQuery.width,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: color,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(10),
           ),
         ),
         child: Text(
@@ -46,7 +46,7 @@ class AhhhhhhButton extends StatelessWidget {
             fontFamily: 'VarelaRound',
             fontSize: fontSize,
             fontWeight: FontWeight.w400,
-            letterSpacing: 3.0,
+            letterSpacing: 3,
           ),
         ),
       ),

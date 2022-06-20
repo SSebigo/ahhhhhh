@@ -1,14 +1,13 @@
+import 'package:ahhhhhh/presentation/widgets/changelog/changelog.dart';
 import 'package:ahhhhhh/utils/functions.dart';
+import 'package:ahhhhhh/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:ahhhhhh/presentation/widgets/changelog/changelog.dart';
-import 'package:ahhhhhh/utils/themes.dart';
 
 /// @nodoc
 class ChangelogPage extends StatelessWidget {
   /// @nodoc
-  const ChangelogPage({Key? key}) : super(key: key);
+  const ChangelogPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +21,9 @@ class ChangelogPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('CHANGELOGS'),
           backgroundColor: Colors.black,
-          brightness: Brightness.dark,
           iconTheme: const IconThemeData(color: Colors.white),
-          elevation: 0.0,
+          elevation: 0,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: SafeArea(
           child: ListView(

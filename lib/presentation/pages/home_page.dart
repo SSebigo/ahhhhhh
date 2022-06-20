@@ -1,8 +1,4 @@
 import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/application/home/home_bloc.dart';
 import 'package:ahhhhhh/application/visual/visual_bloc.dart';
@@ -10,14 +6,17 @@ import 'package:ahhhhhh/injection.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_body_layout.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_end_drawer.dart';
 import 'package:ahhhhhh/utils/themes.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// @nodoc
 class HomePage extends StatefulWidget {
   /// @nodoc
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -53,9 +52,9 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            brightness: Brightness.light,
             iconTheme: const IconThemeData(color: Colors.black),
-            elevation: 0.0,
+            elevation: 0,
+            systemOverlayStyle: SystemUiOverlayStyle.dark,
           ),
           body: const HomeBodyLayout(),
           endDrawer: const HomeEndDrawer(),

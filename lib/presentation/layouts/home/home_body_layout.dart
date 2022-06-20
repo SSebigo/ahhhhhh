@@ -1,8 +1,3 @@
-import 'package:ahhhhhh/utils/functions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-
 import 'package:ahhhhhh/ad_manager.dart';
 import 'package:ahhhhhh/application/audio/audio_bloc.dart';
 import 'package:ahhhhhh/application/device_battery/device_battery_bloc.dart';
@@ -12,17 +7,21 @@ import 'package:ahhhhhh/application/visual/visual_bloc.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_idle_layout.dart';
 import 'package:ahhhhhh/presentation/widgets/ahhhhhh_button.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_visual.dart';
+import 'package:ahhhhhh/utils/functions.dart';
 import 'package:ahhhhhh/utils/getters.dart';
 import 'package:ahhhhhh/utils/palettes.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:logger/logger.dart';
 
 /// @nodoc
 class HomeBodyLayout extends StatefulWidget {
   /// @nodoc
-  const HomeBodyLayout({Key? key}) : super(key: key);
+  const HomeBodyLayout({super.key});
 
   @override
-  _HomeBodyLayoutState createState() => _HomeBodyLayoutState();
+  State<HomeBodyLayout> createState() => _HomeBodyLayoutState();
 }
 
 class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
@@ -101,7 +100,8 @@ class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
             deviceBatteryState.maybeMap(
               batteryStateChangedState: (state) {
                 context.read<AudioBloc>().add(
-                    AudioEvent.batteryStateChangedEvent(state.batteryState));
+                      AudioEvent.batteryStateChangedEvent(state.batteryState),
+                    );
               },
               orElse: () {},
             );
@@ -133,29 +133,33 @@ class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
               },
               selectVisualState: (value) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: BlocBuilder<VisualBloc, VisualState>(
                     builder: (context, visualState) {
                       return ListView(
                         children: <Widget>[
                           const SizedBox(height: 20),
                           AhhhhhhButton(
-                            fontSize: 25.0,
+                            fontSize: 25,
                             title: 'Cancel',
                             onPressed: () => context.read<HomeBloc>().add(
-                                const HomeEvent
-                                    .visualSelectedOrCanceledEvent()),
+                                  const HomeEvent
+                                      .visualSelectedOrCanceledEvent(),
+                                ),
                           ),
                           const SizedBox(height: 30),
                           ...visuals.map(
                             (visual) => Padding(
-                              padding: const EdgeInsets.only(bottom: 30.0),
+                              padding: const EdgeInsets.only(bottom: 30),
                               child: GestureDetector(
                                 onTap: () {
                                   context.read<VisualBloc>().add(
-                                      VisualEvent.visualSelectedEvent(visual));
-                                  context.read<HomeBloc>().add(const HomeEvent
-                                      .visualSelectedOrCanceledEvent());
+                                        VisualEvent.visualSelectedEvent(visual),
+                                      );
+                                  context.read<HomeBloc>().add(
+                                        const HomeEvent
+                                            .visualSelectedOrCanceledEvent(),
+                                      );
                                 },
                                 child: Column(
                                   children: [
@@ -170,13 +174,13 @@ class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
                                           ? const TextStyle(
                                               color: Palettes.orangeYellow,
                                               fontFamily: 'VarelaRound',
-                                              fontSize: 20.0,
+                                              fontSize: 20,
                                               fontWeight: FontWeight.bold,
                                             )
                                           : const TextStyle(
                                               color: Colors.black,
                                               fontFamily: 'VarelaRound',
-                                              fontSize: 16.0,
+                                              fontSize: 16,
                                             ),
                                     ),
                                     const SizedBox(height: 10),

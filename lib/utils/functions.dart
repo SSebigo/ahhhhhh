@@ -15,10 +15,10 @@ double getSmartBannerHeight(BuildContext context) {
       ? mediaScreen.size.height
       : mediaScreen.size.width;
   if (dpHeight <= 400.0) {
-    return 32.0;
+    return 32;
   }
   if (dpHeight > 720.0) {
-    return 90.0;
+    return 90;
   }
-  return 50.0;
+  return 50;
 }

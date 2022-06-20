@@ -7,12 +7,12 @@ import 'package:bloc/bloc.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 
+part 'upload_audio_form_bloc.freezed.dart';
 part 'upload_audio_form_event.dart';
 part 'upload_audio_form_state.dart';
-part 'upload_audio_form_bloc.freezed.dart';
 
 /// @nodoc
 @injectable

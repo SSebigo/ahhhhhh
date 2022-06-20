@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 /// @nodoc
 class AboutPage extends StatelessWidget {
   /// @nodoc
-  const AboutPage({Key? key}) : super(key: key);
+  const AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,9 @@ class AboutPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('ABOUT'),
           backgroundColor: Colors.black,
-          brightness: Brightness.dark,
           iconTheme: const IconThemeData(color: Colors.white),
-          elevation: 0.0,
+          elevation: 0,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: BlocProvider(
           create: (context) => getIt<AboutBloc>()

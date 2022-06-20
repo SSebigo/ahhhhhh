@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class Changelog extends StatelessWidget {
   /// @nodoc
   const Changelog({
-    Key? key,
+    super.key,
     this.changes = const <String>[],
     required this.version,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final List<String> changes;
@@ -26,14 +26,14 @@ class Changelog extends StatelessWidget {
             'v$version',
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 18.0,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
         ...changes.map(
           (change) => Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: SizedBox(
               width: mediaQuery.width,
               child: Text(
@@ -41,7 +41,7 @@ class Changelog extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 15.0,
+                  fontSize: 15,
                 ),
               ),
             ),

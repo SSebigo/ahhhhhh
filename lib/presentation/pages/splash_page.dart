@@ -1,18 +1,17 @@
+import 'package:ahhhhhh/application/core/core_bloc.dart';
 import 'package:ahhhhhh/presentation/routes/router.gr.dart';
+import 'package:ahhhhhh/presentation/widgets/splash/splash_copyright.dart';
+import 'package:ahhhhhh/utils/assets.dart';
+import 'package:ahhhhhh/utils/themes.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:ahhhhhh/application/core/core_bloc.dart';
-import 'package:ahhhhhh/presentation/widgets/splash/splash_copyright.dart';
-import 'package:ahhhhhh/utils/assets.dart';
-import 'package:ahhhhhh/utils/themes.dart';
-
 /// @nodoc
 class SplashPage extends StatelessWidget {
   /// @nodoc
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +35,11 @@ class SplashPage extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Align(
-                alignment: Alignment.center,
                 child: SizedBox(
                   width: 200,
                   height: 200,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
                       Assets.logoImage,
                       fit: BoxFit.cover,
@@ -50,7 +48,7 @@ class SplashPage extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(bottom: 25.0),
+                padding: EdgeInsets.only(bottom: 25),
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: SplashCopyright(),

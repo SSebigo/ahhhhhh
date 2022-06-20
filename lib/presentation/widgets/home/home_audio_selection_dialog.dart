@@ -1,20 +1,19 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/domain/models/hive/audio.dart';
 import 'package:ahhhhhh/utils/palettes.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// @nodoc
 class HomeAudioSelectionDialog extends StatelessWidget {
   /// @nodoc
   const HomeAudioSelectionDialog({
-    Key? key,
+    super.key,
     required this.onBatteryFullTapped,
     required this.onChargingTapped,
     required this.onDischargingTapped,
     required this.selectedAudio,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final Audio selectedAudio;
@@ -32,10 +31,10 @@ class HomeAudioSelectionDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Container(
-        width: 350.0,
+        width: 350,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.white,
@@ -45,21 +44,21 @@ class HomeAudioSelectionDialog extends StatelessWidget {
             return Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 25.0),
+                const SizedBox(height: 25),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Text(
                     'Assign "${selectedAudio.name}" to:',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       color: Colors.black,
-                      fontSize: 16.0,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                const SizedBox(height: 20.0),
-                Container(
+                const SizedBox(height: 20),
+                ColoredBox(
                   color: selectedAudio.name ==
                           drawerState.batteryFullAudio!['name']
                       ? Palettes.orangeYellow
@@ -69,7 +68,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                       'BATTERY FULL',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 18.0,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -83,7 +82,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                     onTap: onBatteryFullTapped,
                   ),
                 ),
-                Container(
+                ColoredBox(
                   color:
                       selectedAudio.name == drawerState.chargingAudio!['name']
                           ? Palettes.orangeYellow
@@ -93,7 +92,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                       'CHARGING',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 18.0,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -107,7 +106,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                     onTap: onChargingTapped,
                   ),
                 ),
-                Container(
+                ColoredBox(
                   color: selectedAudio.name ==
                           drawerState.dischargingAudio!['name']
                       ? Palettes.orangeYellow
@@ -117,7 +116,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                       'DISCHARGING',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 18.0,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -131,7 +130,7 @@ class HomeAudioSelectionDialog extends StatelessWidget {
                     onTap: onDischargingTapped,
                   ),
                 ),
-                const SizedBox(height: 25.0),
+                const SizedBox(height: 25),
               ],
             );
           },

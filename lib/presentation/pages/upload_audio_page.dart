@@ -1,16 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:ahhhhhh/application/upload_audio_form/upload_audio_form_bloc.dart';
 import 'package:ahhhhhh/injection.dart';
 import 'package:ahhhhhh/presentation/widgets/upload_audio/upload_audio_form.dart';
 import 'package:ahhhhhh/utils/themes.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// @nodoc
 class UploadAudioPage extends StatelessWidget {
   /// @nodoc
-  const UploadAudioPage({Key? key}) : super(key: key);
+  const UploadAudioPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +23,9 @@ class UploadAudioPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('UPLOAD A SOUND'),
           backgroundColor: Colors.black,
-          brightness: Brightness.dark,
           iconTheme: const IconThemeData(color: Colors.white),
-          elevation: 0.0,
+          elevation: 0,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: BlocProvider(
           create: (_) => getIt<UploadAudioFormBloc>(),

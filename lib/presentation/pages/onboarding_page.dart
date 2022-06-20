@@ -9,7 +9,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 /// @nodoc
 class OnboardingPage extends StatelessWidget with Getters {
   /// @nodoc
-  const OnboardingPage({Key? key}) : super(key: key);
+  const OnboardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,9 @@ class OnboardingPage extends StatelessWidget with Getters {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          brightness: Brightness.light,
           iconTheme: const IconThemeData(color: Colors.black),
-          elevation: 0.0,
+          elevation: 0,
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
         body: SafeArea(
           child: IntroductionScreen(
@@ -35,9 +35,9 @@ class OnboardingPage extends StatelessWidget with Getters {
               'Done',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20.0,
+                fontSize: 20,
                 fontFamily: 'VarelaRound',
-                letterSpacing: 1.0,
+                letterSpacing: 1,
               ),
             ),
             showNextButton: false,
@@ -58,12 +58,12 @@ class OnboardingPage extends StatelessWidget with Getters {
                     titleTextStyle: TextStyle(
                       color: Colors.black87,
                       fontFamily: 'VarelaRound',
-                      fontSize: 30.0,
+                      fontSize: 30,
                     ),
                     bodyTextStyle: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: 20.0,
-                      letterSpacing: 1.0,
+                      fontSize: 20,
+                      letterSpacing: 1,
                       height: 1.5,
                     ),
                   ),

@@ -1,19 +1,20 @@
+import 'package:ahhhhhh/application/about/about_bloc.dart';
+import 'package:ahhhhhh/utils/constants.dart';
 import 'package:ahhhhhh/utils/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:ahhhhhh/application/about/about_bloc.dart';
-import 'package:ahhhhhh/utils/constants.dart';
-
 /// @nodoc
 class AboutBodyLayout extends StatelessWidget {
   /// @nodoc
-  const AboutBodyLayout({Key? key}) : super(key: key);
+  const AboutBodyLayout({super.key});
 
   Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    final uri = Uri.parse(url);
+
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 
@@ -27,7 +28,7 @@ class AboutBodyLayout extends StatelessWidget {
               'Version',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18.0,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -42,7 +43,7 @@ class AboutBodyLayout extends StatelessWidget {
               'Build number',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18.0,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -57,7 +58,7 @@ class AboutBodyLayout extends StatelessWidget {
               'Compilation date',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18.0,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -68,7 +69,7 @@ class AboutBodyLayout extends StatelessWidget {
               'Website',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18.0,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -80,7 +81,7 @@ class AboutBodyLayout extends StatelessWidget {
               'Github',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18.0,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),

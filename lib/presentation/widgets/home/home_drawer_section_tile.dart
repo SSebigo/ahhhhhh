@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class HomeDrawerSectionTile extends StatelessWidget {
   /// @nodoc
   const HomeDrawerSectionTile({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final String title;
@@ -18,7 +18,7 @@ class HomeDrawerSectionTile extends StatelessWidget {
         title,
         style: const TextStyle(
           color: Colors.black,
-          fontSize: 18.0,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
       ),

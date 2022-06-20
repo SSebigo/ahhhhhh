@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class HomeVisual extends StatelessWidget {
   /// @nodoc
   const HomeVisual({
-    Key? key,
+    super.key,
     this.height,
     this.width,
     required this.visualPath,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final double? height;
@@ -24,7 +24,7 @@ class HomeVisual extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context).size;
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
+      borderRadius: BorderRadius.circular(20),
       child: visualPath.isNotEmpty
           ? Image.asset(
               visualPath,

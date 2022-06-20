@@ -1,8 +1,3 @@
-import 'package:ahhhhhh/utils/functions.dart';
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:ahhhhhh/application/audio/audio_bloc.dart';
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/domain/models/hive/audio.dart';
@@ -11,12 +6,16 @@ import 'package:ahhhhhh/presentation/widgets/home/home_audio_selection_dialog.da
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_section_tile.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_separator.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_tile.dart';
+import 'package:ahhhhhh/utils/functions.dart';
 import 'package:ahhhhhh/utils/getters.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// @nodoc
 class HomeEndDrawer extends StatelessWidget with Getters {
   /// @nodoc
-  const HomeEndDrawer({Key? key}) : super(key: key);
+  const HomeEndDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +46,13 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                   drawerState.batteryFullAudio!['name'] ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
-                onTap: () => context
-                    .read<AudioBloc>()
-                    .add(AudioEvent.playAudioEvent(Audio.fromMap(
-                      drawerState.batteryFullAudio!,
-                    ))),
+                onTap: () => context.read<AudioBloc>().add(
+                      AudioEvent.playAudioEvent(
+                        Audio.fromMap(
+                          drawerState.batteryFullAudio!,
+                        ),
+                      ),
+                    ),
               ),
               const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Charging sound:'),
@@ -60,11 +61,13 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                   drawerState.chargingAudio!['name'] ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
-                onTap: () => context
-                    .read<AudioBloc>()
-                    .add(AudioEvent.playAudioEvent(Audio.fromMap(
-                      drawerState.chargingAudio!,
-                    ))),
+                onTap: () => context.read<AudioBloc>().add(
+                      AudioEvent.playAudioEvent(
+                        Audio.fromMap(
+                          drawerState.chargingAudio!,
+                        ),
+                      ),
+                    ),
               ),
               const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Discharging sound:'),
@@ -73,11 +76,13 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                   drawerState.dischargingAudio!['name'] ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
-                onTap: () => context
-                    .read<AudioBloc>()
-                    .add(AudioEvent.playAudioEvent(Audio.fromMap(
-                      drawerState.dischargingAudio!,
-                    ))),
+                onTap: () => context.read<AudioBloc>().add(
+                      AudioEvent.playAudioEvent(
+                        Audio.fromMap(
+                          drawerState.dischargingAudio!,
+                        ),
+                      ),
+                    ),
               ),
               const HomeDrawerSeparator(),
               const HomeDrawerSectionTile(title: 'Default sounds:'),
@@ -95,7 +100,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                     onTap: () => context
                         .read<AudioBloc>()
                         .add(AudioEvent.playAudioEvent(audio)),
-                    onLongPress: () => showDialog(
+                    onLongPress: () => showDialog<HomeAudioSelectionDialog>(
                       context: context,
                       builder: (_) => HomeAudioSelectionDialog(
                         onBatteryFullTapped: () {
@@ -135,7 +140,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
                     onTap: () => context
                         .read<AudioBloc>()
                         .add(AudioEvent.playAudioEvent(audio)),
-                    onLongPress: () => showDialog(
+                    onLongPress: () => showDialog<HomeAudioSelectionDialog>(
                       context: context,
                       builder: (_) => HomeAudioSelectionDialog(
                         onBatteryFullTapped: () {
