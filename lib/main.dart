@@ -48,7 +48,7 @@ Future<void> initService() async {
       onBackground: (_) => false,
     ),
     androidConfiguration: AndroidConfiguration(
-      onStart: (_) {},
+      onStart: onStart,
       isForegroundMode: true,
     ),
   );
