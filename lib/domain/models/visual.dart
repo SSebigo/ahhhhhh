@@ -10,9 +10,9 @@ class Visual {
   /// @nodoc
   factory Visual.fromMap(Map<String, dynamic> map) {
     return Visual(
-      chargingVisualPath: map['chargingVisualPath'],
-      dischargingVisualPath: map['dischargingVisualPath'],
-      name: map['name'],
+      chargingVisualPath: map['chargingVisualPath'] as String,
+      dischargingVisualPath: map['dischargingVisualPath'] as String,
+      name: map['name'] as String,
     );
   }
 

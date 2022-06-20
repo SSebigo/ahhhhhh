@@ -15,9 +15,9 @@ class Audio extends HiveObject {
   /// @nodoc
   factory Audio.fromMap(Map<String, dynamic> map) {
     return Audio(
-      name: map['name'],
-      path: map['path'],
-      isAsset: map['isAsset'],
+      name: map['name'] as String,
+      path: map['path'] as String,
+      isAsset: map['isAsset'] as bool,
     );
   }
 

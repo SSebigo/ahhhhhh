@@ -12,9 +12,9 @@ class OnboardingContent extends Equatable {
   /// @nodoc
   factory OnboardingContent.fromMap(Map<String, dynamic> map) {
     return OnboardingContent(
-      title: map['title'],
-      explanation: map['explanation'],
-      coverURL: map['coverURL'],
+      title: map['title'] as String,
+      explanation: map['explanation'] as String,
+      coverURL: map['coverURL'] as String,
     );
   }
 

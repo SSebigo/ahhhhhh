@@ -5,8 +5,12 @@ analyzer:
     missing_required_param: error
     missing_return: error
     must_be_immutable: error
+    missing_enum_constant_in_switch: ignore
+    todo: ignore
+
   exclude:
     - "**/*.config.dart"
     - "**/*.freezed.dart"
     - "**/*.g.dart"
     - "**/*.gr.dart"
+    - "**/packages/**"
