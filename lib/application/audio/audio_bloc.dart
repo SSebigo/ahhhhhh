@@ -1,13 +1,12 @@
 import 'dart:async';
 
+import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
+import 'package:ahhhhhh/domain/models/hive/audio.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:battery/battery.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
-import 'package:ahhhhhh/domain/models/hive/audio.dart';
 
 part 'audio_bloc.freezed.dart';
 part 'audio_event.dart';
