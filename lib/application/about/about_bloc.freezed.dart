@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'about_bloc.dart';
 
@@ -10,25 +12,18 @@ part of 'about_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AboutEventTearOff {
-  const _$AboutEventTearOff();
-
-  AboutPageLaunchedEvent aboutPageLaunchedEvent() {
-    return const AboutPageLaunchedEvent();
-  }
-}
-
-/// @nodoc
-const $AboutEvent = _$AboutEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AboutEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() aboutPageLaunchedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? aboutPageLaunchedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +36,11 @@ mixin _$AboutEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AboutPageLaunchedEvent value)
         aboutPageLaunchedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AboutPageLaunchedEvent value)? aboutPageLaunchedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,22 +68,23 @@ class _$AboutEventCopyWithImpl<$Res> implements $AboutEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AboutPageLaunchedEventCopyWith<$Res> {
-  factory $AboutPageLaunchedEventCopyWith(AboutPageLaunchedEvent value,
-          $Res Function(AboutPageLaunchedEvent) then) =
-      _$AboutPageLaunchedEventCopyWithImpl<$Res>;
+abstract class _$$AboutPageLaunchedEventCopyWith<$Res> {
+  factory _$$AboutPageLaunchedEventCopyWith(_$AboutPageLaunchedEvent value,
+          $Res Function(_$AboutPageLaunchedEvent) then) =
+      __$$AboutPageLaunchedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AboutPageLaunchedEventCopyWithImpl<$Res>
+class __$$AboutPageLaunchedEventCopyWithImpl<$Res>
     extends _$AboutEventCopyWithImpl<$Res>
-    implements $AboutPageLaunchedEventCopyWith<$Res> {
-  _$AboutPageLaunchedEventCopyWithImpl(AboutPageLaunchedEvent _value,
-      $Res Function(AboutPageLaunchedEvent) _then)
-      : super(_value, (v) => _then(v as AboutPageLaunchedEvent));
+    implements _$$AboutPageLaunchedEventCopyWith<$Res> {
+  __$$AboutPageLaunchedEventCopyWithImpl(_$AboutPageLaunchedEvent _value,
+      $Res Function(_$AboutPageLaunchedEvent) _then)
+      : super(_value, (v) => _then(v as _$AboutPageLaunchedEvent));
 
   @override
-  AboutPageLaunchedEvent get _value => super._value as AboutPageLaunchedEvent;
+  _$AboutPageLaunchedEvent get _value =>
+      super._value as _$AboutPageLaunchedEvent;
 }
 
 /// @nodoc
@@ -98,7 +99,8 @@ class _$AboutPageLaunchedEvent implements AboutPageLaunchedEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AboutPageLaunchedEvent);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AboutPageLaunchedEvent);
   }
 
   @override
@@ -110,6 +112,14 @@ class _$AboutPageLaunchedEvent implements AboutPageLaunchedEvent {
     required TResult Function() aboutPageLaunchedEvent,
   }) {
     return aboutPageLaunchedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? aboutPageLaunchedEvent,
+  }) {
+    return aboutPageLaunchedEvent?.call();
   }
 
   @override
@@ -135,6 +145,14 @@ class _$AboutPageLaunchedEvent implements AboutPageLaunchedEvent {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AboutPageLaunchedEvent value)? aboutPageLaunchedEvent,
+  }) {
+    return aboutPageLaunchedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AboutPageLaunchedEvent value)? aboutPageLaunchedEvent,
     required TResult orElse(),
@@ -149,21 +167,6 @@ class _$AboutPageLaunchedEvent implements AboutPageLaunchedEvent {
 abstract class AboutPageLaunchedEvent implements AboutEvent {
   const factory AboutPageLaunchedEvent() = _$AboutPageLaunchedEvent;
 }
-
-/// @nodoc
-class _$AboutStateTearOff {
-  const _$AboutStateTearOff();
-
-  _AboutState call({required String buildNumber, required String version}) {
-    return _AboutState(
-      buildNumber: buildNumber,
-      version: version,
-    );
-  }
-}
-
-/// @nodoc
-const $AboutState = _$AboutStateTearOff();
 
 /// @nodoc
 mixin _$AboutState {
@@ -210,30 +213,31 @@ class _$AboutStateCopyWithImpl<$Res> implements $AboutStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AboutStateCopyWith<$Res> implements $AboutStateCopyWith<$Res> {
-  factory _$AboutStateCopyWith(
-          _AboutState value, $Res Function(_AboutState) then) =
-      __$AboutStateCopyWithImpl<$Res>;
+abstract class _$$_AboutStateCopyWith<$Res>
+    implements $AboutStateCopyWith<$Res> {
+  factory _$$_AboutStateCopyWith(
+          _$_AboutState value, $Res Function(_$_AboutState) then) =
+      __$$_AboutStateCopyWithImpl<$Res>;
   @override
   $Res call({String buildNumber, String version});
 }
 
 /// @nodoc
-class __$AboutStateCopyWithImpl<$Res> extends _$AboutStateCopyWithImpl<$Res>
-    implements _$AboutStateCopyWith<$Res> {
-  __$AboutStateCopyWithImpl(
-      _AboutState _value, $Res Function(_AboutState) _then)
-      : super(_value, (v) => _then(v as _AboutState));
+class __$$_AboutStateCopyWithImpl<$Res> extends _$AboutStateCopyWithImpl<$Res>
+    implements _$$_AboutStateCopyWith<$Res> {
+  __$$_AboutStateCopyWithImpl(
+      _$_AboutState _value, $Res Function(_$_AboutState) _then)
+      : super(_value, (v) => _then(v as _$_AboutState));
 
   @override
-  _AboutState get _value => super._value as _AboutState;
+  _$_AboutState get _value => super._value as _$_AboutState;
 
   @override
   $Res call({
     Object? buildNumber = freezed,
     Object? version = freezed,
   }) {
-    return _then(_AboutState(
+    return _then(_$_AboutState(
       buildNumber: buildNumber == freezed
           ? _value.buildNumber
           : buildNumber // ignore: cast_nullable_to_non_nullable
@@ -264,29 +268,29 @@ class _$_AboutState implements _AboutState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AboutState &&
-            (identical(other.buildNumber, buildNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.buildNumber, buildNumber)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality().equals(other.version, version)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AboutState &&
+            const DeepCollectionEquality()
+                .equals(other.buildNumber, buildNumber) &&
+            const DeepCollectionEquality().equals(other.version, version));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(buildNumber) ^
-      const DeepCollectionEquality().hash(version);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(buildNumber),
+      const DeepCollectionEquality().hash(version));
 
   @JsonKey(ignore: true)
   @override
-  _$AboutStateCopyWith<_AboutState> get copyWith =>
-      __$AboutStateCopyWithImpl<_AboutState>(this, _$identity);
+  _$$_AboutStateCopyWith<_$_AboutState> get copyWith =>
+      __$$_AboutStateCopyWithImpl<_$_AboutState>(this, _$identity);
 }
 
 abstract class _AboutState implements AboutState {
   const factory _AboutState(
-      {required String buildNumber, required String version}) = _$_AboutState;
+      {required final String buildNumber,
+      required final String version}) = _$_AboutState;
 
   @override
   String get buildNumber => throw _privateConstructorUsedError;
@@ -294,6 +298,6 @@ abstract class _AboutState implements AboutState {
   String get version => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AboutStateCopyWith<_AboutState> get copyWith =>
+  _$$_AboutStateCopyWith<_$_AboutState> get copyWith =>
       throw _privateConstructorUsedError;
 }

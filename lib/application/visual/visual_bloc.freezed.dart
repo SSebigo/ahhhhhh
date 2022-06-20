@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'visual_bloc.dart';
 
@@ -10,25 +12,7 @@ part of 'visual_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$VisualEventTearOff {
-  const _$VisualEventTearOff();
-
-  HomePageLaunchedEvent homePageLaunchedEvent() {
-    return const HomePageLaunchedEvent();
-  }
-
-  VisualSelectedEvent visualSelectedEvent(Visual visual) {
-    return VisualSelectedEvent(
-      visual,
-    );
-  }
-}
-
-/// @nodoc
-const $VisualEvent = _$VisualEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$VisualEvent {
@@ -36,6 +20,12 @@ mixin _$VisualEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() homePageLaunchedEvent,
     required TResult Function(Visual visual) visualSelectedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? homePageLaunchedEvent,
+    TResult Function(Visual visual)? visualSelectedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +40,12 @@ mixin _$VisualEvent {
     required TResult Function(HomePageLaunchedEvent value)
         homePageLaunchedEvent,
     required TResult Function(VisualSelectedEvent value) visualSelectedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,22 +74,22 @@ class _$VisualEventCopyWithImpl<$Res> implements $VisualEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $HomePageLaunchedEventCopyWith<$Res> {
-  factory $HomePageLaunchedEventCopyWith(HomePageLaunchedEvent value,
-          $Res Function(HomePageLaunchedEvent) then) =
-      _$HomePageLaunchedEventCopyWithImpl<$Res>;
+abstract class _$$HomePageLaunchedEventCopyWith<$Res> {
+  factory _$$HomePageLaunchedEventCopyWith(_$HomePageLaunchedEvent value,
+          $Res Function(_$HomePageLaunchedEvent) then) =
+      __$$HomePageLaunchedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HomePageLaunchedEventCopyWithImpl<$Res>
+class __$$HomePageLaunchedEventCopyWithImpl<$Res>
     extends _$VisualEventCopyWithImpl<$Res>
-    implements $HomePageLaunchedEventCopyWith<$Res> {
-  _$HomePageLaunchedEventCopyWithImpl(
-      HomePageLaunchedEvent _value, $Res Function(HomePageLaunchedEvent) _then)
-      : super(_value, (v) => _then(v as HomePageLaunchedEvent));
+    implements _$$HomePageLaunchedEventCopyWith<$Res> {
+  __$$HomePageLaunchedEventCopyWithImpl(_$HomePageLaunchedEvent _value,
+      $Res Function(_$HomePageLaunchedEvent) _then)
+      : super(_value, (v) => _then(v as _$HomePageLaunchedEvent));
 
   @override
-  HomePageLaunchedEvent get _value => super._value as HomePageLaunchedEvent;
+  _$HomePageLaunchedEvent get _value => super._value as _$HomePageLaunchedEvent;
 }
 
 /// @nodoc
@@ -108,7 +104,8 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is HomePageLaunchedEvent);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$HomePageLaunchedEvent);
   }
 
   @override
@@ -121,6 +118,15 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
     required TResult Function(Visual visual) visualSelectedEvent,
   }) {
     return homePageLaunchedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? homePageLaunchedEvent,
+    TResult Function(Visual visual)? visualSelectedEvent,
+  }) {
+    return homePageLaunchedEvent?.call();
   }
 
   @override
@@ -148,6 +154,15 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
+  }) {
+    return homePageLaunchedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
     TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
@@ -165,29 +180,29 @@ abstract class HomePageLaunchedEvent implements VisualEvent {
 }
 
 /// @nodoc
-abstract class $VisualSelectedEventCopyWith<$Res> {
-  factory $VisualSelectedEventCopyWith(
-          VisualSelectedEvent value, $Res Function(VisualSelectedEvent) then) =
-      _$VisualSelectedEventCopyWithImpl<$Res>;
+abstract class _$$VisualSelectedEventCopyWith<$Res> {
+  factory _$$VisualSelectedEventCopyWith(_$VisualSelectedEvent value,
+          $Res Function(_$VisualSelectedEvent) then) =
+      __$$VisualSelectedEventCopyWithImpl<$Res>;
   $Res call({Visual visual});
 }
 
 /// @nodoc
-class _$VisualSelectedEventCopyWithImpl<$Res>
+class __$$VisualSelectedEventCopyWithImpl<$Res>
     extends _$VisualEventCopyWithImpl<$Res>
-    implements $VisualSelectedEventCopyWith<$Res> {
-  _$VisualSelectedEventCopyWithImpl(
-      VisualSelectedEvent _value, $Res Function(VisualSelectedEvent) _then)
-      : super(_value, (v) => _then(v as VisualSelectedEvent));
+    implements _$$VisualSelectedEventCopyWith<$Res> {
+  __$$VisualSelectedEventCopyWithImpl(
+      _$VisualSelectedEvent _value, $Res Function(_$VisualSelectedEvent) _then)
+      : super(_value, (v) => _then(v as _$VisualSelectedEvent));
 
   @override
-  VisualSelectedEvent get _value => super._value as VisualSelectedEvent;
+  _$VisualSelectedEvent get _value => super._value as _$VisualSelectedEvent;
 
   @override
   $Res call({
     Object? visual = freezed,
   }) {
-    return _then(VisualSelectedEvent(
+    return _then(_$VisualSelectedEvent(
       visual == freezed
           ? _value.visual
           : visual // ignore: cast_nullable_to_non_nullable
@@ -212,19 +227,20 @@ class _$VisualSelectedEvent implements VisualSelectedEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is VisualSelectedEvent &&
-            (identical(other.visual, visual) ||
-                const DeepCollectionEquality().equals(other.visual, visual)));
+        (other.runtimeType == runtimeType &&
+            other is _$VisualSelectedEvent &&
+            const DeepCollectionEquality().equals(other.visual, visual));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(visual);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(visual));
 
   @JsonKey(ignore: true)
   @override
-  $VisualSelectedEventCopyWith<VisualSelectedEvent> get copyWith =>
-      _$VisualSelectedEventCopyWithImpl<VisualSelectedEvent>(this, _$identity);
+  _$$VisualSelectedEventCopyWith<_$VisualSelectedEvent> get copyWith =>
+      __$$VisualSelectedEventCopyWithImpl<_$VisualSelectedEvent>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -233,6 +249,15 @@ class _$VisualSelectedEvent implements VisualSelectedEvent {
     required TResult Function(Visual visual) visualSelectedEvent,
   }) {
     return visualSelectedEvent(visual);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? homePageLaunchedEvent,
+    TResult Function(Visual visual)? visualSelectedEvent,
+  }) {
+    return visualSelectedEvent?.call(visual);
   }
 
   @override
@@ -260,6 +285,15 @@ class _$VisualSelectedEvent implements VisualSelectedEvent {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
+  }) {
+    return visualSelectedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
     TResult Function(VisualSelectedEvent value)? visualSelectedEvent,
@@ -273,30 +307,14 @@ class _$VisualSelectedEvent implements VisualSelectedEvent {
 }
 
 abstract class VisualSelectedEvent implements VisualEvent {
-  const factory VisualSelectedEvent(Visual visual) = _$VisualSelectedEvent;
+  const factory VisualSelectedEvent(final Visual visual) =
+      _$VisualSelectedEvent;
 
   Visual get visual => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VisualSelectedEventCopyWith<VisualSelectedEvent> get copyWith =>
+  _$$VisualSelectedEventCopyWith<_$VisualSelectedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$VisualStateTearOff {
-  const _$VisualStateTearOff();
-
-  _VisualState call(
-      {required String? chargingVisualPath,
-      required String? dischargingVisualPath}) {
-    return _VisualState(
-      chargingVisualPath: chargingVisualPath,
-      dischargingVisualPath: dischargingVisualPath,
-    );
-  }
-}
-
-/// @nodoc
-const $VisualState = _$VisualStateTearOff();
 
 /// @nodoc
 mixin _$VisualState {
@@ -343,31 +361,31 @@ class _$VisualStateCopyWithImpl<$Res> implements $VisualStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$VisualStateCopyWith<$Res>
+abstract class _$$_VisualStateCopyWith<$Res>
     implements $VisualStateCopyWith<$Res> {
-  factory _$VisualStateCopyWith(
-          _VisualState value, $Res Function(_VisualState) then) =
-      __$VisualStateCopyWithImpl<$Res>;
+  factory _$$_VisualStateCopyWith(
+          _$_VisualState value, $Res Function(_$_VisualState) then) =
+      __$$_VisualStateCopyWithImpl<$Res>;
   @override
   $Res call({String? chargingVisualPath, String? dischargingVisualPath});
 }
 
 /// @nodoc
-class __$VisualStateCopyWithImpl<$Res> extends _$VisualStateCopyWithImpl<$Res>
-    implements _$VisualStateCopyWith<$Res> {
-  __$VisualStateCopyWithImpl(
-      _VisualState _value, $Res Function(_VisualState) _then)
-      : super(_value, (v) => _then(v as _VisualState));
+class __$$_VisualStateCopyWithImpl<$Res> extends _$VisualStateCopyWithImpl<$Res>
+    implements _$$_VisualStateCopyWith<$Res> {
+  __$$_VisualStateCopyWithImpl(
+      _$_VisualState _value, $Res Function(_$_VisualState) _then)
+      : super(_value, (v) => _then(v as _$_VisualState));
 
   @override
-  _VisualState get _value => super._value as _VisualState;
+  _$_VisualState get _value => super._value as _$_VisualState;
 
   @override
   $Res call({
     Object? chargingVisualPath = freezed,
     Object? dischargingVisualPath = freezed,
   }) {
-    return _then(_VisualState(
+    return _then(_$_VisualState(
       chargingVisualPath: chargingVisualPath == freezed
           ? _value.chargingVisualPath
           : chargingVisualPath // ignore: cast_nullable_to_non_nullable
@@ -399,31 +417,30 @@ class _$_VisualState implements _VisualState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _VisualState &&
-            (identical(other.chargingVisualPath, chargingVisualPath) ||
-                const DeepCollectionEquality()
-                    .equals(other.chargingVisualPath, chargingVisualPath)) &&
-            (identical(other.dischargingVisualPath, dischargingVisualPath) ||
-                const DeepCollectionEquality().equals(
-                    other.dischargingVisualPath, dischargingVisualPath)));
+        (other.runtimeType == runtimeType &&
+            other is _$_VisualState &&
+            const DeepCollectionEquality()
+                .equals(other.chargingVisualPath, chargingVisualPath) &&
+            const DeepCollectionEquality()
+                .equals(other.dischargingVisualPath, dischargingVisualPath));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(chargingVisualPath) ^
-      const DeepCollectionEquality().hash(dischargingVisualPath);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(chargingVisualPath),
+      const DeepCollectionEquality().hash(dischargingVisualPath));
 
   @JsonKey(ignore: true)
   @override
-  _$VisualStateCopyWith<_VisualState> get copyWith =>
-      __$VisualStateCopyWithImpl<_VisualState>(this, _$identity);
+  _$$_VisualStateCopyWith<_$_VisualState> get copyWith =>
+      __$$_VisualStateCopyWithImpl<_$_VisualState>(this, _$identity);
 }
 
 abstract class _VisualState implements VisualState {
   const factory _VisualState(
-      {required String? chargingVisualPath,
-      required String? dischargingVisualPath}) = _$_VisualState;
+      {required final String? chargingVisualPath,
+      required final String? dischargingVisualPath}) = _$_VisualState;
 
   @override
   String? get chargingVisualPath => throw _privateConstructorUsedError;
@@ -431,6 +448,6 @@ abstract class _VisualState implements VisualState {
   String? get dischargingVisualPath => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$VisualStateCopyWith<_VisualState> get copyWith =>
+  _$$_VisualStateCopyWith<_$_VisualState> get copyWith =>
       throw _privateConstructorUsedError;
 }

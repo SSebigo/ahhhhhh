@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'core_bloc.dart';
 
@@ -10,25 +12,18 @@ part of 'core_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CoreEventTearOff {
-  const _$CoreEventTearOff();
-
-  AppStartedEvent appStartedEvent() {
-    return const AppStartedEvent();
-  }
-}
-
-/// @nodoc
-const $CoreEvent = _$CoreEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CoreEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() appStartedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appStartedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +35,11 @@ mixin _$CoreEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppStartedEvent value) appStartedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppStartedEvent value)? appStartedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,21 +66,22 @@ class _$CoreEventCopyWithImpl<$Res> implements $CoreEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AppStartedEventCopyWith<$Res> {
-  factory $AppStartedEventCopyWith(
-          AppStartedEvent value, $Res Function(AppStartedEvent) then) =
-      _$AppStartedEventCopyWithImpl<$Res>;
+abstract class _$$AppStartedEventCopyWith<$Res> {
+  factory _$$AppStartedEventCopyWith(
+          _$AppStartedEvent value, $Res Function(_$AppStartedEvent) then) =
+      __$$AppStartedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppStartedEventCopyWithImpl<$Res> extends _$CoreEventCopyWithImpl<$Res>
-    implements $AppStartedEventCopyWith<$Res> {
-  _$AppStartedEventCopyWithImpl(
-      AppStartedEvent _value, $Res Function(AppStartedEvent) _then)
-      : super(_value, (v) => _then(v as AppStartedEvent));
+class __$$AppStartedEventCopyWithImpl<$Res>
+    extends _$CoreEventCopyWithImpl<$Res>
+    implements _$$AppStartedEventCopyWith<$Res> {
+  __$$AppStartedEventCopyWithImpl(
+      _$AppStartedEvent _value, $Res Function(_$AppStartedEvent) _then)
+      : super(_value, (v) => _then(v as _$AppStartedEvent));
 
   @override
-  AppStartedEvent get _value => super._value as AppStartedEvent;
+  _$AppStartedEvent get _value => super._value as _$AppStartedEvent;
 }
 
 /// @nodoc
@@ -95,7 +96,8 @@ class _$AppStartedEvent implements AppStartedEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AppStartedEvent);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AppStartedEvent);
   }
 
   @override
@@ -107,6 +109,14 @@ class _$AppStartedEvent implements AppStartedEvent {
     required TResult Function() appStartedEvent,
   }) {
     return appStartedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appStartedEvent,
+  }) {
+    return appStartedEvent?.call();
   }
 
   @override
@@ -131,6 +141,14 @@ class _$AppStartedEvent implements AppStartedEvent {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppStartedEvent value)? appStartedEvent,
+  }) {
+    return appStartedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppStartedEvent value)? appStartedEvent,
     required TResult orElse(),
@@ -147,32 +165,19 @@ abstract class AppStartedEvent implements CoreEvent {
 }
 
 /// @nodoc
-class _$CoreStateTearOff {
-  const _$CoreStateTearOff();
-
-  _HomeState homeState() {
-    return const _HomeState();
-  }
-
-  _InitialState initialState() {
-    return const _InitialState();
-  }
-
-  _OnboardingState onboardingState() {
-    return const _OnboardingState();
-  }
-}
-
-/// @nodoc
-const $CoreState = _$CoreStateTearOff();
-
-/// @nodoc
 mixin _$CoreState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() homeState,
     required TResult Function() initialState,
     required TResult Function() onboardingState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -188,6 +193,13 @@ mixin _$CoreState {
     required TResult Function(_HomeState value) homeState,
     required TResult Function(_InitialState value) initialState,
     required TResult Function(_OnboardingState value) onboardingState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -216,20 +228,21 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$HomeStateCopyWith<$Res> {
-  factory _$HomeStateCopyWith(
-          _HomeState value, $Res Function(_HomeState) then) =
-      __$HomeStateCopyWithImpl<$Res>;
+abstract class _$$_HomeStateCopyWith<$Res> {
+  factory _$$_HomeStateCopyWith(
+          _$_HomeState value, $Res Function(_$_HomeState) then) =
+      __$$_HomeStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$HomeStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
-    implements _$HomeStateCopyWith<$Res> {
-  __$HomeStateCopyWithImpl(_HomeState _value, $Res Function(_HomeState) _then)
-      : super(_value, (v) => _then(v as _HomeState));
+class __$$_HomeStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
+    implements _$$_HomeStateCopyWith<$Res> {
+  __$$_HomeStateCopyWithImpl(
+      _$_HomeState _value, $Res Function(_$_HomeState) _then)
+      : super(_value, (v) => _then(v as _$_HomeState));
 
   @override
-  _HomeState get _value => super._value as _HomeState;
+  _$_HomeState get _value => super._value as _$_HomeState;
 }
 
 /// @nodoc
@@ -244,7 +257,8 @@ class _$_HomeState implements _HomeState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _HomeState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_HomeState);
   }
 
   @override
@@ -258,6 +272,16 @@ class _$_HomeState implements _HomeState {
     required TResult Function() onboardingState,
   }) {
     return homeState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
+  }) {
+    return homeState?.call();
   }
 
   @override
@@ -286,6 +310,16 @@ class _$_HomeState implements _HomeState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
+  }) {
+    return homeState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeState value)? homeState,
     TResult Function(_InitialState value)? initialState,
@@ -304,21 +338,21 @@ abstract class _HomeState implements CoreState {
 }
 
 /// @nodoc
-abstract class _$InitialStateCopyWith<$Res> {
-  factory _$InitialStateCopyWith(
-          _InitialState value, $Res Function(_InitialState) then) =
-      __$InitialStateCopyWithImpl<$Res>;
+abstract class _$$_InitialStateCopyWith<$Res> {
+  factory _$$_InitialStateCopyWith(
+          _$_InitialState value, $Res Function(_$_InitialState) then) =
+      __$$_InitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
-    implements _$InitialStateCopyWith<$Res> {
-  __$InitialStateCopyWithImpl(
-      _InitialState _value, $Res Function(_InitialState) _then)
-      : super(_value, (v) => _then(v as _InitialState));
+class __$$_InitialStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
+    implements _$$_InitialStateCopyWith<$Res> {
+  __$$_InitialStateCopyWithImpl(
+      _$_InitialState _value, $Res Function(_$_InitialState) _then)
+      : super(_value, (v) => _then(v as _$_InitialState));
 
   @override
-  _InitialState get _value => super._value as _InitialState;
+  _$_InitialState get _value => super._value as _$_InitialState;
 }
 
 /// @nodoc
@@ -333,7 +367,8 @@ class _$_InitialState implements _InitialState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitialState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_InitialState);
   }
 
   @override
@@ -347,6 +382,16 @@ class _$_InitialState implements _InitialState {
     required TResult Function() onboardingState,
   }) {
     return initialState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
+  }) {
+    return initialState?.call();
   }
 
   @override
@@ -375,6 +420,16 @@ class _$_InitialState implements _InitialState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
+  }) {
+    return initialState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeState value)? homeState,
     TResult Function(_InitialState value)? initialState,
@@ -393,21 +448,22 @@ abstract class _InitialState implements CoreState {
 }
 
 /// @nodoc
-abstract class _$OnboardingStateCopyWith<$Res> {
-  factory _$OnboardingStateCopyWith(
-          _OnboardingState value, $Res Function(_OnboardingState) then) =
-      __$OnboardingStateCopyWithImpl<$Res>;
+abstract class _$$_OnboardingStateCopyWith<$Res> {
+  factory _$$_OnboardingStateCopyWith(
+          _$_OnboardingState value, $Res Function(_$_OnboardingState) then) =
+      __$$_OnboardingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OnboardingStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
-    implements _$OnboardingStateCopyWith<$Res> {
-  __$OnboardingStateCopyWithImpl(
-      _OnboardingState _value, $Res Function(_OnboardingState) _then)
-      : super(_value, (v) => _then(v as _OnboardingState));
+class __$$_OnboardingStateCopyWithImpl<$Res>
+    extends _$CoreStateCopyWithImpl<$Res>
+    implements _$$_OnboardingStateCopyWith<$Res> {
+  __$$_OnboardingStateCopyWithImpl(
+      _$_OnboardingState _value, $Res Function(_$_OnboardingState) _then)
+      : super(_value, (v) => _then(v as _$_OnboardingState));
 
   @override
-  _OnboardingState get _value => super._value as _OnboardingState;
+  _$_OnboardingState get _value => super._value as _$_OnboardingState;
 }
 
 /// @nodoc
@@ -422,7 +478,8 @@ class _$_OnboardingState implements _OnboardingState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OnboardingState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnboardingState);
   }
 
   @override
@@ -436,6 +493,16 @@ class _$_OnboardingState implements _OnboardingState {
     required TResult Function() onboardingState,
   }) {
     return onboardingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? homeState,
+    TResult Function()? initialState,
+    TResult Function()? onboardingState,
+  }) {
+    return onboardingState?.call();
   }
 
   @override
@@ -460,6 +527,16 @@ class _$_OnboardingState implements _OnboardingState {
     required TResult Function(_OnboardingState value) onboardingState,
   }) {
     return onboardingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_HomeState value)? homeState,
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(_OnboardingState value)? onboardingState,
+  }) {
+    return onboardingState?.call(this);
   }
 
   @override

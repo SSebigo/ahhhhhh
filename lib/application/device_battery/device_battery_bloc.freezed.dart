@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'device_battery_bloc.dart';
 
@@ -10,25 +12,7 @@ part of 'device_battery_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DeviceBatteryEventTearOff {
-  const _$DeviceBatteryEventTearOff();
-
-  BatteryStateChangedEvent batteryStateChangedEvent(BatteryState state) {
-    return BatteryStateChangedEvent(
-      state,
-    );
-  }
-
-  HomePageLaunchedEvent homePageLaunchedEvent() {
-    return const HomePageLaunchedEvent();
-  }
-}
-
-/// @nodoc
-const $DeviceBatteryEvent = _$DeviceBatteryEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DeviceBatteryEvent {
@@ -36,6 +20,12 @@ mixin _$DeviceBatteryEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(BatteryState state) batteryStateChangedEvent,
     required TResult Function() homePageLaunchedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BatteryState state)? batteryStateChangedEvent,
+    TResult Function()? homePageLaunchedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +41,12 @@ mixin _$DeviceBatteryEvent {
         batteryStateChangedEvent,
     required TResult Function(HomePageLaunchedEvent value)
         homePageLaunchedEvent,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BatteryStateChangedEvent value)? batteryStateChangedEvent,
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,30 +76,30 @@ class _$DeviceBatteryEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $BatteryStateChangedEventCopyWith<$Res> {
-  factory $BatteryStateChangedEventCopyWith(BatteryStateChangedEvent value,
-          $Res Function(BatteryStateChangedEvent) then) =
-      _$BatteryStateChangedEventCopyWithImpl<$Res>;
+abstract class _$$BatteryStateChangedEventCopyWith<$Res> {
+  factory _$$BatteryStateChangedEventCopyWith(_$BatteryStateChangedEvent value,
+          $Res Function(_$BatteryStateChangedEvent) then) =
+      __$$BatteryStateChangedEventCopyWithImpl<$Res>;
   $Res call({BatteryState state});
 }
 
 /// @nodoc
-class _$BatteryStateChangedEventCopyWithImpl<$Res>
+class __$$BatteryStateChangedEventCopyWithImpl<$Res>
     extends _$DeviceBatteryEventCopyWithImpl<$Res>
-    implements $BatteryStateChangedEventCopyWith<$Res> {
-  _$BatteryStateChangedEventCopyWithImpl(BatteryStateChangedEvent _value,
-      $Res Function(BatteryStateChangedEvent) _then)
-      : super(_value, (v) => _then(v as BatteryStateChangedEvent));
+    implements _$$BatteryStateChangedEventCopyWith<$Res> {
+  __$$BatteryStateChangedEventCopyWithImpl(_$BatteryStateChangedEvent _value,
+      $Res Function(_$BatteryStateChangedEvent) _then)
+      : super(_value, (v) => _then(v as _$BatteryStateChangedEvent));
 
   @override
-  BatteryStateChangedEvent get _value =>
-      super._value as BatteryStateChangedEvent;
+  _$BatteryStateChangedEvent get _value =>
+      super._value as _$BatteryStateChangedEvent;
 
   @override
   $Res call({
     Object? state = freezed,
   }) {
-    return _then(BatteryStateChangedEvent(
+    return _then(_$BatteryStateChangedEvent(
       state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
@@ -128,20 +124,21 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is BatteryStateChangedEvent &&
-            (identical(other.state, state) ||
-                const DeepCollectionEquality().equals(other.state, state)));
+        (other.runtimeType == runtimeType &&
+            other is _$BatteryStateChangedEvent &&
+            const DeepCollectionEquality().equals(other.state, state));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(state);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(state));
 
   @JsonKey(ignore: true)
   @override
-  $BatteryStateChangedEventCopyWith<BatteryStateChangedEvent> get copyWith =>
-      _$BatteryStateChangedEventCopyWithImpl<BatteryStateChangedEvent>(
-          this, _$identity);
+  _$$BatteryStateChangedEventCopyWith<_$BatteryStateChangedEvent>
+      get copyWith =>
+          __$$BatteryStateChangedEventCopyWithImpl<_$BatteryStateChangedEvent>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -150,6 +147,15 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
     required TResult Function() homePageLaunchedEvent,
   }) {
     return batteryStateChangedEvent(state);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BatteryState state)? batteryStateChangedEvent,
+    TResult Function()? homePageLaunchedEvent,
+  }) {
+    return batteryStateChangedEvent?.call(state);
   }
 
   @override
@@ -178,6 +184,15 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BatteryStateChangedEvent value)? batteryStateChangedEvent,
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+  }) {
+    return batteryStateChangedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BatteryStateChangedEvent value)? batteryStateChangedEvent,
     TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
@@ -191,32 +206,32 @@ class _$BatteryStateChangedEvent implements BatteryStateChangedEvent {
 }
 
 abstract class BatteryStateChangedEvent implements DeviceBatteryEvent {
-  const factory BatteryStateChangedEvent(BatteryState state) =
+  const factory BatteryStateChangedEvent(final BatteryState state) =
       _$BatteryStateChangedEvent;
 
   BatteryState get state => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BatteryStateChangedEventCopyWith<BatteryStateChangedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$BatteryStateChangedEventCopyWith<_$BatteryStateChangedEvent>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomePageLaunchedEventCopyWith<$Res> {
-  factory $HomePageLaunchedEventCopyWith(HomePageLaunchedEvent value,
-          $Res Function(HomePageLaunchedEvent) then) =
-      _$HomePageLaunchedEventCopyWithImpl<$Res>;
+abstract class _$$HomePageLaunchedEventCopyWith<$Res> {
+  factory _$$HomePageLaunchedEventCopyWith(_$HomePageLaunchedEvent value,
+          $Res Function(_$HomePageLaunchedEvent) then) =
+      __$$HomePageLaunchedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HomePageLaunchedEventCopyWithImpl<$Res>
+class __$$HomePageLaunchedEventCopyWithImpl<$Res>
     extends _$DeviceBatteryEventCopyWithImpl<$Res>
-    implements $HomePageLaunchedEventCopyWith<$Res> {
-  _$HomePageLaunchedEventCopyWithImpl(
-      HomePageLaunchedEvent _value, $Res Function(HomePageLaunchedEvent) _then)
-      : super(_value, (v) => _then(v as HomePageLaunchedEvent));
+    implements _$$HomePageLaunchedEventCopyWith<$Res> {
+  __$$HomePageLaunchedEventCopyWithImpl(_$HomePageLaunchedEvent _value,
+      $Res Function(_$HomePageLaunchedEvent) _then)
+      : super(_value, (v) => _then(v as _$HomePageLaunchedEvent));
 
   @override
-  HomePageLaunchedEvent get _value => super._value as HomePageLaunchedEvent;
+  _$HomePageLaunchedEvent get _value => super._value as _$HomePageLaunchedEvent;
 }
 
 /// @nodoc
@@ -231,7 +246,8 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is HomePageLaunchedEvent);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$HomePageLaunchedEvent);
   }
 
   @override
@@ -244,6 +260,15 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
     required TResult Function() homePageLaunchedEvent,
   }) {
     return homePageLaunchedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BatteryState state)? batteryStateChangedEvent,
+    TResult Function()? homePageLaunchedEvent,
+  }) {
+    return homePageLaunchedEvent?.call();
   }
 
   @override
@@ -272,6 +297,15 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BatteryStateChangedEvent value)? batteryStateChangedEvent,
+    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+  }) {
+    return homePageLaunchedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BatteryStateChangedEvent value)? batteryStateChangedEvent,
     TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
@@ -289,29 +323,6 @@ abstract class HomePageLaunchedEvent implements DeviceBatteryEvent {
 }
 
 /// @nodoc
-class _$DeviceBatteryStateTearOff {
-  const _$DeviceBatteryStateTearOff();
-
-  _BatteryStateChangedState batteryStateChangedState(
-      BatteryState batteryState) {
-    return _BatteryStateChangedState(
-      batteryState,
-    );
-  }
-
-  _ChangingBatteryState changingBatteryState() {
-    return const _ChangingBatteryState();
-  }
-
-  _InitialState initialState() {
-    return const _InitialState();
-  }
-}
-
-/// @nodoc
-const $DeviceBatteryState = _$DeviceBatteryStateTearOff();
-
-/// @nodoc
 mixin _$DeviceBatteryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -319,6 +330,13 @@ mixin _$DeviceBatteryState {
         batteryStateChangedState,
     required TResult Function() changingBatteryState,
     required TResult Function() initialState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BatteryState batteryState)? batteryStateChangedState,
+    TResult Function()? changingBatteryState,
+    TResult Function()? initialState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -335,6 +353,13 @@ mixin _$DeviceBatteryState {
         batteryStateChangedState,
     required TResult Function(_ChangingBatteryState value) changingBatteryState,
     required TResult Function(_InitialState value) initialState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_BatteryStateChangedState value)? batteryStateChangedState,
+    TResult Function(_ChangingBatteryState value)? changingBatteryState,
+    TResult Function(_InitialState value)? initialState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -365,30 +390,31 @@ class _$DeviceBatteryStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$BatteryStateChangedStateCopyWith<$Res> {
-  factory _$BatteryStateChangedStateCopyWith(_BatteryStateChangedState value,
-          $Res Function(_BatteryStateChangedState) then) =
-      __$BatteryStateChangedStateCopyWithImpl<$Res>;
+abstract class _$$_BatteryStateChangedStateCopyWith<$Res> {
+  factory _$$_BatteryStateChangedStateCopyWith(
+          _$_BatteryStateChangedState value,
+          $Res Function(_$_BatteryStateChangedState) then) =
+      __$$_BatteryStateChangedStateCopyWithImpl<$Res>;
   $Res call({BatteryState batteryState});
 }
 
 /// @nodoc
-class __$BatteryStateChangedStateCopyWithImpl<$Res>
+class __$$_BatteryStateChangedStateCopyWithImpl<$Res>
     extends _$DeviceBatteryStateCopyWithImpl<$Res>
-    implements _$BatteryStateChangedStateCopyWith<$Res> {
-  __$BatteryStateChangedStateCopyWithImpl(_BatteryStateChangedState _value,
-      $Res Function(_BatteryStateChangedState) _then)
-      : super(_value, (v) => _then(v as _BatteryStateChangedState));
+    implements _$$_BatteryStateChangedStateCopyWith<$Res> {
+  __$$_BatteryStateChangedStateCopyWithImpl(_$_BatteryStateChangedState _value,
+      $Res Function(_$_BatteryStateChangedState) _then)
+      : super(_value, (v) => _then(v as _$_BatteryStateChangedState));
 
   @override
-  _BatteryStateChangedState get _value =>
-      super._value as _BatteryStateChangedState;
+  _$_BatteryStateChangedState get _value =>
+      super._value as _$_BatteryStateChangedState;
 
   @override
   $Res call({
     Object? batteryState = freezed,
   }) {
-    return _then(_BatteryStateChangedState(
+    return _then(_$_BatteryStateChangedState(
       batteryState == freezed
           ? _value.batteryState
           : batteryState // ignore: cast_nullable_to_non_nullable
@@ -413,21 +439,21 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BatteryStateChangedState &&
-            (identical(other.batteryState, batteryState) ||
-                const DeepCollectionEquality()
-                    .equals(other.batteryState, batteryState)));
+        (other.runtimeType == runtimeType &&
+            other is _$_BatteryStateChangedState &&
+            const DeepCollectionEquality()
+                .equals(other.batteryState, batteryState));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(batteryState);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(batteryState));
 
   @JsonKey(ignore: true)
   @override
-  _$BatteryStateChangedStateCopyWith<_BatteryStateChangedState> get copyWith =>
-      __$BatteryStateChangedStateCopyWithImpl<_BatteryStateChangedState>(
-          this, _$identity);
+  _$$_BatteryStateChangedStateCopyWith<_$_BatteryStateChangedState>
+      get copyWith => __$$_BatteryStateChangedStateCopyWithImpl<
+          _$_BatteryStateChangedState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -438,6 +464,16 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
     required TResult Function() initialState,
   }) {
     return batteryStateChangedState(batteryState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BatteryState batteryState)? batteryStateChangedState,
+    TResult Function()? changingBatteryState,
+    TResult Function()? initialState,
+  }) {
+    return batteryStateChangedState?.call(batteryState);
   }
 
   @override
@@ -467,6 +503,16 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_BatteryStateChangedState value)? batteryStateChangedState,
+    TResult Function(_ChangingBatteryState value)? changingBatteryState,
+    TResult Function(_InitialState value)? initialState,
+  }) {
+    return batteryStateChangedState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BatteryStateChangedState value)? batteryStateChangedState,
     TResult Function(_ChangingBatteryState value)? changingBatteryState,
@@ -481,32 +527,32 @@ class _$_BatteryStateChangedState implements _BatteryStateChangedState {
 }
 
 abstract class _BatteryStateChangedState implements DeviceBatteryState {
-  const factory _BatteryStateChangedState(BatteryState batteryState) =
+  const factory _BatteryStateChangedState(final BatteryState batteryState) =
       _$_BatteryStateChangedState;
 
   BatteryState get batteryState => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$BatteryStateChangedStateCopyWith<_BatteryStateChangedState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_BatteryStateChangedStateCopyWith<_$_BatteryStateChangedState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangingBatteryStateCopyWith<$Res> {
-  factory _$ChangingBatteryStateCopyWith(_ChangingBatteryState value,
-          $Res Function(_ChangingBatteryState) then) =
-      __$ChangingBatteryStateCopyWithImpl<$Res>;
+abstract class _$$_ChangingBatteryStateCopyWith<$Res> {
+  factory _$$_ChangingBatteryStateCopyWith(_$_ChangingBatteryState value,
+          $Res Function(_$_ChangingBatteryState) then) =
+      __$$_ChangingBatteryStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ChangingBatteryStateCopyWithImpl<$Res>
+class __$$_ChangingBatteryStateCopyWithImpl<$Res>
     extends _$DeviceBatteryStateCopyWithImpl<$Res>
-    implements _$ChangingBatteryStateCopyWith<$Res> {
-  __$ChangingBatteryStateCopyWithImpl(
-      _ChangingBatteryState _value, $Res Function(_ChangingBatteryState) _then)
-      : super(_value, (v) => _then(v as _ChangingBatteryState));
+    implements _$$_ChangingBatteryStateCopyWith<$Res> {
+  __$$_ChangingBatteryStateCopyWithImpl(_$_ChangingBatteryState _value,
+      $Res Function(_$_ChangingBatteryState) _then)
+      : super(_value, (v) => _then(v as _$_ChangingBatteryState));
 
   @override
-  _ChangingBatteryState get _value => super._value as _ChangingBatteryState;
+  _$_ChangingBatteryState get _value => super._value as _$_ChangingBatteryState;
 }
 
 /// @nodoc
@@ -521,7 +567,8 @@ class _$_ChangingBatteryState implements _ChangingBatteryState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ChangingBatteryState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ChangingBatteryState);
   }
 
   @override
@@ -536,6 +583,16 @@ class _$_ChangingBatteryState implements _ChangingBatteryState {
     required TResult Function() initialState,
   }) {
     return changingBatteryState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BatteryState batteryState)? batteryStateChangedState,
+    TResult Function()? changingBatteryState,
+    TResult Function()? initialState,
+  }) {
+    return changingBatteryState?.call();
   }
 
   @override
@@ -565,6 +622,16 @@ class _$_ChangingBatteryState implements _ChangingBatteryState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_BatteryStateChangedState value)? batteryStateChangedState,
+    TResult Function(_ChangingBatteryState value)? changingBatteryState,
+    TResult Function(_InitialState value)? initialState,
+  }) {
+    return changingBatteryState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BatteryStateChangedState value)? batteryStateChangedState,
     TResult Function(_ChangingBatteryState value)? changingBatteryState,
@@ -583,22 +650,22 @@ abstract class _ChangingBatteryState implements DeviceBatteryState {
 }
 
 /// @nodoc
-abstract class _$InitialStateCopyWith<$Res> {
-  factory _$InitialStateCopyWith(
-          _InitialState value, $Res Function(_InitialState) then) =
-      __$InitialStateCopyWithImpl<$Res>;
+abstract class _$$_InitialStateCopyWith<$Res> {
+  factory _$$_InitialStateCopyWith(
+          _$_InitialState value, $Res Function(_$_InitialState) then) =
+      __$$_InitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialStateCopyWithImpl<$Res>
+class __$$_InitialStateCopyWithImpl<$Res>
     extends _$DeviceBatteryStateCopyWithImpl<$Res>
-    implements _$InitialStateCopyWith<$Res> {
-  __$InitialStateCopyWithImpl(
-      _InitialState _value, $Res Function(_InitialState) _then)
-      : super(_value, (v) => _then(v as _InitialState));
+    implements _$$_InitialStateCopyWith<$Res> {
+  __$$_InitialStateCopyWithImpl(
+      _$_InitialState _value, $Res Function(_$_InitialState) _then)
+      : super(_value, (v) => _then(v as _$_InitialState));
 
   @override
-  _InitialState get _value => super._value as _InitialState;
+  _$_InitialState get _value => super._value as _$_InitialState;
 }
 
 /// @nodoc
@@ -613,7 +680,8 @@ class _$_InitialState implements _InitialState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitialState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_InitialState);
   }
 
   @override
@@ -628,6 +696,16 @@ class _$_InitialState implements _InitialState {
     required TResult Function() initialState,
   }) {
     return initialState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BatteryState batteryState)? batteryStateChangedState,
+    TResult Function()? changingBatteryState,
+    TResult Function()? initialState,
+  }) {
+    return initialState?.call();
   }
 
   @override
@@ -653,6 +731,16 @@ class _$_InitialState implements _InitialState {
     required TResult Function(_InitialState value) initialState,
   }) {
     return initialState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_BatteryStateChangedState value)? batteryStateChangedState,
+    TResult Function(_ChangingBatteryState value)? changingBatteryState,
+    TResult Function(_InitialState value)? initialState,
+  }) {
+    return initialState?.call(this);
   }
 
   @override
