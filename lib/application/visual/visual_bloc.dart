@@ -14,41 +14,38 @@ class VisualBloc extends Bloc<VisualEvent, VisualState> {
   /// @nodoc
   VisualBloc(
     this._localSessionFacade,
-  ) : super(VisualState.initial());
+  ) : super(VisualState.initial()) {
+    on<HomePageLaunchedEvent>((value, emit) async {
+      final session = _localSessionFacade.fetchSession();
 
-  final ILocalSessionFacade _localSessionFacade;
-
-  @override
-  Stream<VisualState> mapEventToState(
-    VisualEvent event,
-  ) async* {
-    yield* event.map(
-      homePageLaunchedEvent: (value) async* {
-        final session = _localSessionFacade.fetchSession();
-
-        if (session != null) {
-          yield state.copyWith(
+      if (session != null) {
+        emit(
+          state.copyWith(
             chargingVisualPath: session.chargingVisualPath,
             dischargingVisualPath: session.dischargingVisualPath,
-          );
-        }
-      },
-      visualSelectedEvent: (value) async* {
-        final session = _localSessionFacade.fetchSession();
+          ),
+        );
+      }
+    });
+    on<VisualSelectedEvent>((value, emit) async {
+      final session = _localSessionFacade.fetchSession();
 
-        if (session != null) {
-          session
-            ..chargingVisualPath = value.visual.chargingVisualPath
-            ..dischargingVisualPath = value.visual.dischargingVisualPath;
+      if (session != null) {
+        session
+          ..chargingVisualPath = value.visual.chargingVisualPath
+          ..dischargingVisualPath = value.visual.dischargingVisualPath;
 
-          await _localSessionFacade.updateSession(session);
+        await _localSessionFacade.updateSession(session);
 
-          yield state.copyWith(
+        emit(
+          state.copyWith(
             chargingVisualPath: value.visual.chargingVisualPath,
             dischargingVisualPath: value.visual.dischargingVisualPath,
-          );
-        }
-      },
-    );
+          ),
+        );
+      }
+    });
   }
+
+  final ILocalSessionFacade _localSessionFacade;
 }

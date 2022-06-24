@@ -38,7 +38,7 @@ class _HomeBodyLayoutState extends State<HomeBodyLayout> with Getters {
       adUnitId: AdManager.bannerAdUnitId,
       listener: const BannerAdListener(),
       request: const AdRequest(),
-      size: AdSize.smartBanner,
+      size: AdSize.banner,
     )..load();
   }
 

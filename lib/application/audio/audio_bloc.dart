@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
 import 'package:ahhhhhh/domain/models/hive/audio.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:battery/battery.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:just_audio/just_audio.dart';
 
 part 'audio_bloc.freezed.dart';
 part 'audio_event.dart';
@@ -90,11 +90,9 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
     on<PlayAudioEvent>((value, emit) async {
       emit(const AudioState.playingTestAudioState());
 
-      if (_isAudioPlaying) {
+      if (_player.playing) {
         await _player.stop();
       }
-
-      _isAudioPlaying = true;
 
       await _playAudio(value.audio);
 
@@ -104,17 +102,14 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
 
   final ILocalSessionFacade _localSessionFacade;
 
-  bool _isAudioPlaying = false;
-
-  final _player = AudioPlayer(playerId: '0');
+  final _player = AudioPlayer();
 
   Future<void> _playAudio(Audio audio) async {
-    audio.isAsset
-        ? await _player.play(AssetSource(audio.path)).whenComplete(() {
-            _isAudioPlaying = false;
-          })
-        : await _player.play(DeviceFileSource(audio.path)).whenComplete(() {
-            _isAudioPlaying = false;
-          });
+    if (audio.isAsset) {
+      await _player.setAsset(audio.path);
+    } else {
+      await _player.setFilePath(audio.path);
+    }
+    await _player.play();
   }
 }

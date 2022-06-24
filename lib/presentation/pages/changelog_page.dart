@@ -93,6 +93,13 @@ class ChangelogPage extends StatelessWidget {
                   '- Bug fixes.',
                 ],
               ),
+              const Changelog(
+                version: '2.4.0',
+                changes: <String>[
+                  '''- Ahhhhhh should runs in the background if the app is not completely shut.''',
+                  '- Bug fixes.',
+                ],
+              ),
               SizedBox(height: getSmartBannerHeight(context)),
             ],
           ),

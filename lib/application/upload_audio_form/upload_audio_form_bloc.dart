@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:io';
 
 import 'package:ahhhhhh/domain/facades/i_local_audio_facade.dart';
@@ -21,59 +20,55 @@ class UploadAudioFormBloc
   /// @nodoc
   UploadAudioFormBloc(
     this._localAudioFacade,
-  ) : super(UploadAudioFormState.initial());
+  ) : super(UploadAudioFormState.initial()) {
+    on<NameChangedEvent>((value, emit) async {
+      final name = value.name.trim();
 
-  final ILocalAudioFacade _localAudioFacade;
-
-  @override
-  Stream<UploadAudioFormState> mapEventToState(
-    UploadAudioFormEvent event,
-  ) async* {
-    yield* event.map(
-      nameChangedEVT: (value) async* {
-        final name = value.name.trim();
-
-        yield state.copyWith(
+      emit(
+        state.copyWith(
           name: name,
           formCompleted: name.isNotEmpty && state.audioPath.isNotEmpty,
-        );
-      },
-      saveUserAudioEvent: (value) async* {
-        await _localAudioFacade.addAudio(
-          state.name,
-          Audio(
-            isAsset: false,
-            name: state.name,
-            path: state.audioPath,
-          ),
-        );
+        ),
+      );
+    });
+    on<SaveUserAudioEvent>((value, emit) async {
+      await _localAudioFacade.addAudio(
+        state.name,
+        Audio(
+          isAsset: false,
+          name: state.name,
+          path: state.audioPath,
+        ),
+      );
 
-        yield state.copyWith(audioUploaded: true);
-      },
-      uploadUserAudioEvent: (value) async* {
-        final result =
-            await FilePicker.platform.pickFiles(type: FileType.audio);
+      emit(state.copyWith(audioUploaded: true));
+    });
+    on<UploadUserAudioEvent>((value, emit) async {
+      final result = await FilePicker.platform.pickFiles(type: FileType.audio);
 
-        if (result != null) {
-          final path = result.files.single.path;
+      if (result != null) {
+        final path = result.files.single.path;
 
-          if (path != null) {
-            final audioAsFile = File(path);
+        if (path != null) {
+          final audioAsFile = File(path);
 
-            final appDocDir = await getApplicationDocumentsDirectory();
-            final audioPath = appDocDir.uri.resolve(p.basename(path)).path;
-            final audio = await audioAsFile.copy(audioPath);
+          final appDocDir = await getApplicationDocumentsDirectory();
+          final audioPath = appDocDir.uri.resolve(p.basename(path)).path;
+          final audio = await audioAsFile.copy(audioPath);
 
-            final originalName = audio.path.split('/').last;
+          final originalName = audio.path.split('/').last;
 
-            yield state.copyWith(
+          emit(
+            state.copyWith(
               audioOriginalName: originalName,
               audioPath: audio.path,
               formCompleted: state.name.isNotEmpty && audioPath.isNotEmpty,
-            );
-          }
+            ),
+          );
         }
-      },
-    );
+      }
+    });
   }
+
+  final ILocalAudioFacade _localAudioFacade;
 }

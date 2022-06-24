@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -13,21 +11,16 @@ part 'about_state.dart';
 @injectable
 class AboutBloc extends Bloc<AboutEvent, AboutState> {
   /// @nodoc
-  AboutBloc() : super(AboutState.initial());
+  AboutBloc() : super(AboutState.initial()) {
+    on<AboutPageLaunchedEvent>((value, emit) async {
+      final packageInfo = await PackageInfo.fromPlatform();
 
-  @override
-  Stream<AboutState> mapEventToState(
-    AboutEvent event,
-  ) async* {
-    yield* event.map(
-      aboutPageLaunchedEvent: (event) async* {
-        final packageInfo = await PackageInfo.fromPlatform();
-
-        yield state.copyWith(
+      emit(
+        state.copyWith(
           buildNumber: packageInfo.buildNumber,
           version: packageInfo.version,
-        );
-      },
-    );
+        ),
+      );
+    });
   }
 }

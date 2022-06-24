@@ -43,7 +43,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
               const HomeDrawerSectionTile(title: 'Battery full sound:'),
               ListTile(
                 title: Text(
-                  drawerState.batteryFullAudio!['name'] ?? '',
+                  drawerState.batteryFullAudio!['name'] as String? ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
                 onTap: () => context.read<AudioBloc>().add(
@@ -58,7 +58,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
               const HomeDrawerSectionTile(title: 'Charging sound:'),
               ListTile(
                 title: Text(
-                  drawerState.chargingAudio!['name'] ?? '',
+                  drawerState.chargingAudio!['name'] as String? ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
                 onTap: () => context.read<AudioBloc>().add(
@@ -73,7 +73,7 @@ class HomeEndDrawer extends StatelessWidget with Getters {
               const HomeDrawerSectionTile(title: 'Discharging sound:'),
               ListTile(
                 title: Text(
-                  drawerState.dischargingAudio!['name'] ?? '',
+                  drawerState.dischargingAudio!['name'] as String? ?? '',
                   style: const TextStyle(color: Colors.black),
                 ),
                 onTap: () => context.read<AudioBloc>().add(

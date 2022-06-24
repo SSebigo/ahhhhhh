@@ -9,7 +9,9 @@ import 'package:ahhhhhh/simple_bloc_observer.dart';
 import 'package:battery/battery.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
+import 'package:flutter_background_service_android/flutter_background_service_android.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 Future<void> main() async {
@@ -48,7 +50,7 @@ Future<void> initService() async {
       onBackground: (_) => false,
     ),
     androidConfiguration: AndroidConfiguration(
-      onStart: onStart,
+      onStart: (s) => onStart(s, getIt),
       isForegroundMode: true,
     ),
   );
@@ -56,12 +58,28 @@ Future<void> initService() async {
 }
 
 /// @nodoc
-Future<void> onStart(ServiceInstance service) async {
+Future<void> onStart(ServiceInstance service, GetIt injector) async {
   DartPluginRegistrant.ensureInitialized();
+
+  if (service is AndroidServiceInstance) {
+    service.on('setAsForeground').listen((event) {
+      service.setAsForegroundService();
+    });
+
+    service.on('setAsBackground').listen((event) {
+      service.setAsBackgroundService();
+    });
+  }
+
+  service.on('stopService').listen((event) {
+    service.stopSelf();
+  });
+
+  // await configureInjection();
 
   Battery().onBatteryStateChanged.listen(
     (state) {
-      getIt<AudioBloc>().add(AudioEvent.batteryStateChangedEvent(state));
+      injector<AudioBloc>().add(AudioEvent.batteryStateChangedEvent(state));
     },
   );
 }

@@ -4,8 +4,8 @@ part of 'upload_audio_form_bloc.dart';
 @freezed
 class UploadAudioFormEvent with _$UploadAudioFormEvent {
   /// @nodoc
-  const factory UploadAudioFormEvent.nameChangedEVT(String name) =
-      NameChangedEVT;
+  const factory UploadAudioFormEvent.nameChangedEvent(String name) =
+      NameChangedEvent;
 
   /// @nodoc
   const factory UploadAudioFormEvent.saveUserAudioEvent() = SaveUserAudioEvent;

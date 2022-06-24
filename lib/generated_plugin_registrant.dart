@@ -7,7 +7,6 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:audio_session/audio_session_web.dart';
-import 'package:audioplayers_web/audioplayers_web.dart';
 import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:just_audio_web/just_audio_web.dart';
 import 'package:url_launcher_web/url_launcher_web.dart';
@@ -17,7 +16,6 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 // ignore: public_member_api_docs
 void registerPlugins(Registrar registrar) {
   AudioSessionWeb.registerWith(registrar);
-  AudioplayersPlugin.registerWith(registrar);
   FilePickerWeb.registerWith(registrar);
   JustAudioPlugin.registerWith(registrar);
   UrlLauncherPlugin.registerWith(registrar);

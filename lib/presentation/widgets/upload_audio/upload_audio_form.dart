@@ -60,7 +60,7 @@ class UploadAudioForm extends StatelessWidget {
                   style: const TextStyle(color: Colors.black),
                   onChanged: (value) => context
                       .read<UploadAudioFormBloc>()
-                      .add(UploadAudioFormEvent.nameChangedEVT(value)),
+                      .add(UploadAudioFormEvent.nameChangedEvent(value)),
                 ),
                 const SizedBox(height: 25),
                 BlocBuilder<UploadAudioFormBloc, UploadAudioFormState>(

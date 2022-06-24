@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:ahhhhhh/domain/facades/i_local_audio_facade.dart';
 import 'package:ahhhhhh/domain/facades/i_local_session_facade.dart';
 import 'package:ahhhhhh/domain/models/hive/audio.dart';
@@ -18,47 +16,46 @@ class DrawerBloc extends Bloc<DrawerEvent, DrawerState> {
   DrawerBloc(
     this._localSessionFacade,
     this._localAudioFacade,
-  ) : super(DrawerState.initial());
+  ) : super(DrawerState.initial()) {
+    on<AudioAssignedEvent>((value, emit) async {
+      final session = _localSessionFacade.fetchSession();
 
-  final ILocalSessionFacade _localSessionFacade;
-  final ILocalAudioFacade _localAudioFacade;
-
-  @override
-  Stream<DrawerState> mapEventToState(
-    DrawerEvent event,
-  ) async* {
-    yield* event.map(
-      audioAssignedEvent: (value) async* {
-        final session = _localSessionFacade.fetchSession();
-
-        if (session != null) {
-          yield state.copyWith(
+      if (session != null) {
+        emit(
+          state.copyWith(
             batteryFullAudio: session.batteryFullAudio,
             chargingAudio: session.chargingAudio,
             dischargingAudio: session.dischargingAudio,
-          );
-        }
-      },
-      homePageLaunchedEvent: (value) async* {
-        final session = _localSessionFacade.fetchSession();
-        final audios = _localAudioFacade.fetchAllAudios();
+          ),
+        );
+      }
+    });
+    on<HomePageLaunchedEvent>((value, emit) async {
+      final session = _localSessionFacade.fetchSession();
+      final audios = _localAudioFacade.fetchAllAudios();
 
-        if (session != null) {
-          yield state.copyWith(
+      if (session != null) {
+        emit(
+          state.copyWith(
             audios: audios,
             batteryFullAudio: session.batteryFullAudio,
             chargingAudio: session.chargingAudio,
             dischargingAudio: session.dischargingAudio,
-          );
-        }
-      },
-      userAudioUploadedEvent: (value) async* {
-        final audios = _localAudioFacade.fetchAllAudios();
-
-        yield state.copyWith(
-          audios: audios,
+          ),
         );
-      },
-    );
+      }
+    });
+    on<UserAudioUploadedEvent>((value, emit) async {
+      final audios = _localAudioFacade.fetchAllAudios();
+
+      emit(
+        state.copyWith(
+          audios: audios,
+        ),
+      );
+    });
   }
+
+  final ILocalSessionFacade _localSessionFacade;
+  final ILocalAudioFacade _localAudioFacade;
 }

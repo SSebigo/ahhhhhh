@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UploadAudioFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) nameChangedEVT,
+    required TResult Function(String name) nameChangedEvent,
     required TResult Function() saveUserAudioEvent,
     required TResult Function() uploadUserAudioEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
     required TResult orElse(),
@@ -40,21 +40,21 @@ mixin _$UploadAudioFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(NameChangedEvent value) nameChangedEvent,
     required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
     required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
     required TResult orElse(),
@@ -80,29 +80,29 @@ class _$UploadAudioFormEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$NameChangedEVTCopyWith<$Res> {
-  factory _$$NameChangedEVTCopyWith(
-          _$NameChangedEVT value, $Res Function(_$NameChangedEVT) then) =
-      __$$NameChangedEVTCopyWithImpl<$Res>;
+abstract class _$$NameChangedEventCopyWith<$Res> {
+  factory _$$NameChangedEventCopyWith(
+          _$NameChangedEvent value, $Res Function(_$NameChangedEvent) then) =
+      __$$NameChangedEventCopyWithImpl<$Res>;
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$NameChangedEVTCopyWithImpl<$Res>
+class __$$NameChangedEventCopyWithImpl<$Res>
     extends _$UploadAudioFormEventCopyWithImpl<$Res>
-    implements _$$NameChangedEVTCopyWith<$Res> {
-  __$$NameChangedEVTCopyWithImpl(
-      _$NameChangedEVT _value, $Res Function(_$NameChangedEVT) _then)
-      : super(_value, (v) => _then(v as _$NameChangedEVT));
+    implements _$$NameChangedEventCopyWith<$Res> {
+  __$$NameChangedEventCopyWithImpl(
+      _$NameChangedEvent _value, $Res Function(_$NameChangedEvent) _then)
+      : super(_value, (v) => _then(v as _$NameChangedEvent));
 
   @override
-  _$NameChangedEVT get _value => super._value as _$NameChangedEVT;
+  _$NameChangedEvent get _value => super._value as _$NameChangedEvent;
 
   @override
   $Res call({
     Object? name = freezed,
   }) {
-    return _then(_$NameChangedEVT(
+    return _then(_$NameChangedEvent(
       name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -113,22 +113,22 @@ class __$$NameChangedEVTCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NameChangedEVT implements NameChangedEVT {
-  const _$NameChangedEVT(this.name);
+class _$NameChangedEvent implements NameChangedEvent {
+  const _$NameChangedEvent(this.name);
 
   @override
   final String name;
 
   @override
   String toString() {
-    return 'UploadAudioFormEvent.nameChangedEVT(name: $name)';
+    return 'UploadAudioFormEvent.nameChangedEvent(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NameChangedEVT &&
+            other is _$NameChangedEvent &&
             const DeepCollectionEquality().equals(other.name, name));
   }
 
@@ -138,39 +138,39 @@ class _$NameChangedEVT implements NameChangedEVT {
 
   @JsonKey(ignore: true)
   @override
-  _$$NameChangedEVTCopyWith<_$NameChangedEVT> get copyWith =>
-      __$$NameChangedEVTCopyWithImpl<_$NameChangedEVT>(this, _$identity);
+  _$$NameChangedEventCopyWith<_$NameChangedEvent> get copyWith =>
+      __$$NameChangedEventCopyWithImpl<_$NameChangedEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) nameChangedEVT,
+    required TResult Function(String name) nameChangedEvent,
     required TResult Function() saveUserAudioEvent,
     required TResult Function() uploadUserAudioEvent,
   }) {
-    return nameChangedEVT(name);
+    return nameChangedEvent(name);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
   }) {
-    return nameChangedEVT?.call(name);
+    return nameChangedEvent?.call(name);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
     required TResult orElse(),
   }) {
-    if (nameChangedEVT != null) {
-      return nameChangedEVT(name);
+    if (nameChangedEvent != null) {
+      return nameChangedEvent(name);
     }
     return orElse();
   }
@@ -178,44 +178,44 @@ class _$NameChangedEVT implements NameChangedEVT {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(NameChangedEvent value) nameChangedEvent,
     required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
     required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
   }) {
-    return nameChangedEVT(this);
+    return nameChangedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) {
-    return nameChangedEVT?.call(this);
+    return nameChangedEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
     required TResult orElse(),
   }) {
-    if (nameChangedEVT != null) {
-      return nameChangedEVT(this);
+    if (nameChangedEvent != null) {
+      return nameChangedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class NameChangedEVT implements UploadAudioFormEvent {
-  const factory NameChangedEVT(final String name) = _$NameChangedEVT;
+abstract class NameChangedEvent implements UploadAudioFormEvent {
+  const factory NameChangedEvent(final String name) = _$NameChangedEvent;
 
   String get name => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$NameChangedEVTCopyWith<_$NameChangedEVT> get copyWith =>
+  _$$NameChangedEventCopyWith<_$NameChangedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -260,7 +260,7 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) nameChangedEVT,
+    required TResult Function(String name) nameChangedEvent,
     required TResult Function() saveUserAudioEvent,
     required TResult Function() uploadUserAudioEvent,
   }) {
@@ -270,7 +270,7 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
   }) {
@@ -280,7 +280,7 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
     required TResult orElse(),
@@ -294,7 +294,7 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(NameChangedEvent value) nameChangedEvent,
     required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
     required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
   }) {
@@ -304,7 +304,7 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) {
@@ -314,7 +314,7 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
     required TResult orElse(),
@@ -371,7 +371,7 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) nameChangedEVT,
+    required TResult Function(String name) nameChangedEvent,
     required TResult Function() saveUserAudioEvent,
     required TResult Function() uploadUserAudioEvent,
   }) {
@@ -381,7 +381,7 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
   }) {
@@ -391,7 +391,7 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEVT,
+    TResult Function(String name)? nameChangedEvent,
     TResult Function()? saveUserAudioEvent,
     TResult Function()? uploadUserAudioEvent,
     required TResult orElse(),
@@ -405,7 +405,7 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChangedEVT value) nameChangedEVT,
+    required TResult Function(NameChangedEvent value) nameChangedEvent,
     required TResult Function(SaveUserAudioEvent value) saveUserAudioEvent,
     required TResult Function(UploadUserAudioEvent value) uploadUserAudioEvent,
   }) {
@@ -415,7 +415,7 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) {
@@ -425,7 +425,7 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChangedEVT value)? nameChangedEVT,
+    TResult Function(NameChangedEvent value)? nameChangedEvent,
     TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
     TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
     required TResult orElse(),

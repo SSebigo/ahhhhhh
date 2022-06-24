@@ -13,9 +13,35 @@ part 'device_battery_state.dart';
 @injectable
 class DeviceBatteryBloc extends Bloc<DeviceBatteryEvent, DeviceBatteryState> {
   /// @nodoc
-  DeviceBatteryBloc() : super(const DeviceBatteryState.initialState());
+  DeviceBatteryBloc() : super(const DeviceBatteryState.initialState()) {
+    on<BatteryStateChangedEvent>((value, emit) async {
+      emit(const DeviceBatteryState.changingBatteryState());
 
-  final Battery _battery = Battery();
+      emit(DeviceBatteryState.batteryStateChangedState(value.state));
+    });
+    on<HomePageLaunchedEvent>((value, emit) async {
+      await _batteryStateSubscription?.cancel();
+
+      _batteryStateSubscription = _battery.onBatteryStateChanged.listen(
+        (state) {
+          previousBatteryState = currentBatteryState;
+          currentBatteryState = state;
+
+          if (previousBatteryState != null &&
+              currentBatteryState != null &&
+              currentBatteryState != previousBatteryState) {
+            add(
+              DeviceBatteryEvent.batteryStateChangedEvent(
+                currentBatteryState!,
+              ),
+            );
+          }
+        },
+      );
+    });
+  }
+
+  final _battery = Battery();
 
   StreamSubscription<BatteryState>? _batteryStateSubscription;
 
@@ -24,37 +50,4 @@ class DeviceBatteryBloc extends Bloc<DeviceBatteryEvent, DeviceBatteryState> {
 
   /// @nodoc
   BatteryState? currentBatteryState;
-
-  @override
-  Stream<DeviceBatteryState> mapEventToState(
-    DeviceBatteryEvent event,
-  ) async* {
-    yield* event.map(
-      batteryStateChangedEvent: (value) async* {
-        yield const DeviceBatteryState.changingBatteryState();
-
-        yield DeviceBatteryState.batteryStateChangedState(value.state);
-      },
-      homePageLaunchedEvent: (value) async* {
-        await _batteryStateSubscription?.cancel();
-
-        _batteryStateSubscription = _battery.onBatteryStateChanged.listen(
-          (BatteryState state) {
-            previousBatteryState = currentBatteryState;
-            currentBatteryState = state;
-
-            if (previousBatteryState != null &&
-                currentBatteryState != null &&
-                currentBatteryState != previousBatteryState) {
-              add(
-                DeviceBatteryEvent.batteryStateChangedEvent(
-                  currentBatteryState!,
-                ),
-              );
-            }
-          },
-        );
-      },
-    );
-  }
 }
