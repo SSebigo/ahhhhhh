@@ -1,13 +1,13 @@
 name: ahhhhhh
 description: Makes your smartphone moan, scream or laugh when charging, discharging or full.
 
-version: 2.4.0
+version: 2.4.0+27
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  auto_route: ^4.0.1
+  auto_route: ^4.2.0
   battery: ^2.0.3
   cupertino_icons: ^1.0.5
   equatable: ^2.0.3
@@ -22,18 +22,18 @@ dependencies:
   freezed_annotation: ^2.0.3
   get_it: ^7.2.0
   google_mobile_ads: ^1.3.0
-  hive: ^2.2.2
+  hive: ^2.2.3
   hive_flutter: ^1.1.0
   injectable: ^1.5.3
   introduction_screen: ^3.0.2
-  just_audio: ^0.9.25
+  just_audio: ^0.9.27
   logger: ^1.1.0
   package_info: ^2.0.2
   path_provider: ^2.0.11
   url_launcher: ^6.1.4
 
 dev_dependencies:
-  auto_route_generator: ^4.0.0
+  auto_route_generator: ^4.2.0
   build_runner: ^2.1.11
   freezed: ^2.0.3+1
   hive_generator: ^1.1.3
