@@ -20,7 +20,7 @@ class OnboardingPage extends StatelessWidget with Getters {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Themes.wineLightTheme(),
+      value: Themes.ahhhhhhLightTheme(),
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(

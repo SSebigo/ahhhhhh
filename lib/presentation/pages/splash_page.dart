@@ -20,7 +20,7 @@ class SplashPage extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Themes.wineLightTheme(),
+      value: Themes.ahhhhhhLightTheme(),
       child: Scaffold(
         backgroundColor: Colors.white,
         body: BlocListener<CoreBloc, CoreState>(

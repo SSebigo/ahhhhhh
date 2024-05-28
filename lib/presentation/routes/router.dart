@@ -1,10 +1,10 @@
-import 'package:ahhhhhh/presentation/pages/about_page.dart';
+import 'package:ahhhhhh/presentation/about/about_page.dart';
+import 'package:ahhhhhh/presentation/home/home_page.dart';
 import 'package:ahhhhhh/presentation/pages/changelog_page.dart';
-import 'package:ahhhhhh/presentation/pages/home_page.dart';
 import 'package:ahhhhhh/presentation/pages/onboarding_page.dart';
 import 'package:ahhhhhh/presentation/pages/splash_page.dart';
 import 'package:ahhhhhh/presentation/pages/upload_audio_page.dart';
-import 'package:ahhhhhh/utils/constants.dart';
+import 'package:ahhhhhh/utils/constants/router.dart';
 import 'package:auto_route/auto_route.dart';
 
 part 'router.gr.dart';
@@ -15,28 +15,28 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: AboutRoute.page,
-          path: Constants.aboutPagePath,
+          path: aboutPagePath,
         ),
         AutoRoute(
           page: ChangelogRoute.page,
-          path: Constants.changelogPagePath,
+          path: changelogPagePath,
         ),
         AutoRoute(
           page: HomeRoute.page,
-          path: Constants.homePagePath,
+          path: homePagePath,
         ),
         AutoRoute(
           page: OnboardingRoute.page,
-          path: Constants.onboardingPagePath,
+          path: onboardingPagePath,
         ),
         AutoRoute(
           page: SplashRoute.page,
-          path: Constants.splashPagePath,
+          path: splashPagePath,
           initial: true,
         ),
         AutoRoute(
           page: UploadAudioRoute.page,
-          path: Constants.uploadAudioPagePath,
+          path: uploadAudioPagePath,
         ),
       ];
 }

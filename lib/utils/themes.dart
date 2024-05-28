@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 /// @nodoc
 class Themes {
   /// Makes the status bar white and the icon
-  static SystemUiOverlayStyle wineLightTheme() {
+  static SystemUiOverlayStyle ahhhhhhLightTheme() {
     return SystemUiOverlayStyle.light.copyWith(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,

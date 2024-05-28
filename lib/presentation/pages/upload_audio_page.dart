@@ -19,7 +19,7 @@ class UploadAudioPage extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Themes.wineLightTheme(),
+      value: Themes.ahhhhhhLightTheme(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('UPLOAD A SOUND'),
