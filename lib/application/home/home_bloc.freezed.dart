@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'home_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'home_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$HomeEvent {
@@ -24,8 +24,8 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? goToVisualSelectionEvent,
-    TResult Function()? visualSelectedOrCanceledEvent,
+    TResult? Function()? goToVisualSelectionEvent,
+    TResult? Function()? visualSelectedOrCanceledEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,8 +45,8 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GoToVisualSelectionEvent value)? goToVisualSelectionEvent,
-    TResult Function(VisualSelectedOrCanceledEvent value)?
+    TResult? Function(GoToVisualSelectionEvent value)? goToVisualSelectionEvent,
+    TResult? Function(VisualSelectedOrCanceledEvent value)?
         visualSelectedOrCanceledEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,42 +63,42 @@ mixin _$HomeEvent {
 /// @nodoc
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
-      _$HomeEventCopyWithImpl<$Res>;
+      _$HomeEventCopyWithImpl<$Res, HomeEvent>;
 }
 
 /// @nodoc
-class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
+class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
+    implements $HomeEventCopyWith<$Res> {
   _$HomeEventCopyWithImpl(this._value, this._then);
 
-  final HomeEvent _value;
   // ignore: unused_field
-  final $Res Function(HomeEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$GoToVisualSelectionEventCopyWith<$Res> {
-  factory _$$GoToVisualSelectionEventCopyWith(_$GoToVisualSelectionEvent value,
-          $Res Function(_$GoToVisualSelectionEvent) then) =
-      __$$GoToVisualSelectionEventCopyWithImpl<$Res>;
+abstract class _$$GoToVisualSelectionEventImplCopyWith<$Res> {
+  factory _$$GoToVisualSelectionEventImplCopyWith(
+          _$GoToVisualSelectionEventImpl value,
+          $Res Function(_$GoToVisualSelectionEventImpl) then) =
+      __$$GoToVisualSelectionEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GoToVisualSelectionEventCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
-    implements _$$GoToVisualSelectionEventCopyWith<$Res> {
-  __$$GoToVisualSelectionEventCopyWithImpl(_$GoToVisualSelectionEvent _value,
-      $Res Function(_$GoToVisualSelectionEvent) _then)
-      : super(_value, (v) => _then(v as _$GoToVisualSelectionEvent));
-
-  @override
-  _$GoToVisualSelectionEvent get _value =>
-      super._value as _$GoToVisualSelectionEvent;
+class __$$GoToVisualSelectionEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GoToVisualSelectionEventImpl>
+    implements _$$GoToVisualSelectionEventImplCopyWith<$Res> {
+  __$$GoToVisualSelectionEventImplCopyWithImpl(
+      _$GoToVisualSelectionEventImpl _value,
+      $Res Function(_$GoToVisualSelectionEventImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GoToVisualSelectionEvent implements GoToVisualSelectionEvent {
-  const _$GoToVisualSelectionEvent();
+class _$GoToVisualSelectionEventImpl implements GoToVisualSelectionEvent {
+  const _$GoToVisualSelectionEventImpl();
 
   @override
   String toString() {
@@ -106,10 +106,10 @@ class _$GoToVisualSelectionEvent implements GoToVisualSelectionEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoToVisualSelectionEvent);
+            other is _$GoToVisualSelectionEventImpl);
   }
 
   @override
@@ -127,8 +127,8 @@ class _$GoToVisualSelectionEvent implements GoToVisualSelectionEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? goToVisualSelectionEvent,
-    TResult Function()? visualSelectedOrCanceledEvent,
+    TResult? Function()? goToVisualSelectionEvent,
+    TResult? Function()? visualSelectedOrCanceledEvent,
   }) {
     return goToVisualSelectionEvent?.call();
   }
@@ -160,8 +160,8 @@ class _$GoToVisualSelectionEvent implements GoToVisualSelectionEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GoToVisualSelectionEvent value)? goToVisualSelectionEvent,
-    TResult Function(VisualSelectedOrCanceledEvent value)?
+    TResult? Function(GoToVisualSelectionEvent value)? goToVisualSelectionEvent,
+    TResult? Function(VisualSelectedOrCanceledEvent value)?
         visualSelectedOrCanceledEvent,
   }) {
     return goToVisualSelectionEvent?.call(this);
@@ -183,35 +183,32 @@ class _$GoToVisualSelectionEvent implements GoToVisualSelectionEvent {
 }
 
 abstract class GoToVisualSelectionEvent implements HomeEvent {
-  const factory GoToVisualSelectionEvent() = _$GoToVisualSelectionEvent;
+  const factory GoToVisualSelectionEvent() = _$GoToVisualSelectionEventImpl;
 }
 
 /// @nodoc
-abstract class _$$VisualSelectedOrCanceledEventCopyWith<$Res> {
-  factory _$$VisualSelectedOrCanceledEventCopyWith(
-          _$VisualSelectedOrCanceledEvent value,
-          $Res Function(_$VisualSelectedOrCanceledEvent) then) =
-      __$$VisualSelectedOrCanceledEventCopyWithImpl<$Res>;
+abstract class _$$VisualSelectedOrCanceledEventImplCopyWith<$Res> {
+  factory _$$VisualSelectedOrCanceledEventImplCopyWith(
+          _$VisualSelectedOrCanceledEventImpl value,
+          $Res Function(_$VisualSelectedOrCanceledEventImpl) then) =
+      __$$VisualSelectedOrCanceledEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$VisualSelectedOrCanceledEventCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
-    implements _$$VisualSelectedOrCanceledEventCopyWith<$Res> {
-  __$$VisualSelectedOrCanceledEventCopyWithImpl(
-      _$VisualSelectedOrCanceledEvent _value,
-      $Res Function(_$VisualSelectedOrCanceledEvent) _then)
-      : super(_value, (v) => _then(v as _$VisualSelectedOrCanceledEvent));
-
-  @override
-  _$VisualSelectedOrCanceledEvent get _value =>
-      super._value as _$VisualSelectedOrCanceledEvent;
+class __$$VisualSelectedOrCanceledEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$VisualSelectedOrCanceledEventImpl>
+    implements _$$VisualSelectedOrCanceledEventImplCopyWith<$Res> {
+  __$$VisualSelectedOrCanceledEventImplCopyWithImpl(
+      _$VisualSelectedOrCanceledEventImpl _value,
+      $Res Function(_$VisualSelectedOrCanceledEventImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$VisualSelectedOrCanceledEvent implements VisualSelectedOrCanceledEvent {
-  const _$VisualSelectedOrCanceledEvent();
+class _$VisualSelectedOrCanceledEventImpl
+    implements VisualSelectedOrCanceledEvent {
+  const _$VisualSelectedOrCanceledEventImpl();
 
   @override
   String toString() {
@@ -219,10 +216,10 @@ class _$VisualSelectedOrCanceledEvent implements VisualSelectedOrCanceledEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VisualSelectedOrCanceledEvent);
+            other is _$VisualSelectedOrCanceledEventImpl);
   }
 
   @override
@@ -240,8 +237,8 @@ class _$VisualSelectedOrCanceledEvent implements VisualSelectedOrCanceledEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? goToVisualSelectionEvent,
-    TResult Function()? visualSelectedOrCanceledEvent,
+    TResult? Function()? goToVisualSelectionEvent,
+    TResult? Function()? visualSelectedOrCanceledEvent,
   }) {
     return visualSelectedOrCanceledEvent?.call();
   }
@@ -273,8 +270,8 @@ class _$VisualSelectedOrCanceledEvent implements VisualSelectedOrCanceledEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GoToVisualSelectionEvent value)? goToVisualSelectionEvent,
-    TResult Function(VisualSelectedOrCanceledEvent value)?
+    TResult? Function(GoToVisualSelectionEvent value)? goToVisualSelectionEvent,
+    TResult? Function(VisualSelectedOrCanceledEvent value)?
         visualSelectedOrCanceledEvent,
   }) {
     return visualSelectedOrCanceledEvent?.call(this);
@@ -297,7 +294,7 @@ class _$VisualSelectedOrCanceledEvent implements VisualSelectedOrCanceledEvent {
 
 abstract class VisualSelectedOrCanceledEvent implements HomeEvent {
   const factory VisualSelectedOrCanceledEvent() =
-      _$VisualSelectedOrCanceledEvent;
+      _$VisualSelectedOrCanceledEventImpl;
 }
 
 /// @nodoc
@@ -312,10 +309,10 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultState,
-    TResult Function()? movingToDefaultState,
-    TResult Function()? movingToVisualSelectionState,
-    TResult Function()? selectVisualState,
+    TResult? Function()? defaultState,
+    TResult? Function()? movingToDefaultState,
+    TResult? Function()? movingToVisualSelectionState,
+    TResult? Function()? selectVisualState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -338,11 +335,11 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DefaultState value)? defaultState,
-    TResult Function(_MovingToDefaultState value)? movingToDefaultState,
-    TResult Function(_MovingToVisualSelectionState value)?
+    TResult? Function(_DefaultState value)? defaultState,
+    TResult? Function(_MovingToDefaultState value)? movingToDefaultState,
+    TResult? Function(_MovingToVisualSelectionState value)?
         movingToVisualSelectionState,
-    TResult Function(_SelectVisualState value)? selectVisualState,
+    TResult? Function(_SelectVisualState value)? selectVisualState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -360,40 +357,40 @@ mixin _$HomeState {
 /// @nodoc
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res>;
+      _$HomeStateCopyWithImpl<$Res, HomeState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
+class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
+    implements $HomeStateCopyWith<$Res> {
   _$HomeStateCopyWithImpl(this._value, this._then);
 
-  final HomeState _value;
   // ignore: unused_field
-  final $Res Function(HomeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_DefaultStateCopyWith<$Res> {
-  factory _$$_DefaultStateCopyWith(
-          _$_DefaultState value, $Res Function(_$_DefaultState) then) =
-      __$$_DefaultStateCopyWithImpl<$Res>;
+abstract class _$$DefaultStateImplCopyWith<$Res> {
+  factory _$$DefaultStateImplCopyWith(
+          _$DefaultStateImpl value, $Res Function(_$DefaultStateImpl) then) =
+      __$$DefaultStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DefaultStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$_DefaultStateCopyWith<$Res> {
-  __$$_DefaultStateCopyWithImpl(
-      _$_DefaultState _value, $Res Function(_$_DefaultState) _then)
-      : super(_value, (v) => _then(v as _$_DefaultState));
-
-  @override
-  _$_DefaultState get _value => super._value as _$_DefaultState;
+class __$$DefaultStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$DefaultStateImpl>
+    implements _$$DefaultStateImplCopyWith<$Res> {
+  __$$DefaultStateImplCopyWithImpl(
+      _$DefaultStateImpl _value, $Res Function(_$DefaultStateImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DefaultState implements _DefaultState {
-  const _$_DefaultState();
+class _$DefaultStateImpl implements _DefaultState {
+  const _$DefaultStateImpl();
 
   @override
   String toString() {
@@ -401,9 +398,9 @@ class _$_DefaultState implements _DefaultState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DefaultState);
+        (other.runtimeType == runtimeType && other is _$DefaultStateImpl);
   }
 
   @override
@@ -423,10 +420,10 @@ class _$_DefaultState implements _DefaultState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultState,
-    TResult Function()? movingToDefaultState,
-    TResult Function()? movingToVisualSelectionState,
-    TResult Function()? selectVisualState,
+    TResult? Function()? defaultState,
+    TResult? Function()? movingToDefaultState,
+    TResult? Function()? movingToVisualSelectionState,
+    TResult? Function()? selectVisualState,
   }) {
     return defaultState?.call();
   }
@@ -461,11 +458,11 @@ class _$_DefaultState implements _DefaultState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DefaultState value)? defaultState,
-    TResult Function(_MovingToDefaultState value)? movingToDefaultState,
-    TResult Function(_MovingToVisualSelectionState value)?
+    TResult? Function(_DefaultState value)? defaultState,
+    TResult? Function(_MovingToDefaultState value)? movingToDefaultState,
+    TResult? Function(_MovingToVisualSelectionState value)?
         movingToVisualSelectionState,
-    TResult Function(_SelectVisualState value)? selectVisualState,
+    TResult? Function(_SelectVisualState value)? selectVisualState,
   }) {
     return defaultState?.call(this);
   }
@@ -488,32 +485,29 @@ class _$_DefaultState implements _DefaultState {
 }
 
 abstract class _DefaultState implements HomeState {
-  const factory _DefaultState() = _$_DefaultState;
+  const factory _DefaultState() = _$DefaultStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_MovingToDefaultStateCopyWith<$Res> {
-  factory _$$_MovingToDefaultStateCopyWith(_$_MovingToDefaultState value,
-          $Res Function(_$_MovingToDefaultState) then) =
-      __$$_MovingToDefaultStateCopyWithImpl<$Res>;
+abstract class _$$MovingToDefaultStateImplCopyWith<$Res> {
+  factory _$$MovingToDefaultStateImplCopyWith(_$MovingToDefaultStateImpl value,
+          $Res Function(_$MovingToDefaultStateImpl) then) =
+      __$$MovingToDefaultStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_MovingToDefaultStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$_MovingToDefaultStateCopyWith<$Res> {
-  __$$_MovingToDefaultStateCopyWithImpl(_$_MovingToDefaultState _value,
-      $Res Function(_$_MovingToDefaultState) _then)
-      : super(_value, (v) => _then(v as _$_MovingToDefaultState));
-
-  @override
-  _$_MovingToDefaultState get _value => super._value as _$_MovingToDefaultState;
+class __$$MovingToDefaultStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$MovingToDefaultStateImpl>
+    implements _$$MovingToDefaultStateImplCopyWith<$Res> {
+  __$$MovingToDefaultStateImplCopyWithImpl(_$MovingToDefaultStateImpl _value,
+      $Res Function(_$MovingToDefaultStateImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_MovingToDefaultState implements _MovingToDefaultState {
-  const _$_MovingToDefaultState();
+class _$MovingToDefaultStateImpl implements _MovingToDefaultState {
+  const _$MovingToDefaultStateImpl();
 
   @override
   String toString() {
@@ -521,9 +515,10 @@ class _$_MovingToDefaultState implements _MovingToDefaultState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_MovingToDefaultState);
+        (other.runtimeType == runtimeType &&
+            other is _$MovingToDefaultStateImpl);
   }
 
   @override
@@ -543,10 +538,10 @@ class _$_MovingToDefaultState implements _MovingToDefaultState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultState,
-    TResult Function()? movingToDefaultState,
-    TResult Function()? movingToVisualSelectionState,
-    TResult Function()? selectVisualState,
+    TResult? Function()? defaultState,
+    TResult? Function()? movingToDefaultState,
+    TResult? Function()? movingToVisualSelectionState,
+    TResult? Function()? selectVisualState,
   }) {
     return movingToDefaultState?.call();
   }
@@ -581,11 +576,11 @@ class _$_MovingToDefaultState implements _MovingToDefaultState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DefaultState value)? defaultState,
-    TResult Function(_MovingToDefaultState value)? movingToDefaultState,
-    TResult Function(_MovingToVisualSelectionState value)?
+    TResult? Function(_DefaultState value)? defaultState,
+    TResult? Function(_MovingToDefaultState value)? movingToDefaultState,
+    TResult? Function(_MovingToVisualSelectionState value)?
         movingToVisualSelectionState,
-    TResult Function(_SelectVisualState value)? selectVisualState,
+    TResult? Function(_SelectVisualState value)? selectVisualState,
   }) {
     return movingToDefaultState?.call(this);
   }
@@ -608,35 +603,32 @@ class _$_MovingToDefaultState implements _MovingToDefaultState {
 }
 
 abstract class _MovingToDefaultState implements HomeState {
-  const factory _MovingToDefaultState() = _$_MovingToDefaultState;
+  const factory _MovingToDefaultState() = _$MovingToDefaultStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_MovingToVisualSelectionStateCopyWith<$Res> {
-  factory _$$_MovingToVisualSelectionStateCopyWith(
-          _$_MovingToVisualSelectionState value,
-          $Res Function(_$_MovingToVisualSelectionState) then) =
-      __$$_MovingToVisualSelectionStateCopyWithImpl<$Res>;
+abstract class _$$MovingToVisualSelectionStateImplCopyWith<$Res> {
+  factory _$$MovingToVisualSelectionStateImplCopyWith(
+          _$MovingToVisualSelectionStateImpl value,
+          $Res Function(_$MovingToVisualSelectionStateImpl) then) =
+      __$$MovingToVisualSelectionStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_MovingToVisualSelectionStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$_MovingToVisualSelectionStateCopyWith<$Res> {
-  __$$_MovingToVisualSelectionStateCopyWithImpl(
-      _$_MovingToVisualSelectionState _value,
-      $Res Function(_$_MovingToVisualSelectionState) _then)
-      : super(_value, (v) => _then(v as _$_MovingToVisualSelectionState));
-
-  @override
-  _$_MovingToVisualSelectionState get _value =>
-      super._value as _$_MovingToVisualSelectionState;
+class __$$MovingToVisualSelectionStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$MovingToVisualSelectionStateImpl>
+    implements _$$MovingToVisualSelectionStateImplCopyWith<$Res> {
+  __$$MovingToVisualSelectionStateImplCopyWithImpl(
+      _$MovingToVisualSelectionStateImpl _value,
+      $Res Function(_$MovingToVisualSelectionStateImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_MovingToVisualSelectionState implements _MovingToVisualSelectionState {
-  const _$_MovingToVisualSelectionState();
+class _$MovingToVisualSelectionStateImpl
+    implements _MovingToVisualSelectionState {
+  const _$MovingToVisualSelectionStateImpl();
 
   @override
   String toString() {
@@ -644,10 +636,10 @@ class _$_MovingToVisualSelectionState implements _MovingToVisualSelectionState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MovingToVisualSelectionState);
+            other is _$MovingToVisualSelectionStateImpl);
   }
 
   @override
@@ -667,10 +659,10 @@ class _$_MovingToVisualSelectionState implements _MovingToVisualSelectionState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultState,
-    TResult Function()? movingToDefaultState,
-    TResult Function()? movingToVisualSelectionState,
-    TResult Function()? selectVisualState,
+    TResult? Function()? defaultState,
+    TResult? Function()? movingToDefaultState,
+    TResult? Function()? movingToVisualSelectionState,
+    TResult? Function()? selectVisualState,
   }) {
     return movingToVisualSelectionState?.call();
   }
@@ -705,11 +697,11 @@ class _$_MovingToVisualSelectionState implements _MovingToVisualSelectionState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DefaultState value)? defaultState,
-    TResult Function(_MovingToDefaultState value)? movingToDefaultState,
-    TResult Function(_MovingToVisualSelectionState value)?
+    TResult? Function(_DefaultState value)? defaultState,
+    TResult? Function(_MovingToDefaultState value)? movingToDefaultState,
+    TResult? Function(_MovingToVisualSelectionState value)?
         movingToVisualSelectionState,
-    TResult Function(_SelectVisualState value)? selectVisualState,
+    TResult? Function(_SelectVisualState value)? selectVisualState,
   }) {
     return movingToVisualSelectionState?.call(this);
   }
@@ -733,32 +725,29 @@ class _$_MovingToVisualSelectionState implements _MovingToVisualSelectionState {
 
 abstract class _MovingToVisualSelectionState implements HomeState {
   const factory _MovingToVisualSelectionState() =
-      _$_MovingToVisualSelectionState;
+      _$MovingToVisualSelectionStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_SelectVisualStateCopyWith<$Res> {
-  factory _$$_SelectVisualStateCopyWith(_$_SelectVisualState value,
-          $Res Function(_$_SelectVisualState) then) =
-      __$$_SelectVisualStateCopyWithImpl<$Res>;
+abstract class _$$SelectVisualStateImplCopyWith<$Res> {
+  factory _$$SelectVisualStateImplCopyWith(_$SelectVisualStateImpl value,
+          $Res Function(_$SelectVisualStateImpl) then) =
+      __$$SelectVisualStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SelectVisualStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$_SelectVisualStateCopyWith<$Res> {
-  __$$_SelectVisualStateCopyWithImpl(
-      _$_SelectVisualState _value, $Res Function(_$_SelectVisualState) _then)
-      : super(_value, (v) => _then(v as _$_SelectVisualState));
-
-  @override
-  _$_SelectVisualState get _value => super._value as _$_SelectVisualState;
+class __$$SelectVisualStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$SelectVisualStateImpl>
+    implements _$$SelectVisualStateImplCopyWith<$Res> {
+  __$$SelectVisualStateImplCopyWithImpl(_$SelectVisualStateImpl _value,
+      $Res Function(_$SelectVisualStateImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SelectVisualState implements _SelectVisualState {
-  const _$_SelectVisualState();
+class _$SelectVisualStateImpl implements _SelectVisualState {
+  const _$SelectVisualStateImpl();
 
   @override
   String toString() {
@@ -766,9 +755,9 @@ class _$_SelectVisualState implements _SelectVisualState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SelectVisualState);
+        (other.runtimeType == runtimeType && other is _$SelectVisualStateImpl);
   }
 
   @override
@@ -788,10 +777,10 @@ class _$_SelectVisualState implements _SelectVisualState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultState,
-    TResult Function()? movingToDefaultState,
-    TResult Function()? movingToVisualSelectionState,
-    TResult Function()? selectVisualState,
+    TResult? Function()? defaultState,
+    TResult? Function()? movingToDefaultState,
+    TResult? Function()? movingToVisualSelectionState,
+    TResult? Function()? selectVisualState,
   }) {
     return selectVisualState?.call();
   }
@@ -826,11 +815,11 @@ class _$_SelectVisualState implements _SelectVisualState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DefaultState value)? defaultState,
-    TResult Function(_MovingToDefaultState value)? movingToDefaultState,
-    TResult Function(_MovingToVisualSelectionState value)?
+    TResult? Function(_DefaultState value)? defaultState,
+    TResult? Function(_MovingToDefaultState value)? movingToDefaultState,
+    TResult? Function(_MovingToVisualSelectionState value)?
         movingToVisualSelectionState,
-    TResult Function(_SelectVisualState value)? selectVisualState,
+    TResult? Function(_SelectVisualState value)? selectVisualState,
   }) {
     return selectVisualState?.call(this);
   }
@@ -853,5 +842,5 @@ class _$_SelectVisualState implements _SelectVisualState {
 }
 
 abstract class _SelectVisualState implements HomeState {
-  const factory _SelectVisualState() = _$_SelectVisualState;
+  const factory _SelectVisualState() = _$SelectVisualStateImpl;
 }

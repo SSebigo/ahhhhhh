@@ -1,5 +1,5 @@
 import 'package:ahhhhhh/application/core/core_bloc.dart';
-import 'package:ahhhhhh/presentation/routes/router.gr.dart';
+import 'package:ahhhhhh/presentation/routes/router.dart';
 import 'package:ahhhhhh/presentation/widgets/splash/splash_copyright.dart';
 import 'package:ahhhhhh/utils/assets.dart';
 import 'package:ahhhhhh/utils/themes.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// @nodoc
+@RoutePage()
 class SplashPage extends StatelessWidget {
   /// @nodoc
   const SplashPage({super.key});

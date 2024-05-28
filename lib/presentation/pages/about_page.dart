@@ -2,11 +2,12 @@ import 'package:ahhhhhh/application/about/about_bloc.dart';
 import 'package:ahhhhhh/injection.dart';
 import 'package:ahhhhhh/presentation/layouts/about/about_body_layout.dart';
 import 'package:ahhhhhh/utils/themes.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// @nodoc
+@RoutePage()
 class AboutPage extends StatelessWidget {
   /// @nodoc
   const AboutPage({super.key});

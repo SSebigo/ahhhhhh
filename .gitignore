@@ -81,3 +81,6 @@
 # Others
 **/lib/ad_manager.dart
 **/.flutter-plugins-dependencies
+
+# FVM Version Cache
+.fvm/

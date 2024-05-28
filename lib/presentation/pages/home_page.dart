@@ -6,11 +6,12 @@ import 'package:ahhhhhh/injection.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_body_layout.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_end_drawer.dart';
 import 'package:ahhhhhh/utils/themes.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// @nodoc
+@RoutePage()
 class HomePage extends StatefulWidget {
   /// @nodoc
   const HomePage({super.key});

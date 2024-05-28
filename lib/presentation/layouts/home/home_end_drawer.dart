@@ -1,7 +1,7 @@
 import 'package:ahhhhhh/application/audio/audio_bloc.dart';
 import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/domain/models/hive/audio.dart';
-import 'package:ahhhhhh/presentation/routes/router.gr.dart';
+import 'package:ahhhhhh/presentation/routes/router.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_audio_selection_dialog.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_section_tile.dart';
 import 'package:ahhhhhh/presentation/widgets/home/home_drawer_separator.dart';

@@ -19,7 +19,7 @@ class UploadAudioForm extends StatelessWidget {
           context
               .read<DrawerBloc>()
               .add(const DrawerEvent.userAudioUploadedEvent());
-          context.router.pop();
+          context.router.maybePop();
         }
       },
       child: Form(

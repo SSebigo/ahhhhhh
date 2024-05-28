@@ -27,4 +27,16 @@ class Constants {
 
   /// @nodoc
   static const String githubUrl = 'https://github.com/SSebigo/ahhhhhh';
+
+  static const String splashPagePath = '/splash';
+
+  static const String aboutPagePath = '/about';
+
+  static const String changelogPagePath = '/changelog';
+
+  static const String homePagePath = '/';
+
+  static const String onboardingPagePath = '/onboarding';
+
+  static const String uploadAudioPagePath = '/upload-audio';
 }

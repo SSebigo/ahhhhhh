@@ -1,85 +1,167 @@
-import 'dart:ui';
+import 'dart:async';
 
-import 'package:ahhhhhh/application/audio/audio_bloc.dart';
-import 'package:ahhhhhh/application/core/core_bloc.dart';
-import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/injection.dart';
 import 'package:ahhhhhh/presentation/core/app.dart';
 import 'package:ahhhhhh/simple_bloc_observer.dart';
-import 'package:battery/battery.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_background_service/flutter_background_service.dart';
-import 'package:flutter_background_service_android/flutter_background_service_android.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+// Future<void> onStart(ServiceInstance service) async {
+//   DartPluginRegistrant.ensureInitialized();
+
+//   Timer.periodic(const Duration(seconds: 1), (timer) async {
+//     if (service is AndroidServiceInstance) {
+//       if (await service.isForegroundService()) {
+//         await service.setForegroundNotificationInfo(
+//           title: 'Ahhhhhh in background...',
+//           content: 'Update ${DateTime.now()}',
+//         );
+//       }
+
+//       if (getIt.isRegistered(instance: AudioBloc)) {
+//         Battery().onBatteryStateChanged.listen(
+//           (state) {
+//             getIt<AudioBloc>().add(AudioEvent.batteryStateChangedEvent(state));
+//           },
+//         );
+//       }
+//     }
+
+//     service.invoke(
+//       'update',
+//       {
+//         'current_date': DateTime.now().toIso8601String(),
+//       },
+//     );
+//   });
+// }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await MobileAds.instance.initialize();
 
   await configureInjection();
-  await initService();
+  // await initializeService();
 
-  BlocOverrides.runZoned(
-    () => runApp(
-      MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (_) => getIt<AudioBloc>()),
-          BlocProvider(
-            create: (_) =>
-                getIt<CoreBloc>()..add(const CoreEvent.appStartedEvent()),
-          ),
-          BlocProvider(
-            create: (_) => getIt<DrawerBloc>(),
-          ),
-        ],
-        child: App(),
-      ),
-    ),
-    blocObserver: SimpleBlocObserver(),
-  );
+  Bloc.observer = SimpleBlocObserver();
+
+  runApp(App());
 }
+
+// Future<void> initializeService() async {
+//   final service = FlutterBackgroundService();
+//   final logger = Logger();
+
+//   try {
+//     await service.configure(
+//       iosConfiguration: IosConfiguration(),
+//       androidConfiguration: AndroidConfiguration(
+//         onStart: onStart,
+//         isForegroundMode: false,
+//       ),
+//     );
+//   } catch (e) {
+//     logger.d('Error initializing background service: $e');
+//   }
+// }
 
 /// @nodoc
-Future<void> initService() async {
-  final service = FlutterBackgroundService();
-  await service.configure(
-    iosConfiguration: IosConfiguration(
-      onForeground: (_) {},
-      onBackground: (_) => false,
-    ),
-    androidConfiguration: AndroidConfiguration(
-      onStart: (s) => onStart(s, getIt),
-      isForegroundMode: true,
-    ),
-  );
-  await service.startService();
-}
+// Future<void> initializeService() async {
+//   final service = FlutterBackgroundService();
 
-/// @nodoc
-Future<void> onStart(ServiceInstance service, GetIt injector) async {
-  DartPluginRegistrant.ensureInitialized();
+//   const channel = AndroidNotificationChannel(
+//     'my_foreground',
+//     'MY FOREGROUND SERVICE',
+//     description: 'This channel is used for important notifications.',
+//     importance: Importance.low,
+//   );
 
-  if (service is AndroidServiceInstance) {
-    service.on('setAsForeground').listen((event) {
-      service.setAsForegroundService();
-    });
+//   final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
-    service.on('setAsBackground').listen((event) {
-      service.setAsBackgroundService();
-    });
-  }
+//   if (Platform.isIOS || Platform.isAndroid) {
+//     await flutterLocalNotificationsPlugin.initialize(
+//       const InitializationSettings(
+//         iOS: DarwinInitializationSettings(),
+//         android: AndroidInitializationSettings('ic_bg_service_small'),
+//       ),
+//     );
+//   }
 
-  service.on('stopService').listen((event) {
-    service.stopSelf();
-  });
+//   await flutterLocalNotificationsPlugin
+//       .resolvePlatformSpecificImplementation<
+//           AndroidFlutterLocalNotificationsPlugin>()
+//       ?.createNotificationChannel(channel);
 
-  // await configureInjection();
+//   await service.configure(
+//     androidConfiguration: AndroidConfiguration(
+//       onStart: (s) => onStart(s, getIt),
+//       isForegroundMode: true,
+//       notificationChannelId: 'my_foreground',
+//       initialNotificationTitle: 'AWESOME SERVICE',
+//       initialNotificationContent: 'Initializing',
+//       foregroundServiceNotificationId: 888,
+//     ),
+//     iosConfiguration: IosConfiguration(),
+//   );
 
-  Battery().onBatteryStateChanged.listen(
-    (state) {
-      injector<AudioBloc>().add(AudioEvent.batteryStateChangedEvent(state));
-    },
-  );
-}
+//   // await service.startService();
+// }
+
+// Future<void> onStart(ServiceInstance service, GetIt injector) async {
+//   DartPluginRegistrant.ensureInitialized();
+
+//   final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+
+//   if (service is AndroidServiceInstance) {
+//     service.on('setAsForeground').listen((event) {
+//       service.setAsForegroundService();
+//     });
+
+//     service.on('setAsBackground').listen((event) {
+//       service.setAsBackgroundService();
+//     });
+//   }
+
+//   service.on('stopService').listen((event) {
+//     service.stopSelf();
+//   });
+
+//   Timer.periodic(const Duration(seconds: 1), (timer) async {
+//     if (service is AndroidServiceInstance) {
+//       if (await service.isForegroundService()) {
+//         await flutterLocalNotificationsPlugin.show(
+//           888,
+//           'Ahhhhhh Notification',
+//           'Ahhhhhh is now running in the background.',
+//           const NotificationDetails(
+//             android: AndroidNotificationDetails(
+//               'my_foreground',
+//               'MY FOREGROUND SERVICE',
+//               icon: 'ic_bg_service_small',
+//               ongoing: true,
+//             ),
+//           ),
+//         );
+
+//         // if you don't using custom notification, uncomment this
+//         await service.setForegroundNotificationInfo(
+//           title: 'Ahhhhhh',
+//           content: 'Ahhhhhh is running in the background.',
+//         );
+//       }
+//     }
+
+//     Battery().onBatteryStateChanged.listen(
+//       (state) {
+//         injector<AudioBloc>().add(AudioEvent.batteryStateChangedEvent(state));
+//       },
+//     );
+
+//     service.invoke(
+//       'update',
+//       {},
+//     );
+//   });
+// }
