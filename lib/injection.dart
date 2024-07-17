@@ -7,6 +7,4 @@ final getIt = GetIt.instance;
 
 /// @nodoc
 @InjectableInit()
-Future<void> configureInjection() async {
-  await $initGetIt(getIt);
-}
+Future<void> configureInjection() async => getIt.init();

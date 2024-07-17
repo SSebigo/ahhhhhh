@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'drawer_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'drawer_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DrawerEvent {
@@ -25,9 +25,9 @@ mixin _$DrawerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? audioAssignedEvent,
-    TResult Function()? homePageLaunchedEvent,
-    TResult Function()? userAudioUploadedEvent,
+    TResult? Function()? audioAssignedEvent,
+    TResult? Function()? homePageLaunchedEvent,
+    TResult? Function()? userAudioUploadedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,9 +49,9 @@ mixin _$DrawerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AudioAssignedEvent value)? audioAssignedEvent,
-    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
-    TResult Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
+    TResult? Function(AudioAssignedEvent value)? audioAssignedEvent,
+    TResult? Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult? Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,41 +68,40 @@ mixin _$DrawerEvent {
 abstract class $DrawerEventCopyWith<$Res> {
   factory $DrawerEventCopyWith(
           DrawerEvent value, $Res Function(DrawerEvent) then) =
-      _$DrawerEventCopyWithImpl<$Res>;
+      _$DrawerEventCopyWithImpl<$Res, DrawerEvent>;
 }
 
 /// @nodoc
-class _$DrawerEventCopyWithImpl<$Res> implements $DrawerEventCopyWith<$Res> {
+class _$DrawerEventCopyWithImpl<$Res, $Val extends DrawerEvent>
+    implements $DrawerEventCopyWith<$Res> {
   _$DrawerEventCopyWithImpl(this._value, this._then);
 
-  final DrawerEvent _value;
   // ignore: unused_field
-  final $Res Function(DrawerEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$AudioAssignedEventCopyWith<$Res> {
-  factory _$$AudioAssignedEventCopyWith(_$AudioAssignedEvent value,
-          $Res Function(_$AudioAssignedEvent) then) =
-      __$$AudioAssignedEventCopyWithImpl<$Res>;
+abstract class _$$AudioAssignedEventImplCopyWith<$Res> {
+  factory _$$AudioAssignedEventImplCopyWith(_$AudioAssignedEventImpl value,
+          $Res Function(_$AudioAssignedEventImpl) then) =
+      __$$AudioAssignedEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AudioAssignedEventCopyWithImpl<$Res>
-    extends _$DrawerEventCopyWithImpl<$Res>
-    implements _$$AudioAssignedEventCopyWith<$Res> {
-  __$$AudioAssignedEventCopyWithImpl(
-      _$AudioAssignedEvent _value, $Res Function(_$AudioAssignedEvent) _then)
-      : super(_value, (v) => _then(v as _$AudioAssignedEvent));
-
-  @override
-  _$AudioAssignedEvent get _value => super._value as _$AudioAssignedEvent;
+class __$$AudioAssignedEventImplCopyWithImpl<$Res>
+    extends _$DrawerEventCopyWithImpl<$Res, _$AudioAssignedEventImpl>
+    implements _$$AudioAssignedEventImplCopyWith<$Res> {
+  __$$AudioAssignedEventImplCopyWithImpl(_$AudioAssignedEventImpl _value,
+      $Res Function(_$AudioAssignedEventImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AudioAssignedEvent implements AudioAssignedEvent {
-  const _$AudioAssignedEvent();
+class _$AudioAssignedEventImpl implements AudioAssignedEvent {
+  const _$AudioAssignedEventImpl();
 
   @override
   String toString() {
@@ -110,9 +109,9 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AudioAssignedEvent);
+        (other.runtimeType == runtimeType && other is _$AudioAssignedEventImpl);
   }
 
   @override
@@ -131,9 +130,9 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? audioAssignedEvent,
-    TResult Function()? homePageLaunchedEvent,
-    TResult Function()? userAudioUploadedEvent,
+    TResult? Function()? audioAssignedEvent,
+    TResult? Function()? homePageLaunchedEvent,
+    TResult? Function()? userAudioUploadedEvent,
   }) {
     return audioAssignedEvent?.call();
   }
@@ -167,9 +166,9 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AudioAssignedEvent value)? audioAssignedEvent,
-    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
-    TResult Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
+    TResult? Function(AudioAssignedEvent value)? audioAssignedEvent,
+    TResult? Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult? Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
   }) {
     return audioAssignedEvent?.call(this);
   }
@@ -190,32 +189,30 @@ class _$AudioAssignedEvent implements AudioAssignedEvent {
 }
 
 abstract class AudioAssignedEvent implements DrawerEvent {
-  const factory AudioAssignedEvent() = _$AudioAssignedEvent;
+  const factory AudioAssignedEvent() = _$AudioAssignedEventImpl;
 }
 
 /// @nodoc
-abstract class _$$HomePageLaunchedEventCopyWith<$Res> {
-  factory _$$HomePageLaunchedEventCopyWith(_$HomePageLaunchedEvent value,
-          $Res Function(_$HomePageLaunchedEvent) then) =
-      __$$HomePageLaunchedEventCopyWithImpl<$Res>;
+abstract class _$$HomePageLaunchedEventImplCopyWith<$Res> {
+  factory _$$HomePageLaunchedEventImplCopyWith(
+          _$HomePageLaunchedEventImpl value,
+          $Res Function(_$HomePageLaunchedEventImpl) then) =
+      __$$HomePageLaunchedEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomePageLaunchedEventCopyWithImpl<$Res>
-    extends _$DrawerEventCopyWithImpl<$Res>
-    implements _$$HomePageLaunchedEventCopyWith<$Res> {
-  __$$HomePageLaunchedEventCopyWithImpl(_$HomePageLaunchedEvent _value,
-      $Res Function(_$HomePageLaunchedEvent) _then)
-      : super(_value, (v) => _then(v as _$HomePageLaunchedEvent));
-
-  @override
-  _$HomePageLaunchedEvent get _value => super._value as _$HomePageLaunchedEvent;
+class __$$HomePageLaunchedEventImplCopyWithImpl<$Res>
+    extends _$DrawerEventCopyWithImpl<$Res, _$HomePageLaunchedEventImpl>
+    implements _$$HomePageLaunchedEventImplCopyWith<$Res> {
+  __$$HomePageLaunchedEventImplCopyWithImpl(_$HomePageLaunchedEventImpl _value,
+      $Res Function(_$HomePageLaunchedEventImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
-  const _$HomePageLaunchedEvent();
+class _$HomePageLaunchedEventImpl implements HomePageLaunchedEvent {
+  const _$HomePageLaunchedEventImpl();
 
   @override
   String toString() {
@@ -223,9 +220,10 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomePageLaunchedEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$HomePageLaunchedEventImpl);
   }
 
   @override
@@ -244,9 +242,9 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? audioAssignedEvent,
-    TResult Function()? homePageLaunchedEvent,
-    TResult Function()? userAudioUploadedEvent,
+    TResult? Function()? audioAssignedEvent,
+    TResult? Function()? homePageLaunchedEvent,
+    TResult? Function()? userAudioUploadedEvent,
   }) {
     return homePageLaunchedEvent?.call();
   }
@@ -280,9 +278,9 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AudioAssignedEvent value)? audioAssignedEvent,
-    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
-    TResult Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
+    TResult? Function(AudioAssignedEvent value)? audioAssignedEvent,
+    TResult? Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult? Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
   }) {
     return homePageLaunchedEvent?.call(this);
   }
@@ -303,33 +301,31 @@ class _$HomePageLaunchedEvent implements HomePageLaunchedEvent {
 }
 
 abstract class HomePageLaunchedEvent implements DrawerEvent {
-  const factory HomePageLaunchedEvent() = _$HomePageLaunchedEvent;
+  const factory HomePageLaunchedEvent() = _$HomePageLaunchedEventImpl;
 }
 
 /// @nodoc
-abstract class _$$UserAudioUploadedEventCopyWith<$Res> {
-  factory _$$UserAudioUploadedEventCopyWith(_$UserAudioUploadedEvent value,
-          $Res Function(_$UserAudioUploadedEvent) then) =
-      __$$UserAudioUploadedEventCopyWithImpl<$Res>;
+abstract class _$$UserAudioUploadedEventImplCopyWith<$Res> {
+  factory _$$UserAudioUploadedEventImplCopyWith(
+          _$UserAudioUploadedEventImpl value,
+          $Res Function(_$UserAudioUploadedEventImpl) then) =
+      __$$UserAudioUploadedEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserAudioUploadedEventCopyWithImpl<$Res>
-    extends _$DrawerEventCopyWithImpl<$Res>
-    implements _$$UserAudioUploadedEventCopyWith<$Res> {
-  __$$UserAudioUploadedEventCopyWithImpl(_$UserAudioUploadedEvent _value,
-      $Res Function(_$UserAudioUploadedEvent) _then)
-      : super(_value, (v) => _then(v as _$UserAudioUploadedEvent));
-
-  @override
-  _$UserAudioUploadedEvent get _value =>
-      super._value as _$UserAudioUploadedEvent;
+class __$$UserAudioUploadedEventImplCopyWithImpl<$Res>
+    extends _$DrawerEventCopyWithImpl<$Res, _$UserAudioUploadedEventImpl>
+    implements _$$UserAudioUploadedEventImplCopyWith<$Res> {
+  __$$UserAudioUploadedEventImplCopyWithImpl(
+      _$UserAudioUploadedEventImpl _value,
+      $Res Function(_$UserAudioUploadedEventImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UserAudioUploadedEvent implements UserAudioUploadedEvent {
-  const _$UserAudioUploadedEvent();
+class _$UserAudioUploadedEventImpl implements UserAudioUploadedEvent {
+  const _$UserAudioUploadedEventImpl();
 
   @override
   String toString() {
@@ -337,9 +333,10 @@ class _$UserAudioUploadedEvent implements UserAudioUploadedEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserAudioUploadedEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$UserAudioUploadedEventImpl);
   }
 
   @override
@@ -358,9 +355,9 @@ class _$UserAudioUploadedEvent implements UserAudioUploadedEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? audioAssignedEvent,
-    TResult Function()? homePageLaunchedEvent,
-    TResult Function()? userAudioUploadedEvent,
+    TResult? Function()? audioAssignedEvent,
+    TResult? Function()? homePageLaunchedEvent,
+    TResult? Function()? userAudioUploadedEvent,
   }) {
     return userAudioUploadedEvent?.call();
   }
@@ -394,9 +391,9 @@ class _$UserAudioUploadedEvent implements UserAudioUploadedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AudioAssignedEvent value)? audioAssignedEvent,
-    TResult Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
-    TResult Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
+    TResult? Function(AudioAssignedEvent value)? audioAssignedEvent,
+    TResult? Function(HomePageLaunchedEvent value)? homePageLaunchedEvent,
+    TResult? Function(UserAudioUploadedEvent value)? userAudioUploadedEvent,
   }) {
     return userAudioUploadedEvent?.call(this);
   }
@@ -417,7 +414,7 @@ class _$UserAudioUploadedEvent implements UserAudioUploadedEvent {
 }
 
 abstract class UserAudioUploadedEvent implements DrawerEvent {
-  const factory UserAudioUploadedEvent() = _$UserAudioUploadedEvent;
+  const factory UserAudioUploadedEvent() = _$UserAudioUploadedEventImpl;
 }
 
 /// @nodoc
@@ -438,7 +435,8 @@ mixin _$DrawerState {
 abstract class $DrawerStateCopyWith<$Res> {
   factory $DrawerStateCopyWith(
           DrawerState value, $Res Function(DrawerState) then) =
-      _$DrawerStateCopyWithImpl<$Res>;
+      _$DrawerStateCopyWithImpl<$Res, DrawerState>;
+  @useResult
   $Res call(
       {List<Audio> audios,
       Map<String, dynamic>? batteryFullAudio,
@@ -447,48 +445,52 @@ abstract class $DrawerStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DrawerStateCopyWithImpl<$Res> implements $DrawerStateCopyWith<$Res> {
+class _$DrawerStateCopyWithImpl<$Res, $Val extends DrawerState>
+    implements $DrawerStateCopyWith<$Res> {
   _$DrawerStateCopyWithImpl(this._value, this._then);
 
-  final DrawerState _value;
   // ignore: unused_field
-  final $Res Function(DrawerState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? audios = freezed,
+    Object? audios = null,
     Object? batteryFullAudio = freezed,
     Object? chargingAudio = freezed,
     Object? dischargingAudio = freezed,
   }) {
     return _then(_value.copyWith(
-      audios: audios == freezed
+      audios: null == audios
           ? _value.audios
           : audios // ignore: cast_nullable_to_non_nullable
               as List<Audio>,
-      batteryFullAudio: batteryFullAudio == freezed
+      batteryFullAudio: freezed == batteryFullAudio
           ? _value.batteryFullAudio
           : batteryFullAudio // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      chargingAudio: chargingAudio == freezed
+      chargingAudio: freezed == chargingAudio
           ? _value.chargingAudio
           : chargingAudio // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      dischargingAudio: dischargingAudio == freezed
+      dischargingAudio: freezed == dischargingAudio
           ? _value.dischargingAudio
           : dischargingAudio // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_DrawerStateCopyWith<$Res>
+abstract class _$$DrawerStateImplCopyWith<$Res>
     implements $DrawerStateCopyWith<$Res> {
-  factory _$$_DrawerStateCopyWith(
-          _$_DrawerState value, $Res Function(_$_DrawerState) then) =
-      __$$_DrawerStateCopyWithImpl<$Res>;
+  factory _$$DrawerStateImplCopyWith(
+          _$DrawerStateImpl value, $Res Function(_$DrawerStateImpl) then) =
+      __$$DrawerStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<Audio> audios,
       Map<String, dynamic>? batteryFullAudio,
@@ -497,36 +499,35 @@ abstract class _$$_DrawerStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DrawerStateCopyWithImpl<$Res> extends _$DrawerStateCopyWithImpl<$Res>
-    implements _$$_DrawerStateCopyWith<$Res> {
-  __$$_DrawerStateCopyWithImpl(
-      _$_DrawerState _value, $Res Function(_$_DrawerState) _then)
-      : super(_value, (v) => _then(v as _$_DrawerState));
+class __$$DrawerStateImplCopyWithImpl<$Res>
+    extends _$DrawerStateCopyWithImpl<$Res, _$DrawerStateImpl>
+    implements _$$DrawerStateImplCopyWith<$Res> {
+  __$$DrawerStateImplCopyWithImpl(
+      _$DrawerStateImpl _value, $Res Function(_$DrawerStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_DrawerState get _value => super._value as _$_DrawerState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? audios = freezed,
+    Object? audios = null,
     Object? batteryFullAudio = freezed,
     Object? chargingAudio = freezed,
     Object? dischargingAudio = freezed,
   }) {
-    return _then(_$_DrawerState(
-      audios: audios == freezed
+    return _then(_$DrawerStateImpl(
+      audios: null == audios
           ? _value._audios
           : audios // ignore: cast_nullable_to_non_nullable
               as List<Audio>,
-      batteryFullAudio: batteryFullAudio == freezed
+      batteryFullAudio: freezed == batteryFullAudio
           ? _value._batteryFullAudio
           : batteryFullAudio // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      chargingAudio: chargingAudio == freezed
+      chargingAudio: freezed == chargingAudio
           ? _value._chargingAudio
           : chargingAudio // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      dischargingAudio: dischargingAudio == freezed
+      dischargingAudio: freezed == dischargingAudio
           ? _value._dischargingAudio
           : dischargingAudio // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
@@ -536,8 +537,8 @@ class __$$_DrawerStateCopyWithImpl<$Res> extends _$DrawerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DrawerState implements _DrawerState {
-  const _$_DrawerState(
+class _$DrawerStateImpl implements _DrawerState {
+  const _$DrawerStateImpl(
       {required final List<Audio> audios,
       required final Map<String, dynamic>? batteryFullAudio,
       required final Map<String, dynamic>? chargingAudio,
@@ -550,6 +551,7 @@ class _$_DrawerState implements _DrawerState {
   final List<Audio> _audios;
   @override
   List<Audio> get audios {
+    if (_audios is EqualUnmodifiableListView) return _audios;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_audios);
   }
@@ -559,6 +561,7 @@ class _$_DrawerState implements _DrawerState {
   Map<String, dynamic>? get batteryFullAudio {
     final value = _batteryFullAudio;
     if (value == null) return null;
+    if (_batteryFullAudio is EqualUnmodifiableMapView) return _batteryFullAudio;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -568,6 +571,7 @@ class _$_DrawerState implements _DrawerState {
   Map<String, dynamic>? get chargingAudio {
     final value = _chargingAudio;
     if (value == null) return null;
+    if (_chargingAudio is EqualUnmodifiableMapView) return _chargingAudio;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -577,6 +581,7 @@ class _$_DrawerState implements _DrawerState {
   Map<String, dynamic>? get dischargingAudio {
     final value = _dischargingAudio;
     if (value == null) return null;
+    if (_dischargingAudio is EqualUnmodifiableMapView) return _dischargingAudio;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -587,10 +592,10 @@ class _$_DrawerState implements _DrawerState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DrawerState &&
+            other is _$DrawerStateImpl &&
             const DeepCollectionEquality().equals(other._audios, _audios) &&
             const DeepCollectionEquality()
                 .equals(other._batteryFullAudio, _batteryFullAudio) &&
@@ -610,29 +615,29 @@ class _$_DrawerState implements _DrawerState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_DrawerStateCopyWith<_$_DrawerState> get copyWith =>
-      __$$_DrawerStateCopyWithImpl<_$_DrawerState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DrawerStateImplCopyWith<_$DrawerStateImpl> get copyWith =>
+      __$$DrawerStateImplCopyWithImpl<_$DrawerStateImpl>(this, _$identity);
 }
 
 abstract class _DrawerState implements DrawerState {
   const factory _DrawerState(
-      {required final List<Audio> audios,
-      required final Map<String, dynamic>? batteryFullAudio,
-      required final Map<String, dynamic>? chargingAudio,
-      required final Map<String, dynamic>? dischargingAudio}) = _$_DrawerState;
+          {required final List<Audio> audios,
+          required final Map<String, dynamic>? batteryFullAudio,
+          required final Map<String, dynamic>? chargingAudio,
+          required final Map<String, dynamic>? dischargingAudio}) =
+      _$DrawerStateImpl;
 
   @override
-  List<Audio> get audios => throw _privateConstructorUsedError;
+  List<Audio> get audios;
   @override
-  Map<String, dynamic>? get batteryFullAudio =>
-      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get batteryFullAudio;
   @override
-  Map<String, dynamic>? get chargingAudio => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get chargingAudio;
   @override
-  Map<String, dynamic>? get dischargingAudio =>
-      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get dischargingAudio;
   @override
   @JsonKey(ignore: true)
-  _$$_DrawerStateCopyWith<_$_DrawerState> get copyWith =>
+  _$$DrawerStateImplCopyWith<_$DrawerStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

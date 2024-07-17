@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 class AhhhhhhButton extends StatelessWidget {
   /// @nodoc
   const AhhhhhhButton({
-    super.key,
-    this.color = Palettes.orangeYellow,
-    this.fontSize = 35.0,
     required this.onPressed,
     required this.title,
+    this.color = Palettes.orangeYellow,
+    this.fontSize = 35.0,
+    super.key,
   });
 
   /// @nodoc

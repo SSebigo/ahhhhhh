@@ -1,113 +1,139 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
-import 'package:ahhhhhh/presentation/pages/about_page.dart' as _i1;
-import 'package:ahhhhhh/presentation/pages/changelog_page.dart' as _i2;
-import 'package:ahhhhhh/presentation/pages/home_page.dart' as _i3;
-import 'package:ahhhhhh/presentation/pages/onboarding_page.dart' as _i4;
-import 'package:ahhhhhh/presentation/pages/splash_page.dart' as _i5;
-import 'package:ahhhhhh/presentation/pages/upload_audio_page.dart' as _i6;
-import 'package:auto_route/auto_route.dart' as _i7;
-import 'package:flutter/material.dart' as _i8;
+part of 'router.dart';
 
-class AppRouter extends _i7.RootStackRouter {
-  AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i7.PageFactory> pagesMap = {
+  final Map<String, PageFactory> pagesMap = {
     AboutRoute.name: (routeData) {
-      return _i7.AdaptivePage<dynamic>(
-          routeData: routeData, child: const _i1.AboutPage());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AboutPage(),
+      );
     },
     ChangelogRoute.name: (routeData) {
-      return _i7.AdaptivePage<dynamic>(
-          routeData: routeData, child: const _i2.ChangelogPage());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ChangelogPage(),
+      );
     },
     HomeRoute.name: (routeData) {
-      return _i7.AdaptivePage<dynamic>(
-          routeData: routeData, child: const _i3.HomePage());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
+      );
     },
     OnboardingRoute.name: (routeData) {
-      return _i7.AdaptivePage<dynamic>(
-          routeData: routeData, child: const _i4.OnboardingPage());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OnboardingPage(),
+      );
     },
     SplashRoute.name: (routeData) {
-      return _i7.AdaptivePage<dynamic>(
-          routeData: routeData, child: const _i5.SplashPage());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SplashPage(),
+      );
     },
     UploadAudioRoute.name: (routeData) {
-      return _i7.AdaptivePage<dynamic>(
-          routeData: routeData, child: const _i6.UploadAudioPage());
-    }
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const UploadAudioPage(),
+      );
+    },
   };
-
-  @override
-  List<_i7.RouteConfig> get routes => [
-        _i7.RouteConfig(AboutRoute.name, path: '/about-page'),
-        _i7.RouteConfig(ChangelogRoute.name, path: '/changelog-page'),
-        _i7.RouteConfig(HomeRoute.name, path: '/home-page'),
-        _i7.RouteConfig(OnboardingRoute.name, path: '/onboarding-page'),
-        _i7.RouteConfig(SplashRoute.name, path: '/'),
-        _i7.RouteConfig(UploadAudioRoute.name, path: '/upload-audio-page')
-      ];
 }
 
 /// generated route for
-/// [_i1.AboutPage]
-class AboutRoute extends _i7.PageRouteInfo<void> {
-  const AboutRoute() : super(AboutRoute.name, path: '/about-page');
+/// [AboutPage]
+class AboutRoute extends PageRouteInfo<void> {
+  const AboutRoute({List<PageRouteInfo>? children})
+      : super(
+          AboutRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'AboutRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i2.ChangelogPage]
-class ChangelogRoute extends _i7.PageRouteInfo<void> {
-  const ChangelogRoute() : super(ChangelogRoute.name, path: '/changelog-page');
+/// [ChangelogPage]
+class ChangelogRoute extends PageRouteInfo<void> {
+  const ChangelogRoute({List<PageRouteInfo>? children})
+      : super(
+          ChangelogRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'ChangelogRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i3.HomePage]
-class HomeRoute extends _i7.PageRouteInfo<void> {
-  const HomeRoute() : super(HomeRoute.name, path: '/home-page');
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i4.OnboardingPage]
-class OnboardingRoute extends _i7.PageRouteInfo<void> {
-  const OnboardingRoute()
-      : super(OnboardingRoute.name, path: '/onboarding-page');
+/// [OnboardingPage]
+class OnboardingRoute extends PageRouteInfo<void> {
+  const OnboardingRoute({List<PageRouteInfo>? children})
+      : super(
+          OnboardingRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'OnboardingRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.SplashPage]
-class SplashRoute extends _i7.PageRouteInfo<void> {
-  const SplashRoute() : super(SplashRoute.name, path: '/');
+/// [SplashPage]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute({List<PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'SplashRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i6.UploadAudioPage]
-class UploadAudioRoute extends _i7.PageRouteInfo<void> {
-  const UploadAudioRoute()
-      : super(UploadAudioRoute.name, path: '/upload-audio-page');
+/// [UploadAudioPage]
+class UploadAudioRoute extends PageRouteInfo<void> {
+  const UploadAudioRoute({List<PageRouteInfo>? children})
+      : super(
+          UploadAudioRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'UploadAudioRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

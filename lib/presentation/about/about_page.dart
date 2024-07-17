@@ -1,14 +1,14 @@
 import 'package:ahhhhhh/application/about/about_bloc.dart';
 import 'package:ahhhhhh/injection.dart';
-import 'package:ahhhhhh/presentation/layouts/about/about_body_layout.dart';
+import 'package:ahhhhhh/presentation/about/about_layout.dart';
 import 'package:ahhhhhh/utils/themes.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// @nodoc
+@RoutePage()
 class AboutPage extends StatelessWidget {
-  /// @nodoc
   const AboutPage({super.key});
 
   @override
@@ -18,7 +18,7 @@ class AboutPage extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Themes.wineLightTheme(),
+      value: Themes.ahhhhhhLightTheme(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('ABOUT'),
@@ -30,7 +30,7 @@ class AboutPage extends StatelessWidget {
         body: BlocProvider(
           create: (context) => getIt<AboutBloc>()
             ..add(const AboutEvent.aboutPageLaunchedEvent()),
-          child: const AboutBodyLayout(),
+          child: const AboutLayout(),
         ),
       ),
     );

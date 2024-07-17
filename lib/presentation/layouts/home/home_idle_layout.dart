@@ -10,8 +10,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 class HomeIdleLayout extends StatelessWidget {
   /// @nodoc
   const HomeIdleLayout({
-    super.key,
     required this.bannerAd,
+    super.key,
   });
 
   /// @nodoc

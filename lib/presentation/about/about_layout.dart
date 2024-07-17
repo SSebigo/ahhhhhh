@@ -1,14 +1,11 @@
 import 'package:ahhhhhh/application/about/about_bloc.dart';
-import 'package:ahhhhhh/utils/constants.dart';
 import 'package:ahhhhhh/utils/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-/// @nodoc
-class AboutBodyLayout extends StatelessWidget {
-  /// @nodoc
-  const AboutBodyLayout({super.key});
+class AboutLayout extends StatelessWidget {
+  const AboutLayout({super.key});
 
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
@@ -33,8 +30,8 @@ class AboutBodyLayout extends StatelessWidget {
               ),
             ),
             subtitle: BlocBuilder<AboutBloc, AboutState>(
-              builder: (context, aboutState) {
-                return Text(aboutState.version);
+              builder: (context, state) {
+                return Text(state.version);
               },
             ),
           ),

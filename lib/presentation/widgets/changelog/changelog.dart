@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class Changelog extends StatelessWidget {
   /// @nodoc
   const Changelog({
-    super.key,
-    this.changes = const <String>[],
     required this.version,
+    this.changes = const <String>[],
+    super.key,
   });
 
   /// @nodoc

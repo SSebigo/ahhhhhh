@@ -1,4 +1,4 @@
-import 'package:ahhhhhh/presentation/routes/router.gr.dart';
+import 'package:ahhhhhh/presentation/routes/router.dart';
 import 'package:ahhhhhh/utils/getters.dart';
 import 'package:ahhhhhh/utils/themes.dart';
 import 'package:auto_route/auto_route.dart';
@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-/// @nodoc
+@RoutePage()
 class OnboardingPage extends StatelessWidget with Getters {
   /// @nodoc
   const OnboardingPage({super.key});
@@ -20,7 +20,7 @@ class OnboardingPage extends StatelessWidget with Getters {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Themes.wineLightTheme(),
+      value: Themes.ahhhhhhLightTheme(),
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(

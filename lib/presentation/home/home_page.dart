@@ -3,14 +3,16 @@ import 'package:ahhhhhh/application/drawer/drawer_bloc.dart';
 import 'package:ahhhhhh/application/home/home_bloc.dart';
 import 'package:ahhhhhh/application/visual/visual_bloc.dart';
 import 'package:ahhhhhh/injection.dart';
+import 'package:ahhhhhh/presentation/home/home_layout.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_body_layout.dart';
 import 'package:ahhhhhh/presentation/layouts/home/home_end_drawer.dart';
 import 'package:ahhhhhh/utils/themes.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// @nodoc
+@RoutePage()
 class HomePage extends StatefulWidget {
   /// @nodoc
   const HomePage({super.key});
@@ -33,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Themes.wineLightTheme(),
+      value: Themes.ahhhhhhLightTheme(),
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
@@ -56,7 +58,7 @@ class _HomePageState extends State<HomePage> {
             elevation: 0,
             systemOverlayStyle: SystemUiOverlayStyle.dark,
           ),
-          body: const HomeBodyLayout(),
+          body: const HomeLayout(),
           endDrawer: const HomeEndDrawer(),
         ),
       ),

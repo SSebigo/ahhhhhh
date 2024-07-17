@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class HomeDrawerSectionTile extends StatelessWidget {
   /// @nodoc
   const HomeDrawerSectionTile({
-    super.key,
     required this.title,
+    super.key,
   });
 
   /// @nodoc

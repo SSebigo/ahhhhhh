@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_audio_form_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'upload_audio_form_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UploadAudioFormEvent {
@@ -25,9 +25,9 @@ mixin _$UploadAudioFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEvent,
-    TResult Function()? saveUserAudioEvent,
-    TResult Function()? uploadUserAudioEvent,
+    TResult? Function(String name)? nameChangedEvent,
+    TResult? Function()? saveUserAudioEvent,
+    TResult? Function()? uploadUserAudioEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$UploadAudioFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEvent value)? nameChangedEvent,
-    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
-    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    TResult? Function(NameChangedEvent value)? nameChangedEvent,
+    TResult? Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult? Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,44 +66,45 @@ mixin _$UploadAudioFormEvent {
 abstract class $UploadAudioFormEventCopyWith<$Res> {
   factory $UploadAudioFormEventCopyWith(UploadAudioFormEvent value,
           $Res Function(UploadAudioFormEvent) then) =
-      _$UploadAudioFormEventCopyWithImpl<$Res>;
+      _$UploadAudioFormEventCopyWithImpl<$Res, UploadAudioFormEvent>;
 }
 
 /// @nodoc
-class _$UploadAudioFormEventCopyWithImpl<$Res>
+class _$UploadAudioFormEventCopyWithImpl<$Res,
+        $Val extends UploadAudioFormEvent>
     implements $UploadAudioFormEventCopyWith<$Res> {
   _$UploadAudioFormEventCopyWithImpl(this._value, this._then);
 
-  final UploadAudioFormEvent _value;
   // ignore: unused_field
-  final $Res Function(UploadAudioFormEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$NameChangedEventCopyWith<$Res> {
-  factory _$$NameChangedEventCopyWith(
-          _$NameChangedEvent value, $Res Function(_$NameChangedEvent) then) =
-      __$$NameChangedEventCopyWithImpl<$Res>;
+abstract class _$$NameChangedEventImplCopyWith<$Res> {
+  factory _$$NameChangedEventImplCopyWith(_$NameChangedEventImpl value,
+          $Res Function(_$NameChangedEventImpl) then) =
+      __$$NameChangedEventImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$NameChangedEventCopyWithImpl<$Res>
-    extends _$UploadAudioFormEventCopyWithImpl<$Res>
-    implements _$$NameChangedEventCopyWith<$Res> {
-  __$$NameChangedEventCopyWithImpl(
-      _$NameChangedEvent _value, $Res Function(_$NameChangedEvent) _then)
-      : super(_value, (v) => _then(v as _$NameChangedEvent));
+class __$$NameChangedEventImplCopyWithImpl<$Res>
+    extends _$UploadAudioFormEventCopyWithImpl<$Res, _$NameChangedEventImpl>
+    implements _$$NameChangedEventImplCopyWith<$Res> {
+  __$$NameChangedEventImplCopyWithImpl(_$NameChangedEventImpl _value,
+      $Res Function(_$NameChangedEventImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$NameChangedEvent get _value => super._value as _$NameChangedEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
   }) {
-    return _then(_$NameChangedEvent(
-      name == freezed
+    return _then(_$NameChangedEventImpl(
+      null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -113,8 +114,8 @@ class __$$NameChangedEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NameChangedEvent implements NameChangedEvent {
-  const _$NameChangedEvent(this.name);
+class _$NameChangedEventImpl implements NameChangedEvent {
+  const _$NameChangedEventImpl(this.name);
 
   @override
   final String name;
@@ -125,21 +126,22 @@ class _$NameChangedEvent implements NameChangedEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NameChangedEvent &&
-            const DeepCollectionEquality().equals(other.name, name));
+            other is _$NameChangedEventImpl &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
-  _$$NameChangedEventCopyWith<_$NameChangedEvent> get copyWith =>
-      __$$NameChangedEventCopyWithImpl<_$NameChangedEvent>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NameChangedEventImplCopyWith<_$NameChangedEventImpl> get copyWith =>
+      __$$NameChangedEventImplCopyWithImpl<_$NameChangedEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -154,9 +156,9 @@ class _$NameChangedEvent implements NameChangedEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEvent,
-    TResult Function()? saveUserAudioEvent,
-    TResult Function()? uploadUserAudioEvent,
+    TResult? Function(String name)? nameChangedEvent,
+    TResult? Function()? saveUserAudioEvent,
+    TResult? Function()? uploadUserAudioEvent,
   }) {
     return nameChangedEvent?.call(name);
   }
@@ -188,9 +190,9 @@ class _$NameChangedEvent implements NameChangedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEvent value)? nameChangedEvent,
-    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
-    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    TResult? Function(NameChangedEvent value)? nameChangedEvent,
+    TResult? Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult? Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) {
     return nameChangedEvent?.call(this);
   }
@@ -211,37 +213,34 @@ class _$NameChangedEvent implements NameChangedEvent {
 }
 
 abstract class NameChangedEvent implements UploadAudioFormEvent {
-  const factory NameChangedEvent(final String name) = _$NameChangedEvent;
+  const factory NameChangedEvent(final String name) = _$NameChangedEventImpl;
 
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @JsonKey(ignore: true)
-  _$$NameChangedEventCopyWith<_$NameChangedEvent> get copyWith =>
+  _$$NameChangedEventImplCopyWith<_$NameChangedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SaveUserAudioEventCopyWith<$Res> {
-  factory _$$SaveUserAudioEventCopyWith(_$SaveUserAudioEvent value,
-          $Res Function(_$SaveUserAudioEvent) then) =
-      __$$SaveUserAudioEventCopyWithImpl<$Res>;
+abstract class _$$SaveUserAudioEventImplCopyWith<$Res> {
+  factory _$$SaveUserAudioEventImplCopyWith(_$SaveUserAudioEventImpl value,
+          $Res Function(_$SaveUserAudioEventImpl) then) =
+      __$$SaveUserAudioEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SaveUserAudioEventCopyWithImpl<$Res>
-    extends _$UploadAudioFormEventCopyWithImpl<$Res>
-    implements _$$SaveUserAudioEventCopyWith<$Res> {
-  __$$SaveUserAudioEventCopyWithImpl(
-      _$SaveUserAudioEvent _value, $Res Function(_$SaveUserAudioEvent) _then)
-      : super(_value, (v) => _then(v as _$SaveUserAudioEvent));
-
-  @override
-  _$SaveUserAudioEvent get _value => super._value as _$SaveUserAudioEvent;
+class __$$SaveUserAudioEventImplCopyWithImpl<$Res>
+    extends _$UploadAudioFormEventCopyWithImpl<$Res, _$SaveUserAudioEventImpl>
+    implements _$$SaveUserAudioEventImplCopyWith<$Res> {
+  __$$SaveUserAudioEventImplCopyWithImpl(_$SaveUserAudioEventImpl _value,
+      $Res Function(_$SaveUserAudioEventImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SaveUserAudioEvent implements SaveUserAudioEvent {
-  const _$SaveUserAudioEvent();
+class _$SaveUserAudioEventImpl implements SaveUserAudioEvent {
+  const _$SaveUserAudioEventImpl();
 
   @override
   String toString() {
@@ -249,9 +248,9 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SaveUserAudioEvent);
+        (other.runtimeType == runtimeType && other is _$SaveUserAudioEventImpl);
   }
 
   @override
@@ -270,9 +269,9 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEvent,
-    TResult Function()? saveUserAudioEvent,
-    TResult Function()? uploadUserAudioEvent,
+    TResult? Function(String name)? nameChangedEvent,
+    TResult? Function()? saveUserAudioEvent,
+    TResult? Function()? uploadUserAudioEvent,
   }) {
     return saveUserAudioEvent?.call();
   }
@@ -304,9 +303,9 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEvent value)? nameChangedEvent,
-    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
-    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    TResult? Function(NameChangedEvent value)? nameChangedEvent,
+    TResult? Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult? Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) {
     return saveUserAudioEvent?.call(this);
   }
@@ -327,32 +326,29 @@ class _$SaveUserAudioEvent implements SaveUserAudioEvent {
 }
 
 abstract class SaveUserAudioEvent implements UploadAudioFormEvent {
-  const factory SaveUserAudioEvent() = _$SaveUserAudioEvent;
+  const factory SaveUserAudioEvent() = _$SaveUserAudioEventImpl;
 }
 
 /// @nodoc
-abstract class _$$UploadUserAudioEventCopyWith<$Res> {
-  factory _$$UploadUserAudioEventCopyWith(_$UploadUserAudioEvent value,
-          $Res Function(_$UploadUserAudioEvent) then) =
-      __$$UploadUserAudioEventCopyWithImpl<$Res>;
+abstract class _$$UploadUserAudioEventImplCopyWith<$Res> {
+  factory _$$UploadUserAudioEventImplCopyWith(_$UploadUserAudioEventImpl value,
+          $Res Function(_$UploadUserAudioEventImpl) then) =
+      __$$UploadUserAudioEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UploadUserAudioEventCopyWithImpl<$Res>
-    extends _$UploadAudioFormEventCopyWithImpl<$Res>
-    implements _$$UploadUserAudioEventCopyWith<$Res> {
-  __$$UploadUserAudioEventCopyWithImpl(_$UploadUserAudioEvent _value,
-      $Res Function(_$UploadUserAudioEvent) _then)
-      : super(_value, (v) => _then(v as _$UploadUserAudioEvent));
-
-  @override
-  _$UploadUserAudioEvent get _value => super._value as _$UploadUserAudioEvent;
+class __$$UploadUserAudioEventImplCopyWithImpl<$Res>
+    extends _$UploadAudioFormEventCopyWithImpl<$Res, _$UploadUserAudioEventImpl>
+    implements _$$UploadUserAudioEventImplCopyWith<$Res> {
+  __$$UploadUserAudioEventImplCopyWithImpl(_$UploadUserAudioEventImpl _value,
+      $Res Function(_$UploadUserAudioEventImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UploadUserAudioEvent implements UploadUserAudioEvent {
-  const _$UploadUserAudioEvent();
+class _$UploadUserAudioEventImpl implements UploadUserAudioEvent {
+  const _$UploadUserAudioEventImpl();
 
   @override
   String toString() {
@@ -360,9 +356,10 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UploadUserAudioEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$UploadUserAudioEventImpl);
   }
 
   @override
@@ -381,9 +378,9 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChangedEvent,
-    TResult Function()? saveUserAudioEvent,
-    TResult Function()? uploadUserAudioEvent,
+    TResult? Function(String name)? nameChangedEvent,
+    TResult? Function()? saveUserAudioEvent,
+    TResult? Function()? uploadUserAudioEvent,
   }) {
     return uploadUserAudioEvent?.call();
   }
@@ -415,9 +412,9 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChangedEvent value)? nameChangedEvent,
-    TResult Function(SaveUserAudioEvent value)? saveUserAudioEvent,
-    TResult Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
+    TResult? Function(NameChangedEvent value)? nameChangedEvent,
+    TResult? Function(SaveUserAudioEvent value)? saveUserAudioEvent,
+    TResult? Function(UploadUserAudioEvent value)? uploadUserAudioEvent,
   }) {
     return uploadUserAudioEvent?.call(this);
   }
@@ -438,7 +435,7 @@ class _$UploadUserAudioEvent implements UploadUserAudioEvent {
 }
 
 abstract class UploadUserAudioEvent implements UploadAudioFormEvent {
-  const factory UploadUserAudioEvent() = _$UploadUserAudioEvent;
+  const factory UploadUserAudioEvent() = _$UploadUserAudioEventImpl;
 }
 
 /// @nodoc
@@ -458,7 +455,8 @@ mixin _$UploadAudioFormState {
 abstract class $UploadAudioFormStateCopyWith<$Res> {
   factory $UploadAudioFormStateCopyWith(UploadAudioFormState value,
           $Res Function(UploadAudioFormState) then) =
-      _$UploadAudioFormStateCopyWithImpl<$Res>;
+      _$UploadAudioFormStateCopyWithImpl<$Res, UploadAudioFormState>;
+  @useResult
   $Res call(
       {bool audioUploaded,
       bool formCompleted,
@@ -468,54 +466,58 @@ abstract class $UploadAudioFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadAudioFormStateCopyWithImpl<$Res>
+class _$UploadAudioFormStateCopyWithImpl<$Res,
+        $Val extends UploadAudioFormState>
     implements $UploadAudioFormStateCopyWith<$Res> {
   _$UploadAudioFormStateCopyWithImpl(this._value, this._then);
 
-  final UploadAudioFormState _value;
   // ignore: unused_field
-  final $Res Function(UploadAudioFormState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? audioUploaded = freezed,
-    Object? formCompleted = freezed,
-    Object? audioOriginalName = freezed,
-    Object? audioPath = freezed,
-    Object? name = freezed,
+    Object? audioUploaded = null,
+    Object? formCompleted = null,
+    Object? audioOriginalName = null,
+    Object? audioPath = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      audioUploaded: audioUploaded == freezed
+      audioUploaded: null == audioUploaded
           ? _value.audioUploaded
           : audioUploaded // ignore: cast_nullable_to_non_nullable
               as bool,
-      formCompleted: formCompleted == freezed
+      formCompleted: null == formCompleted
           ? _value.formCompleted
           : formCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
-      audioOriginalName: audioOriginalName == freezed
+      audioOriginalName: null == audioOriginalName
           ? _value.audioOriginalName
           : audioOriginalName // ignore: cast_nullable_to_non_nullable
               as String,
-      audioPath: audioPath == freezed
+      audioPath: null == audioPath
           ? _value.audioPath
           : audioPath // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UploadAudioFormStateCopyWith<$Res>
+abstract class _$$UploadAudioFormStateImplCopyWith<$Res>
     implements $UploadAudioFormStateCopyWith<$Res> {
-  factory _$$_UploadAudioFormStateCopyWith(_$_UploadAudioFormState value,
-          $Res Function(_$_UploadAudioFormState) then) =
-      __$$_UploadAudioFormStateCopyWithImpl<$Res>;
+  factory _$$UploadAudioFormStateImplCopyWith(_$UploadAudioFormStateImpl value,
+          $Res Function(_$UploadAudioFormStateImpl) then) =
+      __$$UploadAudioFormStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool audioUploaded,
       bool formCompleted,
@@ -525,42 +527,40 @@ abstract class _$$_UploadAudioFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UploadAudioFormStateCopyWithImpl<$Res>
-    extends _$UploadAudioFormStateCopyWithImpl<$Res>
-    implements _$$_UploadAudioFormStateCopyWith<$Res> {
-  __$$_UploadAudioFormStateCopyWithImpl(_$_UploadAudioFormState _value,
-      $Res Function(_$_UploadAudioFormState) _then)
-      : super(_value, (v) => _then(v as _$_UploadAudioFormState));
+class __$$UploadAudioFormStateImplCopyWithImpl<$Res>
+    extends _$UploadAudioFormStateCopyWithImpl<$Res, _$UploadAudioFormStateImpl>
+    implements _$$UploadAudioFormStateImplCopyWith<$Res> {
+  __$$UploadAudioFormStateImplCopyWithImpl(_$UploadAudioFormStateImpl _value,
+      $Res Function(_$UploadAudioFormStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UploadAudioFormState get _value => super._value as _$_UploadAudioFormState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? audioUploaded = freezed,
-    Object? formCompleted = freezed,
-    Object? audioOriginalName = freezed,
-    Object? audioPath = freezed,
-    Object? name = freezed,
+    Object? audioUploaded = null,
+    Object? formCompleted = null,
+    Object? audioOriginalName = null,
+    Object? audioPath = null,
+    Object? name = null,
   }) {
-    return _then(_$_UploadAudioFormState(
-      audioUploaded: audioUploaded == freezed
+    return _then(_$UploadAudioFormStateImpl(
+      audioUploaded: null == audioUploaded
           ? _value.audioUploaded
           : audioUploaded // ignore: cast_nullable_to_non_nullable
               as bool,
-      formCompleted: formCompleted == freezed
+      formCompleted: null == formCompleted
           ? _value.formCompleted
           : formCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
-      audioOriginalName: audioOriginalName == freezed
+      audioOriginalName: null == audioOriginalName
           ? _value.audioOriginalName
           : audioOriginalName // ignore: cast_nullable_to_non_nullable
               as String,
-      audioPath: audioPath == freezed
+      audioPath: null == audioPath
           ? _value.audioPath
           : audioPath // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -570,8 +570,8 @@ class __$$_UploadAudioFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UploadAudioFormState implements _UploadAudioFormState {
-  const _$_UploadAudioFormState(
+class _$UploadAudioFormStateImpl implements _UploadAudioFormState {
+  const _$UploadAudioFormStateImpl(
       {required this.audioUploaded,
       required this.formCompleted,
       required this.audioOriginalName,
@@ -595,34 +595,32 @@ class _$_UploadAudioFormState implements _UploadAudioFormState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UploadAudioFormState &&
-            const DeepCollectionEquality()
-                .equals(other.audioUploaded, audioUploaded) &&
-            const DeepCollectionEquality()
-                .equals(other.formCompleted, formCompleted) &&
-            const DeepCollectionEquality()
-                .equals(other.audioOriginalName, audioOriginalName) &&
-            const DeepCollectionEquality().equals(other.audioPath, audioPath) &&
-            const DeepCollectionEquality().equals(other.name, name));
+            other is _$UploadAudioFormStateImpl &&
+            (identical(other.audioUploaded, audioUploaded) ||
+                other.audioUploaded == audioUploaded) &&
+            (identical(other.formCompleted, formCompleted) ||
+                other.formCompleted == formCompleted) &&
+            (identical(other.audioOriginalName, audioOriginalName) ||
+                other.audioOriginalName == audioOriginalName) &&
+            (identical(other.audioPath, audioPath) ||
+                other.audioPath == audioPath) &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(audioUploaded),
-      const DeepCollectionEquality().hash(formCompleted),
-      const DeepCollectionEquality().hash(audioOriginalName),
-      const DeepCollectionEquality().hash(audioPath),
-      const DeepCollectionEquality().hash(name));
+  int get hashCode => Object.hash(runtimeType, audioUploaded, formCompleted,
+      audioOriginalName, audioPath, name);
 
   @JsonKey(ignore: true)
   @override
-  _$$_UploadAudioFormStateCopyWith<_$_UploadAudioFormState> get copyWith =>
-      __$$_UploadAudioFormStateCopyWithImpl<_$_UploadAudioFormState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UploadAudioFormStateImplCopyWith<_$UploadAudioFormStateImpl>
+      get copyWith =>
+          __$$UploadAudioFormStateImplCopyWithImpl<_$UploadAudioFormStateImpl>(
+              this, _$identity);
 }
 
 abstract class _UploadAudioFormState implements UploadAudioFormState {
@@ -631,20 +629,20 @@ abstract class _UploadAudioFormState implements UploadAudioFormState {
       required final bool formCompleted,
       required final String audioOriginalName,
       required final String audioPath,
-      required final String name}) = _$_UploadAudioFormState;
+      required final String name}) = _$UploadAudioFormStateImpl;
 
   @override
-  bool get audioUploaded => throw _privateConstructorUsedError;
+  bool get audioUploaded;
   @override
-  bool get formCompleted => throw _privateConstructorUsedError;
+  bool get formCompleted;
   @override
-  String get audioOriginalName => throw _privateConstructorUsedError;
+  String get audioOriginalName;
   @override
-  String get audioPath => throw _privateConstructorUsedError;
+  String get audioPath;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_UploadAudioFormStateCopyWith<_$_UploadAudioFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UploadAudioFormStateImplCopyWith<_$UploadAudioFormStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

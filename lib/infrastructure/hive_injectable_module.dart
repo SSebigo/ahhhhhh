@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:ahhhhhh/domain/models/hive/audio.dart';
 import 'package:ahhhhhh/domain/models/hive/session.dart';
-import 'package:ahhhhhh/utils/constants.dart';
+import 'package:ahhhhhh/utils/constants/hive.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
@@ -23,7 +23,7 @@ abstract class HiveInjectableModule {
     // ignore: cascade_invocations
     Hive.registerAdapter<Session>(SessionAdapter());
 
-    return Hive.openBox<Session>(Constants.sessionsBox);
+    return Hive.openBox<Session>(sessionsBox);
   }
 
   /// @nodoc
@@ -39,6 +39,6 @@ abstract class HiveInjectableModule {
     // ignore: cascade_invocations
     Hive.registerAdapter<Audio>(AudioAdapter());
 
-    return Hive.openBox<Audio>(Constants.audiosBox);
+    return Hive.openBox<Audio>(audiosBox);
   }
 }

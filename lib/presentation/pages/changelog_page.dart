@@ -1,10 +1,11 @@
 import 'package:ahhhhhh/presentation/widgets/changelog/changelog.dart';
 import 'package:ahhhhhh/utils/functions.dart';
 import 'package:ahhhhhh/utils/themes.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/// @nodoc
+@RoutePage()
 class ChangelogPage extends StatelessWidget {
   /// @nodoc
   const ChangelogPage({super.key});
@@ -16,7 +17,7 @@ class ChangelogPage extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Themes.wineLightTheme(),
+      value: Themes.ahhhhhhLightTheme(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('CHANGELOGS'),

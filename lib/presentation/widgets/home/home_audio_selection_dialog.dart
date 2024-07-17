@@ -8,11 +8,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class HomeAudioSelectionDialog extends StatelessWidget {
   /// @nodoc
   const HomeAudioSelectionDialog({
-    super.key,
     required this.onBatteryFullTapped,
     required this.onChargingTapped,
     required this.onDischargingTapped,
     required this.selectedAudio,
+    super.key,
   });
 
   /// @nodoc

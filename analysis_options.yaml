@@ -1,13 +1,10 @@
 include: package:very_good_analysis/analysis_options.yaml
 
-analyzer:
-  errors:
-    missing_required_param: error
-    missing_return: error
-    must_be_immutable: error
-    missing_enum_constant_in_switch: ignore
-    todo: ignore
+linter:
+  rules:
+    public_member_api_docs: false
 
+analyzer:
   exclude:
     - "**/*.config.dart"
     - "**/*.freezed.dart"
