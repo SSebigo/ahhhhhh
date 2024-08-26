@@ -28,8 +28,7 @@ class AboutPage extends StatelessWidget {
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: BlocProvider(
-          create: (context) => getIt<AboutBloc>()
-            ..add(const AboutEvent.aboutPageLaunchedEvent()),
+          create: (context) => getIt<AboutBloc>()..add(const AboutEvent.init()),
           child: const AboutLayout(),
         ),
       ),

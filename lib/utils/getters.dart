@@ -1,35 +1,35 @@
-import 'package:ahhhhhh/domain/models/hive/audio.dart';
-import 'package:ahhhhhh/domain/models/onboarding_content.dart';
-import 'package:ahhhhhh/domain/models/visual.dart';
-import 'package:ahhhhhh/utils/assets.dart';
+import 'package:ahhhhhh/domain/audio/audio.dart';
+import 'package:ahhhhhh/domain/core/onboarding_content.dart';
+import 'package:ahhhhhh/domain/core/visual.dart';
+import 'package:ahhhhhh/utils/constants/assets.dart';
 
 /// @nodoc
 mixin Getters {
   /// @nodoc
   List<OnboardingContent> get onboardingContents => [
-        const OnboardingContent(
-          coverURL: Assets.v2OutImage,
+        OnboardingContent(
+          coverURL: v2OutImage,
           explanation:
               // ignore: lines_longer_than_80_chars
               "We've been working for sometimes now on the v2.0 of ahhhhhh, we hope you'll like it.",
           title: 'v2.0',
         ),
-        const OnboardingContent(
-          coverURL: Assets.plugInImage,
+        OnboardingContent(
+          coverURL: plugInImage,
           explanation:
               // ignore: lines_longer_than_80_chars
               'Simply plug or unplug your smartphone and let the magic happen.',
           title: 'Plug/Unplug',
         ),
-        const OnboardingContent(
-          coverURL: Assets.stateChangeImage,
+        OnboardingContent(
+          coverURL: stateChangeImage,
           explanation:
               // ignore: lines_longer_than_80_chars
               'When you plug/unplug your smarphone the image will change accordingly.',
           title: 'Visual change',
         ),
-        const OnboardingContent(
-          coverURL: Assets.clickImage,
+        OnboardingContent(
+          coverURL: clickImage,
           explanation:
               // ignore: lines_longer_than_80_chars
               'Press the image in the center of the screen to customize.',
@@ -39,183 +39,183 @@ mixin Getters {
 
   /// @nodoc
   List<Audio> get defaultAudios => [
-        Audio(name: 'Ara Ara v1', path: Assets.araAraV1Audio, isAsset: true),
-        Audio(name: 'Bison Yes', path: Assets.bisonYesAudio, isAsset: true),
+        Audio(name: 'Ara Ara v1', path: araAraV1Audio, isAsset: true),
+        Audio(name: 'Bison Yes', path: bisonYesAudio, isAsset: true),
         Audio(
           name: 'Chidori Nagashi!',
-          path: Assets.chidoriNagashiAudio,
+          path: chidoriNagashiAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Damn Boi!',
-          path: Assets.damnBoiAudio,
+          path: damnBoiAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Frieza Laugh v1',
-          path: Assets.friezaLaughV1Audio,
+          path: friezaLaughV1Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Frieza Laugh v2',
-          path: Assets.friezaLaughV2Audio,
+          path: friezaLaughV2Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Hehe Boi',
-          path: Assets.heheBoiAudio,
+          path: heheBoiAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Hollow Ichigo Laugh',
-          path: Assets.hollowIchigoLaughAudio,
+          path: hollowIchigoLaughAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Holy Jesus!',
-          path: Assets.holyJesusAudio,
+          path: holyJesusAudio,
           isAsset: true,
         ),
         Audio(
           name: 'It is wednesday my dudes',
-          path: Assets.itsWednesdayAudio,
+          path: itsWednesdayAudio,
           isAsset: true,
         ),
         Audio(
           name: "It's Over 9000!",
-          path: Assets.itsOver9000Audio,
+          path: itsOver9000Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Joseph Nice',
-          path: Assets.josephNiceAudio,
+          path: josephNiceAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Megumin Yamero!',
-          path: Assets.meguminYameroAudio,
+          path: meguminYameroAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Nani! v1',
-          path: Assets.naniV1Audio,
+          path: naniV1Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Nani! v2',
-          path: Assets.naniV2Audio,
+          path: naniV2Audio,
           isAsset: true,
         ),
         Audio(
           name: 'No! No! No! No! No!',
-          path: Assets.noNoNoNoNoAudio,
+          path: noNoNoNoNoAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Nyaa',
-          path: Assets.nyaaAudio,
+          path: nyaaAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Oh God, oh Jesus',
-          path: Assets.ohGodOhJesusAudio,
+          path: ohGodOhJesusAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Oh My Fucking God!',
-          path: Assets.ohMyFuckingGodAudio,
+          path: ohMyFuckingGodAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Ohhh No!',
-          path: Assets.ohhhNoAudio,
+          path: ohhhNoAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Oi Eu Sou O Goku',
-          path: Assets.oiEuSouOGokuAudio,
+          path: oiEuSouOGokuAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Omae Wa Mo Shindeiru!',
-          path: Assets.omaeWaMoShindeiruAudio,
+          path: omaeWaMoShindeiruAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Pikachuuu!',
-          path: Assets.pikachuuuAudio,
+          path: pikachuuuAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Sate Sate Sate v1',
-          path: Assets.sateSateSateV1Audio,
+          path: sateSateSateV1Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Sate Sate Sate v2',
-          path: Assets.sateSateSateV2Audio,
+          path: sateSateSateV2Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Sate Sate Sate v3',
-          path: Assets.sateSateSateV3Audio,
+          path: sateSateSateV3Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Sate Sate Sate v4',
-          path: Assets.sateSateSateV4Audio,
+          path: sateSateSateV4Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Sate Sate Sate v5',
-          path: Assets.sateSateSateV5Audio,
+          path: sateSateSateV5Audio,
           isAsset: true,
         ),
-        Audio(name: 'Savun', path: Assets.savunAudio, isAsset: true),
-        Audio(name: 'Terry', path: Assets.terryAudio, isAsset: true),
+        Audio(name: 'Savun', path: savunAudio, isAsset: true),
+        Audio(name: 'Terry', path: terryAudio, isAsset: true),
         Audio(
           name: "That's Pretty Good",
-          path: Assets.thatsPrettyGoodAudio,
+          path: thatsPrettyGoodAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Urusai!',
-          path: Assets.urusaiAudio,
+          path: urusaiAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Whoaaa v1',
-          path: Assets.whoaaaV1Audio,
+          path: whoaaaV1Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Yamete kudasai!',
-          path: Assets.yamateV1Audio,
+          path: yamateV1Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Yamete kudasai! Moan v1',
-          path: Assets.yameteMoanV1Audio,
+          path: yameteMoanV1Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Yamete kudasai! Moan v2',
-          path: Assets.yameteMoanV2Audio,
+          path: yameteMoanV2Audio,
           isAsset: true,
         ),
         Audio(
           name: 'Yare Yare Daze',
-          path: Assets.yareYareDazeAudio,
+          path: yareYareDazeAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Yes Yes Yes Omg!',
-          path: Assets.yesYesYesOmgAudio,
+          path: yesYesYesOmgAudio,
           isAsset: true,
         ),
         Audio(
           name: 'Yes Yes Yes Yes Yes!',
-          path: Assets.yesYesYesYesYesAudio,
+          path: yesYesYesYesYesAudio,
           isAsset: true,
         ),
       ];
@@ -223,38 +223,38 @@ mixin Getters {
   /// @nodoc
   List<Visual> get visuals => [
         Visual(
-          chargingVisualPath: Assets.aikuroChargingImage,
-          dischargingVisualPath: Assets.aikuroDischargingImage,
+          chargingVisualPath: aikuroChargingImage,
+          dischargingVisualPath: aikuroDischargingImage,
           name: 'Aikuro',
         ),
         Visual(
-          chargingVisualPath: Assets.animeGirlChargingImage,
-          dischargingVisualPath: Assets.animeGirlDischargingImage,
+          chargingVisualPath: animeGirlChargingImage,
+          dischargingVisualPath: animeGirlDischargingImage,
           name: 'Anime Girl',
         ),
         Visual(
-          chargingVisualPath: Assets.chikaChargingImage,
-          dischargingVisualPath: Assets.chikaDischargingImage,
+          chargingVisualPath: chikaChargingImage,
+          dischargingVisualPath: chikaDischargingImage,
           name: 'Chika',
         ),
         Visual(
-          chargingVisualPath: Assets.drakeChargingImage,
-          dischargingVisualPath: Assets.drakeDischargingImage,
+          chargingVisualPath: drakeChargingImage,
+          dischargingVisualPath: drakeDischargingImage,
           name: 'Drake',
         ),
         Visual(
-          chargingVisualPath: Assets.geordiChargingImage,
-          dischargingVisualPath: Assets.geordiDischargingImage,
+          chargingVisualPath: geordiChargingImage,
+          dischargingVisualPath: geordiDischargingImage,
           name: 'Geordi',
         ),
         Visual(
-          chargingVisualPath: Assets.marioChargingImage,
-          dischargingVisualPath: Assets.marioDischargingImage,
+          chargingVisualPath: marioChargingImage,
+          dischargingVisualPath: marioDischargingImage,
           name: 'Mario',
         ),
         Visual(
-          chargingVisualPath: Assets.yaranaikaChargingImage,
-          dischargingVisualPath: Assets.yaranaikaDischargingImage,
+          chargingVisualPath: yaranaikaChargingImage,
+          dischargingVisualPath: yaranaikaDischargingImage,
           name: 'Yaranaika',
         ),
       ];

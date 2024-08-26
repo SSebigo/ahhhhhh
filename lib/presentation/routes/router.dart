@@ -1,9 +1,8 @@
 import 'package:ahhhhhh/presentation/about/about_page.dart';
+import 'package:ahhhhhh/presentation/changelog/changelog_page.dart';
 import 'package:ahhhhhh/presentation/home/home_page.dart';
-import 'package:ahhhhhh/presentation/pages/changelog_page.dart';
-import 'package:ahhhhhh/presentation/pages/onboarding_page.dart';
-import 'package:ahhhhhh/presentation/pages/splash_page.dart';
-import 'package:ahhhhhh/presentation/pages/upload_audio_page.dart';
+import 'package:ahhhhhh/presentation/onboarding/onboarding_page.dart';
+import 'package:ahhhhhh/presentation/splash/splash_page.dart';
 import 'package:ahhhhhh/utils/constants/router.dart';
 import 'package:auto_route/auto_route.dart';
 
@@ -33,10 +32,6 @@ class AppRouter extends _$AppRouter {
           page: SplashRoute.page,
           path: splashPagePath,
           initial: true,
-        ),
-        AutoRoute(
-          page: UploadAudioRoute.page,
-          path: uploadAudioPagePath,
         ),
       ];
 }

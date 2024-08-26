@@ -1,4 +1,5 @@
 import 'package:ahhhhhh/application/about/about_bloc.dart';
+import 'package:ahhhhhh/utils/constants/urls.dart';
 import 'package:ahhhhhh/utils/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -70,8 +71,8 @@ class AboutLayout extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: const Text(Constants.websiteUrl),
-            onTap: () => _launchUrl(Constants.websiteUrl),
+            subtitle: const Text(websiteUrl),
+            onTap: () => _launchUrl(websiteUrl),
           ),
           ListTile(
             title: const Text(
@@ -82,8 +83,8 @@ class AboutLayout extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: const Text(Constants.githubUrl),
-            onTap: () => _launchUrl(Constants.githubUrl),
+            subtitle: const Text(githubUrl),
+            onTap: () => _launchUrl(githubUrl),
           ),
           SizedBox(height: getSmartBannerHeight(context)),
         ],

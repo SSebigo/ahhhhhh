@@ -12,7 +12,7 @@ part 'about_state.dart';
 class AboutBloc extends Bloc<AboutEvent, AboutState> {
   /// @nodoc
   AboutBloc() : super(AboutState.initial()) {
-    on<AboutPageLaunchedEvent>((value, emit) async {
+    on<Init>((value, emit) async {
       final packageInfo = await PackageInfo.fromPlatform();
 
       emit(

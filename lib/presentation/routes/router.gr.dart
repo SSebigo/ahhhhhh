@@ -45,12 +45,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SplashPage(),
       );
     },
-    UploadAudioRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const UploadAudioPage(),
-      );
-    },
   };
 }
 
@@ -120,20 +114,6 @@ class SplashRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SplashRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [UploadAudioPage]
-class UploadAudioRoute extends PageRouteInfo<void> {
-  const UploadAudioRoute({List<PageRouteInfo>? children})
-      : super(
-          UploadAudioRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'UploadAudioRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

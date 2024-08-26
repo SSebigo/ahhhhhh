@@ -18,34 +18,33 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AboutEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() aboutPageLaunchedEvent,
+    required TResult Function() init,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? aboutPageLaunchedEvent,
+    TResult? Function()? init,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? aboutPageLaunchedEvent,
+    TResult Function()? init,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AboutPageLaunchedEvent value)
-        aboutPageLaunchedEvent,
+    required TResult Function(Init value) init,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AboutPageLaunchedEvent value)? aboutPageLaunchedEvent,
+    TResult? Function(Init value)? init,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AboutPageLaunchedEvent value)? aboutPageLaunchedEvent,
+    TResult Function(Init value)? init,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,38 +69,34 @@ class _$AboutEventCopyWithImpl<$Res, $Val extends AboutEvent>
 }
 
 /// @nodoc
-abstract class _$$AboutPageLaunchedEventImplCopyWith<$Res> {
-  factory _$$AboutPageLaunchedEventImplCopyWith(
-          _$AboutPageLaunchedEventImpl value,
-          $Res Function(_$AboutPageLaunchedEventImpl) then) =
-      __$$AboutPageLaunchedEventImplCopyWithImpl<$Res>;
+abstract class _$$InitImplCopyWith<$Res> {
+  factory _$$InitImplCopyWith(
+          _$InitImpl value, $Res Function(_$InitImpl) then) =
+      __$$InitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AboutPageLaunchedEventImplCopyWithImpl<$Res>
-    extends _$AboutEventCopyWithImpl<$Res, _$AboutPageLaunchedEventImpl>
-    implements _$$AboutPageLaunchedEventImplCopyWith<$Res> {
-  __$$AboutPageLaunchedEventImplCopyWithImpl(
-      _$AboutPageLaunchedEventImpl _value,
-      $Res Function(_$AboutPageLaunchedEventImpl) _then)
+class __$$InitImplCopyWithImpl<$Res>
+    extends _$AboutEventCopyWithImpl<$Res, _$InitImpl>
+    implements _$$InitImplCopyWith<$Res> {
+  __$$InitImplCopyWithImpl(_$InitImpl _value, $Res Function(_$InitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AboutPageLaunchedEventImpl implements AboutPageLaunchedEvent {
-  const _$AboutPageLaunchedEventImpl();
+class _$InitImpl implements Init {
+  const _$InitImpl();
 
   @override
   String toString() {
-    return 'AboutEvent.aboutPageLaunchedEvent()';
+    return 'AboutEvent.init()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AboutPageLaunchedEventImpl);
+        (other.runtimeType == runtimeType && other is _$InitImpl);
   }
 
   @override
@@ -110,27 +105,27 @@ class _$AboutPageLaunchedEventImpl implements AboutPageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() aboutPageLaunchedEvent,
+    required TResult Function() init,
   }) {
-    return aboutPageLaunchedEvent();
+    return init();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? aboutPageLaunchedEvent,
+    TResult? Function()? init,
   }) {
-    return aboutPageLaunchedEvent?.call();
+    return init?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? aboutPageLaunchedEvent,
+    TResult Function()? init,
     required TResult orElse(),
   }) {
-    if (aboutPageLaunchedEvent != null) {
-      return aboutPageLaunchedEvent();
+    if (init != null) {
+      return init();
     }
     return orElse();
   }
@@ -138,35 +133,34 @@ class _$AboutPageLaunchedEventImpl implements AboutPageLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AboutPageLaunchedEvent value)
-        aboutPageLaunchedEvent,
+    required TResult Function(Init value) init,
   }) {
-    return aboutPageLaunchedEvent(this);
+    return init(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AboutPageLaunchedEvent value)? aboutPageLaunchedEvent,
+    TResult? Function(Init value)? init,
   }) {
-    return aboutPageLaunchedEvent?.call(this);
+    return init?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AboutPageLaunchedEvent value)? aboutPageLaunchedEvent,
+    TResult Function(Init value)? init,
     required TResult orElse(),
   }) {
-    if (aboutPageLaunchedEvent != null) {
-      return aboutPageLaunchedEvent(this);
+    if (init != null) {
+      return init(this);
     }
     return orElse();
   }
 }
 
-abstract class AboutPageLaunchedEvent implements AboutEvent {
-  const factory AboutPageLaunchedEvent() = _$AboutPageLaunchedEventImpl;
+abstract class Init implements AboutEvent {
+  const factory Init() = _$InitImpl;
 }
 
 /// @nodoc

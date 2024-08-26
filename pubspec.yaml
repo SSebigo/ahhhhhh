@@ -1,14 +1,14 @@
 name: ahhhhhh
 description: Makes your smartphone moan, scream or laugh when charging, discharging or full.
 
-version: 2.4.0+27
+version: 2.5.0+28
 
 environment:
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
   auto_route: 8.1.3
-  battery: 2.0.3
+  battery_plus: 6.0.1
   bloc: 8.1.4
   cupertino_icons: 1.0.8
   equatable: 2.0.5
@@ -17,34 +17,45 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: 8.1.5
-  flutter_launcher_icons: 0.9.3
+  flutter_foreground_task: 6.2.0
   flutter_local_notifications: 17.1.2
   freezed_annotation: 2.4.1
   get_it: 7.7.0
-  google_mobile_ads: 5.1.0
   hive: 2.2.3
   hive_flutter: 1.1.0
   injectable: 2.4.2
   introduction_screen: 3.1.14
   just_audio: 0.9.38
   logger: 2.3.0
+  oxidized: 6.1.0
   package_info: 2.0.2
   path: 1.9.0
   path_provider: 2.1.3
+  permission_handler: 11.3.1
   url_launcher: 6.2.6
 
 dev_dependencies:
   auto_route_generator: 8.0.0
   build_runner: 2.4.9
+  flutter_launcher_icons: 0.13.1
+  flutter_native_splash: 2.4.0
   freezed: 2.5.2
   hive_generator: 2.0.1
   injectable_generator: 2.6.1
   very_good_analysis: 5.1.0
 
-flutter_icons:
-  android: true
+flutter_launcher_icons:
+  android: "launcher_icon"
   ios: true
   image_path: "assets/launcher/ic_launcher.png"
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/launcher/ic_launcher.png"
+
+  android_12:
+    image: "assets/launcher/ic_launcher.png"
+    icon_background_color: "#ffffff"
 
 flutter:
   uses-material-design: true
