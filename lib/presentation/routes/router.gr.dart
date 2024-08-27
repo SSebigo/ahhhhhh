@@ -9,45 +9,6 @@
 
 part of 'router.dart';
 
-abstract class _$AppRouter extends RootStackRouter {
-  // ignore: unused_element
-  _$AppRouter({super.navigatorKey});
-
-  @override
-  final Map<String, PageFactory> pagesMap = {
-    AboutRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const AboutPage(),
-      );
-    },
-    ChangelogRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChangelogPage(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HomePage(),
-      );
-    },
-    OnboardingRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const OnboardingPage(),
-      );
-    },
-    SplashRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SplashPage(),
-      );
-    },
-  };
-}
-
 /// generated route for
 /// [AboutPage]
 class AboutRoute extends PageRouteInfo<void> {
@@ -59,7 +20,12 @@ class AboutRoute extends PageRouteInfo<void> {
 
   static const String name = 'AboutRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AboutPage();
+    },
+  );
 }
 
 /// generated route for
@@ -73,7 +39,12 @@ class ChangelogRoute extends PageRouteInfo<void> {
 
   static const String name = 'ChangelogRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ChangelogPage();
+    },
+  );
 }
 
 /// generated route for
@@ -87,7 +58,12 @@ class HomeRoute extends PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const HomePage();
+    },
+  );
 }
 
 /// generated route for
@@ -101,7 +77,12 @@ class OnboardingRoute extends PageRouteInfo<void> {
 
   static const String name = 'OnboardingRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const OnboardingPage();
+    },
+  );
 }
 
 /// generated route for
@@ -115,5 +96,10 @@ class SplashRoute extends PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SplashPage();
+    },
+  );
 }

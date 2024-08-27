@@ -38,10 +38,7 @@ Future<void> initForegroundService() async {
         name: 'launcher',
       ),
     ),
-    iosNotificationOptions: const IOSNotificationOptions(
-      showNotification: true,
-      playSound: false,
-    ),
+    iosNotificationOptions: const IOSNotificationOptions(),
     foregroundTaskOptions: const ForegroundTaskOptions(
       isOnceEvent: true,
     ),

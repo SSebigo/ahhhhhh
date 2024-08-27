@@ -4,7 +4,6 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   battery_plus
-  firebase_core
   permission_handler_windows
   url_launcher_windows
 )
